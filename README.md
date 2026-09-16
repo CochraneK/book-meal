@@ -1,4 +1,19 @@
-# 明朝那些事儿知识库
+<div align="center">
+
+# 明朝那些事儿 · 知识库
+
+**从 156 章文本中抽取人物、地点、事件、关系与年谱，做成可搜索、可浏览、可离线使用的静态知识图谱。**
+
+<p>
+  <img alt="Chapters" src="https://img.shields.io/badge/章节-156-6C63FF">
+  <img alt="Characters" src="https://img.shields.io/badge/人物-1231-2F80ED">
+  <img alt="Events" src="https://img.shields.io/badge/事件-1106-27AE60">
+  <img alt="Relations" src="https://img.shields.io/badge/关系-2324-F2994A">
+</p>
+
+[**在线查看**](https://cochranek.github.io/ming/) · [**离线版**](https://cochranek.github.io/ming/standalone.html)
+
+</div>
 
 基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库。在线版采用 V13 分层按需交付：首页只加载 `boot-data.js`，全局搜索加载轻量 `search-index.js`；人物为 `data-characters.js` + 16 个人物详情 shard，地点为 `data-locations.js` + 8 个地点详情 shard + 独立章节/航线块，年谱使用独立 `data-lifespans.js`；事件为轻量 `data-events.js` + 8 个事件详情 shard；关系索引进一步只加载可见字段组成的 `data-relations.js` core，完整关系 id / 端点类型 / 来源键等 metadata 只在 full DATA 时由 `data-relation-meta.js` 补回。`standalone.html` 仍是完整单文件离线版。
 
