@@ -1,0 +1,191 @@
+{
+ "pid": "synthesis",
+ "criterion": "Crossref query.title; token coverage>=0.6 + surname hit + |year diff|<=3",
+ "rows": [
+  {
+   "ok": true,
+   "title": "Conjectures on World Literature",
+   "authors": [
+    "moretti"
+   ],
+   "year": 2000,
+   "doi": "10.64590/hxj",
+   "container": "New Left Review",
+   "publisher": "New Left Review",
+   "type": "journal-article",
+   "overlap": 1.0,
+   "key": "moretti2000",
+   "want_title": "Conjectures on World Literature",
+   "want_year": 2000
+  },
+  {
+   "ok": true,
+   "title": "Latent Dirichlet Allocation",
+   "authors": [
+    "blei",
+    "jordan",
+    "ng"
+   ],
+   "year": 2002,
+   "doi": "10.7551/mitpress/1120.003.0082",
+   "container": "Advances in Neural Information Processing Systems 14",
+   "publisher": "The MIT Press",
+   "type": "book-chapter",
+   "overlap": 1.0,
+   "key": "blei2003",
+   "want_title": "Latent Dirichlet Allocation",
+   "want_year": 2003
+  },
+  {
+   "ok": false,
+   "title": "",
+   "authors": [],
+   "year": null,
+   "doi": "",
+   "container": "",
+   "publisher": "",
+   "type": "",
+   "overlap": 0.0,
+   "key": "gold2015",
+   "want_title": "Debates in Digital Humanities",
+   "want_year": 2015
+  },
+  {
+   "ok": true,
+   "title": "Introduction: Understanding the Digital Humanities",
+   "authors": [
+    "berry"
+   ],
+   "year": 2012,
+   "doi": "10.1057/9780230371934_1",
+   "container": "Understanding Digital Humanities",
+   "publisher": "Palgrave Macmillan UK",
+   "type": "book-chapter",
+   "overlap": 1.0,
+   "key": "berry2011",
+   "want_title": "Understanding Digital Humanities",
+   "want_year": 2011
+  },
+  {
+   "ok": false,
+   "title": "",
+   "authors": [],
+   "year": null,
+   "doi": "",
+   "container": "",
+   "publisher": "",
+   "type": "",
+   "overlap": 0.0,
+   "key": "hockey2009",
+   "want_title": "The Digital Humanities A Preliminary Survey",
+   "want_year": 2009
+  },
+  {
+   "ok": false,
+   "title": "",
+   "authors": [],
+   "year": null,
+   "doi": "",
+   "container": "",
+   "publisher": "",
+   "type": "",
+   "overlap": 0.0,
+   "key": "stone1971",
+   "want_title": "The Theory and Practice of Structural Analysis",
+   "want_year": 1971
+  },
+  {
+   "ok": false,
+   "title": "",
+   "authors": [],
+   "year": null,
+   "doi": "",
+   "container": "",
+   "publisher": "",
+   "type": "",
+   "overlap": 0.0,
+   "key": "white1973",
+   "want_title": "Metahistory",
+   "want_year": 1973
+  },
+  {
+   "ok": false,
+   "title": "",
+   "authors": [],
+   "year": null,
+   "doi": "",
+   "container": "",
+   "publisher": "",
+   "type": "",
+   "overlap": 0.0,
+   "key": "ginzburg1980",
+   "want_title": "Spelling the Beast",
+   "want_year": 1980
+  },
+  {
+   "ok": true,
+   "title": "The Language of New Media",
+   "authors": [
+    "manovich"
+   ],
+   "year": 2002,
+   "doi": "10.22230/cjc.2002v27n1a1280",
+   "container": "Canadian Journal of Communication",
+   "publisher": "University of Toronto Press Inc. (UTPress)",
+   "type": "journal-article",
+   "overlap": 1.0,
+   "key": "manovich2001",
+   "want_title": "The Language of New Media",
+   "want_year": 2001
+  },
+  {
+   "ok": false,
+   "title": "",
+   "authors": [],
+   "year": null,
+   "doi": "",
+   "container": "",
+   "publisher": "",
+   "type": "",
+   "overlap": 0.0,
+   "key": "piper2018",
+   "want_title": "The Breadth of Literary Study",
+   "want_year": 2018
+  },
+  {
+   "ok": true,
+   "title": "The Cambridge History of China, Volume 7: The Ming Dynasty, 1368-1644",
+   "authors": [
+    "dardess",
+    "mote",
+    "twitchett"
+   ],
+   "year": 1990,
+   "doi": "10.2307/603917",
+   "container": "Journal of the American Oriental Society",
+   "publisher": "JSTOR",
+   "type": "journal-article",
+   "overlap": 1.0,
+   "key": "mote1988",
+   "want_title": "The Cambridge History of China Volume 7 The Ming Dynasty 1368-1644",
+   "want_year": 1988
+  },
+  {
+   "ok": true,
+   "title": "1587, A Year of No Significance: The Ming Dynasty in Decline",
+   "authors": [
+    "huang",
+    "taylor"
+   ],
+   "year": 1982,
+   "doi": "10.2307/1863438",
+   "container": "The American Historical Review",
+   "publisher": "JSTOR",
+   "type": "journal-article",
+   "overlap": 1.0,
+   "key": "huang1981",
+   "want_title": "1587 A Year of No Significance The Ming Dynasty in Decline",
+   "want_year": 1981
+  }
+ ]
+}

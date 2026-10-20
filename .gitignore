@@ -17,3 +17,10 @@ dist/
 # 脚本运行期的临时输出与本地镜像
 .dump/_*_out.txt
 .dump/git-sync/
+
+# 论文试点工程：独立 git 仓库（自带完整历史与远程），不整体并入本仓
+papers_pilot/
+# .dump 只保留工程脚本，调试输出与日志不入库
+.dump/_*.txt
+.dump/_*.log
+.dump/__pycache__/

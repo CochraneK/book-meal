@@ -3,33 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#29241f">
-<meta name="color-scheme" content="light">
 <title>明朝那些事儿 · __TITLE__</title>
 <!-- Leaflet 改为「打开地图视图才按需加载」（见 loadLeaflet），避免首屏被 unpkg 阻塞 -->
 <style>
 /*{{INLINE_CSS}}*/</style>
-<style data-generated-from="web/css/theme.css">
-/* THEME_SYNC_START */
-/* ===== Classic UI compatibility layer =====
-   Keep the original pre-V1 visual language. This file now carries only
-   non-invasive accessibility behavior; app.css remains the visible skin. */
-.skip-link{position:fixed;left:16px;top:10px;z-index:100;transform:translateY(-180%);padding:8px 12px;border-radius:6px;background:#fffdf8;color:var(--accent);border:1px solid #cdbd9e;font-weight:700;text-decoration:none}.skip-link:focus{transform:translateY(0)}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #b88b35;outline-offset:2px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-@media print{.skip-link{display:none!important}}
-/* THEME_SYNC_END */
-</style>
 </head>
 <body>
-<a class="skip-link" href="#mainContent">跳到主要内容</a>
 <header class="app-header"><div class="header-inner">
   <h1 class="brand">明朝那些事儿 · __TITLE__</h1><div id="headerStat" class="header-stat"></div>
   <nav class="tabs" aria-label="报告视图">
     <button data-view="overview" class="active">总览</button><button data-view="distribution">分布</button><button data-view="visuals">图谱</button><button data-view="locations">地点</button><button data-view="map">地图</button><button data-view="characters">人物</button><button data-view="events">事件</button><button data-view="relations">关系</button><button data-view="timeline">时间轴</button><button data-view="dynasty">帝王</button><button data-view="chronicle">年谱</button><button data-view="insight">洞察</button>
   </nav>
 </div></header>
-<main class="shell" id="mainContent" tabindex="-1">
+<main class="shell">
   <section id="overview" class="view active"></section>
   <section id="distribution" class="view"></section>
   <section id="visuals" class="view"></section>
@@ -44,7 +30,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[t
   <section id="insight" class="view"></section>
 </main>
 <dialog id="detailDialog"><div class="dialog-body"><div class="dialog-head"><h2 id="dialogTitle"></h2><button class="dialog-close" id="dialogClose">关闭</button></div><div id="dialogContent"></div></div></dialog>
-<footer class="muted app-footer" style="text-align:center;padding:0 24px 28px;font-size:12px">数据来自章节抽取与人工整理；地点、年份及关系均保留核验状态。</footer>
+<footer class="muted" style="text-align:center;padding:0 24px 28px;font-size:12px">数据来自章节抽取与人工整理；地点、年份及关系均保留核验状态。</footer>
 <script>
 /* 启动守卫（P3-03）：主脚本内联了整份数据，一旦数据被裁剪或脚本执行抛错，
    页面会停在空白骨架且毫无提示。这里独立于主脚本先埋一个检查点：
@@ -69,19 +55,4 @@ setTimeout(function(){
 </script>
 <script>
 /*{{INLINE_JS}}*/</script>
-<style data-generated-from="web/css/experience.css">
-/* EXPERIENCE_CSS_SYNC_START */
-/* Classic UI mode: no visible V2/V3 product-experience overlays.
-   The online delivery/search infrastructure remains available underneath. */
-/* EXPERIENCE_CSS_SYNC_END */
-</style>
-<script data-generated-from="web/js/experience.js">
-/* EXPERIENCE_SYNC_START */
-/* Classic UI mode.
-   V2/V3's grouped navigation, homepage story, command-palette trigger and graph-reader
-   overlays are intentionally disabled so the original pre-V1 frontend remains visible.
-   Modern delivery/data-loader/lazy-data infrastructure is kept in separate files. */
-window.__MING_EXPERIENCE_READY=true;
-/* EXPERIENCE_SYNC_END */
-</script>
 </body></html>

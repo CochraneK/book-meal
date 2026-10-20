@@ -1,0 +1,950 @@
+{
+  "counts": {
+    "characters": 1231,
+    "events": 1106,
+    "relations": 2324,
+    "locations": 563,
+    "chapters": 156
+  },
+  "text_hits": {
+    "心学": 38,
+    "致良知": 2,
+    "知行合一": 12,
+    "王守仁": 538,
+    "理学": 29,
+    "讲学": 17,
+    "书院": 20,
+    "李贽": 2,
+    "存天理": 4,
+    "天理": 24,
+    "良知": 16
+  },
+  "relation_categories": [
+    {
+      "name": "其他",
+      "n": 927,
+      "pct": 39.9
+    },
+    {
+      "name": "君臣从属",
+      "n": 397,
+      "pct": 17.1
+    },
+    {
+      "name": "敌对冲突",
+      "n": 321,
+      "pct": 13.8
+    },
+    {
+      "name": "政治攻讦",
+      "n": 193,
+      "pct": 8.3
+    },
+    {
+      "name": "亲属",
+      "n": 185,
+      "pct": 8.0
+    },
+    {
+      "name": "同盟友党",
+      "n": 162,
+      "pct": 7.0
+    },
+    {
+      "name": "师生同门",
+      "n": 63,
+      "pct": 2.7
+    },
+    {
+      "name": "派系机构关联",
+      "n": 33,
+      "pct": 1.4
+    },
+    {
+      "name": "地点关联",
+      "n": 18,
+      "pct": 0.8
+    },
+    {
+      "name": "其他实体关联",
+      "n": 16,
+      "pct": 0.7
+    },
+    {
+      "name": "政权关联",
+      "n": 5,
+      "pct": 0.2
+    },
+    {
+      "name": "婚姻姻亲",
+      "n": 4,
+      "pct": 0.2
+    }
+  ],
+  "teacher_peer_global": {
+    "n": 63,
+    "pct": 2.7
+  },
+  "groups": {
+    "thought_names": [
+      "王守仁",
+      "聂豹",
+      "徐阶",
+      "王艮",
+      "王畿",
+      "钱德洪",
+      "何心隐",
+      "李贽",
+      "顾宪成",
+      "高攀龙"
+    ],
+    "power_names": [
+      "张居正",
+      "严嵩"
+    ],
+    "thought_all": {
+      "n": 148,
+      "categories": [
+        {
+          "name": "其他",
+          "n": 58,
+          "pct": 39.2
+        },
+        {
+          "name": "师生同门",
+          "n": 27,
+          "pct": 18.2
+        },
+        {
+          "name": "君臣从属",
+          "n": 17,
+          "pct": 11.5
+        },
+        {
+          "name": "敌对冲突",
+          "n": 16,
+          "pct": 10.8
+        },
+        {
+          "name": "政治攻讦",
+          "n": 13,
+          "pct": 8.8
+        },
+        {
+          "name": "亲属",
+          "n": 8,
+          "pct": 5.4
+        },
+        {
+          "name": "同盟友党",
+          "n": 7,
+          "pct": 4.7
+        },
+        {
+          "name": "地点关联",
+          "n": 1,
+          "pct": 0.7
+        },
+        {
+          "name": "派系机构关联",
+          "n": 1,
+          "pct": 0.7
+        }
+      ],
+      "teacher_peer_n": 27,
+      "teacher_peer_pct": 18.2,
+      "power_relation_n": 53,
+      "power_relation_pct": 35.8
+    },
+    "thought_explicit": {
+      "n": 90,
+      "categories": [
+        {
+          "name": "师生同门",
+          "n": 27,
+          "pct": 30.0
+        },
+        {
+          "name": "君臣从属",
+          "n": 17,
+          "pct": 18.9
+        },
+        {
+          "name": "敌对冲突",
+          "n": 16,
+          "pct": 17.8
+        },
+        {
+          "name": "政治攻讦",
+          "n": 13,
+          "pct": 14.4
+        },
+        {
+          "name": "亲属",
+          "n": 8,
+          "pct": 8.9
+        },
+        {
+          "name": "同盟友党",
+          "n": 7,
+          "pct": 7.8
+        },
+        {
+          "name": "地点关联",
+          "n": 1,
+          "pct": 1.1
+        },
+        {
+          "name": "派系机构关联",
+          "n": 1,
+          "pct": 1.1
+        }
+      ],
+      "teacher_peer_n": 27,
+      "teacher_peer_pct": 30.0,
+      "power_relation_n": 53,
+      "power_relation_pct": 58.9
+    },
+    "power_all": {
+      "n": 123,
+      "categories": [
+        {
+          "name": "其他",
+          "n": 46,
+          "pct": 37.4
+        },
+        {
+          "name": "政治攻讦",
+          "n": 18,
+          "pct": 14.6
+        },
+        {
+          "name": "敌对冲突",
+          "n": 17,
+          "pct": 13.8
+        },
+        {
+          "name": "同盟友党",
+          "n": 14,
+          "pct": 11.4
+        },
+        {
+          "name": "君臣从属",
+          "n": 13,
+          "pct": 10.6
+        },
+        {
+          "name": "师生同门",
+          "n": 9,
+          "pct": 7.3
+        },
+        {
+          "name": "亲属",
+          "n": 6,
+          "pct": 4.9
+        }
+      ],
+      "teacher_peer_n": 9,
+      "teacher_peer_pct": 7.3,
+      "power_relation_n": 62,
+      "power_relation_pct": 50.4
+    },
+    "power_explicit": {
+      "n": 77,
+      "categories": [
+        {
+          "name": "政治攻讦",
+          "n": 18,
+          "pct": 23.4
+        },
+        {
+          "name": "敌对冲突",
+          "n": 17,
+          "pct": 22.1
+        },
+        {
+          "name": "同盟友党",
+          "n": 14,
+          "pct": 18.2
+        },
+        {
+          "name": "君臣从属",
+          "n": 13,
+          "pct": 16.9
+        },
+        {
+          "name": "师生同门",
+          "n": 9,
+          "pct": 11.7
+        },
+        {
+          "name": "亲属",
+          "n": 6,
+          "pct": 7.8
+        }
+      ],
+      "teacher_peer_n": 9,
+      "teacher_peer_pct": 11.7,
+      "power_relation_n": 62,
+      "power_relation_pct": 80.5
+    }
+  },
+  "anchors": {
+    "王守仁": {
+      "degree": 50,
+      "all_incident": {
+        "n": 50,
+        "categories": [
+          {
+            "name": "其他",
+            "n": 14,
+            "pct": 28.0
+          },
+          {
+            "name": "师生同门",
+            "n": 8,
+            "pct": 16.0
+          },
+          {
+            "name": "政治攻讦",
+            "n": 8,
+            "pct": 16.0
+          },
+          {
+            "name": "亲属",
+            "n": 7,
+            "pct": 14.0
+          },
+          {
+            "name": "君臣从属",
+            "n": 6,
+            "pct": 12.0
+          },
+          {
+            "name": "敌对冲突",
+            "n": 5,
+            "pct": 10.0
+          },
+          {
+            "name": "同盟友党",
+            "n": 2,
+            "pct": 4.0
+          }
+        ],
+        "teacher_peer_n": 8,
+        "teacher_peer_pct": 16.0,
+        "power_relation_n": 21,
+        "power_relation_pct": 42.0
+      },
+      "explicit_incident": {
+        "n": 36,
+        "categories": [
+          {
+            "name": "师生同门",
+            "n": 8,
+            "pct": 22.2
+          },
+          {
+            "name": "政治攻讦",
+            "n": 8,
+            "pct": 22.2
+          },
+          {
+            "name": "亲属",
+            "n": 7,
+            "pct": 19.4
+          },
+          {
+            "name": "君臣从属",
+            "n": 6,
+            "pct": 16.7
+          },
+          {
+            "name": "敌对冲突",
+            "n": 5,
+            "pct": 13.9
+          },
+          {
+            "name": "同盟友党",
+            "n": 2,
+            "pct": 5.6
+          }
+        ],
+        "teacher_peer_n": 8,
+        "teacher_peer_pct": 22.2,
+        "power_relation_n": 21,
+        "power_relation_pct": 58.3
+      }
+    },
+    "徐阶": {
+      "degree": 67,
+      "all_incident": {
+        "n": 67,
+        "categories": [
+          {
+            "name": "其他",
+            "n": 25,
+            "pct": 37.3
+          },
+          {
+            "name": "师生同门",
+            "n": 17,
+            "pct": 25.4
+          },
+          {
+            "name": "君臣从属",
+            "n": 10,
+            "pct": 14.9
+          },
+          {
+            "name": "敌对冲突",
+            "n": 10,
+            "pct": 14.9
+          },
+          {
+            "name": "同盟友党",
+            "n": 2,
+            "pct": 3.0
+          },
+          {
+            "name": "政治攻讦",
+            "n": 2,
+            "pct": 3.0
+          },
+          {
+            "name": "亲属",
+            "n": 1,
+            "pct": 1.5
+          }
+        ],
+        "teacher_peer_n": 17,
+        "teacher_peer_pct": 25.4,
+        "power_relation_n": 24,
+        "power_relation_pct": 35.8
+      },
+      "explicit_incident": {
+        "n": 42,
+        "categories": [
+          {
+            "name": "师生同门",
+            "n": 17,
+            "pct": 40.5
+          },
+          {
+            "name": "君臣从属",
+            "n": 10,
+            "pct": 23.8
+          },
+          {
+            "name": "敌对冲突",
+            "n": 10,
+            "pct": 23.8
+          },
+          {
+            "name": "同盟友党",
+            "n": 2,
+            "pct": 4.8
+          },
+          {
+            "name": "政治攻讦",
+            "n": 2,
+            "pct": 4.8
+          },
+          {
+            "name": "亲属",
+            "n": 1,
+            "pct": 2.4
+          }
+        ],
+        "teacher_peer_n": 17,
+        "teacher_peer_pct": 40.5,
+        "power_relation_n": 24,
+        "power_relation_pct": 57.1
+      }
+    },
+    "顾宪成": {
+      "degree": 18,
+      "all_incident": {
+        "n": 18,
+        "categories": [
+          {
+            "name": "其他",
+            "n": 11,
+            "pct": 61.1
+          },
+          {
+            "name": "同盟友党",
+            "n": 1,
+            "pct": 5.6
+          },
+          {
+            "name": "君臣从属",
+            "n": 1,
+            "pct": 5.6
+          },
+          {
+            "name": "地点关联",
+            "n": 1,
+            "pct": 5.6
+          },
+          {
+            "name": "师生同门",
+            "n": 1,
+            "pct": 5.6
+          },
+          {
+            "name": "政治攻讦",
+            "n": 1,
+            "pct": 5.6
+          },
+          {
+            "name": "敌对冲突",
+            "n": 1,
+            "pct": 5.6
+          },
+          {
+            "name": "派系机构关联",
+            "n": 1,
+            "pct": 5.6
+          }
+        ],
+        "teacher_peer_n": 1,
+        "teacher_peer_pct": 5.6,
+        "power_relation_n": 4,
+        "power_relation_pct": 22.2
+      },
+      "explicit_incident": {
+        "n": 7,
+        "categories": [
+          {
+            "name": "同盟友党",
+            "n": 1,
+            "pct": 14.3
+          },
+          {
+            "name": "君臣从属",
+            "n": 1,
+            "pct": 14.3
+          },
+          {
+            "name": "地点关联",
+            "n": 1,
+            "pct": 14.3
+          },
+          {
+            "name": "师生同门",
+            "n": 1,
+            "pct": 14.3
+          },
+          {
+            "name": "政治攻讦",
+            "n": 1,
+            "pct": 14.3
+          },
+          {
+            "name": "敌对冲突",
+            "n": 1,
+            "pct": 14.3
+          },
+          {
+            "name": "派系机构关联",
+            "n": 1,
+            "pct": 14.3
+          }
+        ],
+        "teacher_peer_n": 1,
+        "teacher_peer_pct": 14.3,
+        "power_relation_n": 4,
+        "power_relation_pct": 57.1
+      }
+    },
+    "高攀龙": {
+      "degree": 11,
+      "all_incident": {
+        "n": 11,
+        "categories": [
+          {
+            "name": "其他",
+            "n": 10,
+            "pct": 90.9
+          },
+          {
+            "name": "师生同门",
+            "n": 1,
+            "pct": 9.1
+          }
+        ],
+        "teacher_peer_n": 1,
+        "teacher_peer_pct": 9.1,
+        "power_relation_n": 0,
+        "power_relation_pct": 0.0
+      },
+      "explicit_incident": {
+        "n": 1,
+        "categories": [
+          {
+            "name": "师生同门",
+            "n": 1,
+            "pct": 100.0
+          }
+        ],
+        "teacher_peer_n": 1,
+        "teacher_peer_pct": 100.0,
+        "power_relation_n": 0,
+        "power_relation_pct": 0.0
+      }
+    },
+    "张居正": {
+      "degree": 66,
+      "all_incident": {
+        "n": 66,
+        "categories": [
+          {
+            "name": "其他",
+            "n": 21,
+            "pct": 31.8
+          },
+          {
+            "name": "政治攻讦",
+            "n": 11,
+            "pct": 16.7
+          },
+          {
+            "name": "同盟友党",
+            "n": 10,
+            "pct": 15.2
+          },
+          {
+            "name": "君臣从属",
+            "n": 10,
+            "pct": 15.2
+          },
+          {
+            "name": "师生同门",
+            "n": 8,
+            "pct": 12.1
+          },
+          {
+            "name": "敌对冲突",
+            "n": 4,
+            "pct": 6.1
+          },
+          {
+            "name": "亲属",
+            "n": 2,
+            "pct": 3.0
+          }
+        ],
+        "teacher_peer_n": 8,
+        "teacher_peer_pct": 12.1,
+        "power_relation_n": 35,
+        "power_relation_pct": 53.0
+      },
+      "explicit_incident": {
+        "n": 45,
+        "categories": [
+          {
+            "name": "政治攻讦",
+            "n": 11,
+            "pct": 24.4
+          },
+          {
+            "name": "同盟友党",
+            "n": 10,
+            "pct": 22.2
+          },
+          {
+            "name": "君臣从属",
+            "n": 10,
+            "pct": 22.2
+          },
+          {
+            "name": "师生同门",
+            "n": 8,
+            "pct": 17.8
+          },
+          {
+            "name": "敌对冲突",
+            "n": 4,
+            "pct": 8.9
+          },
+          {
+            "name": "亲属",
+            "n": 2,
+            "pct": 4.4
+          }
+        ],
+        "teacher_peer_n": 8,
+        "teacher_peer_pct": 17.8,
+        "power_relation_n": 35,
+        "power_relation_pct": 77.8
+      }
+    },
+    "严嵩": {
+      "degree": 59,
+      "all_incident": {
+        "n": 59,
+        "categories": [
+          {
+            "name": "其他",
+            "n": 26,
+            "pct": 44.1
+          },
+          {
+            "name": "敌对冲突",
+            "n": 14,
+            "pct": 23.7
+          },
+          {
+            "name": "政治攻讦",
+            "n": 7,
+            "pct": 11.9
+          },
+          {
+            "name": "亲属",
+            "n": 4,
+            "pct": 6.8
+          },
+          {
+            "name": "同盟友党",
+            "n": 4,
+            "pct": 6.8
+          },
+          {
+            "name": "君臣从属",
+            "n": 3,
+            "pct": 5.1
+          },
+          {
+            "name": "师生同门",
+            "n": 1,
+            "pct": 1.7
+          }
+        ],
+        "teacher_peer_n": 1,
+        "teacher_peer_pct": 1.7,
+        "power_relation_n": 28,
+        "power_relation_pct": 47.5
+      },
+      "explicit_incident": {
+        "n": 33,
+        "categories": [
+          {
+            "name": "敌对冲突",
+            "n": 14,
+            "pct": 42.4
+          },
+          {
+            "name": "政治攻讦",
+            "n": 7,
+            "pct": 21.2
+          },
+          {
+            "name": "亲属",
+            "n": 4,
+            "pct": 12.1
+          },
+          {
+            "name": "同盟友党",
+            "n": 4,
+            "pct": 12.1
+          },
+          {
+            "name": "君臣从属",
+            "n": 3,
+            "pct": 9.1
+          },
+          {
+            "name": "师生同门",
+            "n": 1,
+            "pct": 3.0
+          }
+        ],
+        "teacher_peer_n": 1,
+        "teacher_peer_pct": 3.0,
+        "power_relation_n": 28,
+        "power_relation_pct": 84.8
+      }
+    }
+  },
+  "ideology_events": [
+    {
+      "name": "王守仁格物穷理求圣",
+      "year": 1488,
+      "category": "人物生平",
+      "participants": [
+        "王守仁",
+        "朱熹",
+        "程颐"
+      ],
+      "chapters": [
+        "p3-c8"
+      ]
+    },
+    {
+      "name": "龙场悟道创心学",
+      "year": 1508,
+      "category": "人物生平",
+      "participants": [
+        "王守仁"
+      ],
+      "chapters": [
+        "p3-c9"
+      ]
+    },
+    {
+      "name": "知行合一悟道",
+      "year": 1508,
+      "category": "人物生平",
+      "participants": [
+        "王守仁"
+      ],
+      "chapters": [
+        "p3-c14"
+      ]
+    },
+    {
+      "name": "王艮拜师创泰州学派",
+      "year": 1522,
+      "category": "人物生平",
+      "participants": [
+        "王艮",
+        "王守仁"
+      ],
+      "chapters": [
+        "p3-c19"
+      ]
+    },
+    {
+      "name": "天泉论道",
+      "year": 1527,
+      "category": "人物生平",
+      "participants": [
+        "王守仁",
+        "钱德洪",
+        "王畿"
+      ],
+      "chapters": [
+        "p3-c19"
+      ]
+    },
+    {
+      "name": "徐阶拜聂豹习心学",
+      "year": 1520,
+      "category": "人物生平",
+      "participants": [
+        "徐阶",
+        "聂豹",
+        "王守仁"
+      ],
+      "chapters": [
+        "p4-c7"
+      ]
+    },
+    {
+      "name": "张居正封闭天下书院六十四处",
+      "year": 1579,
+      "category": "政治斗争",
+      "participants": [
+        "张居正"
+      ],
+      "chapters": [
+        "p5-c9"
+      ]
+    },
+    {
+      "name": "顾宪成推举王家屏被罢、东林书院讲学",
+      "year": 1593,
+      "category": "政治斗争",
+      "participants": [
+        "顾宪成",
+        "王家屏",
+        "朱翊钧",
+        "高攀龙",
+        "顾允成",
+        "欧阳东凤"
+      ],
+      "chapters": [
+        "p6-c5"
+      ]
+    }
+  ],
+  "ideology_events_n": 8,
+  "ideology_events_by_year": [
+    {
+      "year": 1488,
+      "n": 1
+    },
+    {
+      "year": 1508,
+      "n": 2
+    },
+    {
+      "year": 1520,
+      "n": 1
+    },
+    {
+      "year": 1522,
+      "n": 1
+    },
+    {
+      "year": 1527,
+      "n": 1
+    },
+    {
+      "year": 1579,
+      "n": 1
+    },
+    {
+      "year": 1593,
+      "n": 1
+    }
+  ],
+  "ideology_events_by_category": [
+    {
+      "name": "人物生平",
+      "n": 6,
+      "pct": 75.0
+    },
+    {
+      "name": "政治斗争",
+      "n": 2,
+      "pct": 25.0
+    }
+  ],
+  "ideology_event_windows": [
+    {
+      "label": "1480--1507",
+      "n": 1
+    },
+    {
+      "label": "1508--1528",
+      "n": 5
+    },
+    {
+      "label": "1529--1578",
+      "n": 0
+    },
+    {
+      "label": "1579--1600",
+      "n": 2
+    }
+  ],
+  "peak_window": {
+    "label": "1508--1528",
+    "n": 5,
+    "pct": 62.5,
+    "denominator": 8
+  },
+  "verified_book_evidence": {
+    "知行合一": 12,
+    "致良知": 2,
+    "讲学": 17,
+    "书院": 20
+  },
+  "limitations": {
+    "text_is_narrative_mentions_not_philosophical_treatises": true,
+    "derived_edges_excluded_in_explicit_robustness": true,
+    "framework_not_direct_measure": "突围/收编仅为解释框架；替代量为关系类别构成与事件时间序列"
+  }
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "key": "farmer1995",
+    "status": "UNVERIFIED",
+    "title": "Zhu Yuanzhang and Early Ming Legislation: The Reordering of Chinese Society Following the Era of Mongol Rule",
+    "doi": "",
+    "matched_title": "",
+    "matched_year": null,
+    "matched_authors": [],
+    "source": "",
+    "n_candidates": 5
+  },
+  {
+    "key": "mote1988",
+    "status": "VERIFIED",
+    "title": "The Cambridge History of China, Volume 7: The Ming Dynasty, 1368-1644",
+    "doi": "10.2307/2162852",
+    "matched_title": "The Cambridge History of China. Volume 7, The Ming Dynasty, 1368-1644.",
+    "matched_year": 1990,
+    "matched_authors": [
+      "Farmer",
+      "Mote",
+      "Twitchett"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "huang1981",
+    "status": "UNVERIFIED",
+    "title": "1587, A Year of No Significance: The Ming Dynasty in Decline",
+    "doi": "",
+    "matched_title": "",
+    "matched_year": null,
+    "matched_authors": [],
+    "source": "",
+    "n_candidates": 5
+  },
+  {
+    "key": "brook1998",
+    "status": "UNVERIFIED",
+    "title": "The Confusions of Pleasure: Commerce and Culture in Ming China",
+    "doi": "",
+    "matched_title": "",
+    "matched_year": null,
+    "matched_authors": [],
+    "source": "",
+    "n_candidates": 5
+  },
+  {
+    "key": "hucker1985",
+    "status": "VERIFIED",
+    "title": "A Dictionary of Official Titles in Imperial China",
+    "doi": "10.2307/1858260",
+    "matched_title": "A Dictionary of Official Titles in Imperial China",
+    "matched_year": 1986,
+    "matched_authors": [
+      "Teng",
+      "Hucker"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "bodde1967",
+    "status": "VERIFIED",
+    "title": "Law in Imperial China: Exemplified by 190 Ch'ing Dynasty Cases",
+    "doi": "10.2307/1227553",
+    "matched_title": "Law in Imperial China: Exemplified by 190 Ch'ing Dynasty Cases",
+    "matched_year": 1968,
+    "matched_authors": [
+      "Birmingham",
+      "Bodde",
+      "Morris"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "tsai1996",
+    "status": "UNVERIFIED",
+    "title": "The Eunuchs in the Ming Dynasty",
+    "doi": "",
+    "matched_title": "",
+    "matched_year": null,
+    "matched_authors": [],
+    "source": "",
+    "n_candidates": 5
+  },
+  {
+    "key": "mcknight1992",
+    "status": "VERIFIED",
+    "title": "Law and Order in Sung China",
+    "doi": "10.1017/cbo9780511529030",
+    "matched_title": "Law and Order in Sung China",
+    "matched_year": 1992,
+    "matched_authors": [
+      "McKnight"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "maccormack1996",
+    "status": "VERIFIED",
+    "title": "The Spirit of Traditional Chinese Law",
+    "doi": "10.2307/845494",
+    "matched_title": "The Spirit of Traditional Chinese Law",
+    "matched_year": 1997,
+    "matched_authors": [
+      "Jones",
+      "MacCormack"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "alford1995",
+    "status": "UNVERIFIED",
+    "title": "To Steal a Book Is an Elegant Offense: Intellectual Property Law in Chinese Civilization",
+    "doi": "",
+    "matched_title": "",
+    "matched_year": null,
+    "matched_authors": [],
+    "source": "",
+    "n_candidates": 5
+  },
+  {
+    "key": "huangp2001",
+    "status": "VERIFIED",
+    "title": "Code, Custom, and Legal Practice in China: The Qing and the Republic Compared",
+    "doi": "10.1515/9780804764575",
+    "matched_title": "Code, Custom, and Legal Practice in China",
+    "matched_year": 2002,
+    "matched_authors": [
+      "Huang"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "robinson1995",
+    "status": "UNVERIFIED",
+    "title": "Bandits, Eunuchs, and the Son of Heaven: Rebellions and the Economy of Violence in Ming China",
+    "doi": "",
+    "matched_title": "",
+    "matched_year": null,
+    "matched_authors": [],
+    "source": "",
+    "n_candidates": 5
+  },
+  {
+    "key": "michel2011",
+    "status": "VERIFIED",
+    "title": "Quantitative analysis of culture using millions of digitized books",
+    "doi": "10.1126/science.1199644",
+    "matched_title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+    "matched_year": 2011,
+    "matched_authors": [
+      "Michel",
+      "Shen",
+      "Aiden",
+      "Veres"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  },
+  {
+    "key": "ginzburg1980",
+    "status": "VERIFIED",
+    "title": "The Cheese and the Worms: The Cosmos of a Sixteenth-Century Miller",
+    "doi": "10.2307/3104820",
+    "matched_title": "The Cheese and the Worms: The Cosmos of a Sixteenth Century Miller",
+    "matched_year": 1982,
+    "matched_authors": [
+      "Keller",
+      "Ginzburg",
+      "Tedeschi",
+      "Tedeschi"
+    ],
+    "source": "crossref",
+    "n_candidates": 5
+  }
+]

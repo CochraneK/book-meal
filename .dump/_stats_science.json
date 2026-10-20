@@ -1,0 +1,1128 @@
+{
+  "pid": "science",
+  "counts": {
+    "n_characters": 1231,
+    "n_events": 1106,
+    "n_relations": 2324,
+    "n_locations": 563,
+    "n_lifespans": 165,
+    "n_chapters_total": 156
+  },
+  "definition": {
+    "tech_core": [
+      "李时珍",
+      "潘季驯",
+      "徐光启",
+      "孙元化",
+      "汪鉉",
+      "汤序",
+      "宋礼",
+      "陈瑄",
+      "徐霞客"
+    ],
+    "tech_broad_add": [
+      "郑和",
+      "李舜臣"
+    ],
+    "power_groups": [
+      "帝系",
+      "内阁文臣",
+      "武将勋臣",
+      "开国功臣"
+    ],
+    "power_n": 84,
+    "rule": "技艺/学术型 = 人物被写入图谱的理由是一项专门技艺或一门学问（关键词初筛后人工核对）；权力型 = lifespans 中帝系/内阁文臣/武将勋臣/开国功臣四组。"
+  },
+  "tech_core_persons": [
+    {
+      "name": "李时珍",
+      "group": "tech",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 32,
+      "role": "著《本草纲目》(1552-1578)，曾任楚王医、太医院医，弃荣华负重著书救人"
+    },
+    {
+      "name": "潘季驯",
+      "group": "tech",
+      "chapters": 2,
+      "degree": 1,
+      "hit": 17,
+      "role": "浙江吴兴人，嘉靖二十九年进士，治黄河创'束水冲沙法'、分洪（滚水坝）"
+    },
+    {
+      "name": "徐光启",
+      "group": "tech",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 1,
+      "role": "科学家"
+    },
+    {
+      "name": "孙元化",
+      "group": "tech",
+      "chapters": 3,
+      "degree": 4,
+      "hit": 20,
+      "role": "火炮专家"
+    },
+    {
+      "name": "汪鉉",
+      "group": "tech",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 2,
+      "role": "嘉靖初年击败葡萄牙船队，缴获佛郎机火炮并建议仿制，开启明火器革新。"
+    },
+    {
+      "name": "汤序",
+      "group": "tech",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 5,
+      "role": "天文学家，为曹钦择庚子日起兵，被处决"
+    },
+    {
+      "name": "宋礼",
+      "group": "tech",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 2,
+      "role": "工部尚书，永乐九年受命治理会通河保障漕运"
+    },
+    {
+      "name": "陈瑄",
+      "group": "tech",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 1,
+      "role": "漕运总督，进一步疏通河道使南北漕运畅通"
+    },
+    {
+      "name": "徐霞客",
+      "group": "tech",
+      "chapters": 3,
+      "degree": 6,
+      "hit": 6,
+      "role": "徐经后代，地理学家(提及)"
+    }
+  ],
+  "tech_broad_persons": [
+    {
+      "name": "郑和",
+      "group": "tech_broad",
+      "chapters": 4,
+      "degree": 16,
+      "hit": 125,
+      "role": "航海家、内官监太监、西洋舰队统帅"
+    },
+    {
+      "name": "李舜臣",
+      "group": "tech_broad",
+      "chapters": 4,
+      "degree": 9,
+      "hit": 89,
+      "role": "字汝谐，德水人，柳成龙推举治水军；发明龟船，玉浦、赤珍浦、泗水、唐浦、闲山岛连战连捷，打破日军水陆并进企图，朝鲜唯一希望。"
+    }
+  ],
+  "power_persons": [
+    {
+      "name": "朱元璋",
+      "group": "power",
+      "chapters": 41,
+      "degree": 87,
+      "hit": 1265,
+      "role": "吴王/红巾军首领，后为明太祖"
+    },
+    {
+      "name": "朱标",
+      "group": "power",
+      "chapters": 5,
+      "degree": 7,
+      "hit": 52,
+      "role": "太子，宋濂学生"
+    },
+    {
+      "name": "朱允炆",
+      "group": "power",
+      "chapters": 13,
+      "degree": 40,
+      "hit": 150,
+      "role": "朱标之子，继太子位"
+    },
+    {
+      "name": "朱棣",
+      "group": "power",
+      "chapters": 25,
+      "degree": 113,
+      "hit": 1415,
+      "role": "明成祖（永乐帝）"
+    },
+    {
+      "name": "朱高炽",
+      "group": "power",
+      "chapters": 11,
+      "degree": 29,
+      "hit": 121,
+      "role": "明仁宗"
+    },
+    {
+      "name": "朱瞻基",
+      "group": "power",
+      "chapters": 7,
+      "degree": 19,
+      "hit": 101,
+      "role": "明宣宗（宣德帝）"
+    },
+    {
+      "name": "朱祁镇",
+      "group": "power",
+      "chapters": 14,
+      "degree": 56,
+      "hit": 433,
+      "role": "明英宗"
+    },
+    {
+      "name": "朱祁钰",
+      "group": "power",
+      "chapters": 10,
+      "degree": 48,
+      "hit": 213,
+      "role": "郕王，英宗弟，监国（后为代宗）"
+    },
+    {
+      "name": "朱见深",
+      "group": "power",
+      "chapters": 6,
+      "degree": 13,
+      "hit": 166,
+      "role": "朱祁镇子，三岁，未立"
+    },
+    {
+      "name": "朱祐樘",
+      "group": "power",
+      "chapters": 5,
+      "degree": 18,
+      "hit": 76,
+      "role": "纪妃所生皇子，藏养五年，后立为太子"
+    },
+    {
+      "name": "朱厚照",
+      "group": "power",
+      "chapters": 11,
+      "degree": 40,
+      "hit": 334,
+      "role": "少年皇帝，贪玩，宠信八虎"
+    },
+    {
+      "name": "朱厚熜",
+      "group": "power",
+      "chapters": 26,
+      "degree": 58,
+      "hit": 61,
+      "role": "兴献王之子，被杨廷和推立为新帝，改元嘉靖"
+    },
+    {
+      "name": "朱载坖",
+      "group": "power",
+      "chapters": 0,
+      "degree": 0,
+      "hit": 0,
+      "role": null
+    },
+    {
+      "name": "朱翊钧",
+      "group": "power",
+      "chapters": 30,
+      "degree": 52,
+      "hit": 5,
+      "role": "追谥于谦'忠肃'(提及)"
+    },
+    {
+      "name": "朱常洛",
+      "group": "power",
+      "chapters": 8,
+      "degree": 23,
+      "hit": 48,
+      "role": "万历十年（1582）恭妃所生，万历长子；争国本核心人物，群臣力主册立为太子。"
+    },
+    {
+      "name": "朱由校",
+      "group": "power",
+      "chapters": 7,
+      "degree": 29,
+      "hit": 52,
+      "role": "时为李选侍所掌，双方争夺对象。"
+    },
+    {
+      "name": "朱由检",
+      "group": "power",
+      "chapters": 19,
+      "degree": 67,
+      "hit": 17,
+      "role": "信王（后继位为崇祯帝）"
+    },
+    {
+      "name": "徐达",
+      "group": "power",
+      "chapters": 13,
+      "degree": 23,
+      "hit": 165,
+      "role": "大将，善谋略"
+    },
+    {
+      "name": "常遇春",
+      "group": "power",
+      "chapters": 10,
+      "degree": 18,
+      "hit": 104,
+      "role": "大将，善突击、神箭手"
+    },
+    {
+      "name": "刘基",
+      "group": "power",
+      "chapters": 8,
+      "degree": 12,
+      "hit": 112,
+      "role": "刘伯温，谋士，力主决战"
+    },
+    {
+      "name": "李善长",
+      "group": "power",
+      "chapters": 6,
+      "degree": 18,
+      "hit": 89,
+      "role": "明朝开国第一功臣，谋士"
+    },
+    {
+      "name": "宋濂",
+      "group": "power",
+      "chapters": 3,
+      "degree": 3,
+      "hit": 24,
+      "role": "文臣太子师，修《元史》，因孙涉胡党被召欲杀，马皇后救"
+    },
+    {
+      "name": "方孝孺",
+      "group": "power",
+      "chapters": 6,
+      "degree": 15,
+      "hit": 54,
+      "role": "建文智囊，宋濂学生，方克勤之子"
+    },
+    {
+      "name": "于谦",
+      "group": "power",
+      "chapters": 15,
+      "degree": 45,
+      "hit": 276,
+      "role": "兵部左侍郎（后主角）"
+    },
+    {
+      "name": "李贤",
+      "group": "power",
+      "chapters": 5,
+      "degree": 16,
+      "hit": 103,
+      "role": "吏部右侍郎入阁，非徐亲信，静观待机"
+    },
+    {
+      "name": "徐有贞",
+      "group": "power",
+      "chapters": 7,
+      "degree": 27,
+      "hit": 157,
+      "role": "侍讲学士，主张南迁逃跑"
+    },
+    {
+      "name": "王阳明",
+      "group": "power",
+      "chapters": 12,
+      "degree": 0,
+      "hit": 0,
+      "role": "兵部武选司主事，因谏留刘健谢迁被廷杖，后成圣贤"
+    },
+    {
+      "name": "严嵩",
+      "group": "power",
+      "chapters": 17,
+      "degree": 59,
+      "hit": 598,
+      "role": "江西分宜人，神童入仕，初正直后阿附嘉靖，写青词拍马，告倒夏言入阁，专断贪污"
+    },
+    {
+      "name": "夏言",
+      "group": "power",
+      "chapters": 8,
+      "degree": 32,
+      "hit": 300,
+      "role": "兵科给事中，议礼起家，善辩，斗倒张璁，任礼部尚书、首辅"
+    },
+    {
+      "name": "徐阶",
+      "group": "power",
+      "chapters": 22,
+      "degree": 67,
+      "hit": 742,
+      "role": "泰州学派插班生，后成重量级人物"
+    },
+    {
+      "name": "海瑞",
+      "group": "power",
+      "chapters": 6,
+      "degree": 19,
+      "hit": 216,
+      "role": "户部云南司主事，历任南平教谕、淳安/兴国知县，上《治安疏》骂嘉靖，买棺死谏"
+    },
+    {
+      "name": "张居正",
+      "group": "power",
+      "chapters": 23,
+      "degree": 66,
+      "hit": 634,
+      "role": "被提及作对比：百年后改革家栽在艰难抉择上"
+    },
+    {
+      "name": "申时行",
+      "group": "power",
+      "chapters": 9,
+      "degree": 32,
+      "hit": 188,
+      "role": "吏部侍郎，与王锡爵求情未果"
+    },
+    {
+      "name": "孙承宗",
+      "group": "power",
+      "chapters": 10,
+      "degree": 40,
+      "hit": 193,
+      "role": "《明史》独传人物，明末最伟大的战略家，努尔哈赤父子克星，京城保卫者，帝师；登场前为十六年未中举的落魄秀才。"
+    },
+    {
+      "name": "温体仁",
+      "group": "power",
+      "chapters": 4,
+      "degree": 21,
+      "hit": 122,
+      "role": "礼部尚书，后入阁"
+    },
+    {
+      "name": "周延儒",
+      "group": "power",
+      "chapters": 4,
+      "degree": 14,
+      "hit": 67,
+      "role": "内阁大学士，后入阁"
+    },
+    {
+      "name": "胡宗宪",
+      "group": "power",
+      "chapters": 12,
+      "degree": 34,
+      "hit": 404,
+      "role": "本章核心人物，徽州望族，巴结赵文华借严党上位，接任浙江巡抚，立志平倭"
+    },
+    {
+      "name": "俞大猷",
+      "group": "power",
+      "chapters": 8,
+      "degree": 22,
+      "hit": 130,
+      "role": "本章核心人物之一，武艺兵法绝世，屡立战功却屡遭贬抑，终被胡宗宪任浙江总兵"
+    },
+    {
+      "name": "戚继光",
+      "group": "power",
+      "chapters": 12,
+      "degree": 30,
+      "hit": 310,
+      "role": "登州卫指挥佥事，著《备俺答策》，庚戌之变参战，被王邦瑞评为将才"
+    },
+    {
+      "name": "李成梁",
+      "group": "power",
+      "chapters": 9,
+      "degree": 15,
+      "hit": 118,
+      "role": "辽东副总兵，拜徐渭为师教子李如松、李如柏"
+    },
+    {
+      "name": "李如松",
+      "group": "power",
+      "chapters": 7,
+      "degree": 46,
+      "hit": 282,
+      "role": "李成梁长子，从徐渭学戚继光兵法，万历间援朝大破日军"
+    },
+    {
+      "name": "熊廷弼",
+      "group": "power",
+      "chapters": 5,
+      "degree": 14,
+      "hit": 64,
+      "role": "万历四十七年（1619）萨尔浒后入辽东，杀逃将、赶李如桢、亲赴抚顺吹号威慑，数月稳定局势、组游击队骚扰后金，迫使努尔哈赤停攻。"
+    },
+    {
+      "name": "毛文龙",
+      "group": "power",
+      "chapters": 6,
+      "degree": 11,
+      "hit": 137,
+      "role": "镇江堡大捷阵斩佟养真（佟养正），东江镇总兵（原书误作佟养性；佟养性为其弟，天聪六年病死于后金）"
+    },
+    {
+      "name": "袁崇焕",
+      "group": "power",
+      "chapters": 15,
+      "degree": 74,
+      "hit": 533,
+      "role": "杀毛文龙，后被崇祯以擅杀罪名处死。"
+    },
+    {
+      "name": "卢象昇",
+      "group": "power",
+      "chapters": 3,
+      "degree": 10,
+      "hit": 122,
+      "role": "五省（后七省）总理，郧阳巡抚，天雄军主帅"
+    },
+    {
+      "name": "孙传庭",
+      "group": "power",
+      "chapters": 5,
+      "degree": 17,
+      "hit": 43,
+      "role": "陕西巡抚"
+    },
+    {
+      "name": "杨嗣昌",
+      "group": "power",
+      "chapters": 5,
+      "degree": 16,
+      "hit": 104,
+      "role": "山海关参政"
+    },
+    {
+      "name": "洪承畴",
+      "group": "power",
+      "chapters": 7,
+      "degree": 26,
+      "hit": 137,
+      "role": "陕西参政，延绥巡抚，三边总督"
+    },
+    {
+      "name": "左良玉",
+      "group": "power",
+      "chapters": 6,
+      "degree": 19,
+      "hit": 80,
+      "role": "将领"
+    },
+    {
+      "name": "吴三桂",
+      "group": "power",
+      "chapters": 3,
+      "degree": 3,
+      "hit": 18,
+      "role": "少年（后为明末清初风云人物）"
+    },
+    {
+      "name": "汤和",
+      "group": "power",
+      "chapters": 6,
+      "degree": 10,
+      "hit": 35,
+      "role": "朱元璋同乡，招其投军"
+    },
+    {
+      "name": "沐英",
+      "group": "power",
+      "chapters": 1,
+      "degree": 0,
+      "hit": 17,
+      "role": "镇守云南，发明三行火铳战法克象兵"
+    },
+    {
+      "name": "邓愈",
+      "group": "power",
+      "chapters": 4,
+      "degree": 7,
+      "hit": 13,
+      "role": "左副副将军"
+    },
+    {
+      "name": "冯胜",
+      "group": "power",
+      "chapters": 11,
+      "degree": 14,
+      "hit": 45,
+      "role": "冯国用弟，后名冯胜"
+    },
+    {
+      "name": "傅友德",
+      "group": "power",
+      "chapters": 7,
+      "degree": 9,
+      "hit": 31,
+      "role": "将领，征云南"
+    },
+    {
+      "name": "廖永忠",
+      "group": "power",
+      "chapters": 2,
+      "degree": 1,
+      "hit": 5,
+      "role": "水军将领"
+    },
+    {
+      "name": "耿炳文",
+      "group": "power",
+      "chapters": 6,
+      "degree": 13,
+      "hit": 58,
+      "role": "将领，攻城东北"
+    },
+    {
+      "name": "郭英",
+      "group": "power",
+      "chapters": 6,
+      "degree": 6,
+      "hit": 15,
+      "role": "部将，报粮水缺乏"
+    },
+    {
+      "name": "胡大海",
+      "group": "power",
+      "chapters": 1,
+      "degree": 0,
+      "hit": 4,
+      "role": "将领，荐刘基"
+    },
+    {
+      "name": "李文忠",
+      "group": "power",
+      "chapters": 6,
+      "degree": 11,
+      "hit": 66,
+      "role": "朱元璋外甥"
+    },
+    {
+      "name": "冯国用",
+      "group": "power",
+      "chapters": 1,
+      "degree": 0,
+      "hit": 1,
+      "role": "谋士"
+    },
+    {
+      "name": "康茂才",
+      "group": "power",
+      "chapters": 2,
+      "degree": 1,
+      "hit": 8,
+      "role": "双面间谍（原陈友谅将）"
+    },
+    {
+      "name": "蹇义",
+      "group": "power",
+      "chapters": 2,
+      "degree": 1,
+      "hit": 10,
+      "role": "尚书，太子党，东宫迎驾事件下狱"
+    },
+    {
+      "name": "商辂",
+      "group": "power",
+      "chapters": 6,
+      "degree": 12,
+      "hit": 25,
+      "role": "正统年间连中三元者"
+    },
+    {
+      "name": "彭时",
+      "group": "power",
+      "chapters": 2,
+      "degree": 0,
+      "hit": 8,
+      "role": "内阁，谏止废后、劝帝雨露均沾"
+    },
+    {
+      "name": "刘健",
+      "group": "power",
+      "chapters": 3,
+      "degree": 6,
+      "hit": 42,
+      "role": "弘治首辅，性暴善断"
+    },
+    {
+      "name": "李东阳",
+      "group": "power",
+      "chapters": 7,
+      "degree": 21,
+      "hit": 78,
+      "role": "内阁次辅，善谋，茶陵派领袖，上报唐寅案"
+    },
+    {
+      "name": "谢迁",
+      "group": "power",
+      "chapters": 3,
+      "degree": 2,
+      "hit": 23,
+      "role": "内阁，状元，善侃，弘治三阁臣之一"
+    },
+    {
+      "name": "杨廷和",
+      "group": "power",
+      "chapters": 17,
+      "degree": 47,
+      "hit": 176,
+      "role": "新科翰林，起草实录稿被丘浚叹服，后权倾天下"
+    },
+    {
+      "name": "杨一清",
+      "group": "power",
+      "chapters": 10,
+      "degree": 33,
+      "hit": 138,
+      "role": "左副都御史，弘治十五年被派陕西管马"
+    },
+    {
+      "name": "张璁",
+      "group": "power",
+      "chapters": 5,
+      "degree": 31,
+      "hit": 272,
+      "role": "礼部主事，第八次中进士，上疏支持嘉靖认本生父母，发大议礼之端"
+    },
+    {
+      "name": "高拱",
+      "group": "power",
+      "chapters": 12,
+      "degree": 59,
+      "hit": 384,
+      "role": "翰林院编修，河南新郑人，被严世蕃忽视的第五位英才"
+    },
+    {
+      "name": "王锡爵",
+      "group": "power",
+      "chapters": 6,
+      "degree": 17,
+      "hit": 137,
+      "role": "大学士，詹仰庇复起后巴结对象"
+    },
+    {
+      "name": "叶向高",
+      "group": "power",
+      "chapters": 7,
+      "degree": 26,
+      "hit": 92,
+      "role": "非东林而与之联系密切；于慎行死后成唯一首辅，得李三才、顾宪成暗助稳位。"
+    },
+    {
+      "name": "麻贵",
+      "group": "power",
+      "chapters": 4,
+      "degree": 17,
+      "hit": 87,
+      "role": "大同人，将门出身；宁夏平叛初攻城不利被李如松骂『无能』，后心服口服。"
+    },
+    {
+      "name": "刘綎",
+      "group": "power",
+      "chapters": 5,
+      "degree": 7,
+      "hit": 52,
+      "role": "明军撤朝后留镇朝鲜要地。"
+    },
+    {
+      "name": "杜松",
+      "group": "power",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 22,
+      "role": "萨尔浒先锋，率精锐六万驻萨尔浒、分兵吉林崖，被努尔哈赤全歼。"
+    },
+    {
+      "name": "陈璘",
+      "group": "power",
+      "chapters": 2,
+      "degree": 8,
+      "hit": 65,
+      "role": "广东翁源人，粤语、贪但极善战；率五千广东水军抵朝，以诗团结李舜臣；执行封锁海岸、堵截小西行长海道，于露梁海设伏。"
+    },
+    {
+      "name": "邓子龙",
+      "group": "power",
+      "chapters": 2,
+      "degree": 3,
+      "hit": 22,
+      "role": "丰城人，年逾七十，老实无后台；率三千伏于露梁海北侧，截敌退路。"
+    },
+    {
+      "name": "李如柏",
+      "group": "power",
+      "chapters": 6,
+      "degree": 15,
+      "hit": 25,
+      "role": "李成梁次子，从徐渭学兵法"
+    },
+    {
+      "name": "满桂",
+      "group": "power",
+      "chapters": 7,
+      "degree": 21,
+      "hit": 84,
+      "role": "宁远总兵"
+    },
+    {
+      "name": "赵率教",
+      "group": "power",
+      "chapters": 5,
+      "degree": 18,
+      "hit": 66,
+      "role": "辽东将领、副总兵"
+    },
+    {
+      "name": "祖大寿",
+      "group": "power",
+      "chapters": 10,
+      "degree": 38,
+      "hit": 126,
+      "role": "辽东名将、游击将军、总兵"
+    },
+    {
+      "name": "袁可立",
+      "group": "power",
+      "chapters": 0,
+      "degree": 0,
+      "hit": 0,
+      "role": null
+    }
+  ],
+  "tech_summary": {
+    "n": 9,
+    "pct_of_characters": 0.73,
+    "mean_chapters": 1.56,
+    "median_chapters": 1,
+    "mean_degree": 1.89,
+    "median_degree": 1,
+    "mean_hit": 9.56,
+    "median_hit": 5,
+    "sum_hit": 86,
+    "sum_degree": 17
+  },
+  "tech_broad_summary": {
+    "n": 11,
+    "pct_of_characters": 0.89,
+    "mean_chapters": 2,
+    "median_chapters": 1,
+    "mean_degree": 3.82,
+    "median_degree": 1,
+    "mean_hit": 27.27,
+    "median_hit": 6,
+    "sum_hit": 300,
+    "sum_degree": 42
+  },
+  "power_summary": {
+    "n": 84,
+    "pct_of_characters": 6.82,
+    "mean_chapters": 8.38,
+    "median_chapters": 6.0,
+    "mean_degree": 24.02,
+    "median_degree": 18.0,
+    "mean_hit": 159.13,
+    "median_hit": 85.5,
+    "sum_hit": 13367,
+    "sum_degree": 2018
+  },
+  "ratios": {
+    "mean_degree_power_over_tech": 12.71,
+    "mean_chapters_power_over_tech": 5.37,
+    "mean_hit_power_over_tech": 16.65,
+    "tech_share_pct": 0.73,
+    "power_share_pct": 6.82
+  },
+  "conversion_kappa": {
+    "tech": {
+      "n": 9,
+      "mean": 49.89,
+      "median": 50.0
+    },
+    "power": {
+      "n": 81,
+      "mean": 37.06,
+      "median": 16.67
+    },
+    "power_over_tech": 0.74,
+    "def": "kappa = 100 * degree / hit"
+  },
+  "chapter_density_lambda": {
+    "tech": {
+      "n": 9,
+      "mean": 6.69,
+      "median": 2.0
+    },
+    "power": {
+      "n": 82,
+      "mean": 16.78,
+      "median": 13.27
+    },
+    "tech_over_power": 0.4,
+    "def": "lambda = hit / chapters"
+  },
+  "event_categories": [
+    {
+      "name": "政治斗争",
+      "n": 365,
+      "pct": 33.0
+    },
+    {
+      "name": "军事战争",
+      "n": 316,
+      "pct": 28.6
+    },
+    {
+      "name": "人事任免",
+      "n": 77,
+      "pct": 7.0
+    },
+    {
+      "name": "案件刑狱",
+      "n": 75,
+      "pct": 6.8
+    },
+    {
+      "name": "死亡身后",
+      "n": 66,
+      "pct": 6.0
+    },
+    {
+      "name": "外交边务",
+      "n": 52,
+      "pct": 4.7
+    },
+    {
+      "name": "宫廷变故",
+      "n": 51,
+      "pct": 4.6
+    },
+    {
+      "name": "人物生平",
+      "n": 35,
+      "pct": 3.2
+    },
+    {
+      "name": "制度科举",
+      "n": 34,
+      "pct": 3.1
+    },
+    {
+      "name": "民变起义",
+      "n": 30,
+      "pct": 2.7
+    },
+    {
+      "name": "天灾人祸",
+      "n": 5,
+      "pct": 0.5
+    }
+  ],
+  "relation_categories": [
+    {
+      "name": "其他",
+      "n": 927,
+      "pct": 39.9
+    },
+    {
+      "name": "君臣从属",
+      "n": 397,
+      "pct": 17.1
+    },
+    {
+      "name": "敌对冲突",
+      "n": 321,
+      "pct": 13.8
+    },
+    {
+      "name": "政治攻讦",
+      "n": 193,
+      "pct": 8.3
+    },
+    {
+      "name": "亲属",
+      "n": 185,
+      "pct": 8.0
+    },
+    {
+      "name": "同盟友党",
+      "n": 162,
+      "pct": 7.0
+    },
+    {
+      "name": "师生同门",
+      "n": 63,
+      "pct": 2.7
+    },
+    {
+      "name": "派系机构关联",
+      "n": 33,
+      "pct": 1.4
+    },
+    {
+      "name": "地点关联",
+      "n": 18,
+      "pct": 0.8
+    },
+    {
+      "name": "其他实体关联",
+      "n": 16,
+      "pct": 0.7
+    },
+    {
+      "name": "政权关联",
+      "n": 5,
+      "pct": 0.2
+    },
+    {
+      "name": "婚姻姻亲",
+      "n": 4,
+      "pct": 0.2
+    }
+  ],
+  "event_layer": {
+    "institutional_exam_n": 34,
+    "institutional_exam_pct": 3.1,
+    "biography_n": 35,
+    "biography_pct": 3.2,
+    "politics_n": 365,
+    "war_n": 316,
+    "politics_plus_war_pct": 61.6
+  },
+  "relation_layer": {
+    "teacher_student_n": 63,
+    "teacher_student_pct": 2.7,
+    "conflict_n": 514,
+    "conflict_pct": 22.1,
+    "conflict_over_learning": 8.16
+  },
+  "robustness": {
+    "R1_drop_top_hit": {
+      "n": 8,
+      "pct_of_characters": 0.65,
+      "mean_chapters": 1.62,
+      "median_chapters": 1.0,
+      "mean_degree": 2,
+      "median_degree": 1.0,
+      "mean_hit": 6.75,
+      "median_hit": 3.5,
+      "sum_hit": 54,
+      "sum_degree": 16
+    },
+    "R2_broad_definition": {
+      "n": 11,
+      "pct_of_characters": 0.89,
+      "mean_chapters": 2,
+      "median_chapters": 1,
+      "mean_degree": 3.82,
+      "median_degree": 1,
+      "mean_hit": 27.27,
+      "median_hit": 6,
+      "sum_hit": 300,
+      "sum_degree": 42
+    },
+    "R3_degree_positive_only": {
+      "n": 9,
+      "pct_of_characters": 0.73,
+      "mean_chapters": 1.56,
+      "median_chapters": 1,
+      "mean_degree": 1.89,
+      "median_degree": 1,
+      "mean_hit": 9.56,
+      "median_hit": 5,
+      "sum_hit": 86,
+      "sum_degree": 17
+    },
+    "R4_cabinet_only": {
+      "n": 25,
+      "pct_of_characters": 2.03,
+      "mean_chapters": 8.88,
+      "median_chapters": 7,
+      "mean_degree": 27.72,
+      "median_degree": 26,
+      "mean_hit": 199.24,
+      "median_hit": 138,
+      "sum_hit": 4981,
+      "sum_degree": 693
+    }
+  },
+  "claimed_transcendence_quad": {
+    "persons": [
+      {
+        "name": "李时珍",
+        "group": "quad",
+        "chapters": 1,
+        "degree": 1,
+        "hit": 32,
+        "role": "著《本草纲目》(1552-1578)，曾任楚王医、太医院医，弃荣华负重著书救人"
+      },
+      {
+        "name": "朱厚熜",
+        "group": "quad",
+        "chapters": 26,
+        "degree": 58,
+        "hit": 61,
+        "role": "兴献王之子，被杨廷和推立为新帝，改元嘉靖"
+      },
+      {
+        "name": "徐阶",
+        "group": "quad",
+        "chapters": 22,
+        "degree": 67,
+        "hit": 742,
+        "role": "泰州学派插班生，后成重量级人物"
+      },
+      {
+        "name": "张居正",
+        "group": "quad",
+        "chapters": 23,
+        "degree": 66,
+        "hit": 634,
+        "role": "被提及作对比：百年后改革家栽在艰难抉择上"
+      }
+    ],
+    "named_superior_mean_chapters": 23.67,
+    "named_superior_mean_degree": 63.67,
+    "named_superior_mean_hit": 479,
+    "li_shizhen": {
+      "name": "李时珍",
+      "group": "quad",
+      "chapters": 1,
+      "degree": 1,
+      "hit": 32,
+      "role": "著《本草纲目》(1552-1578)，曾任楚王医、太医院医，弃荣华负重著书救人"
+    },
+    "chapters_ratio": 23.67,
+    "degree_ratio": 63.67,
+    "hit_ratio": 14.97
+  },
+  "quote_hits": {
+    "医学算是杂学": 1,
+    "那么医生就是杂人了": 1,
+    "杂学": 2,
+    "这个人的落榜实在值得全人类放鞭炮庆祝": 1,
+    "李时珍也得以超越嘉靖、徐阶、张居正": 1,
+    "束水冲沙法": 1,
+    "明、清两代最伟大的水利学家": 1,
+    "潘季驯，嘉靖二十九年": 1,
+    "他没有能够看到此书的出版": 1,
+    "一千九百余种": 1,
+    "一万一千多则": 1,
+    "孙元化，明代伟大的科学家": 1,
+    "李时珍": 32,
+    "潘季驯": 17,
+    "徐光启": 1,
+    "本草纲目": 4,
+    "水利": 13,
+    "天文": 22
+  }
+}

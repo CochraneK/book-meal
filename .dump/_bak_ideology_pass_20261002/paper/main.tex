@@ -1,0 +1,55 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{ctex}
+% CJK 主字体：ctex 默认字集 FandolSong 缺「濙」(U+6FD9) 等字形（PDF 会出现空白/方框），
+% 必须用系统华文宋体 STSong（普通 TrueType，xdvipdfmx 可正常子集嵌入）。
+% ⚠️ 不要用 Noto Serif SC：本机那版是可变字体 VF，会被 xdvipdfmx 以 Invalid TTC index 拒收。
+\setCJKmainfont{STSong}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{tabulary}
+
+\input{math_commands}
+\input{latex_includes}
+
+% ⚠️ IEEEtran conference 类不定义参考文献栏头那个宏（那是 book/article 类的名字），
+%    在本类里重定义它会使文档类报错并直接编译失败。此处沿用 conference 版式自带的英文 References 栏头。
+
+\title{心学与朝廷：思想的突围与权力的收编\\[2pt]
+\large Mind Learning and the Court: Intellectual Diffusion and Political Incorporation}
+
+\author{Anonymous}
+\date{}
+
+\begin{document}
+\maketitle
+
+%% 中文摘要（200–350 字）：目的 → 数据 → 方法 → 三个结果（带数字）→ 首要限制
+\noindent\textbf{摘要（中文）}：本文以一部民间明史通俗叙事（156章）及其结构化知识图谱为语料，检验阳明心学在该叙事中的传播是否独立于朝廷权力结构。语料含1231位人物、1106件事件与2324条关系。逐字检索显示，书中“王阳明”零命中而“王守仁”命中538次，且“致良知”仅2次、“知行合一”12次，思想语汇呈标签化层级分布。关系网络分析表明，10名思想相关人物的90条显式关系中师生同门占30.0\%，高于全图2.7\%的基线，也高于权力参照组的11.7\%；但同一批人物中权力类关系仍占58.9\%，说明师承通道是嵌入而非悬浮于权力网络。时间上，8件思想事件中5件（62.5\%）集中于1508--1528年，1579年与1593年的书院事件在结构化编码中被判为政治斗争。结论是：思想突围只在叙事修辞层面成立，其制度性收编表现为可测量的类别迁移。首要限制是语料同源，图谱编码与叙事出自同一作者，统计相关不能排除主观抽取选择。
+
+\noindent\textbf{关键词}：阳明心学；师承网络；书院；知识图谱；数字人文；明代思想史
+
+\vspace{6pt}
+%% 英文摘要 150–250 词（aris 硬要求，不许超）
+\begin{abstract}
+We test whether the diffusion of Wang Yangming's moral learning in a popular Ming-history narrative is independent of court politics. The corpus comprises 156 chapters together with a structured knowledge graph of 1,231 persons, 1,106 events and 2,324 relations. Verbatim search shows that the phrase used for the philosopher is not the one modern scholarship prefers: ``Wang Yangming'' occurs zero times while ``Wang Shouren'' occurs 538 times, and the programmatic terms ``innate knowing'' and ``unity of knowledge and action'' appear only twice and twelve times respectively. Relation analysis of ten intellectually salient persons gives 90 explicit edges, of which 30.0\% are master--disciple ties, well above the whole-graph baseline of 2.7\% and above an 11.7\% power-relation control group; yet within the same persons power relations still account for 58.9\%. Mentorship therefore penetrates the power network rather than floating outside it. Temporally, five of eight intellectually tagged events (62.5\%) fall in 1508--1528, and the two late academy events of 1579 and 1593 are coded as political conflict. The narrative thus dramatizes intellectual emancipation while its encoded structure records institutional incorporation. The principal validity threat is that graph and narrative share a single source of authorship.
+\end{abstract}
+
+\begin{IEEEkeywords}
+mind learning, Wang Yangming, relation network, academies, digital humanities, Ming intellectual history
+\end{IEEEkeywords}
+
+\input{sections/1_introduction}
+\input{sections/2_related_work}
+\input{sections/3_corpus}
+\input{sections/4_method}
+\input{sections/5_results}
+\input{sections/6_discussion}
+\input{sections/7_conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

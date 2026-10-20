@@ -1,0 +1,727 @@
+[
+  {
+    "key": "hirschman1970",
+    "type": "book",
+    "title": "Exit, voice, and loyalty",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Exit, Voice, and Loyalty: A Profile",
+        "matched_author": "Inoguchi",
+        "matched_year": 2017,
+        "matched_type": "book-chapter",
+        "doi": "10.1007/978-981-10-4724-4_5",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 47,
+        "authors_checked": [
+          "Inoguchi"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "Exit, Voice, and Loyalty in Twenty-Nine Asian Societies",
+        "matched_author": "Inoguchi",
+        "matched_year": 2017,
+        "matched_type": "book-chapter",
+        "doi": "10.1007/978-981-10-4724-4_6",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 47,
+        "authors_checked": [
+          "Inoguchi"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "Exit, Voice, and Loyalty",
+        "matched_author": "Inoguchi",
+        "matched_year": 2017,
+        "matched_type": "book-chapter",
+        "doi": "10.1007/978-981-10-4724-4_2",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 47,
+        "authors_checked": [
+          "Inoguchi"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "asch1951",
+    "type": "article",
+    "title": "Effects of group pressure upon the modification and maintenance of opinions",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Effects of Group Pressure upon the Modification and Distortion of Judgments",
+        "matched_author": "",
+        "matched_year": 2016,
+        "matched_type": "book-chapter",
+        "doi": "10.4324/9781315290614-27",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.78,
+        "year_diff": 65,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "EFFECTS OF GROUP PRESSURE UPON THE MODIFICATION AND DISTORTION OF JUDGMENTS",
+        "matched_author": "Asch",
+        "matched_year": 1961,
+        "matched_type": "book-chapter",
+        "doi": "10.1525/9780520313514-017",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.78,
+        "year_diff": 10,
+        "authors_checked": [
+          "Asch"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "EFFECTS OF GROUP PRESSURE UPON THE MODIFICATION AND DISTORTION OF JUDGMENTS",
+        "matched_author": "Asch",
+        "matched_year": 2023,
+        "matched_type": "book-chapter",
+        "doi": "10.2307/jj.5233080.20",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.78,
+        "year_diff": 72,
+        "authors_checked": [
+          "Asch"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "elster1989",
+    "type": "article",
+    "title": "The causal mechanisms in the social sciences",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W2152796930",
+        "matched_title": "Causal Mechanisms in the Social Sciences",
+        "matched_year": 2010,
+        "matched_type": "review",
+        "matched_author": "Peter Hedström",
+        "doi": "10.1146/annurev.soc.012809.102632",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 21,
+        "authors_checked": [
+          "Peter Hedström"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W1533038498",
+        "matched_title": "Evidence for Causal Mechanisms in Social Science: Recommendations from Woodward’s Manipulability Theory of Causation",
+        "matched_year": 2015,
+        "matched_type": "article",
+        "matched_author": "Rosa W. Runhardt",
+        "doi": "10.1086/683679",
+        "source": "openalex",
+        "title_overlap": 0.6,
+        "year_diff": 26,
+        "authors_checked": [
+          "Rosa W. Runhardt"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W4405367085",
+        "matched_title": "Causal Mechanisms in the Social Sciences as Evidence for Higher-Order Causal Relations",
+        "matched_year": 2024,
+        "matched_type": "book-chapter",
+        "matched_author": "Erik Weber",
+        "doi": "10.4324/9781003528937-52",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 35,
+        "authors_checked": [
+          "Erik Weber"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "tillman1994",
+    "type": "book",
+    "title": "Confucian discourse and Chu Yuan-chang",
+    "status": "VERIFIED",
+    "doi": "10.1515/9780824840877-007",
+    "top_matches": [
+      {
+        "matched_title": "3. Chu Hsi and Chang Shih",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780824840877-007",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.5,
+        "year_diff": 2,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "2. Chang Shih",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780824840877-006",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.17,
+        "year_diff": 2,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "1. The First Generation: Chang Chiu-ch’eng and Hu Hung",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780824840877-005",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.33,
+        "year_diff": 2,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      }
+    ]
+  },
+  {
+    "key": "clunas2013",
+    "type": "book",
+    "title": "Empire of great brightness",
+    "status": "VERIFIED",
+    "doi": "10.5040/9781350917767",
+    "top_matches": [
+      {
+        "wid": "W1537963939",
+        "matched_title": "Empire of Great Brightness: Visual And Material Cultures of Ming China, 1368-1644",
+        "matched_year": 2007,
+        "matched_type": "book",
+        "matched_author": "Craig Clunas",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 6,
+        "authors_checked": [
+          "Craig Clunas"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2001668150",
+        "matched_title": "Empire of Great Brightness. Visual and Material Cultures of Ming China, 13681644",
+        "matched_year": 2009,
+        "matched_type": "article",
+        "matched_author": "Anne Burkus‐Chasson",
+        "doi": "10.1163/008254309x12586659061802",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Anne Burkus‐Chasson"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W1981108843",
+        "matched_title": "Empire of Great Brightness: Visual and Material Cultures of Ming China, 1368–1644. By Craig Clunas. Honolulu: University of Hawai‘i Press, 2007. 288 pp. $59.00 (cloth).",
+        "matched_year": 2009,
+        "matched_type": "book-review",
+        "matched_author": "Julia K. Murray",
+        "doi": "10.1017/s0021911809990131",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Julia K. Murray"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "moretti2013",
+    "type": "book",
+    "title": "Distant reading",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W3141474827",
+        "matched_title": "A Genealogy of Distant Reading",
+        "matched_year": 2017,
+        "matched_type": "article",
+        "matched_author": "Ted Underwood",
+        "doi": "10.63744/ktwb2atwsbep",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Ted Underwood"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2339562889",
+        "matched_title": "On Close and Distant Reading in Digital Humanities: A Survey and Future Challenges",
+        "matched_year": 2015,
+        "matched_type": "article",
+        "matched_author": "Stefan Jänicke",
+        "doi": "10.2312/eurovisstar.20151113",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [
+          "Stefan Jänicke"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2766736723",
+        "matched_title": "Why Distant Reading Isn't",
+        "matched_year": 2017,
+        "matched_type": "article",
+        "matched_author": "Johanna Drucker",
+        "doi": "10.1632/pmla.2017.132.3.628",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Johanna Drucker"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "schelling1978",
+    "type": "book",
+    "title": "Micromotives and Macrobehavior",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W1972178529",
+        "matched_title": "Micromotives and Macrobehavior",
+        "matched_year": 1981,
+        "matched_type": "article",
+        "matched_author": "B. Curtis Eaton",
+        "doi": "10.2307/134812",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 3,
+        "authors_checked": [
+          "B. Curtis Eaton"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2321202906",
+        "matched_title": "Micromotives and Macrobehavior.",
+        "matched_year": 1979,
+        "matched_type": "article",
+        "matched_author": "Terry Connolly",
+        "doi": "10.2307/2989930",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Terry Connolly"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W4207030330",
+        "matched_title": "15. Micromotives and Macrobehavior",
+        "matched_year": 2009,
+        "matched_type": "book-chapter",
+        "matched_author": "Thomas C. Schelling",
+        "doi": "10.1515/9781503627116-022",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 31,
+        "authors_checked": [
+          "Thomas C. Schelling"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "granovetter1973",
+    "type": "article",
+    "title": "The Strength of Weak Ties",
+    "status": "VERIFIED",
+    "doi": "10.1086/225469",
+    "top_matches": [
+      {
+        "wid": "W2109469951",
+        "matched_title": "The Strength of Weak Ties",
+        "matched_year": 1973,
+        "matched_type": "article",
+        "matched_author": "Mark S. Granovetter",
+        "doi": "10.1086/225469",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Mark S. Granovetter"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W1987235421",
+        "matched_title": "The Strength of Weak Ties: A Network Theory Revisited",
+        "matched_year": 1983,
+        "matched_type": "article",
+        "matched_author": "Mark S. Granovetter",
+        "doi": "10.2307/202051",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 10,
+        "authors_checked": [
+          "Mark S. Granovetter"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2100493403",
+        "matched_title": "The Strength of Weak Ties You Can Trust: The Mediating Role of Trust in Effective Knowledge Transfer",
+        "matched_year": 2004,
+        "matched_type": "article",
+        "matched_author": "Daniel Z. Levin",
+        "doi": "10.1287/mnsc.1030.0136",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 31,
+        "authors_checked": [
+          "Daniel Z. Levin"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "burt1992",
+    "type": "book",
+    "title": "Structural Holes: The Social Structure of Competition",
+    "status": "VERIFIED_NO_DOI",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W2321650456",
+        "matched_title": "Structural Holes: The Social Structure of Competition",
+        "matched_year": 1995,
+        "matched_type": "article",
+        "matched_author": "Emmanuel Lazega",
+        "doi": "10.2307/3322456",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 3,
+        "authors_checked": [
+          "Emmanuel Lazega"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2062075162",
+        "matched_title": "Structural Holes: The Social Structure of Competition",
+        "matched_year": 1992,
+        "matched_type": "preprint",
+        "matched_author": "Ronald S. Burt",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Ronald S. Burt"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W3121584743",
+        "matched_title": "Structural Holes: The Social Structure of Competition",
+        "matched_year": 1994,
+        "matched_type": "article",
+        "matched_author": "Peter H. Reingen",
+        "doi": "10.2307/1252259",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [
+          "Peter H. Reingen"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "coleman1988",
+    "type": "article",
+    "title": "Social Capital in the Creation of Human Capital",
+    "status": "VERIFIED",
+    "doi": "10.1086/228943",
+    "top_matches": [
+      {
+        "wid": "W3123534837",
+        "matched_title": "Social Capital in the Creation of Human Capital",
+        "matched_year": 1988,
+        "matched_type": "article",
+        "matched_author": "James Smoot Coleman",
+        "doi": "10.1086/228943",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "James Smoot Coleman"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2085491458",
+        "matched_title": "Social Capital in the Creation of Human Capital",
+        "matched_year": 2000,
+        "matched_type": "book-chapter",
+        "matched_author": "J COLEMAN",
+        "doi": "10.1016/b978-0-7506-7222-1.50005-2",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 12,
+        "authors_checked": [
+          "J COLEMAN"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W4302451102",
+        "matched_title": "Social Capital in the Creation of Human Capital",
+        "matched_year": 2003,
+        "matched_type": "book-chapter",
+        "matched_author": "James Smoot Coleman",
+        "doi": "10.1093/oso/9780195159509.003.0007",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 15,
+        "authors_checked": [
+          "James Smoot Coleman"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "freeman1978",
+    "type": "article",
+    "title": "Centrality in Social Networks Conceptual Clarification",
+    "status": "VERIFIED",
+    "doi": "10.1016/0378-8733(78)90021-7",
+    "top_matches": [
+      {
+        "wid": "W2056944867",
+        "matched_title": "Centrality in social networks conceptual clarification",
+        "matched_year": 1978,
+        "matched_type": "article",
+        "matched_author": "Linton C. Freeman",
+        "doi": "10.1016/0378-8733(78)90021-7",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Linton C. Freeman"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W3198636005",
+        "matched_title": "Centrality in Social Networks Conceptual Clarification in Hawaii Nets Conferences",
+        "matched_year": 1979,
+        "matched_type": "article",
+        "matched_author": "L FREEMAN",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "L FREEMAN"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "lemercier2015",
+    "type": "article",
+    "title": "Formal Network Methods in History: Why and How?",
+    "status": "VERIFIED",
+    "doi": "10.1484/m.rurhe-eb.4.00198",
+    "top_matches": [
+      {
+        "matched_title": "Formal network methods in history: Why and how?",
+        "matched_author": "Lemercier",
+        "matched_year": 2015,
+        "matched_type": "book-chapter",
+        "doi": "10.1484/m.rurhe-eb.4.00198",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Lemercier"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "More Automated Formal Methods?! If so, why, where &amp; how?",
+        "matched_author": "Chakrapani Rao",
+        "matched_year": null,
+        "matched_type": "proceedings-article",
+        "doi": "10.29007/k317",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.43,
+        "year_diff": 99,
+        "authors_checked": [
+          "Chakrapani Rao"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "Teaching Formal Methods in a Third World Country: What, Why and How",
+        "matched_author": "Cristiá",
+        "matched_year": 2006,
+        "matched_type": "proceedings-article",
+        "doi": "10.14236/ewic/tfm2006.10",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.57,
+        "year_diff": 9,
+        "authors_checked": [
+          "Cristiá"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "michel2011",
+    "type": "article",
+    "title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+    "status": "VERIFIED",
+    "doi": "10.1126/science.1199644",
+    "top_matches": [
+      {
+        "wid": "W2019096529",
+        "matched_title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+        "matched_year": 2010,
+        "matched_type": "article",
+        "matched_author": "Jean-Baptiste Michel",
+        "doi": "10.1126/science.1199644",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Jean-Baptiste Michel"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2893582820",
+        "matched_title": "Culturomics: Quantitative Analysis of Culture Using Millions of Digitized Books.",
+        "matched_year": 2011,
+        "matched_type": "article",
+        "matched_author": "Erez Lieberman Aiden",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Erez Lieberman Aiden"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "wid": "W2346916980",
+        "matched_title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+        "matched_year": 2010,
+        "matched_type": "other",
+        "matched_author": "Björn‐Olav Dozo",
+        "doi": "10.58079/n32m",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Björn‐Olav Dozo"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  }
+]

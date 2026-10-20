@@ -1,0 +1,20 @@
+foreign stats -> .dump\_bak_systems_foreign_schema_20261002.json
+foreign keys: ['pid', 'title_cn', 'corpus', 'degree', 'powerlaw', 'connectivity', 'time_series', 'periods', 'participants', 'book_evidence', 'fig']
+restored standard schema -> .dump\_stats_systems.json
+live keys: ['pid', 'title_cn', 'corpus', 'vocab', 'distinct_words', 'vocab_zero_hit', 'anchors', 'anchors_missing', 'subset', 'baseline', 'events', 'places', 'fig']
+
+=== subset ===
+{"method": "B: ego(3 anchors)", "n_persons": 55, "n_explicit_edges": 305, "mean_degree": 15.11, "cat_composition": [{"cat": "其他", "n": 150, "pct": 49.2}, {"cat": "君臣从属", "n": 55, "pct": 18.0}, {"cat": "敌对冲突", "n": 48, "pct": 15.7}, {"cat": "同盟友党", "n": 17, "pct": 5.6}, {"cat": "政治攻讦", "n": 13, "pct": 4.3}, {"cat": "亲属", "n": 9, "pct": 3.0}, {"cat": "派系机构关联", "n": 8, "pct": 2.6}, {"cat": "地点关联", "n": 3, "pct": 1.0}, {"cat": "师生同门", "n": 1, "pct": 0.3}, {"cat": "婚姻姻亲", "n": 1, "pct": 0.3}], "top_persons": ["袁崇焕", "朱由检", "魏忠贤", "皇太极", "杨涟", "孙承宗", "祖大寿", "李自成", "张献忠", "朱由校"], "rho_chapter_degree": 0.893, "p_chapter_degree": 0.0}
+
+=== baseline ===
+{"n_edges": 2324, "cat_composition": [{"cat": "其他", "n": 927, "pct": 39.9}, {"cat": "君臣从属", "n": 397, "pct": 17.1}, {"cat": "敌对冲突", "n": 321, "pct": 13.8}, {"cat": "政治攻讦", "n": 193, "pct": 8.3}, {"cat": "亲属", "n": 185, "pct": 8.0}, {"cat": "同盟友党", "n": 162, "pct": 7.0}, {"cat": "师生同门", "n": 63, "pct": 2.7}, {"cat": "派系机构关联", "n": 33, "pct": 1.4}, {"cat": "地点关联", "n": 18, "pct": 0.8}, {"cat": "其他实体关联", "n": 16, "pct": 0.7}, {"cat": "政权关联", "n": 5, "pct": 0.2}, {"cat": "婚姻姻亲", "n": 4, "pct": 0.2}], "mean_degree": 6.27, "isolated": 537}
+
+=== vocab ===
+[{"word": "困", "hits": 167}, {"word": "崩", "hits": 106}, {"word": "民变", "hits": 17}, {"word": "逃亡", "hits": 16}, {"word": "流民", "hits": 8}, {"word": "军户", "hits": 8}, {"word": "饥荒", "hits": 5}, {"word": "衰败", "hits": 2}, {"word": "逼反", "hits": 2}, {"word": "隐患", "hits": 1}]
+
+=== anchors ===
+[{"name": "朱由检", "degree": 67, "chapters": 19, "role": "信王（后继位为崇祯帝）", "faction": "明朝·皇室"}, {"name": "李自成", "degree": 32, "chapters": 10, "role": "银川驿卒，起义军领袖", "faction": "民变·起义"}, {"name": "张献忠", "degree": 29, "chapters": 8, "role": "农民军首领", "faction": "民变·起义"}]
+
+=== events ===
+{"n": 30, "year_hist": [{"year": 1351, "n": 2}, {"year": 1353, "n": 1}, {"year": 1355, "n": 1}, {"year": 1357, "n": 1}, {"year": 1362, "n": 1}, {"year": 1364, "n": 1}, {"year": 1365, "n": 1}, {"year": 1402, "n": 1}, {"year": 1449, "n": 1}, {"year": 1558, "n": 1}, {"year": 1570, "n": 1}, {"year": 1582, "n": 1}, {"year": 1592, "n": 1}, {"year": 1622, "n": 1}, {"year": 1628, "n": 2}, {"year": 1629, "n": 1}, {"year": 1631, "n": 2}, {"year": 1633, "n": 1}, {"year": 1635, "n": 1}, {"year": 1636, "n": 2}, {"year": 1639, "n": 1}, {"year": 1640, "n": 2}, {"year": 1642, "n": 1}], "top": ["土木堡之变", "石人一只眼
+renamed foreign _stats.py

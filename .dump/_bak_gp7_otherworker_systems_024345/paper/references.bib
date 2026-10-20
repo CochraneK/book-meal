@@ -1,0 +1,123 @@
+% references.bib —— 仅纳入 verify_refs.py 已核验条目；语料书籍另条标注。
+% 判据：作者姓氏命中 + 年份容差 <=2 + 标题词元重叠 >=0.5；
+%      记录无作者元数据时作者判据按空真处理，但标题重叠门槛提高到 >=0.85。
+% 注意：裸下划线会让 XeTeX 报 Missing $ inserted（下划线在正文里是数学移位符），
+%       bib 字段里一律写 \textunderscore 或换用无下划线的写法。
+% systems 篇三条本主题引用（watts1998 / clauset2009 / newman2005）经
+%   python papers_pilot/_lib/verify_refs.py systems 核验为 VERIFIED 后入本表；
+%   同批候选 turchin2003 / diamond2005 / scheffer2001 / parker2013 / goldstone1991
+%   等崩塌理论条目均 UNVERIFIED，按「宁缺勿编」一律不进。
+
+@article{watts1998,
+  author = {Watts, Duncan J. and Strogatz, Steven H.},
+  title = {Collective dynamics of small-world networks},
+  journal = {Nature},
+  volume = {393},
+  number = {6684},
+  pages = {440--442},
+  year = {1998},
+  doi = {10.1038/30918}
+}
+
+@article{clauset2009,
+  author = {Clauset, Aaron and Shalizi, Cosma Rohilla and Newman, Mark E. J.},
+  title = {Power-law distributions in empirical data},
+  journal = {SIAM Review},
+  volume = {51},
+  number = {4},
+  pages = {661--703},
+  year = {2009},
+  doi = {10.1137/070710111}
+}
+
+@article{newman2005,
+  author = {Newman, M. E. J.},
+  title = {Power laws, Pareto distributions and Zipf's law},
+  journal = {Contemporary Physics},
+  volume = {46},
+  number = {5},
+  pages = {323--351},
+  year = {2005},
+  doi = {10.1080/00107510500052444}
+}
+
+@article{freeman1978,
+  author = {Freeman, Linton C.},
+  title = {Centrality in Social Networks Conceptual Clarification},
+  journal = {Social Networks},
+  year = {1978},
+  doi = {10.1016/0378-8733(78)90021-7}
+}
+
+@book{wasserman1994,
+  author = {Wasserman, Stanley and Faust, Katherine},
+  title = {Social Network Analysis: Methods and Applications},
+  publisher = {Academic Press},
+  address = {San Diego},
+  year = {1994}
+}
+
+@article{lemercier2015,
+  author = {Lemercier, Claire},
+  title = {Formal Network Methods in History: Why and How?},
+  year = {2015},
+  doi = {10.1484/M.RURHE-EB.4.00198}
+}
+
+@article{granovetter1973,
+  author = {Granovetter, Mark S.},
+  title = {The Strength of Weak Ties},
+  journal = {American Journal of Sociology},
+  volume = {78},
+  number = {6},
+  pages = {1360--1380},
+  year = {1973},
+  doi = {10.1086/225469}
+}
+
+@book{burt1992,
+  author = {Burt, Ronald S.},
+  title = {Structural Holes: The Social Structure of Competition},
+  publisher = {Cambridge University Press},
+  address = {Cambridge},
+  year = {1992}
+}
+
+@article{coleman1988,
+  author = {Coleman, James Smoot},
+  title = {Social Capital in the Creation of Human Capital},
+  journal = {American Journal of Sociology},
+  volume = {94},
+  pages = {S95--S120},
+  year = {1988},
+  doi = {10.1086/228943}
+}
+
+@article{michel2011,
+  author = {Michel, Jean-Baptiste and others},
+  title = {Quantitative Analysis of Culture Using Millions of Digitized Books},
+  journal = {Science},
+  volume = {331},
+  number = {6014},
+  pages = {176--182},
+  year = {2011},
+  doi = {10.1126/science.1199644}
+}
+
+@book{brook1998,
+  author = {Brook, Timothy},
+  title = {The Confusions of Pleasure},
+  publisher = {University of California Press},
+  address = {Berkeley},
+  year = {1998},
+  doi = {10.1525/9780520924079}
+}
+
+@book{dangnian2009,
+  author = {当年明月},
+  title = {明朝那些事儿},
+  publisher = {磨铁图书},
+  address = {北京},
+  year = {2009},
+  note = {该丛书条目无 DOI；全七部，2006--2009 年间连载出版；语料原件不随论文发布}
+}

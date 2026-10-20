@@ -1,0 +1,142 @@
+[
+  {
+    "key": "shannon1948",
+    "title": "A Mathematical Theory of Communication",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "kuran1995",
+    "title": "Private Truths, Public Lies: The Social Consequences of Preference Falsification",
+    "status": "VERIFIED",
+    "doi": "10.2307/2076660",
+    "matched": "Private Truths, Public Lies: The Social Consequences of Preference Falsification.",
+    "matched_year": 1995,
+    "matched_type": "journal-article",
+    "candidates": 6
+  },
+  {
+    "key": "foucault1977",
+    "title": "Discipline and Punish: The Birth of the Prison",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "habermas1989",
+    "title": "The Structural Transformation of the Public Sphere: An Inquiry into a Category of Bourgeois Society",
+    "status": "VERIFIED",
+    "doi": "10.2307/466251",
+    "matched": "The Public's Fear, or Media as Monster in Habermas, Negt, and Kluge. Jurgen Habermas's The Structural Transformation of the Public Sphere: An Inquiry into a Category of Bourgeois Society",
+    "matched_year": 1990,
+    "matched_type": "journal-article",
+    "candidates": 6
+  },
+  {
+    "key": "scott1990",
+    "title": "Domination and the Arts of Resistance: Hidden Transcripts",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "sunstein2009",
+    "title": "On Rumors: How Falsehoods Spread, Why We Believe Them, What Can Be Done",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "goffman1959",
+    "title": "The Presentation of Self in Everyday Life",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "mote1988",
+    "title": "The Cambridge History of China, Volume 7: The Ming Dynasty, 1368-1644",
+    "status": "VERIFIED",
+    "doi": "10.2307/2162852",
+    "matched": "The Cambridge History of China. Volume 7, The Ming Dynasty, 1368-1644.",
+    "matched_year": 1990,
+    "matched_type": "journal-article",
+    "candidates": 6
+  },
+  {
+    "key": "huang1981",
+    "title": "1587, A Year of No Significance: The Ming Dynasty in Decline",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "brook1998",
+    "title": "The Confusions of Pleasure: Commerce and Culture in Ming China",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "robinson2013",
+    "title": "Bandits, Eunuchs, and the Son of Heaven: Rebellion and the Economy of Violence in Mid-Ming China",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "lu1998",
+    "title": "The Ming Court and the Inner Court",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "dangnian2009",
+    "title": "明朝那些事儿",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  },
+  {
+    "key": "mingkg2026",
+    "title": "Ming Knowledge Graph: structured extraction of a popular Ming history",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "matched": null,
+    "matched_year": null,
+    "matched_type": null,
+    "candidates": 6
+  }
+]

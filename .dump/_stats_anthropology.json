@@ -1,0 +1,375 @@
+{
+  "pid": "anthropology",
+  "title_cn": "家国同构：名分、继承与互惠的文化语法",
+  "corpus": {
+    "persons": 1231,
+    "events": 1106,
+    "relations": 2324,
+    "locations": 563,
+    "chapters": 41
+  },
+  "vocab": [
+    {
+      "word": "族",
+      "hits": 234
+    },
+    {
+      "word": "孝",
+      "hits": 167
+    },
+    {
+      "word": "嗣",
+      "hits": 114
+    },
+    {
+      "word": "继承",
+      "hits": 82
+    },
+    {
+      "word": "家族",
+      "hits": 37
+    },
+    {
+      "word": "名分",
+      "hits": 34
+    },
+    {
+      "word": "世袭",
+      "hits": 23
+    },
+    {
+      "word": "祭祀",
+      "hits": 18
+    },
+    {
+      "word": "嫡子",
+      "hits": 17
+    },
+    {
+      "word": "荫",
+      "hits": 7
+    },
+    {
+      "word": "宗族",
+      "hits": 1
+    },
+    {
+      "word": "家法",
+      "hits": 1
+    }
+  ],
+  "distinct_words": 14,
+  "vocab_zero_hit": [
+    "嫡长",
+    "宗法"
+  ],
+  "anchors": [
+    {
+      "name": "朱元璋",
+      "degree": 87,
+      "chapters": 41,
+      "role": "吴王/红巾军首领，后为明太祖",
+      "faction": "朱元璋军"
+    },
+    {
+      "name": "朱棣",
+      "degree": 113,
+      "chapters": 25,
+      "role": "明成祖（永乐帝）",
+      "faction": "明朝"
+    },
+    {
+      "name": "朱由检",
+      "degree": 67,
+      "chapters": 19,
+      "role": "信王（后继位为崇祯帝）",
+      "faction": "明朝·皇室"
+    },
+    {
+      "name": "方孝孺",
+      "degree": 15,
+      "chapters": 6,
+      "role": "建文智囊，宋濂学生，方克勤之子",
+      "faction": "建文朝廷"
+    }
+  ],
+  "anchors_missing": [],
+  "subset": {
+    "method": "B: ego(4 anchors)",
+    "n_persons": 130,
+    "n_explicit_edges": 636,
+    "mean_degree": 12.61,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 312,
+        "pct": 49.1
+      },
+      {
+        "cat": "君臣从属",
+        "n": 116,
+        "pct": 18.2
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 80,
+        "pct": 12.6
+      },
+      {
+        "cat": "亲属",
+        "n": 48,
+        "pct": 7.5
+      },
+      {
+        "cat": "同盟友党",
+        "n": 36,
+        "pct": 5.7
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 23,
+        "pct": 3.6
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 11,
+        "pct": 1.7
+      },
+      {
+        "cat": "地点关联",
+        "n": 4,
+        "pct": 0.6
+      },
+      {
+        "cat": "师生同门",
+        "n": 3,
+        "pct": 0.5
+      },
+      {
+        "cat": "其他实体关联",
+        "n": 2,
+        "pct": 0.3
+      },
+      {
+        "cat": "婚姻姻亲",
+        "n": 1,
+        "pct": 0.2
+      }
+    ],
+    "top_persons": [
+      "朱棣",
+      "朱元璋",
+      "袁崇焕",
+      "朱由检",
+      "魏忠贤",
+      "皇太极",
+      "杨涟",
+      "孙承宗",
+      "朱允炆",
+      "祖大寿"
+    ],
+    "rho_chapter_degree": 0.871,
+    "p_chapter_degree": 0.0
+  },
+  "baseline": {
+    "n_edges": 2324,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 927,
+        "pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "n": 397,
+        "pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 321,
+        "pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 193,
+        "pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "n": 185,
+        "pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "n": 162,
+        "pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "n": 63,
+        "pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 33,
+        "pct": 1.4
+      },
+      {
+        "cat": "地点关联",
+        "n": 18,
+        "pct": 0.8
+      },
+      {
+        "cat": "其他实体关联",
+        "n": 16,
+        "pct": 0.7
+      },
+      {
+        "cat": "政权关联",
+        "n": 5,
+        "pct": 0.2
+      },
+      {
+        "cat": "婚姻姻亲",
+        "n": 4,
+        "pct": 0.2
+      }
+    ],
+    "mean_degree": 6.27,
+    "isolated": 537
+  },
+  "events": {
+    "n": 3,
+    "year_hist": [
+      {
+        "year": 1404,
+        "n": 1
+      },
+      {
+        "year": 1581,
+        "n": 1
+      },
+      {
+        "year": 1601,
+        "n": 1
+      }
+    ],
+    "top": [
+      "立储之议定朱高炽为太子",
+      "争国本开端：万历幸王宫女致孕",
+      "沈一贯请册立、争国本结束"
+    ]
+  },
+  "places": {
+    "n": 0,
+    "top": []
+  },
+  "fig": {
+    "fig1": [
+      {
+        "label": "族",
+        "value": 234
+      },
+      {
+        "label": "孝",
+        "value": 167
+      },
+      {
+        "label": "嗣",
+        "value": 114
+      },
+      {
+        "label": "继承",
+        "value": 82
+      },
+      {
+        "label": "家族",
+        "value": 37
+      },
+      {
+        "label": "名分",
+        "value": 34
+      },
+      {
+        "label": "世袭",
+        "value": 23
+      },
+      {
+        "label": "祭祀",
+        "value": 18
+      },
+      {
+        "label": "嫡子",
+        "value": 17
+      },
+      {
+        "label": "荫",
+        "value": 7
+      },
+      {
+        "label": "宗族",
+        "value": 1
+      },
+      {
+        "label": "家法",
+        "value": 1
+      }
+    ],
+    "fig2": [
+      {
+        "cat": "其他",
+        "subset_pct": 49.1,
+        "baseline_pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "subset_pct": 18.2,
+        "baseline_pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "subset_pct": 12.6,
+        "baseline_pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "subset_pct": 3.6,
+        "baseline_pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "subset_pct": 7.5,
+        "baseline_pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "subset_pct": 5.7,
+        "baseline_pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "subset_pct": 0.5,
+        "baseline_pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "subset_pct": 1.7,
+        "baseline_pct": 1.4
+      }
+    ],
+    "fig3": [
+      {
+        "label": "1404",
+        "value": 1
+      },
+      {
+        "label": "1581",
+        "value": 1
+      },
+      {
+        "label": "1601",
+        "value": 1
+      }
+    ]
+  }
+}

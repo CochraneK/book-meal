@@ -1,0 +1,218 @@
+[
+  {
+    "key": "brook1998",
+    "type": "book",
+    "title": "The Confusions of Pleasure",
+    "status": "VERIFIED",
+    "doi": "10.1525/9780520924079",
+    "top_matches": [
+      {
+        "wid": "W4248976008",
+        "matched_title": "The Confusions of Pleasure",
+        "matched_year": 1998,
+        "matched_type": "book",
+        "matched_author": "Timothy Brook",
+        "doi": "10.1525/9780520924079",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Timothy Brook"
+        ],
+        "author_ok": true
+      },
+      {
+        "wid": "W2054836910",
+        "matched_title": ":The Confusions of Pleasure: Commerce and Culture in Ming China",
+        "matched_year": 2002,
+        "matched_type": "article",
+        "matched_author": "Wendell McKay",
+        "doi": "10.2307/4143992",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Wendell McKay"
+        ],
+        "author_ok": false
+      },
+      {
+        "wid": "W4301329700",
+        "matched_title": "The Confusions of Pleasure: Commerce and Culture in Ming China",
+        "matched_year": 1999,
+        "matched_type": "article",
+        "matched_author": "Lynn Struve",
+        "doi": "10.2307/2651002",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Lynn Struve"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "clunas2013",
+    "type": "book",
+    "title": "Empire of Great Brightness",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W1537963939",
+        "matched_title": "Empire of Great Brightness: Visual And Material Cultures of Ming China, 1368-1644",
+        "matched_year": 2007,
+        "matched_type": "book",
+        "matched_author": "Craig Clunas",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 6,
+        "authors_checked": [
+          "Craig Clunas"
+        ],
+        "author_ok": true
+      },
+      {
+        "wid": "W2001668150",
+        "matched_title": "Empire of Great Brightness. Visual and Material Cultures of Ming China, 13681644",
+        "matched_year": 2009,
+        "matched_type": "article",
+        "matched_author": "Anne Burkus‐Chasson",
+        "doi": "10.1163/008254309x12586659061802",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Anne Burkus‐Chasson"
+        ],
+        "author_ok": false
+      },
+      {
+        "wid": "W1981108843",
+        "matched_title": "Empire of Great Brightness: Visual and Material Cultures of Ming China, 1368–1644. By Craig Clunas. Honolulu: University of Hawai‘i Press, 2007. 288 pp. $59.00 (cloth).",
+        "matched_year": 2009,
+        "matched_type": "book-review",
+        "matched_author": "Julia K. Murray",
+        "doi": "10.1017/s0021911809990131",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Julia K. Murray"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "moretti2013",
+    "type": "book",
+    "title": "Distant Reading",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W3141474827",
+        "matched_title": "A Genealogy of Distant Reading",
+        "matched_year": 2017,
+        "matched_type": "article",
+        "matched_author": "Ted Underwood",
+        "doi": "10.63744/ktwb2atwsbep",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Ted Underwood"
+        ],
+        "author_ok": false
+      },
+      {
+        "wid": "W2339562889",
+        "matched_title": "On Close and Distant Reading in Digital Humanities: A Survey and Future Challenges",
+        "matched_year": 2015,
+        "matched_type": "article",
+        "matched_author": "Stefan Jänicke",
+        "doi": "10.2312/eurovisstar.20151113",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [
+          "Stefan Jänicke"
+        ],
+        "author_ok": false
+      },
+      {
+        "wid": "W2766736723",
+        "matched_title": "Why Distant Reading Isn't",
+        "matched_year": 2017,
+        "matched_type": "article",
+        "matched_author": "Johanna Drucker",
+        "doi": "10.1632/pmla.2017.132.3.628",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [
+          "Johanna Drucker"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "tillman1994",
+    "type": "book",
+    "title": "Confucian Discourse and Chu Yuan-chang",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "3. Chu Hsi and Chang Shih",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780824840877-007",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.5,
+        "year_diff": 2,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "2. Chang Shih",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780824840877-006",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.17,
+        "year_diff": 2,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "1. The First Generation: Chang Chiu-ch’eng and Hu Hung",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780824840877-005",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.33,
+        "year_diff": 2,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  }
+]

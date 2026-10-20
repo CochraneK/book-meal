@@ -1,0 +1,307 @@
+{
+  "pid": "economics",
+  "title_cn": "白银的锁链：赋税、货币与财政崩溃",
+  "corpus": {
+    "persons": 1231,
+    "events": 1106,
+    "relations": 2324,
+    "locations": 563,
+    "chapters": 41
+  },
+  "vocab": [
+    {
+      "word": "银",
+      "hits": 188
+    },
+    {
+      "word": "税",
+      "hits": 68
+    },
+    {
+      "word": "白银",
+      "hits": 49
+    },
+    {
+      "word": "矿",
+      "hits": 30
+    },
+    {
+      "word": "财政",
+      "hits": 23
+    },
+    {
+      "word": "赋税",
+      "hits": 21
+    },
+    {
+      "word": "国库",
+      "hits": 16
+    },
+    {
+      "word": "钱粮",
+      "hits": 6
+    },
+    {
+      "word": "加派",
+      "hits": 2
+    }
+  ],
+  "distinct_words": 14,
+  "vocab_zero_hit": [
+    "辽饷",
+    "捐输",
+    "盐引",
+    "催征",
+    "欠赋"
+  ],
+  "anchors": [
+    {
+      "name": "张居正",
+      "degree": 66,
+      "chapters": 23,
+      "role": "被提及作对比：百年后改革家栽在艰难抉择上",
+      "faction": "明朝·万历朝"
+    },
+    {
+      "name": "朱由检",
+      "degree": 67,
+      "chapters": 19,
+      "role": "信王（后继位为崇祯帝）",
+      "faction": "明朝·皇室"
+    },
+    {
+      "name": "严嵩",
+      "degree": 59,
+      "chapters": 17,
+      "role": "江西分宜人，神童入仕，初正直后阿附嘉靖，写青词拍马，告倒夏言入阁，专断贪污",
+      "faction": "明朝·嘉靖朝·文官"
+    }
+  ],
+  "anchors_missing": [],
+  "subset": {
+    "method": "B: ego(3 anchors)",
+    "n_persons": 89,
+    "n_explicit_edges": 581,
+    "mean_degree": 19.43,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 297,
+        "pct": 51.1
+      },
+      {
+        "cat": "君臣从属",
+        "n": 82,
+        "pct": 14.1
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 68,
+        "pct": 11.7
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 53,
+        "pct": 9.1
+      },
+      {
+        "cat": "同盟友党",
+        "n": 38,
+        "pct": 6.5
+      },
+      {
+        "cat": "亲属",
+        "n": 19,
+        "pct": 3.3
+      },
+      {
+        "cat": "师生同门",
+        "n": 15,
+        "pct": 2.6
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 8,
+        "pct": 1.4
+      },
+      {
+        "cat": "地点关联",
+        "n": 1,
+        "pct": 0.2
+      }
+    ],
+    "top_persons": [
+      "袁崇焕",
+      "徐阶",
+      "朱由检",
+      "魏忠贤",
+      "张居正",
+      "严嵩",
+      "高拱",
+      "朱厚熜",
+      "朱翊钧",
+      "王守仁"
+    ],
+    "rho_chapter_degree": 0.911,
+    "p_chapter_degree": 0.0
+  },
+  "baseline": {
+    "n_edges": 2324,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 927,
+        "pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "n": 397,
+        "pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 321,
+        "pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 193,
+        "pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "n": 185,
+        "pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "n": 162,
+        "pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "n": 63,
+        "pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 33,
+        "pct": 1.4
+      },
+      {
+        "cat": "地点关联",
+        "n": 18,
+        "pct": 0.8
+      },
+      {
+        "cat": "其他实体关联",
+        "n": 16,
+        "pct": 0.7
+      },
+      {
+        "cat": "政权关联",
+        "n": 5,
+        "pct": 0.2
+      },
+      {
+        "cat": "婚姻姻亲",
+        "n": 4,
+        "pct": 0.2
+      }
+    ],
+    "mean_degree": 6.27,
+    "isolated": 537
+  },
+  "events": {
+    "n": 0,
+    "year_hist": [],
+    "top": []
+  },
+  "places": {
+    "n": 0,
+    "top": []
+  },
+  "fig": {
+    "fig1": [
+      {
+        "label": "银",
+        "value": 188
+      },
+      {
+        "label": "税",
+        "value": 68
+      },
+      {
+        "label": "白银",
+        "value": 49
+      },
+      {
+        "label": "矿",
+        "value": 30
+      },
+      {
+        "label": "财政",
+        "value": 23
+      },
+      {
+        "label": "赋税",
+        "value": 21
+      },
+      {
+        "label": "国库",
+        "value": 16
+      },
+      {
+        "label": "钱粮",
+        "value": 6
+      },
+      {
+        "label": "加派",
+        "value": 2
+      }
+    ],
+    "fig2": [
+      {
+        "cat": "其他",
+        "subset_pct": 51.1,
+        "baseline_pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "subset_pct": 14.1,
+        "baseline_pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "subset_pct": 11.7,
+        "baseline_pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "subset_pct": 9.1,
+        "baseline_pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "subset_pct": 3.3,
+        "baseline_pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "subset_pct": 6.5,
+        "baseline_pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "subset_pct": 2.6,
+        "baseline_pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "subset_pct": 1.4,
+        "baseline_pct": 1.4
+      }
+    ],
+    "fig3": []
+  }
+}

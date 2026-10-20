@@ -1,0 +1,746 @@
+[
+  {
+    "key": "trouillot1995",
+    "type": "book",
+    "title": "Silencing the Past: Power and the Production of History",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W4298233655",
+        "matched_title": "Silencing the past: power and the production of history",
+        "matched_year": 1996,
+        "matched_type": "book-review",
+        "matched_author": "",
+        "doi": "10.5860/choice.33-4695",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W3133858026",
+        "matched_title": "Silencing the past: Power and the Production of History",
+        "matched_year": 1996,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/20047700",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W4298328159",
+        "matched_title": "Silencing the Past: Power and the Production of History.",
+        "matched_year": 1997,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/3035047",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "spivak1988",
+    "type": "article",
+    "title": "Can the Subaltern Speak?",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Can the Subaltern Speak?",
+        "matched_author": "",
+        "matched_year": 2017,
+        "matched_type": "book",
+        "doi": "10.4324/9781912281770",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 29,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Can the Subaltern speak attraverso l’ambiente? Tra Storia dell’ambiente e Subaltern Studies",
+        "matched_author": "Biasillo",
+        "matched_year": 2020,
+        "matched_type": "journal-article",
+        "doi": "10.4000/12fgd",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.75,
+        "year_diff": 32,
+        "authors_checked": [
+          "Biasillo"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "CONCLUSION:",
+        "matched_author": "",
+        "matched_year": 2024,
+        "matched_type": "book-chapter",
+        "doi": "10.2307/jj.11288858.11",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 36,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "ricoeur2004",
+    "type": "book",
+    "title": "Memory, History, Forgetting",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Chapter 8. Overcoming Collective Forgetting",
+        "matched_author": "",
+        "matched_year": 2018,
+        "matched_type": "book-chapter",
+        "doi": "10.9783/9780812295283-011",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.33,
+        "year_diff": 14,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Chapter 3. Slavery and Collective Forgetting",
+        "matched_author": "",
+        "matched_year": 2018,
+        "matched_type": "book-chapter",
+        "doi": "10.9783/9780812295283-006",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.33,
+        "year_diff": 14,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Chapter 1. Collective Memory",
+        "matched_author": "",
+        "matched_year": 2018,
+        "matched_type": "book-chapter",
+        "doi": "10.9783/9780812295283-004",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.33,
+        "year_diff": 14,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "derrida1995",
+    "type": "book",
+    "title": "Archive Fever: A Freudian Impression",
+    "status": "VERIFIED",
+    "doi": "10.7208/chicago/9780226851228.001.0001",
+    "top_matches": [
+      {
+        "wid": "W2028265096",
+        "matched_title": "Archive Fever: A Freudian Impression",
+        "matched_year": 1995,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/465144",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W3215379480",
+        "matched_title": "Archive fever: a Freudian impression",
+        "matched_year": 1997,
+        "matched_type": "book-review",
+        "matched_author": "",
+        "doi": "10.5860/choice.34-5619",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W1548409755",
+        "matched_title": "DERRIDA, Archive Fever: A Freudian Impression",
+        "matched_year": 1997,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "foucault1972",
+    "type": "book",
+    "title": "The Archaeology of Knowledge",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W1967541354",
+        "matched_title": "Archaeology of Knowledge",
+        "matched_year": 1970,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1177/053901847000900108",
+        "source": "openalex",
+        "title_overlap": 0.67,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W1592182057",
+        "matched_title": "The archaeology of knowledge ; and, The discourse on language",
+        "matched_year": 1972,
+        "matched_type": "book",
+        "matched_author": "",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2796175043",
+        "matched_title": "The Archaeology of Knowledge.",
+        "matched_year": 1974,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/2800094",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "stoler2009",
+    "type": "book",
+    "title": "Along the Archival Grain: Epistemic Anxieties and Colonial Common Sense",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W1988135773",
+        "matched_title": "Along the Archival Grain: Epistemic Anxieties and Colonial Common Sense",
+        "matched_year": 2012,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1016/j.jhg.2012.01.006",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 3,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W1510652094",
+        "matched_title": "Along The Archival Grain. Epistemic Anxieties And Colonial Common Sense",
+        "matched_year": 2012,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 3,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2046571737",
+        "matched_title": "Ann Laura Stoler, Along the archival grain; Epistemic anxieties and colonial common sense.",
+        "matched_year": 2009,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1163/22134379-90003632",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "burton2005",
+    "type": "book",
+    "title": "Archive Stories: Facts, Fictions, and the Writing of History",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Contents",
+        "matched_author": "",
+        "matched_year": 2020,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780822387046-toc",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 15,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Frontmatter",
+        "matched_author": "",
+        "matched_year": 2020,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9780822387046-fm",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 15,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Introduction",
+        "matched_author": "Burton",
+        "matched_year": 2005,
+        "matched_type": "book-chapter",
+        "doi": "10.1215/9780822387046-001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Burton"
+        ],
+        "author_ok": true
+      }
+    ]
+  },
+  {
+    "key": "farge2013",
+    "type": "book",
+    "title": "The Allure of the Archives",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W614381747",
+        "matched_title": "The Allure of the Archives",
+        "matched_year": 2013,
+        "matched_type": "book",
+        "matched_author": "",
+        "doi": "10.12987/yale/9780300176735.001.0001",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2144336549",
+        "matched_title": "The Allure of the Archive",
+        "matched_year": 2003,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1215/03335372-24-4-729",
+        "source": "openalex",
+        "title_overlap": 0.67,
+        "year_diff": 10,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W4206121656",
+        "matched_title": "The Allure of the Archives",
+        "matched_year": 2017,
+        "matched_type": "book",
+        "matched_author": "",
+        "doi": "10.12987/9780300180213",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "davis1987",
+    "type": "book",
+    "title": "Fiction in the Archives: Pardon Tales and Their Tellers in Sixteenth-Century France",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W2096579556",
+        "matched_title": "Fiction in the Archives: Pardon Tales and their Tellers in Sixteenth-Century France",
+        "matched_year": 1989,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/1906432",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2323281690",
+        "matched_title": "Fiction in the Archives: Pardon Tales and Their Tellers in Sixteenth-Century France",
+        "matched_year": 1992,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/541098",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 5,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2896285435",
+        "matched_title": "Natalie Zemon Davis. Fiction in the Archives: Pardon Tales and Their Tellers in Sixteenth-Century France. Stanford: Stanford University Press. 1987. Pp. ix, 217. $22.50",
+        "matched_year": 1989,
+        "matched_type": "book-review",
+        "matched_author": "",
+        "doi": "10.1086/ahr/94.5.1392",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "genette1980",
+    "type": "book",
+    "title": "Narrative Discourse: An Essay in Method",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W2318445408",
+        "matched_title": "Narrative Discourse: An Essay in Method",
+        "matched_year": 1980,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/3683912",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2161098141",
+        "matched_title": "Narrative Discourse: An Essay in Method",
+        "matched_year": 1980,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/1770890",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2420805278",
+        "matched_title": "Narrative Discourse, an Essay in Method.",
+        "matched_year": 1980,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/2906507",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "carlyle1841",
+    "type": "book",
+    "title": "On Heroes, Hero-Worship, and the Heroic in History",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "On Heroes, Hero-Worship, and the Heroic in History",
+        "matched_author": "Carlyle",
+        "matched_year": 2019,
+        "matched_type": "book-chapter",
+        "doi": "10.1525/9780520911536-006",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 178,
+        "authors_checked": [
+          "Carlyle"
+        ],
+        "author_ok": true
+      },
+      {
+        "matched_title": "‘‘The Tone of the Preacher’’",
+        "matched_author": "Edwards",
+        "matched_year": 2017,
+        "matched_type": "book-chapter",
+        "doi": "10.12987/9780300148626-009",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.14,
+        "year_diff": 176,
+        "authors_checked": [
+          "Edwards"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Illustrations",
+        "matched_author": "",
+        "matched_year": 2019,
+        "matched_type": "book-chapter",
+        "doi": "10.1525/9780520911536-001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 178,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "moretti2013",
+    "type": "book",
+    "title": "Distant Reading",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W3141474827",
+        "matched_title": "A Genealogy of Distant Reading",
+        "matched_year": 2017,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.63744/ktwb2atwsbep",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2339562889",
+        "matched_title": "On Close and Distant Reading in Digital Humanities: A Survey and Future Challenges",
+        "matched_year": 2015,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2312/eurovisstar.20151113",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2766736723",
+        "matched_title": "Why Distant Reading Isn't",
+        "matched_year": 2017,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1632/pmla.2017.132.3.628",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 4,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "michel2011",
+    "type": "article",
+    "title": "Quantitative analysis of culture using millions of digitized books",
+    "status": "VERIFIED",
+    "doi": "10.1126/science.1199644",
+    "top_matches": [
+      {
+        "wid": "W2019096529",
+        "matched_title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+        "matched_year": 2010,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1126/science.1199644",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2893582820",
+        "matched_title": "Culturomics: Quantitative Analysis of Culture Using Millions of Digitized Books.",
+        "matched_year": 2011,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2346916980",
+        "matched_title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+        "matched_year": 2010,
+        "matched_type": "other",
+        "matched_author": "",
+        "doi": "10.58079/n32m",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "white1973",
+    "type": "book",
+    "title": "Metahistory: The Historical Imagination in Nineteenth-Century Europe",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W2101949838",
+        "matched_title": "Metahistory. The Historical Imagination in Nineteenth-Century Europe.",
+        "matched_year": 1975,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/2504605",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W1605770351",
+        "matched_title": "Metahistory: The Historical Imagination in Nineteenth-Century Europe",
+        "matched_year": 1974,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.1080/03612759.1974.9947283",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2442391313",
+        "matched_title": "Metahistory: The Historical Imagination in Nineteenth-Century Europe.",
+        "matched_year": 1976,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/2907121",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 3,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "bal1997",
+    "type": "book",
+    "title": "Narratology: Introduction to the Theory of Narrative",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "wid": "W2044222399",
+        "matched_title": "Narratology: introduction to the theory of narrative",
+        "matched_year": 1998,
+        "matched_type": "book-review",
+        "matched_author": "",
+        "doi": "10.5860/choice.35-6054",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W4298048293",
+        "matched_title": "Narratology: Introduction to the Theory of Narrative",
+        "matched_year": 1987,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/1772578",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 10,
+        "authors_checked": [],
+        "author_ok": false
+      },
+      {
+        "wid": "W2333939423",
+        "matched_title": "Narratology: Introduction to the Theory of Narrative",
+        "matched_year": 1988,
+        "matched_type": "article",
+        "matched_author": "",
+        "doi": "10.2307/3685217",
+        "source": "openalex",
+        "title_overlap": 1.0,
+        "year_diff": 9,
+        "authors_checked": [],
+        "author_ok": false
+      }
+    ]
+  }
+]

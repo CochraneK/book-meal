@@ -1,0 +1,287 @@
+[
+  {
+    "key": "burt1992",
+    "type": "book",
+    "title": "Structural holes: The social structure of competition",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "1 The Social Structure of Competition",
+        "matched_author": "",
+        "matched_year": 1992,
+        "matched_type": "book-chapter",
+        "doi": "10.4159/9780674029095-003",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.67,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "Structural Holes: The Social Structure of Competition",
+        "matched_author": "",
+        "matched_year": 2022,
+        "matched_type": "reference-entry",
+        "doi": "10.4135/9781071812082.n611",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 30,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "Book Review: Structural Holes: The Social Structure of Competition Structural Holes: The Social Structure of Competition by BurtRonald S. (Cambridge, MA: Harvard University Press, 1992, 313 pages, $45.00)",
+        "matched_author": "Zinkhan",
+        "matched_year": 1994,
+        "matched_type": "journal-article",
+        "doi": "10.1177/002224299405800113",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [
+          "Zinkhan"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "coleman1990",
+    "type": "book",
+    "title": "Foundations of social theory",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "6 Hegel's Social Theory and Methodological Atomism",
+        "matched_author": "",
+        "matched_year": 2000,
+        "matched_type": "book-chapter",
+        "doi": "10.4159/9780674041455-009",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.67,
+        "year_diff": 10,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "Foundations of theory in social work",
+        "matched_author": "",
+        "matched_year": 2021,
+        "matched_type": "book-chapter",
+        "doi": "10.4135/9781529739329.n2",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 31,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "Decolonial Social Theory",
+        "matched_author": "Harris",
+        "matched_year": 2024,
+        "matched_type": "book-chapter",
+        "doi": "10.4324/9781003359555-10",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.67,
+        "year_diff": 34,
+        "authors_checked": [
+          "Harris"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "duara1988",
+    "type": "book",
+    "title": "Culture and power in early modern China",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Conclusion: Printing and Literary Culture in Early Modern China",
+        "matched_author": "",
+        "matched_year": 2004,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9781503617520-012",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.83,
+        "year_diff": 16,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "Figures",
+        "matched_author": "",
+        "matched_year": 2004,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9781503617520-001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 16,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      },
+      {
+        "matched_title": "Contents",
+        "matched_author": "",
+        "matched_year": 2004,
+        "matched_type": "book-chapter",
+        "doi": "10.1515/9781503617520-toc",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 16,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": true,
+        "author_check": "vacuous(记录无作者元数据)"
+      }
+    ]
+  },
+  {
+    "key": "hirschman1970",
+    "type": "book",
+    "title": "Exit, Voice, and Loyalty: Responses to Decline in Systems",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Hirschman, Albert: Exit, Voice, and Loyalty",
+        "matched_author": "Bendix",
+        "matched_year": 2020,
+        "matched_type": "book-chapter",
+        "doi": "10.1007/978-3-476-05728-0_9785-1",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.57,
+        "year_diff": 50,
+        "authors_checked": [
+          "Bendix"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States",
+        "matched_author": "Wingrove",
+        "matched_year": 1971,
+        "matched_type": "journal-article",
+        "doi": "10.2307/3005748",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.86,
+        "year_diff": 1,
+        "authors_checked": [
+          "Wingrove"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "Exit, voice, and loyalty: responses to decline in firms, organizations, and states",
+        "matched_author": "Roy Choudhury",
+        "matched_year": 2025,
+        "matched_type": "journal-article",
+        "doi": "10.1108/jmh-04-2025-314",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.86,
+        "year_diff": 55,
+        "authors_checked": [
+          "Roy Choudhury"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  },
+  {
+    "key": "brandes2001",
+    "type": "article",
+    "title": "A faster algorithm for betweenness centrality",
+    "status": "VERIFIED",
+    "doi": "10.1080/0022250x.2001.9990249",
+    "top_matches": [
+      {
+        "matched_title": "A faster algorithm for betweenness centrality*",
+        "matched_author": "Brandes",
+        "matched_year": 2001,
+        "matched_type": "journal-article",
+        "doi": "10.1080/0022250x.2001.9990249",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.8,
+        "year_diff": 0,
+        "authors_checked": [
+          "Brandes"
+        ],
+        "author_ok": true,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "A Faster Parallel Algorithm and Efficient Multithreaded Implementations for Evaluating Betweenness Centrality on Massive Datasets",
+        "matched_author": "Madduri",
+        "matched_year": 2009,
+        "matched_type": "report",
+        "doi": "10.2172/951102",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 8,
+        "authors_checked": [
+          "Madduri"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      },
+      {
+        "matched_title": "A Faster Algorithm to Update Betweenness Centrality After Node Alteration",
+        "matched_author": "Singh",
+        "matched_year": 2015,
+        "matched_type": "journal-article",
+        "doi": "10.1080/15427951.2014.982311",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.8,
+        "year_diff": 14,
+        "authors_checked": [
+          "Singh"
+        ],
+        "author_ok": false,
+        "author_check": "ok"
+      }
+    ]
+  }
+]

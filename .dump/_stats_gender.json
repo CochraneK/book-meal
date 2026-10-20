@@ -1,0 +1,348 @@
+{
+  "pid": "gender",
+  "title_cn": "听见沉默：缺席者、太后政治与档案的建构",
+  "corpus": {
+    "persons": 1231,
+    "events": 1106,
+    "relations": 2324,
+    "locations": 563,
+    "chapters": 41
+  },
+  "vocab": [
+    {
+      "word": "女",
+      "hits": 467
+    },
+    {
+      "word": "妃",
+      "hits": 301
+    },
+    {
+      "word": "母",
+      "hits": 288
+    },
+    {
+      "word": "贵妃",
+      "hits": 206
+    },
+    {
+      "word": "皇后",
+      "hits": 163
+    },
+    {
+      "word": "太后",
+      "hits": 96
+    },
+    {
+      "word": "后宫",
+      "hits": 81
+    },
+    {
+      "word": "妻",
+      "hits": 79
+    },
+    {
+      "word": "宫女",
+      "hits": 55
+    },
+    {
+      "word": "嫡",
+      "hits": 44
+    },
+    {
+      "word": "寡妇",
+      "hits": 13
+    },
+    {
+      "word": "妾",
+      "hits": 13
+    },
+    {
+      "word": "外戚",
+      "hits": 3
+    }
+  ],
+  "distinct_words": 14,
+  "vocab_zero_hit": [
+    "贞节"
+  ],
+  "anchors": [
+    {
+      "name": "朱元璋",
+      "degree": 87,
+      "chapters": 41,
+      "role": "吴王/红巾军首领，后为明太祖",
+      "faction": "朱元璋军"
+    },
+    {
+      "name": "朱棣",
+      "degree": 113,
+      "chapters": 25,
+      "role": "明成祖（永乐帝）",
+      "faction": "明朝"
+    },
+    {
+      "name": "朱由检",
+      "degree": 67,
+      "chapters": 19,
+      "role": "信王（后继位为崇祯帝）",
+      "faction": "明朝·皇室"
+    },
+    {
+      "name": "张太后",
+      "degree": 0,
+      "chapters": 1,
+      "role": "英宗祖母，压制王振七年，正统七年死",
+      "faction": "明朝"
+    }
+  ],
+  "anchors_missing": [],
+  "subset": {
+    "method": "B: ego(4 anchors)",
+    "n_persons": 127,
+    "n_explicit_edges": 631,
+    "mean_degree": 12.87,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 312,
+        "pct": 49.4
+      },
+      {
+        "cat": "君臣从属",
+        "n": 116,
+        "pct": 18.4
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 80,
+        "pct": 12.7
+      },
+      {
+        "cat": "亲属",
+        "n": 46,
+        "pct": 7.3
+      },
+      {
+        "cat": "同盟友党",
+        "n": 36,
+        "pct": 5.7
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 22,
+        "pct": 3.5
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 11,
+        "pct": 1.7
+      },
+      {
+        "cat": "地点关联",
+        "n": 4,
+        "pct": 0.6
+      },
+      {
+        "cat": "其他实体关联",
+        "n": 2,
+        "pct": 0.3
+      },
+      {
+        "cat": "婚姻姻亲",
+        "n": 1,
+        "pct": 0.2
+      },
+      {
+        "cat": "师生同门",
+        "n": 1,
+        "pct": 0.2
+      }
+    ],
+    "top_persons": [
+      "朱棣",
+      "朱元璋",
+      "袁崇焕",
+      "朱由检",
+      "魏忠贤",
+      "皇太极",
+      "杨涟",
+      "孙承宗",
+      "朱允炆",
+      "祖大寿"
+    ],
+    "rho_chapter_degree": 0.87,
+    "p_chapter_degree": 0.0
+  },
+  "baseline": {
+    "n_edges": 2324,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 927,
+        "pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "n": 397,
+        "pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 321,
+        "pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 193,
+        "pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "n": 185,
+        "pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "n": 162,
+        "pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "n": 63,
+        "pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 33,
+        "pct": 1.4
+      },
+      {
+        "cat": "地点关联",
+        "n": 18,
+        "pct": 0.8
+      },
+      {
+        "cat": "其他实体关联",
+        "n": 16,
+        "pct": 0.7
+      },
+      {
+        "cat": "政权关联",
+        "n": 5,
+        "pct": 0.2
+      },
+      {
+        "cat": "婚姻姻亲",
+        "n": 4,
+        "pct": 0.2
+      }
+    ],
+    "mean_degree": 6.27,
+    "isolated": 537
+  },
+  "events": {
+    "n": 0,
+    "year_hist": [],
+    "top": []
+  },
+  "places": {
+    "n": 0,
+    "top": []
+  },
+  "fig": {
+    "fig1": [
+      {
+        "label": "女",
+        "value": 467
+      },
+      {
+        "label": "妃",
+        "value": 301
+      },
+      {
+        "label": "母",
+        "value": 288
+      },
+      {
+        "label": "贵妃",
+        "value": 206
+      },
+      {
+        "label": "皇后",
+        "value": 163
+      },
+      {
+        "label": "太后",
+        "value": 96
+      },
+      {
+        "label": "后宫",
+        "value": 81
+      },
+      {
+        "label": "妻",
+        "value": 79
+      },
+      {
+        "label": "宫女",
+        "value": 55
+      },
+      {
+        "label": "嫡",
+        "value": 44
+      },
+      {
+        "label": "寡妇",
+        "value": 13
+      },
+      {
+        "label": "妾",
+        "value": 13
+      }
+    ],
+    "fig2": [
+      {
+        "cat": "其他",
+        "subset_pct": 49.4,
+        "baseline_pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "subset_pct": 18.4,
+        "baseline_pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "subset_pct": 12.7,
+        "baseline_pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "subset_pct": 3.5,
+        "baseline_pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "subset_pct": 7.3,
+        "baseline_pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "subset_pct": 5.7,
+        "baseline_pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "subset_pct": 0.2,
+        "baseline_pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "subset_pct": 1.7,
+        "baseline_pct": 1.4
+      }
+    ],
+    "fig3": []
+  }
+}

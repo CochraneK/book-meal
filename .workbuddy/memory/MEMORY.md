@@ -67,3 +67,24 @@
 
 ## 历史明细
 逐日见 `.workbuddy/memory/YYYY-MM-DD.md`；重点：`2026-09-13.md`（一~六轮：Phase 1+2 → Phase 3~6 + CI green → 方案逐条验收 → 剩余项补齐 + 体积 −55% → 线上一致性复核 → 同名异地/补年/考据）、`2026-09-14.md`（语录扩面 + 洞察联动上线 + **自查轮修 6 项**）、`2026-08-28.md`（交叉审计）、`2026-09-04.md`（洞察终版/地图）。
+
+## 论文试点（aris 流程，2026-10-01 收口）
+- **TeX 已落地**：`E:\tex\tectonic.exe`（0.17 单文件，XeTeX，联网拉包）；参数 `--keep-logs`、`--outdir` 须先建目录。中文 ctex 编译通。
+- **中文论文必须 `\setCJKmainfont{STSong}`**：ctex 默认 FandolSong **缺「濙」U+6FD9 等字**（PDF 出方框）；`NotoSerifSC-VF.ttf` 是可变字体，xdvipdfmx 以 `Invalid TTC index` 拒收，勿用。缺字自查 = 扫编译 log 的 `could not represent character`。
+- **试点 venue = IEEEtran.cls [conference]**（aris 自带模板里唯一双栏+数字引用+参考文献计页数），中英双语（正文中文/摘要英文）。试点成品：`papers_pilot/history/`（PAPER_PLAN.md / AUDIT.md / paper/ 7 节 + 3 矢量图 + references.bib / out/main.pdf，6 页编译全绿）。
+- **口径坑（每篇复用）**：`relations[].from/to` 存**裸人物名**不是 `person:名字`；`characters[]` **无 id**；叙事热度 = `len(characters[].chapters)`。按 `person:` 前缀查会得 ρ=0.00。
+- **统计底稿的 `min(v,10)` 截断桶坑**：桶键被截断（如 10）却标成「恰为 10」，会造「143 人」假象（真值 7）。截断必须改名或另立 `geN` 汇总桶。
+- **数页数**：tectonic log 不打页数、PDF 对象流全 Flate 压缩 → 用 `zlib` 解流后取 `/Count N` 或数 `/Type/Page`（`papers_pilot/_build.py` 已实现）。
+- **边界（每次交付须声明）**：tectonic ≠ aris 的 latexmk+pdflatex；同模型自审 ≠ aris 跨模型对抗评审。
+
+## papers_pilot（论文子项目，独立于本站构建）
+- **产物**：`papers_pilot/<pid>/paper/`（main.tex + sections/ + figures/ + out/main.pdf）；25 个候选目录里**真 pid = 24 个**（判据：目录里真有 `paper/main.tex`，且不是 `_bak_*`/quarantine/snapshot——据此排掉空壳 `d/2026/WB项目/paper`、PNG 预览页 `首页预览`/`paper_preview`）。
+- **两道闸**：闸 1 `check_all.py` → 逐篇 `check_one.py --strict`（编译 + 章节 7 / 图 ≥2 / 脚本 ≥2 / 引用 ≥6 / 汉字 ≥3000 / 页数 1–8 / 悬空 `\ref` / 裸回车 / 哨兵残留 / lint_spec）；闸 2 `cross_check_all.py` → 两两 4-gram Jaccard < 0.45、作图脚本 md5 跨篇不复用、引用池区分度。**闸 2 的 PIDS 必须动态扫（曾写死 19 篇漏盖 5 篇）。**
+- **去样板化工具**：`papers_pilot/_lib/dup_blocks.py <pid> [--min 25] [--show N]` → 对手 top6 + 本篇被逐字覆盖的连续块（带前后文）。
+- **雷同根因**：`_lib/write_generic.py` 里 §1 开场+边界、§3 语料与口径、§4 贡献三点、§6/§7 收束是**写死样板**，凡是有 `_lib/spec_<pid>.py` 的通用 pid（art/diplomacy/economics/gender/geography/military/museum/narrative/systems）全篇逐字相同；手写型 pid（politics/psychology/history/ideology/sociology/law/science/info/synthesis/anthropology/sovereign 等）天然干净。
+- **派单铁律**：一个 pid 只有一个 owner；`_lib/` 公共文件（write_generic / check_one / build_one / gen_stats）由 lead 独占，**禁止** worker 改；**严禁用 `write_generic.py --generic`**（会整体重写 `.dump/_stats_<pid>.json` 毁底稿）；`gen_stats.py` 与 `_stats.py` 抢同一个 `.dump/_stats_<pid>.json` 槽位，谁后跑谁赢 → 必须**合并**（通用为骨架、专用键只补缺失），不能二选一。
+- **`.py` 里的正文串一律 raw**（`r"""`）：非 raw 串里的 `\r` `\t` 会被 Python 吃掉变真控制字符，把正文改坏（museum 曾出现 `图 \refef` 乱码）。
+- **判裸回车必须是 `re.search(r"\r(?!\n)", t)`**：Windows .tex 本来就是 CRLF，裸判 `"\r" in t` 全库假报错。
+- **`lint_spec.py` 已进程内接进 `check_one.py --strict`**（`import lint_spec` → FAIL 计入退出码、WARN 只打印）。
+- **`check_one.py` 判据 11：正文 cite key ⊆ `references.bib` 的 key 集合。** natbib 对未定义 bibkey **不报** undefined citation（只静默出 `[?]`），所以 und_cit 抓不到——全库唯一一例是 sovereign 的 `freeman1979`（bib 只有 `freeman1978`，中心性三定义出自 1978 那篇，DOI 10.1016/0378-8733(78)90021-7）。
+- **剥 LaTeX 注释只能认「前面不是反斜杠的 %」**：`re.sub(r"(?s)%.*?\n","",t)` 会被正文里的**裸 `%`** 骗到，吃掉真内容（我据此误报过「9 篇摘要越界」，真值 4 篇）。

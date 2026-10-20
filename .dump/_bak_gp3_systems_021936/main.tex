@@ -1,0 +1,55 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{ctex}
+% CJK 主字体：ctex 默认字集 FandolSong 缺「濙」(U+6FD9) 等字形（PDF 会出现空白/方框），
+% 必须用系统华文宋体 STSong（普通 TrueType，xdvipdfmx 可正常子集嵌入）。
+% ⚠️ 不要用 Noto Serif SC：本机那版是可变字体 VF，会被 xdvipdfmx 以 Invalid TTC index 拒收。
+\setCJKmainfont{STSong}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{tabulary}
+
+\input{math_commands}
+\input{latex_includes}
+
+% ⚠️ IEEEtran conference 类不定义 \bibname（那是 book/article 类的宏），
+%    加 \renewcommand{\bibname}{...} 会直接编译失败。栏头沿用 venue 原有的英文 References。
+
+\title{崩塌的涌现：复杂网络中的明朝兴衰\\[2pt]
+\large Emergent Collapse: Ming Rise and Fall as a Complex Network}
+
+\author{Anonymous}
+\date{}
+
+\begin{document}
+\maketitle
+
+%% 中文摘要（200–350 字）：目的 → 数据 → 方法 → 三个结果（带数字）→ 首要限制
+\noindent\textbf{摘要（中文）}：@@ABSTRACT_CN@@
+
+\noindent\textbf{关键词}：@@KEYWORDS_CN@@
+
+\vspace{6pt}
+%% 英文摘要 150–250 词（aris 硬要求，不许超）
+\begin{abstract}
+@@ABSTRACT_EN@@
+\end{abstract}
+
+\begin{IEEEkeywords}
+@@KEYWORDS_EN@@
+\end{IEEEkeywords}
+
+\input{sections/1_introduction}
+\input{sections/2_related_work}
+\input{sections/3_corpus}
+\input{sections/4_method}
+\input{sections/5_results}
+\input{sections/6_discussion}
+\input{sections/7_conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

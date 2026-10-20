@@ -1,0 +1,16 @@
+[
+  {"key": "barabasi1999", "type": "article", "title": "Emergence of scaling in random networks", "author": "Barabasi", "year": 1999},
+  {"key": "clauset2009", "type": "article", "title": "Power-law distributions in empirical data", "author": "Clauset", "year": 2009},
+  {"key": "newman2005", "type": "article", "title": "Power laws, Pareto distributions and Zipf's law", "author": "Newman", "year": 2005},
+  {"key": "watts1998", "type": "article", "title": "Collective dynamics of small-world networks", "author": "Watts", "year": 1998},
+  {"key": "albert2000", "type": "article", "title": "Error and attack tolerance of complex networks", "author": "Albert", "year": 2000},
+  {"key": "turchin2003", "type": "book", "title": "Historical Dynamics: Why States Rise and Fall", "author": "Turchin", "year": 2003},
+  {"key": "diamond2005", "type": "book", "title": "Collapse: How Societies Choose to Fail or Succeed", "author": "Diamond", "year": 2005},
+  {"key": "scheffer2001", "type": "article", "title": "Catastrophic shifts in ecosystems", "author": "Scheffer", "year": 2001},
+  {"key": "parker2013", "type": "book", "title": "Global Crisis: War, Climate Change and Catastrophe in the Seventeenth Century", "author": "Parker", "year": 2013},
+  {"key": "goldstone1991", "type": "book", "title": "Revolution and Rebellion in the Early Modern World", "author": "Goldstone", "year": 1991},
+  {"key": "borgatti2009", "type": "article", "title": "Network analysis in the social sciences", "author": "Borgatti", "year": 2009},
+  {"key": "brook2010", "type": "book", "title": "The Troubled Empire: China in the Yuan and Ming Dynasties", "author": "Brook", "year": 2010},
+  {"key": "mote1988", "type": "book", "title": "The Cambridge History of China Volume 7 The Ming Dynasty 1368-1644 Part 1", "author": "Mote", "year": 1988},
+  {"key": "newman2010", "type": "book", "title": "Networks: An Introduction", "author": "Newman", "year": 2010}
+]

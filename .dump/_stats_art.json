@@ -1,0 +1,317 @@
+{
+  "pid": "art",
+  "title_cn": "笔墨的突围：徐渭、唐寅与才子的命运",
+  "corpus": {
+    "persons": 1231,
+    "events": 1106,
+    "relations": 2324,
+    "locations": 563,
+    "chapters": 41
+  },
+  "vocab": [
+    {
+      "word": "字",
+      "hits": 1004
+    },
+    {
+      "word": "印",
+      "hits": 192
+    },
+    {
+      "word": "狂",
+      "hits": 144
+    },
+    {
+      "word": "画",
+      "hits": 109
+    },
+    {
+      "word": "徐渭",
+      "hits": 101
+    },
+    {
+      "word": "诗",
+      "hits": 101
+    },
+    {
+      "word": "唐寅",
+      "hits": 50
+    },
+    {
+      "word": "才子",
+      "hits": 35
+    },
+    {
+      "word": "墨",
+      "hits": 18
+    },
+    {
+      "word": "书画",
+      "hits": 9
+    },
+    {
+      "word": "祝枝山",
+      "hits": 4
+    },
+    {
+      "word": "文徵明",
+      "hits": 2
+    }
+  ],
+  "distinct_words": 13,
+  "vocab_zero_hit": [
+    "题跋"
+  ],
+  "anchors": [
+    {
+      "name": "徐渭",
+      "degree": 14,
+      "chapters": 8,
+      "role": "明代三才子之一，与杨慎、解缙并称",
+      "faction": "明朝·文人"
+    },
+    {
+      "name": "唐寅",
+      "degree": 6,
+      "chapters": 4,
+      "role": "弘治十二年科场案主角，受考官程敏政赏识；应天府解元（与程敏政仅座主—考生关系，非姻亲）",
+      "faction": "明朝·文人"
+    },
+    {
+      "name": "文徵明",
+      "degree": 0,
+      "chapters": 1,
+      "role": "吴中四才子",
+      "faction": "明朝·文人"
+    }
+  ],
+  "anchors_missing": [],
+  "subset": {
+    "method": "B: ego(3 anchors)",
+    "n_persons": 14,
+    "n_explicit_edges": 40,
+    "mean_degree": 20.71,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 21,
+        "pct": 52.5
+      },
+      {
+        "cat": "君臣从属",
+        "n": 6,
+        "pct": 15.0
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 3,
+        "pct": 7.5
+      },
+      {
+        "cat": "同盟友党",
+        "n": 3,
+        "pct": 7.5
+      },
+      {
+        "cat": "亲属",
+        "n": 3,
+        "pct": 7.5
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 2,
+        "pct": 5.0
+      },
+      {
+        "cat": "师生同门",
+        "n": 2,
+        "pct": 5.0
+      }
+    ],
+    "top_persons": [
+      "朱厚熜",
+      "李如松",
+      "胡宗宪",
+      "朱宸濠",
+      "戚继光",
+      "李东阳",
+      "李如柏",
+      "李成梁",
+      "汪直",
+      "徐渭"
+    ],
+    "rho_chapter_degree": 0.751,
+    "p_chapter_degree": 0.0001
+  },
+  "baseline": {
+    "n_edges": 2324,
+    "cat_composition": [
+      {
+        "cat": "其他",
+        "n": 927,
+        "pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "n": 397,
+        "pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "n": 321,
+        "pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "n": 193,
+        "pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "n": 185,
+        "pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "n": 162,
+        "pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "n": 63,
+        "pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "n": 33,
+        "pct": 1.4
+      },
+      {
+        "cat": "地点关联",
+        "n": 18,
+        "pct": 0.8
+      },
+      {
+        "cat": "其他实体关联",
+        "n": 16,
+        "pct": 0.7
+      },
+      {
+        "cat": "政权关联",
+        "n": 5,
+        "pct": 0.2
+      },
+      {
+        "cat": "婚姻姻亲",
+        "n": 4,
+        "pct": 0.2
+      }
+    ],
+    "mean_degree": 6.27,
+    "isolated": 537
+  },
+  "events": {
+    "n": 0,
+    "year_hist": [],
+    "top": []
+  },
+  "places": {
+    "n": 0,
+    "top": []
+  },
+  "fig": {
+    "fig1": [
+      {
+        "label": "字",
+        "value": 1004
+      },
+      {
+        "label": "印",
+        "value": 192
+      },
+      {
+        "label": "狂",
+        "value": 144
+      },
+      {
+        "label": "画",
+        "value": 109
+      },
+      {
+        "label": "徐渭",
+        "value": 101
+      },
+      {
+        "label": "诗",
+        "value": 101
+      },
+      {
+        "label": "唐寅",
+        "value": 50
+      },
+      {
+        "label": "才子",
+        "value": 35
+      },
+      {
+        "label": "墨",
+        "value": 18
+      },
+      {
+        "label": "书画",
+        "value": 9
+      },
+      {
+        "label": "祝枝山",
+        "value": 4
+      },
+      {
+        "label": "文徵明",
+        "value": 2
+      }
+    ],
+    "fig2": [
+      {
+        "cat": "其他",
+        "subset_pct": 52.5,
+        "baseline_pct": 39.9
+      },
+      {
+        "cat": "君臣从属",
+        "subset_pct": 15.0,
+        "baseline_pct": 17.1
+      },
+      {
+        "cat": "敌对冲突",
+        "subset_pct": 7.5,
+        "baseline_pct": 13.8
+      },
+      {
+        "cat": "政治攻讦",
+        "subset_pct": 5.0,
+        "baseline_pct": 8.3
+      },
+      {
+        "cat": "亲属",
+        "subset_pct": 7.5,
+        "baseline_pct": 8.0
+      },
+      {
+        "cat": "同盟友党",
+        "subset_pct": 7.5,
+        "baseline_pct": 7.0
+      },
+      {
+        "cat": "师生同门",
+        "subset_pct": 5.0,
+        "baseline_pct": 2.7
+      },
+      {
+        "cat": "派系机构关联",
+        "subset_pct": 0.0,
+        "baseline_pct": 1.4
+      }
+    ],
+    "fig3": []
+  }
+}

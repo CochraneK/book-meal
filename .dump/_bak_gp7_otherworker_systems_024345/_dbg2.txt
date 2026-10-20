@@ -1,0 +1,344 @@
+=== stats leaves ===
+.pid                                                 systems
+.title_cn                                            崩塌的涌现：复杂网络中的明朝兴衰
+.corpus.persons                                      1231
+.corpus.events                                       1106
+.corpus.relations                                    2324
+.corpus.locations                                    563
+.corpus.chapters                                     41
+.vocab[0].word                                       困
+.vocab[0].hits                                       167
+.vocab[1].word                                       崩
+.vocab[1].hits                                       106
+.vocab[2].word                                       民变
+.vocab[2].hits                                       17
+.vocab[3].word                                       逃亡
+.vocab[3].hits                                       16
+.vocab[4].word                                       流民
+.vocab[4].hits                                       8
+.vocab[5].word                                       军户
+.vocab[5].hits                                       8
+.vocab[6].word                                       饥荒
+.vocab[6].hits                                       5
+.vocab[7].word                                       衰败
+.vocab[7].hits                                       2
+.vocab[8].word                                       逼反
+.vocab[8].hits                                       2
+.vocab[9].word                                       隐患
+.vocab[9].hits                                       1
+.distinct_words                                      14
+.vocab_zero_hit[0]                                   驿传
+.vocab_zero_hit[1]                                   缺饷
+.vocab_zero_hit[2]                                   积弊
+.vocab_zero_hit[3]                                   啸聚
+.anchors[0].name                                     朱由检
+.anchors[0].degree                                   67
+.anchors[0].chapters                                 19
+.anchors[0].role                                     信王（后继位为崇祯帝）
+.anchors[0].faction                                  明朝·皇室
+.anchors[1].name                                     李自成
+.anchors[1].degree                                   32
+.anchors[1].chapters                                 10
+.anchors[1].role                                     银川驿卒，起义军领袖
+.anchors[1].faction                                  民变·起义
+.anchors[2].name                                     张献忠
+.anchors[2].degree                                   29
+.anchors[2].chapters                                 8
+.anchors[2].role                                     农民军首领
+.anchors[2].faction                                  民变·起义
+.subset.method                                       B: ego(3 anchors)
+.subset.n_persons                                    55
+.subset.n_explicit_edges                             305
+.subset.mean_degree                                  15.11
+.subset.cat_composition[0].cat                       其他
+.subset.cat_composition[0].n                         150
+.subset.cat_composition[0].pct                       49.2
+.subset.cat_composition[1].cat                       君臣从属
+.subset.cat_composition[1].n                         55
+.subset.cat_composition[1].pct                       18.0
+.subset.cat_composition[2].cat                       敌对冲突
+.subset.cat_composition[2].n                         48
+.subset.cat_composition[2].pct                       15.7
+.subset.cat_composition[3].cat                       同盟友党
+.subset.cat_composition[3].n                         17
+.subset.cat_composition[3].pct                       5.6
+.subset.cat_composition[4].cat                       政治攻讦
+.subset.cat_composition[4].n                         13
+.subset.cat_composition[4].pct                       4.3
+.subset.cat_composition[5].cat                       亲属
+.subset.cat_composition[5].n                         9
+.subset.cat_composition[5].pct                       3.0
+.subset.cat_composition[6].cat                       派系机构关联
+.subset.cat_composition[6].n                         8
+.subset.cat_composition[6].pct                       2.6
+.subset.cat_composition[7].cat                       地点关联
+.subset.cat_composition[7].n                         3
+.subset.cat_composition[7].pct                       1.0
+.subset.cat_composition[8].cat                       师生同门
+.subset.cat_composition[8].n                         1
+.subset.cat_composition[8].pct                       0.3
+.subset.cat_composition[9].cat                       婚姻姻亲
+.subset.cat_composition[9].n                         1
+.subset.cat_composition[9].pct                       0.3
+.subset.top_persons[0]                               袁崇焕
+.subset.top_persons[1]                               朱由检
+.subset.top_persons[2]                               魏忠贤
+.subset.top_persons[3]                               皇太极
+.subset.top_persons[4]                               杨涟
+.subset.top_persons[5]                               孙承宗
+.subset.top_persons[6]                               祖大寿
+.subset.top_persons[7]                               李自成
+.subset.top_persons[8]                               张献忠
+.subset.top_persons[9]                               朱由校
+.subset.rho_chapter_degree                           0.893
+.subset.p_chapter_degree                             0.0
+.baseline.n_edges                                    2324
+.baseline.cat_composition[0].cat                     其他
+.baseline.cat_composition[0].n                       927
+.baseline.cat_composition[0].pct                     39.9
+.baseline.cat_composition[1].cat                     君臣从属
+.baseline.cat_composition[1].n                       397
+.baseline.cat_composition[1].pct                     17.1
+.baseline.cat_composition[2].cat                     敌对冲突
+.baseline.cat_composition[2].n                       321
+.baseline.cat_composition[2].pct                     13.8
+.baseline.cat_composition[3].cat                     政治攻讦
+.baseline.cat_composition[3].n                       193
+.baseline.cat_composition[3].pct                     8.3
+.baseline.cat_composition[4].cat                     亲属
+.baseline.cat_composition[4].n                       185
+.baseline.cat_composition[4].pct                     8.0
+.baseline.cat_composition[5].cat                     同盟友党
+.baseline.cat_composition[5].n                       162
+.baseline.cat_composition[5].pct                     7.0
+.baseline.cat_composition[6].cat                     师生同门
+.baseline.cat_composition[6].n                       63
+.baseline.cat_composition[6].pct                     2.7
+.baseline.cat_composition[7].cat                     派系机构关联
+.baseline.cat_composition[7].n                       33
+.baseline.cat_composition[7].pct                     1.4
+.baseline.cat_composition[8].cat                     地点关联
+.baseline.cat_composition[8].n                       18
+.baseline.cat_composition[8].pct                     0.8
+.baseline.cat_composition[9].cat                     其他实体关联
+.baseline.cat_composition[9].n                       16
+.baseline.cat_composition[9].pct                     0.7
+.baseline.cat_composition[10].cat                    政权关联
+.baseline.cat_composition[10].n                      5
+.baseline.cat_composition[10].pct                    0.2
+.baseline.cat_composition[11].cat                    婚姻姻亲
+.baseline.cat_composition[11].n                      4
+.baseline.cat_composition[11].pct                    0.2
+.baseline.mean_degree                                6.27
+.baseline.isolated                                   537
+.events.n                                            30
+.events.year_hist[0].year                            1351
+.events.year_hist[0].n                               2
+.events.year_hist[1].year                            1353
+.events.year_hist[1].n                               1
+.events.year_hist[2].year                            1355
+.events.year_hist[2].n                               1
+.events.year_hist[3].year                            1357
+.events.year_hist[3].n                               1
+.events.year_hist[4].year                            1362
+.events.year_hist[4].n                               1
+.events.year_hist[5].year                            1364
+.events.year_hist[5].n                               1
+.events.year_hist[6].year                            1365
+.events.year_hist[6].n                               1
+.events.year_hist[7].year                            1402
+.events.year_hist[7].n                               1
+.events.year_hist[8].year                            1449
+.events.year_hist[8].n                               1
+.events.year_hist[9].year                            1558
+.events.year_hist[9].n                               1
+.events.year_hist[10].year                           1570
+.events.year_hist[10].n                              1
+.events.year_hist[11].year                           1582
+.events.year_hist[11].n                              1
+.events.year_hist[12].year                           1592
+.events.year_hist[12].n                              1
+.events.year_hist[13].year                           1622
+.events.year_hist[13].n                              1
+.events.year_hist[14].year                           1628
+.events.year_hist[14].n                              2
+.events.year_hist[15].year                           1629
+.events.year_hist[15].n                              1
+.events.year_hist[16].year                           1631
+.events.year_hist[16].n                              2
+.events.year_hist[17].year                           1633
+.events.year_hist[17].n                              1
+.events.year_hist[18].year                           1635
+.events.year_hist[18].n                              1
+.events.year_hist[19].year                           1636
+.events.year_hist[19].n                              2
+.events.year_hist[20].year                           1639
+.events.year_hist[20].n                              1
+.events.year_hist[21].year                           1640
+.events.year_hist[21].n                              2
+.events.year_hist[22].year                           1642
+.events.year_hist[22].n                              1
+.events.top[0]                                       土木堡之变
+.events.top[1]                                       石人一只眼·黄河反
+.events.top[2]                                       韩山童刘福通起义
+.events.top[3]                                       郭子兴死·朱元璋掌兵
+.events.top[4]                                       张士诚高邮之战
+.events.top[5]                                       陈友谅杀倪文俊
+.events.top[6]                                       洪都叛降朱元璋
+.events.top[7]                                       朱元璋即吴王位
+.events.top[8]                                       朱文正谋叛
+.events.top[9]                                       金川门内应京城破
+.events.top[10]                                      义乌械斗
+.events.top[11]                                      殷正茂平两广叛乱
+.places.n                                            0
+.fig.fig1[0].label                                   困
+.fig.fig1[0].value                                   167
+.fig.fig1[1].label                                   崩
+.fig.fig1[1].value                                   106
+.fig.fig1[2].label                                   民变
+.fig.fig1[2].value                                   17
+.fig.fig1[3].label                                   逃亡
+.fig.fig1[3].value                                   16
+.fig.fig1[4].label                                   流民
+.fig.fig1[4].value                                   8
+.fig.fig1[5].label                                   军户
+.fig.fig1[5].value                                   8
+.fig.fig1[6].label                                   饥荒
+.fig.fig1[6].value                                   5
+.fig.fig1[7].label                                   衰败
+.fig.fig1[7].value                                   2
+.fig.fig1[8].label                                   逼反
+.fig.fig1[8].value                                   2
+.fig.fig1[9].label                                   隐患
+.fig.fig1[9].value                                   1
+.fig.fig2[0].cat                                     其他
+.fig.fig2[0].subset_pct                              49.2
+.fig.fig2[0].baseline_pct                            39.9
+.fig.fig2[1].cat                                     君臣从属
+.fig.fig2[1].subset_pct                              18.0
+.fig.fig2[1].baseline_pct                            17.1
+.fig.fig2[2].cat                                     敌对冲突
+.fig.fig2[2].subset_pct                              15.7
+.fig.fig2[2].baseline_pct                            13.8
+.fig.fig2[3].cat                                     政治攻讦
+.fig.fig2[3].subset_pct                              4.3
+.fig.fig2[3].baseline_pct                            8.3
+.fig.fig2[4].cat                                     亲属
+.fig.fig2[4].subset_pct                              3.0
+.fig.fig2[4].baseline_pct                            8.0
+.fig.fig2[5].cat                                     同盟友党
+.fig.fig2[5].subset_pct                              5.6
+.fig.fig2[5].baseline_pct                            7.0
+.fig.fig2[6].cat                                     师生同门
+.fig.fig2[6].subset_pct                              0.3
+.fig.fig2[6].baseline_pct                            2.7
+.fig.fig2[7].cat                                     派系机构关联
+.fig.fig2[7].subset_pct                              2.6
+.fig.fig2[7].baseline_pct                            1.4
+.fig.fig3[0].label                                   1351
+.fig.fig3[0].value                                   2
+.fig.fig3[1].label                                   1353
+.fig.fig3[1].value                                   1
+.fig.fig3[2].label                                   1355
+.fig.fig3[2].value                                   1
+.fig.fig3[3].label                                   1357
+.fig.fig3[3].value                                   1
+.fig.fig3[4].label                                   1362
+.fig.fig3[4].value                                   1
+.fig.fig3[5].label                                   1364
+.fig.fig3[5].value                                   1
+.fig.fig3[6].label                                   1365
+.fig.fig3[6].value                                   1
+.fig.fig3[7].label                                   1402
+.fig.fig3[7].value                                   1
+.fig.fig3[8].label                                   1449
+.fig.fig3[8].value                                   1
+.fig.fig3[9].label                                   1558
+.fig.fig3[9].value                                   1
+.fig.fig3[10].label                                  1570
+.fig.fig3[10].value                                  1
+.fig.fig3[11].label                                  1582
+.fig.fig3[11].value                                  1
+.fig.fig3[12].label                                  1592
+.fig.fig3[12].value                                  1
+.fig.fig3[13].label                                  1622
+.fig.fig3[13].value                                  1
+.fig.fig3[14].label                                  1628
+.fig.fig3[14].value                                  2
+.fig.fig3[15].label                                  1629
+.fig.fig3[15].value                                  1
+.fig.fig3[16].label                                  1631
+.fig.fig3[16].value                                  2
+.fig.fig3[17].label                                  1633
+.fig.fig3[17].value                                  1
+.fig.fig3[18].label                                  1635
+.fig.fig3[18].value                                  1
+.fig.fig3[19].label                                  1636
+.fig.fig3[19].value                                  2
+.fig.fig3[20].label                                  1639
+.fig.fig3[20].value                                  1
+.fig.fig3[21].label                                  1640
+.fig.fig3[21].value                                  2
+.fig.fig3[22].label                                  1642
+.fig.fig3[22].value                                  1
+
+=== pool / used / bad (check_one 同款) ===
+used=44 bad=36  (阈值 0.34*used=14.96)
+BAD=[0.51, 1.16, 1.81, 1.82, 1.91, 2.14, 2.3, 2.37, 2.5, 2.78, 3.4, 3.71, 4.2, 4.62, 5.1, 5.2, 5.3, 5.35, 5.4, 5.5, 6.59, 8.8, 9.7, 10.4, 11.3, 21.5, 21.8, 28.9, 33.9, 40.8, 40.9, 43.6, 57.1, 65.1, 94.9, 129.05]
+
+=== bad 逐一定位 ===
+  [0.51] 未定位
+  [1.16] L34 时间侧不是均匀增长：年均 4.615 件、变异系数 1.16、按年基尼 0.5069，
+  [1.16] L315 年均 4.615 件、标准差 5.353、变异系数 1.16、按年基尼 0.5069。
+  [1.81] 未定位
+  [1.82] 未定位
+  [1.91] 未定位
+  [2.14] 未定位
+  [2.3] L346 人事任免 & 2.3 & 10.4 & 7.0 \\
+  [2.37] 未定位
+  [2.5] L60 但只取它的一半结论：枢纽确实存在（最大度数 113，单人占全部度数和的 2.5\%），
+  [2.5] L255 单人（最大度数 113）就占全部度数和的 2.5\%。
+  [2.78] 未定位
+  [3.4] L347 案件刑狱 & 8.0 & 3.4 & 11.3 \\
+  [3.71] 未定位
+  [4.2] L258 本篇第 4.2 节已明示不许把这两个数混读。
+  [4.62] 未定位
+  [5.1] L215 \subsection{5.1 集中度：537 人与 108 人}
+  [5.1] L375 把第 5.1--5.5 节合起来，"兴衰是涌现"这句话在本篇数据上能落成：
+  [5.2] L61 本篇不去论证"因此是无标度"，而去检验这个标签在数据上是否站得住（第 5.2 节）。
+  [5.2] L69 本篇第 5.2 节完全按这套口径去做，得到的是一条负结果：
+  [5.3] L64 本篇第 5.3 节报的"18 个连通块、最大块占带边顶点的 94.9\%"，就是这条警告的直接读数。
+  [5.3] L129 本篇剔除端点缺失或两端同名的记录后，带边顶点为 741 个（第 5.3 节）。
+  [5.35] 未定位
+  [5.4] L312 \subsection{5.4 时间：不是均匀增长}
+  [5.4] L378 一片脉冲式而非平缓的时间（5.4），
+  [5.5] L81 本篇能验的只有其中一个可数项——结构位移在时间上是否真的发生了（第 5.5 节的类别迁移），
+  [5.5] L146 不是本篇的切分错误；第 5.5 节的三个时期均落在 1368 之后。
+  [6.59] 未定位
+  [8.8] L30 度数排序前一百的 108 人（占全部人物的 8.8\%）握有全部度数和的 65.1\%，
+  [8.8] L254 这 108 人合起来握有全部度数和的 65.1\%，而他们自己只占全部人物的 8.8\%。
+  [9.7] L264 3 度 42 人，此后逐度降到个位数，13 及以上汇总为 $\geq$13 桶共 119 人（9.7\%）。}
+  [10.4] L346 人事任免 & 2.3 & 10.4 & 7.0 \\
+  [11.3] L347 案件刑狱 & 8.0 & 3.4 & 11.3 \\
+  [21.5] L45 政治斗争占比 33.9 / 40.8 / 21.5，两者在第三期方向相反。
+  [21.5] L345 政治斗争 & 33.9 & 40.8 & 21.5 \\
+  [21.8] L44 \item 报一个可用卡方复核的时期迁移：军事战争占比 28.9 / 21.8 / 40.9，
+  [21.8] L344 军事战争 & 28.9 & 21.8 & 40.9 \\
+  [28.9] L44 \item 报一个可用卡方复核的时期迁移：军事战争占比 28.9 / 21.8 / 40.9，
+  [28.9] L344 军事战争 & 28.9 & 21.8 & 40.9 \\
+  [33.9] L45 政治斗争占比 33.9 / 40.8 / 21.5，两者在第三期方向相反。
+  [33.9] L345 政治斗争 & 33.9 & 40.8 & 21.5 \\
+  [40.8] L45 政治斗争占比 33.9 / 40.8 / 21.5，两者在第三期方向相反。
+  [40.8] L345 政治斗争 & 33.9 & 40.8 & 21.5 \\
+  [40.9] L44 \item 报一个可用卡方复核的时期迁移：军事战争占比 28.9 / 21.8 / 40.9，
+  [40.9] L344 军事战争 & 28.9 & 21.8 & 40.9 \\
+  [43.6] L29 基尼系数 0.8199，537 人（43.6\%）一条关系也没有，
+  [43.6] L251 表 \ref{tab:degree} 的两个数最要紧：537 人度数为 0，占全部人物的 43.6\%；
+  [57.1] L33 占带边顶点的 94.9\%，只占全部人物的 57.1\%。
+  [57.1] L304 最大块 703 点，占带边顶点的 94.9\%，占全部人物的 57.1\%。
+  [65.1] L30 度数排序前一百的 108 人（占全部人物的 8.8\%）握有全部度数和的 65.1\%，
+  [65.1] L254 这 108 人合起来握有全部度数和的 65.1\%，而他们自己只占全部人物的 8.8\%。
+  [94.9] L33 占带边顶点的 94.9\%，只占全部人物的 57.1\%。
+  [94.9] L64 本篇第 5.3 节报的"18 个连通块、最大块占带边顶点的 94.9\%"，就是这条警告的直接读数。
+  [129.05] L36 χ²=129.05（df=20，p 小于 $10^{-6}$），Cramér's V=0.259。
+  [129.05] L352 卡方独立性检验给出 $\chi^{2}=129.05$、自由度 20、p 值小于 $10^{-6}$，

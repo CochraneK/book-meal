@@ -1,54 +1,33 @@
-<div align="center">
+# 明朝那些事儿知识库
 
-# 明朝那些事儿 · 知识库
-
-**从 156 章文本中抽取人物、地点、事件、关系与年谱，做成可搜索、可浏览、可离线使用的静态知识图谱。**
-
-<p>
-  <img alt="Chapters" src="https://img.shields.io/badge/章节-156-6C63FF">
-  <img alt="Characters" src="https://img.shields.io/badge/人物-1231-2F80ED">
-  <img alt="Events" src="https://img.shields.io/badge/事件-1106-27AE60">
-  <img alt="Relations" src="https://img.shields.io/badge/关系-2324-F2994A">
-</p>
-
-[**在线查看**](https://cochranek.github.io/ming/) · [**离线版**](https://cochranek.github.io/ming/standalone.html)
-
-</div>
-
-基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库。在线版采用 V13 分层按需交付：首页只加载 `boot-data.js`，全局搜索加载轻量 `search-index.js`；人物为 `data-characters.js` + 16 个人物详情 shard，地点为 `data-locations.js` + 8 个地点详情 shard + 独立章节/航线块，年谱使用独立 `data-lifespans.js`；事件为轻量 `data-events.js` + 8 个事件详情 shard；关系索引进一步只加载可见字段组成的 `data-relations.js` core，完整关系 id / 端点类型 / 来源键等 metadata 只在 full DATA 时由 `data-relation-meta.js` 补回。`standalone.html` 仍是完整单文件离线版。
+基于《明朝那些事儿》七部 156 章全文抽取整理的单文件静态知识库报告。以「圣地巡礼」为第一使用场景：把书中提到的地点落到真实坐标上，并保留每条记录的来源章节与核验状态。
 
 ## 在线查看
 
-GitHub Pages：`https://cochranek.github.io/ming/`（根 `index.html` 为 V13 分层按需版；`standalone.html` 为可下载 / 双击打开的完整离线版）
+GitHub Pages：`https://cochranek.github.io/ming/`（根目录 `index.html` 即入口）
 
 ## 当前规模
 
 | 实体 | 数量 | 说明 |
 |---|---|---|
 | 来源章节 | 156 | 七部全部章节，抽取覆盖 100% |
-| 地点 | 583（已定位 553，94.9%） | 未定位的 30 个如实标为「待核验」，不硬填坐标 |
+| 地点 | 581（已定位 540，92.9%） | 未定位的 41 个如实标为「待核验」，不硬填坐标 |
 | 人物 | 1231 | 含出场章节、别名、势力、身份 |
-| 事件 | 1106（有年份 1104） | 未知年份 2 件单独保留，不混入历史顺序 |
+| 事件 | 1106（有年份 1099） | 未知年份 7 件单独保留，不混入历史顺序 |
 | 关系 | 2324 | 含亲属、政治、军事、派系等类别 |
 | 在位年表 | 17 帝 | 洪武—崇祯，色带与年谱、大事热度对齐 |
 | 年谱 | 165 人 | 主要人物生卒横向展开，与年号对位 |
 
-<!-- README_STATS_SYNC -->
-> 上表的章节 / 地点 / 人物 / 事件 / 关系统计由 `src/sync_readme.py` 从最终模型自动刷新；发布同步工作流会同时维护在线 V13 `index.html + assets/` 与离线 `standalone.html`。
-
 ## 报告视图（12 个）
 
-**全局叙事**：`总览` `分布` `时间轴` `帝王` `年谱`　·　**实体索引**：`人物` `地点` `事件` `关系`　·　**探索分析**：`图谱` `地图` `洞察`
-
-<!-- README_V2_JOURNEYS -->
-> V2 首页另提供三条问题导向的探索路径：**人物脉络**、**时间脉络**、**空间与结构**；顶部导航与深链仍使用原有 12 个 view id。
+`总览` `分布` `图谱` `地点` `地图` `人物` `事件` `关系` `时间轴` `帝王` `年谱` `洞察`
 
 - **总览**：规模指标与数据状态（含未定位地点、未知年份等诚实披露）。
 - **分布**：三层诊断——分部层比较四类抽取量，章节层同时显示总量与每万字密度，结果层展示「章节来源 → 实体 → 关系网络 → 来源追溯」。章节级计数按单章内唯一姓名/古名/事件名统计，实体总量按合并后的全局实体统计，**两个口径不混用**。
 - **图谱**：人物出场热力图（按章节展开高频人物轨迹）、事件类型演变（分部共享尺度）、核心人物关系网络（重复关系聚合到有限邻居）。默认只展示高频人物与主要事件类型，避免挤成不可读的图。关系网络第三块支持**双模式切换**（见下方「关系图双模式」）：「全书人物图」是 **686 人 / 1403 条人物关系**的力导向图（浏览器端实时模拟，可拖拽、缩放、点击高亮邻域），「全书实体图」把地点/机构/政权等非人物端点也作为节点画进来（**741 个实体 / 1467 条关系**，按类型着色并配类型图例）。
-- **地点**：583 张地点卡，支持按古名/今址/别名/区域搜索，同城合并（如北平/顺天府/北京归为一组）。
+- **地点**：581 张地点卡，支持按古名/今址/别名/区域搜索，同城合并（如北平/顺天府/北京归为一组）。
 - **地图**：圣地巡礼地图，聚焦已定位地点；郑和下西洋航线为独立子视图（停靠点面板附书中相关事件，可点击）。瓦片主源 Esri、失败自动回退 OpenStreetMap，**离线时自动退回 SVG 点位图**（点位仍可点击查看书中介绍）；Leaflet 在首屏空闲时后台预热，点开基本零等待；Service Worker 让重复访问秒开。任一环节失败都会在页面底部弹出**统一提示条**（说明故障 + 「重试」+ 可关闭），不再静默白屏。
-- **人物**：扑克牌尺寸（63×88mm）卡片，**正反面等高同风格**，支持墨玉/宣纸/朱砂三套主题切换；卡背以「书内语录」替代关系行（66 位人物的语录均经原文核实，见 `data/character_quotes.json`）；可翻面、可查看详情、可生成打印页。搜索框**只匹配姓名字段**，无匹配时显示空态（不回落为全量）。势力字段由 `src/core/faction_profile.py` 在构建时**一次性结构化为 朝代/政权/时期/派系/机构/身份类别/官职/籍贯/科举**，详情页按结构化字段分组展示并保留「原串」回查行（见下方「势力字段结构化」）。
+- **人物**：扑克牌尺寸（63×88mm）卡片，**正反面等高同风格**，支持墨玉/宣纸/朱砂三套主题切换；卡背以「书内语录」替代关系行（13 位核心人物的语录均经原文核实，见 `data/character_quotes.json`）；可翻面、可查看详情、可生成打印页。搜索框**只匹配姓名字段**，无匹配时显示空态（不回落为全量）。势力字段由 `src/core/faction_profile.py` 在构建时**一次性结构化为 朝代/政权/时期/派系/机构/身份类别/官职/籍贯/科举**，详情页按结构化字段分组展示并保留「原串」回查行（见下方「势力字段结构化」）。
 - **事件 / 关系**：全量分页表格，支持按类别筛选与关键词搜索；关系视图顶部会标明当前范围策略（全书 = 全部关系 / 分部 = 诱导子图）。
 - **时间轴**：按数值年份排序，年份待考事件单独成组保留；顶部支持**起止年份区间筛选**（如 1400—1450），区间会写回地址栏（`from`/`to`）便于分享。
 - **帝王**：十七段年号在位色带，年号标签在色带上下交替错行对齐（短命年号不会糊成一团）。
@@ -80,7 +59,7 @@ python -m http.server 8765 --bind 127.0.0.1
 
 ```powershell
 python src/merge.py                 # 聚合（增量勘误层不会被覆盖）
-python src/build.py                 # 构建全书单文件 standalone.html
+python src/build.py                 # 构建全书单文件 index.html
 python src/build.py --check         # 只校验不落盘（构建前的门禁）
 python tests/run_tests.py           # 单元测试（无第三方依赖，可直接跑）
 ```
@@ -90,12 +69,12 @@ python tests/run_tests.py           # 单元测试（无第三方依赖，可直
 | 参数 | 说明 |
 |---|---|
 | `--scope full\|p1..p7` | 构建全书或某一部（分部产物为 `report_pN.html`） |
-| `--target standalone\|web` | 默认 `standalone`＝CSS/JS/DATA 全内联到 `standalone.html`；`web`＝输出到 `dist/<scope>/`。生产发布在基础 web 构建后依次执行 V11 时间分层、V12 事件分层与 V13 关系分层：人物/地点/事件详情使用确定性 shard，时间另有 `data-lifespans.js`；关系为轻量 `data-relations.js` core + 仅 full DATA 才加载的 `data-relation-meta.js`；图谱 / 洞察 / 元数据继续独立按需加载 |
+| `--target standalone\|web` | 默认 `standalone`＝CSS/JS/DATA 全内联的单文件；`web`＝输出到 `dist/<scope>/`，拆成 `assets/app.css`、`assets/app.js`、`assets/data.js`，便于本地逐文件调试 |
 | `--out 路径` | 覆盖输出位置 |
 | `--check` | 跑完聚合与全部校验后不写文件，ERROR 时以退出码 2 中止 |
 | `--json 路径` | 把校验结论导出为 JSON |
 
-`standalone` 构建继续内联完整最终 DATA；在线生产链路对同一 payload 做可逆传输分区：`src/split_time_asset_v11.py` 拆出 `lifespans`，`src/split_event_asset_v12.py` 把 events 变换成摘要核心 + 8 个详情 shard，`src/split_relation_asset_v13.py` 再把 relations 变换成可见 core + deferred metadata。加载全部物理块后可逐值恢复原始最终模型；不维护 `data-full.js`、`data-character-details.js`、`data-location-details.js`、`data-event-details.js` 或旧 `data-space.js` 单体包。
+构建时会把 `web/template/index.html`（骨架）＋ `web/css/app.css` ＋ `web/js/app.js` 内联回单文件；三者拼回来的结果与拆分前的模板**逐字节一致**，由 `tests/test_template.py` 守着。
 
 - `data/data.json` 是聚合后的单一数据源。
 - `data/geo_annotations.json`（地点坐标/类型标注）、`data/manual_relations.json`（人工关系）、`data/manual_corrections.json`（勘误）、`data/manual_lifespans.json`（年谱）、`data/manual_persons.json`（补录人物）、`data/derived_chapter_persons.json`（文本反查出场）**重跑聚合不会丢失**，是可持续维护的增量层。

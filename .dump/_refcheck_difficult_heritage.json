@@ -1,0 +1,144 @@
+[
+  {
+    "key": "michel2011",
+    "status": "VERIFIED",
+    "author": "Michel",
+    "year": 2011,
+    "title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+    "doi": "10.1126/science.1199644",
+    "matched": {
+      "title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+      "year": 2011,
+      "type": "journal-article",
+      "container": "Science"
+    }
+  },
+  {
+    "key": "mote1988",
+    "status": "VERIFIED",
+    "author": "Mote",
+    "year": 1988,
+    "title": "The rise of the Ming dynasty, 1330-1367",
+    "doi": "10.1017/chol9780521243322.003",
+    "matched": {
+      "title": "The rise of the Ming dynasty, 1330–1367",
+      "year": 1988,
+      "type": "book-chapter",
+      "container": "The Cambridge History of China"
+    }
+  },
+  {
+    "key": "kg1995",
+    "status": "VERIFIED",
+    "author": "Kirshenblatt-Gimblett",
+    "year": 1995,
+    "title": "Theorizing heritage",
+    "doi": "10.2307/924627",
+    "matched": {
+      "title": "Theorizing Heritage",
+      "year": 1995,
+      "type": "journal-article",
+      "container": "Ethnomusicology"
+    }
+  },
+  {
+    "key": "ashworth2002",
+    "status": "VERIFIED",
+    "author": "Ashworth",
+    "year": 2002,
+    "title": "Dark tourism: the attraction of death and disaster",
+    "doi": "10.1016/s0261-5177(01)00055-3",
+    "matched": {
+      "title": "Dark tourism: the attraction of death and disaster",
+      "year": 2002,
+      "type": "journal-article",
+      "container": "Tourism Management"
+    }
+  },
+  {
+    "key": "foley1996",
+    "status": "VERIFIED",
+    "author": "Foley",
+    "year": 1996,
+    "title": "JFK and dark tourism: A fascination with assassination",
+    "doi": "10.1080/13527259608722175",
+    "matched": {
+      "title": "JFK and dark tourism: A fascination with assassination",
+      "year": 1996,
+      "type": "journal-article",
+      "container": "International Journal of Heritage Studies"
+    }
+  },
+  {
+    "key": "waterton2006",
+    "status": "VERIFIED",
+    "author": "Waterton",
+    "year": 2006,
+    "title": "The Utility of Discourse Analysis to Heritage Studies",
+    "doi": "10.1080/13527250600727000",
+    "matched": {
+      "title": "The Utility of Discourse Analysis to Heritage Studies: The Burra Charter and Social Inclusion",
+      "year": 2006,
+      "type": "journal-article",
+      "container": "International Journal of Heritage Studies"
+    }
+  },
+  {
+    "key": "smith2020",
+    "status": "VERIFIED",
+    "author": "Smith",
+    "year": 2020,
+    "title": "Critical realist heritage studies",
+    "doi": "10.4324/9781315713274-3",
+    "matched": {
+      "title": "Critical realist heritage studies",
+      "year": 2020,
+      "type": "book-chapter",
+      "container": "Emotional Heritage"
+    }
+  },
+  {
+    "key": "openshaw1993",
+    "status": "VERIFIED",
+    "author": "Openshaw",
+    "year": 1993,
+    "title": "GIS 'Crime' and GIS 'Criminality'",
+    "doi": "10.1068/a250451",
+    "matched": {
+      "title": "GIS ‘Crime’ and GIS ‘Criminality’",
+      "year": 1993,
+      "type": "journal-article",
+      "container": "Environment and Planning A: Economy and Space"
+    }
+  },
+  {
+    "key": "urry1990",
+    "status": "VERIFIED",
+    "author": "Urry",
+    "year": 1990,
+    "title": "The tourist gaze",
+    "doi": "10.1177/0002764292036002005",
+    "matched": {
+      "title": "The Tourist Gaze “Revisited”",
+      "year": 1992,
+      "type": "journal-article",
+      "container": "American Behavioral Scientist"
+    }
+  },
+  {
+    "key": "lowenthal1985",
+    "status": "UNVERIFIED",
+    "author": "Lowenthal",
+    "year": 1985,
+    "title": "The past is a foreign country-revisited",
+    "doi": ""
+  },
+  {
+    "key": "maccannell1977",
+    "status": "UNVERIFIED",
+    "author": "MacCannell",
+    "year": 1977,
+    "title": "Staged authenticity: arrangements of social space in tourist settings",
+    "doi": ""
+  }
+]

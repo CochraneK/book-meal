@@ -1,0 +1,866 @@
+[
+  {
+    "key": "moretti2005",
+    "type": "book",
+    "title": "Graphs, Maps, Trees: Abstract Models for a Literary History",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Graphs, Maps, Trees: Abstract Models for a Literary History",
+        "matched_author": "Tally",
+        "matched_year": 2007,
+        "matched_type": "journal-article",
+        "doi": "10.1215/00267929-2006-032",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 2,
+        "authors_checked": [
+          "Tally"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Review: Graphs, Maps, Trees: Abstract Models for a Literary History",
+        "matched_author": "Warkentin",
+        "matched_year": 2006,
+        "matched_type": "journal-article",
+        "doi": "10.1093/library/7.3.342",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Warkentin"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Graphs, maps, trees: abstract models for a literary history",
+        "matched_author": "",
+        "matched_year": 2006,
+        "matched_type": "journal-article",
+        "doi": "10.5860/choice.43-2646",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "michel2011",
+    "type": "article",
+    "title": "Quantitative analysis of culture using millions of digitized books",
+    "status": "VERIFIED",
+    "doi": "10.1126/science.1199644",
+    "top_matches": [
+      {
+        "matched_title": "Historical Analysis of National Subjective Wellbeing Using Millions of Digitized Books",
+        "matched_author": "Hills",
+        "matched_year": 2015,
+        "matched_type": "posted-content",
+        "doi": "10.2139/ssrn.2655144",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.71,
+        "year_diff": 4,
+        "authors_checked": [
+          "Hills"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Historical Analysis of National Subjective Wellbeing Using Millions of Digitized Books",
+        "matched_author": "Hills",
+        "matched_year": 2016,
+        "matched_type": "journal-article",
+        "doi": "10.2139/ssrn.2796492",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.71,
+        "year_diff": 5,
+        "authors_checked": [
+          "Hills"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Quantitative Analysis of Culture Using Millions of Digitized Books",
+        "matched_author": "Michel",
+        "matched_year": 2011,
+        "matched_type": "journal-article",
+        "doi": "10.1126/science.1199644",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Michel"
+        ],
+        "author_ok": true
+      }
+    ]
+  },
+  {
+    "key": "jockers2013",
+    "type": "book",
+    "title": "Macroanalysis: Digital Methods and Literary History",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Macroanalysis",
+        "matched_author": "Jockers",
+        "matched_year": 2013,
+        "matched_type": "monograph",
+        "doi": "10.5406/illinois/9780252037528.001.0001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.17,
+        "year_diff": 0,
+        "authors_checked": [
+          "Jockers"
+        ],
+        "author_ok": true
+      },
+      {
+        "matched_title": "Macroanalysis. Digital Methods and Literary History. Matthew L. Jockers.",
+        "matched_author": "Kestemont",
+        "matched_year": 2013,
+        "matched_type": "journal-article",
+        "doi": "10.1093/llc/fqt056",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Kestemont"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Literary Data Mining: A review of Matthew Jockers, Macroanalysis: Digital Methods and Literary History (Urbana: University of Illinois Press, 2013).",
+        "matched_author": "Egan",
+        "matched_year": 2016,
+        "matched_type": "journal-article",
+        "doi": "10.63744/mk9qs59nuprj",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 3,
+        "authors_checked": [
+          "Egan"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "underwood2019",
+    "type": "book",
+    "title": "Distant Horizons: Digital Evidence and Literary Change",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Distant Horizons",
+        "matched_author": "Underwood",
+        "matched_year": 2019,
+        "matched_type": "monograph",
+        "doi": "10.7208/chicago/9780226612973.001.0001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.29,
+        "year_diff": 0,
+        "authors_checked": [
+          "Underwood"
+        ],
+        "author_ok": true
+      },
+      {
+        "matched_title": "5. The Risks of Distant Reading",
+        "matched_author": "",
+        "matched_year": 2019,
+        "matched_type": "book-chapter",
+        "doi": "10.7208/chicago/9780226612973.003.0005",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.14,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "4. Metamorphoses of Gender",
+        "matched_author": "",
+        "matched_year": 2019,
+        "matched_type": "book-chapter",
+        "doi": "10.7208/chicago/9780226612973.003.0004",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "da2019",
+    "type": "article",
+    "title": "The Computational Case against Computational Literary Studies",
+    "status": "VERIFIED",
+    "doi": "10.1086/702594",
+    "top_matches": [
+      {
+        "matched_title": "The Computational Case against Computational Literary Studies",
+        "matched_author": "Da",
+        "matched_year": 2019,
+        "matched_type": "journal-article",
+        "doi": "10.1086/702594",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Da"
+        ],
+        "author_ok": true
+      },
+      {
+        "matched_title": "Literary historiography and computational text analysis",
+        "matched_author": "Rebora",
+        "matched_year": 2026,
+        "matched_type": "book-chapter",
+        "doi": "10.4324/9781003631354-1",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.33,
+        "year_diff": 7,
+        "authors_checked": [
+          "Rebora"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Computational Literary Studies",
+        "matched_author": "Rebora",
+        "matched_year": 2026,
+        "matched_type": "monograph",
+        "doi": "10.4324/9781003631354",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.5,
+        "year_diff": 7,
+        "authors_checked": [
+          "Rebora"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "blei2003",
+    "type": "article",
+    "title": "Latent Dirichlet Allocation",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Partial membership latent Dirichlet allocation",
+        "matched_author": "Chen",
+        "matched_year": null,
+        "matched_type": "dissertation",
+        "doi": "10.32469/10355/56468",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 99,
+        "authors_checked": [
+          "Chen"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Figure 2: Word embedding latent Dirichlet allocation (WELDA).",
+        "matched_author": "",
+        "matched_year": null,
+        "matched_type": "component",
+        "doi": "10.7717/peerj-cs.2300/fig-2",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 99,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Topic Modelling in COVID-19 Vaccination Refusal Cases Using Latent Dirichlet Allocation and Latent Semantic Analysis",
+        "matched_author": "Sholihah",
+        "matched_year": 2023,
+        "matched_type": "posted-content",
+        "doi": "10.21070/ups.774",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 20,
+        "authors_checked": [
+          "Sholihah"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "ramsay2011",
+    "type": "book",
+    "title": "Reading Machines: Toward an Algorithmic Criticism",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Reading Machines",
+        "matched_author": "Ramsay",
+        "matched_year": 2011,
+        "matched_type": "monograph",
+        "doi": "10.5406/illinois/9780252036415.001.0001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.4,
+        "year_diff": 0,
+        "authors_checked": [
+          "Ramsay"
+        ],
+        "author_ok": true
+      },
+      {
+        "matched_title": "Reading Machines. Toward an Algorithmic Criticism. Stephen Ramsay.",
+        "matched_author": "Brown",
+        "matched_year": 2012,
+        "matched_type": "journal-article",
+        "doi": "10.1093/llc/fqs042",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Brown"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Steven Ramsay. &lt;em&gt;Reading Machines: Toward an Algorithmic Criticism&lt;/em&gt;. Champaign IL: University of Illinois Press. 2011. ISBN 978-0-252-03641-5 (Cloth) 978-0-252-07820-0 (Paper).",
+        "matched_author": "Schneider",
+        "matched_year": 2012,
+        "matched_type": "journal-article",
+        "doi": "10.16995/dscn.245",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.8,
+        "year_diff": 1,
+        "authors_checked": [
+          "Schneider"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "white1987",
+    "type": "book",
+    "title": "The Content of the Form: Narrative Discourse and Historical Representation",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Narrativity and Historical Representation",
+        "matched_author": "Rigney",
+        "matched_year": 1991,
+        "matched_type": "journal-article",
+        "doi": "10.2307/1772653",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.38,
+        "year_diff": 4,
+        "authors_checked": [
+          "Rigney"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "The Content of the Form: Narrative Discourse and Historical Representation.",
+        "matched_author": "Flores",
+        "matched_year": 1987,
+        "matched_type": "journal-article",
+        "doi": "10.2307/2905318",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 0,
+        "authors_checked": [
+          "Flores"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "The Content of the Form: Narrative Discourse and Historical Representation",
+        "matched_author": "Lacapra",
+        "matched_year": 1988,
+        "matched_type": "journal-article",
+        "doi": "10.2307/1863532",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Lacapra"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "stone1971",
+    "type": "book",
+    "title": "Prosopography",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Prosopography and Byzantine Identity",
+        "matched_author": "Magdalino",
+        "matched_year": 2003,
+        "matched_type": "book-chapter",
+        "doi": "10.5871/bacad/9780197262924.003.0004",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 32,
+        "authors_checked": [
+          "Magdalino"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Seals and the Prosopography of the Byzantine Empire",
+        "matched_author": "Seibt",
+        "matched_year": 2003,
+        "matched_type": "book-chapter",
+        "doi": "10.5871/bacad/9780197262924.003.0007",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 32,
+        "authors_checked": [
+          "Seibt"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Sources for Roman Imperial Prosopography",
+        "matched_author": "Bruun",
+        "matched_year": 2025,
+        "matched_type": "book-chapter",
+        "doi": "10.1163/9789004748613_020",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 54,
+        "authors_checked": [
+          "Bruun"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "ginzburg1980",
+    "type": "book",
+    "title": "The Cheese and the Worms: The Cosmos of a Sixteenth-Century Miller",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": ":<i>The Cheese and the Worms: The Cosmos of a Sixteenth-Century Miller</i>",
+        "matched_author": "Zanetti",
+        "matched_year": 2014,
+        "matched_type": "journal-article",
+        "doi": "10.1086/scj43920240",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.88,
+        "year_diff": 34,
+        "authors_checked": [
+          "Zanetti"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": ":<i>The Cheese and the Worms. The Cosmos of a Sixteenth-Century Miller</i>",
+        "matched_author": "von Greyerz",
+        "matched_year": 1982,
+        "matched_type": "journal-article",
+        "doi": "10.2307/2539610",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.88,
+        "year_diff": 2,
+        "authors_checked": [
+          "von Greyerz"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": ":<i>The Cheese and the Worms: The Cosmos of a Sixteenth-Century Miller</i>",
+        "matched_author": "Amelang",
+        "matched_year": 2009,
+        "matched_type": "journal-article",
+        "doi": "10.1086/scj40541095",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.88,
+        "year_diff": 29,
+        "authors_checked": [
+          "Amelang"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "mote1988",
+    "type": "book",
+    "title": "The Cambridge History of China, Volume 7: The Ming Dynasty, 1368-1644",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Cambridge History of China, Volume 7, The Ming Dynasty, 1368–1644",
+        "matched_author": "",
+        "matched_year": 2000,
+        "matched_type": "journal-article",
+        "doi": "10.1179/014703700788763252",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.78,
+        "year_diff": 12,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "The Cambridge History of China, Volume 7, The Ming Dynasty, 1368–1644",
+        "matched_author": "",
+        "matched_year": 2000,
+        "matched_type": "journal-article",
+        "doi": "10.1179/014703700788763298",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.78,
+        "year_diff": 12,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "The Cambridge History of China. Volume 8. The Ming Dynasty, 1368–1644",
+        "matched_author": "",
+        "matched_year": 1999,
+        "matched_type": "journal-article",
+        "doi": "10.1179/014703799788763399",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.78,
+        "year_diff": 11,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "huang1981",
+    "type": "book",
+    "title": "1587, A Year of No Significance: The Ming Dynasty in Decline",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "[Illustrations]",
+        "matched_author": "",
+        "matched_year": 1982,
+        "matched_type": "book-chapter",
+        "doi": "10.2307/j.ctt5hk0zw.8",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 1,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Bibliography",
+        "matched_author": "",
+        "matched_year": 2017,
+        "matched_type": "book-chapter",
+        "doi": "10.12987/9780300163537-013",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 36,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Acknowledgments",
+        "matched_author": "",
+        "matched_year": 2017,
+        "matched_type": "book-chapter",
+        "doi": "10.12987/9780300163537-001",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 36,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "manovich2020",
+    "type": "book",
+    "title": "Cultural Analytics",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Celebrating 5 Years of Cultural Analytics",
+        "matched_author": "Piper",
+        "matched_year": 2021,
+        "matched_type": "journal-article",
+        "doi": "10.22148/001c.28215",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 1.0,
+        "year_diff": 1,
+        "authors_checked": [
+          "Piper"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Cultural Sampling",
+        "matched_author": "",
+        "matched_year": 2020,
+        "matched_type": "book-chapter",
+        "doi": "10.7551/mitpress/11214.003.0010",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.5,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Culture Industry and Media Analytics",
+        "matched_author": "",
+        "matched_year": 2020,
+        "matched_type": "book-chapter",
+        "doi": "10.7551/mitpress/11214.003.0007",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.5,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "piper2018",
+    "type": "book",
+    "title": "Enumerations: Data and Literary Study",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "4 Fictionality (Sense)",
+        "matched_author": "",
+        "matched_year": 2018,
+        "matched_type": "book-chapter",
+        "doi": "10.7208/chicago/9780226568898.003.0005",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "2 Plot (Lack)",
+        "matched_author": "",
+        "matched_year": 2018,
+        "matched_type": "book-chapter",
+        "doi": "10.7208/chicago/9780226568898.003.0003",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "6 Corpus (Vulnerability)",
+        "matched_author": "",
+        "matched_year": 2018,
+        "matched_type": "book-chapter",
+        "doi": "10.7208/chicago/9780226568898.003.0007",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 0,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "dangnian2009",
+    "type": "book",
+    "title": "明朝那些事儿",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "文章接受后的那些事儿",
+        "matched_author": "",
+        "matched_year": 2019,
+        "matched_type": "journal-article",
+        "doi": "10.14218/mrp.2019.073",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 10,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "文化安全视角下的青少年网络思想政治教育——以《那年那兔那些事儿》为例",
+        "matched_author": "",
+        "matched_year": 2025,
+        "matched_type": "journal-article",
+        "doi": "10.64216/3104-9672.25.03.038",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 16,
+        "authors_checked": [
+          ""
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "基于大别山精神与红色文化的爱国主义动画传播研究：以《那年那兔那些事儿》为例",
+        "matched_author": "程",
+        "matched_year": 2024,
+        "matched_type": "journal-article",
+        "doi": "10.61369/etr.9546",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.0,
+        "year_diff": 15,
+        "authors_checked": [
+          "程"
+        ],
+        "author_ok": false
+      }
+    ]
+  },
+  {
+    "key": "mingkg2026",
+    "type": "misc",
+    "title": "Ming Knowledge Graph: structured extraction of a popular Ming history",
+    "status": "UNVERIFIED",
+    "doi": "",
+    "top_matches": [
+      {
+        "matched_title": "Relation Extraction with Knowledge-Enhanced Prompt-Tuning on Multimodal Knowledge Graph",
+        "matched_author": "Ming",
+        "matched_year": 2023,
+        "matched_type": "proceedings-article",
+        "doi": "10.1109/smc53992.2023.10394492",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.43,
+        "year_diff": 3,
+        "authors_checked": [
+          "Ming"
+        ],
+        "author_ok": true
+      },
+      {
+        "matched_title": "Distribution-Guided Extraction for Cross-Platform Educational Knowledge Graph Construction",
+        "matched_author": "Huang",
+        "matched_year": 2025,
+        "matched_type": "proceedings-article",
+        "doi": "10.1109/ijcnn64981.2025.11228621",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.43,
+        "year_diff": 1,
+        "authors_checked": [
+          "Huang"
+        ],
+        "author_ok": false
+      },
+      {
+        "matched_title": "Neural-Symbolic Integration of knowledge extraction and reasoning on graph-structured data",
+        "matched_author": "Werner",
+        "matched_year": null,
+        "matched_type": "dissertation",
+        "doi": "10.70675/71d28c80z0772z4822zb94ez15ad4d8024dd",
+        "source": "crossref",
+        "wid": "",
+        "title_overlap": 0.57,
+        "year_diff": 99,
+        "authors_checked": [
+          "Werner"
+        ],
+        "author_ok": false
+      }
+    ]
+  }
+]
