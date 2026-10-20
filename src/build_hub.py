@@ -89,9 +89,17 @@ def load_manifests(books_dir: Path = BOOKS_DIR):
 
 
 def report_href(m) -> str:
-    """卡片「打开」链接。external 书的 report 视为绝对/站外地址。"""
+    """卡片「打开」链接。external 书的 report 视为绝对/站外地址。
+
+    report 为纯文件名（如 `index.html`）时按 `books/<id>/<report>` 拼接；
+    含 `/` 则视为站内相对路径原样使用，供报告不在 `books/<id>/` 下的情形
+    （例：明书下沉到仓库根 `ming/`，写作 `ming/index.html`）。
+
+    路径一律相对门户页（它就在仓库根）解析。本站挂在 GitHub Pages 子路径 `/ming/`，
+    **不能**用 `/` 开头的绝对路径——那会跳到域名根。
+    """
     rep = str(m.get("report", "index.html"))
-    if m.get("external") or rep.startswith(("http://", "https://", "/")):
+    if m.get("external") or "/" in rep:
         return rep
     return "books/%s/%s" % (m.get("id", ""), rep)
 
@@ -297,6 +305,17 @@ def main(argv=None) -> int:
 
     books_dir = Path(args.books) if args.books else BOOKS_DIR
     manifests, warnings = load_manifests(books_dir)
+
+    # 断链校验：卡片「打开报告」指向的文件必须真实存在（站外地址不校验）。
+    # 踩过的坑：明书产物下沉到 ming/ 后，manifest 仍写 index.html，
+    # 门户照旧拼成 books/ming/index.html —— 页面能生成、测试也能过，但点进去是 404。
+    for m in manifests:
+        href = report_href(m)
+        if href.startswith(("http://", "https://")):
+            continue
+        if not (BASE / href).exists():
+            warnings.append("卡片链接指向的文件不存在：%s → %s" % (m.get("id"), href))
+
     for w in warnings:
         print("[warn]", w)
 
@@ -316,6 +335,9 @@ def main(argv=None) -> int:
             return 2
 
     if args.check:
+        if warnings:
+            print("[check] 失败：%d 个问题（见上）" % len(warnings))
+            return 1
         print("[check] OK（未落盘）→ %s" % out)
         return 0
 
