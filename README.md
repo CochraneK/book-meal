@@ -4,7 +4,7 @@
 
 ## 在线查看
 
-GitHub Pages：`https://cochranek.github.io/ming/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版
+GitHub Pages：`https://cochranek.github.io/book-meal/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版，站内目录名仍是 `ming/`，与仓库名无关）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版
 
 ## 仓库结构（多书聚合平台）
 

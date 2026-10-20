@@ -66,7 +66,7 @@ def render_readme(source: str) -> str:
         "基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库，报告位于 `/ming/`。本仓库整体是**多书拆解聚合平台**：根路径为书库门户（`src/build_hub.py` 扫 `books/*/manifest.json` 生成），每本书一份自包含报告置于 `books/<id>/`；新增书籍只需放入目录并附一份 `manifest.json`，无需改动平台代码（见 `docs/add_a_book.md`）。",
         text, count=1, flags=re.MULTILINE,
     )
-    text = _replace_one(text, r"^GitHub Pages：.*$", "GitHub Pages：`https://cochranek.github.io/ming/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版", "在线入口")
+    text = _replace_one(text, r"^GitHub Pages：.*$", "GitHub Pages：`https://cochranek.github.io/book-meal/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版，站内目录名仍是 `ming/`，与仓库名无关）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版", "在线入口")
     text = text.replace("python src/build.py                 # 构建全书单文件 index.html", "python src/build.py                 # 构建全书单文件 standalone.html")
     text = re.sub(
         r"^\| `--target standalone\\\|web` \|.*$",

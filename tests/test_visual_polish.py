@@ -94,8 +94,9 @@ def test_web_target_reports_all_assets():
 
 def test_service_worker_cache_bumped_for_platform_switch():
     """2026-10-20 仓库改造为多书聚合平台：根路径由明书报告变为书库门户，
-    明书报告下沉 /ming/、资源路径由 /assets/ 变为 /ming/assets/。
+    明书报告下沉 /ming/、资源路径由 /assets/ 变为 /ming/assets/；
+    随后仓库由 ming 改名为 book-meal，缓存前缀同步改为 book-meal-。
     SW 缓存必须 bump，以清空旧命名空间下的过期条目。"""
     sw = (B.BASE / "sw.js").read_text(encoding="utf-8")
-    assert "CACHE_PREFIX + 'v10'" in sw
+    assert "CACHE_PREFIX + 'v11'" in sw
     assert "多书聚合平台" in sw

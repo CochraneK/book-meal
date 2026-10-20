@@ -13,8 +13,11 @@
 //     + 地点卡把「别称」与「书中提及」拆成两块渲染（app.js 有变更，必须 bump）。
 // v10：仓库改造为多书聚合平台——根路径从明书报告变为书库门户，明书报告下沉 /ming/，
 //     资源路径由 /assets/ 变为 /ming/assets/。bump 以清空旧命名空间下的过期缓存。
-const CACHE_PREFIX = 'ming-report-';
-const CACHE = CACHE_PREFIX + 'v10';
+// v11：仓库由 CochraneK/ming 改名为 CochraneK/book-meal，Pages 站点根由 /ming/ 变为
+//     /book-meal/。缓存前缀同步改为 book-meal- 并 bump（旧 URL 已不可达，此处仅为
+//     命名空间一致性与清理残留）。
+const CACHE_PREFIX = 'book-meal-';
+const CACHE = CACHE_PREFIX + 'v11';
 
 self.addEventListener('install', () => { self.skipWaiting(); });
 

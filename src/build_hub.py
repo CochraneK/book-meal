@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """多书聚合门户生成器（平台层）。
 
-把 CochraneK/ming 从「单书站」改造为「多书拆解聚合平台」后，
+把 CochraneK/book-meal（原 CochraneK/ming）从「单书站」改造为「多书拆解聚合平台」后，
 仓库根目录的 ``index.html`` 不再是某本书的报告，而是由本脚本生成的**书库门户**：
 
     books/
@@ -95,7 +95,7 @@ def report_href(m) -> str:
     含 `/` 则视为站内相对路径原样使用，供报告不在 `books/<id>/` 下的情形
     （例：明书下沉到仓库根 `ming/`，写作 `ming/index.html`）。
 
-    路径一律相对门户页（它就在仓库根）解析。本站挂在 GitHub Pages 子路径 `/ming/`，
+    路径一律相对门户页（它就在仓库根）解析。本站挂在 GitHub Pages 子路径 `/book-meal/`
     **不能**用 `/` 开头的绝对路径——那会跳到域名根。
     """
     rep = str(m.get("report", "index.html"))
