@@ -11,6 +11,9 @@
 books/<id>/index.html
 ```
 
+> 本书库对应一份用户级 skill：`book-teardown-pipeline`（六阶段流水线 + 纪律 + 踩坑清单），
+> 从「拿到源文本」到「登记进书库」的完整流程见它，本文档只讲本仓的登记步骤。
+
 `<id>` 用小写英文字母 / 数字 / 连字符（如 `tiancai`、`feitu`、`swdw`）。
 若报告是「骨架 + 分层资源」形态，则放 `books/<id>/index.html` + `books/<id>/assets/`。
 
@@ -19,7 +22,15 @@ books/<id>/index.html
 
 ## 二、写 manifest
 
-新建 `books/<id>/manifest.json`：
+一键脚手架（建目录 + 拷报告 + 算 order + 写 manifest，来自 `book-teardown-pipeline` skill）：
+
+```bash
+python "C:/Users/cunyi/.workbuddy/skills/book-teardown-pipeline/scripts/new_book.py" \
+  --hub . --id <id> --title "书名" --author "作者" --kind <kind> \
+  --report "D:/…/out/<id>.html" --chapters N
+```
+
+手工写也一样，新建 `books/<id>/manifest.json`：
 
 ```json
 {
