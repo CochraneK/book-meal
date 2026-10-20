@@ -59,6 +59,11 @@ jobs:
       - name: 聚合门户校验（不落盘）
         run: python src/build_hub.py --check
 
+      # README 是生成物：模板在 src/sync_readme.py，数字来自工件数据。
+      # 手改 README 而不改模板会让下次生成悄悄吃掉改动，故在此拦住。
+      - name: README 与模板一致
+        run: python src/sync_readme.py --check
+
       - name: 数据审计
         run: python src/audit_final.py --quick
 
@@ -68,4 +73,4 @@ jobs:
         run: python src/build.py --scope full --out .ci/index.html --quiet
 
       - name: 无头浏览器自检
-        run: python .dump/_browser_check.py .ci/index.html
+        run: python tests/browser_check.py .ci/index.html

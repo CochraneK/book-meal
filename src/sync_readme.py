@@ -1,10 +1,24 @@
 # -*- coding: utf-8 -*-
-"""让 README 的公开规模口径与最终模型 / 当前交付架构保持一致。"""
+"""生成仓库 README（模板渲染 + 工件数据注入）。
+
+README 是**生成物**：改文案请改本文件的 ``TEMPLATE``，然后运行
+``python src/sync_readme.py``；直接手改 README.md 会在下次运行时被覆盖
+（踩过两次的坑：手改的内容被脚本无声吃掉）。
+
+用法::
+
+    python src/sync_readme.py            # 重新生成 README.md
+    python src/sync_readme.py --check    # 只校验是否一致（CI 用，不一致 exit 1）
+
+数据来源（不写死数字）：
+- 书单与平台总览：``books/*/manifest.json``（与门户 ``src/build_hub.py`` 同一份真值）；
+- 《明朝那些事儿》深度指标：``generate_report.build_scope("full")`` 的最终模型；
+- 语录条目数：``data/character_quotes.json``。
+"""
 from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -12,95 +26,299 @@ BASE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import generate_report as G  # noqa: E402
+import build_hub as HUB  # noqa: E402
 
 README = BASE / "README.md"
 QUOTES = BASE / "data" / "character_quotes.json"
+PAGES = "https://cochranek.github.io/book-meal"
+REPO = "CochraneK/book-meal"
+
+KIND_LABELS = HUB.KIND_LABELS
 
 
-def _replace_one(text: str, pattern: str, replacement: str, label: str) -> str:
-    new, count = re.subn(pattern, replacement, text, count=1, flags=re.MULTILINE)
-    if count != 1:
-        raise SystemExit("README 同步锚点异常（%s）：匹配 %d 处" % (label, count))
-    return new
+# ─────────────────────────────────────────────────────────────
+# 模板。占位符形如 @@NAME@@，由 render() 逐个替换。
+# ─────────────────────────────────────────────────────────────
+TEMPLATE = """# Book-Meal · 拆书知识库
+
+**把一本长篇小说，拆成一份能查、能点、能离线带走的知识库。**
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-在线书库-8a2f2f?logo=githubpages)](@@pages@@/)
+[![CI](https://github.com/@@repo@@/actions/workflows/ci.yml/badge.svg)](https://github.com/@@repo@@/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.13-3776ab?logo=python)](https://www.python.org/)
+[![依赖](https://img.shields.io/badge/dependencies-none-brightgreen)]()
+[![形态](https://img.shields.io/badge/报告-单文件离线-blueviolet)]()
+
+**@@book_count@@ 本书 · @@total_chapters@@ 章 · @@total_characters@@ 人物 · @@total_events@@ 事件 · @@total_relations@@ 关系**
+
+[打开书库 →](@@pages@@/)
+
+---
+
+## 这是什么
+
+一个**多书拆解聚合平台**。每本书从原文抽取实体与关系，聚合成知识图谱，
+最终产出一份**单文件 HTML 报告**：不引任何 CDN、不需要服务端，双击就能打开，
+断网也能用。
+
+根路径是书库门户，点卡片进各书报告。新增一本书 = 放一个目录 + 一份
+`manifest.json`，平台代码和 CI 都不用改。
+
+## 在线入口
+
+| 入口 | 地址 | 说明 |
+|---|---|---|
+| 书库门户 | [`@@pages@@/`](@@pages@@/) | 全部书目卡片，按类型筛选 |
+| 《明朝那些事儿》 | [`@@pages@@/ming/`](@@pages@@/ming/) | 拆得最深的一本，12 个视图 |
+| 离线单文件 | [`@@pages@@/standalone.html`](@@pages@@/standalone.html) | 约 5 MB，右键另存即可带走 |
+
+## 书单
+
+<!-- 下表由 src/sync_readme.py 从 books/*/manifest.json 生成，勿手改 -->
+
+| 书名 | 作者 | 类型 | 章 | 人物 | 事件 | 关系 | 报告 |
+|---|---|---|--:|--:|--:|--:|---|
+@@book_rows@@
+
+合计 **@@book_count@@ 本 · @@total_chapters@@ 章 · @@total_characters@@ 人物 · @@total_events@@ 事件 · @@total_relations@@ 关系**。
+门户只读各书的 `manifest.json`，不加载任何一本书的 payload，因此永远轻量。
+
+## 为什么不一样
+
+- **坐标落在真实世界**——书里的地名解析到真实经纬度，可直接做「圣地巡礼」；
+  未定位的一律标「待核验」而不硬填坐标：对巡礼场景，错误坐标比缺失更有害。
+- **关系网络有两个口径**——`人物图` 只画人物↔人物，`实体图` 把地点/机构/政权
+  也画进来。两者规模不同、图例不同，页面按当前模式分别渲染，绝不混读。
+- **地址栏即状态**——`person=` `event=` `place=` `era=` `from/to=` 全部写进 URL，
+  复制地址就能分享到同一张卡；搜索支持别名（`崇祯` → 朱由检）。
+- **失败必须可见**——地图瓦片、CDN、Service Worker 任一步失败，页面底部弹出
+  统一提示条（说明故障 + 重试 + 可关闭），不再静默白屏。
+- **离线优先**——CSS/JS/数据全内联进单文件；地图在瓦片全失败时自动退回 SVG 点位图，
+  点位仍可点击查看书中介绍。
+- **数据诚实披露**——未知年份的事件单独成组，未定位地点如实标注，覆盖率与
+  缺口都写在页面上，不拿推断充数据。
+
+## 《明朝那些事儿》：目前拆得最深的一本
+
+七部 **@@ming_chapters@@ 章**全文抽取，产出 **@@ming_characters@@ 人物 / @@ming_events@@ 事件 /
+@@ming_relations@@ 关系 / @@ming_locations@@ 地点（已定位 @@ming_located@@，@@ming_located_pct@@）**，
+其中 @@ming_quotes@@ 位人物的书内语录逐条经原文核实。12 个视图：
+
+**全局叙事** `总览` `分布` `时间轴` `帝王` `年谱`　·　**实体索引** `人物` `地点` `事件` `关系`　·　**探索分析** `图谱` `地图` `洞察`
+
+- **地图**：圣地巡礼底图 + 郑和下西洋航线子视图，离线降级为 SVG 点位图。
+- **人物**：扑克牌尺寸卡片（63×88mm，可翻面），三套主题，可一键生成打印页。
+- **洞察**：18 学科 + 1 综合收束的跨学科长文，文内引用 APA 7，参考文献经检索核实。
+- **分布**：三层诊断（分部 → 章节 → 结果），同时给出总量与每万字密度。
+
+## 快速开始
+
+```powershell
+python -m http.server 8765 --bind 127.0.0.1   # 起个静态服务
+# 打开 http://127.0.0.1:8765/index.html      # 书库门户
+```
+
+报告是单文件静态 HTML，直接双击也能开（本地服务可避开个别浏览器对 `file://` 的限制）。
+
+重新生成全部交付物：
+
+```powershell
+python src/merge.py            # 聚合（增量勘误层不会被覆盖）
+python src/build.py            # 构建明书离线单文件 standalone.html
+python src/build_hub.py        # 重建书库门户 index.html
+python tests/run_tests.py      # 单元测试（纯标准库，无第三方依赖）
+```
+
+## 仓库结构
+
+```
+index.html            书库门户（src/build_hub.py 生成，勿手改）
+standalone.html       明书完整离线单文件（src/build.py 生成）
+sw.js                 Service Worker（同源 stale-while-revalidate）
+books/                每本书一个目录
+  <id>/manifest.json  书目名片：书名/作者/类型/指标/入口/更新时间
+  <id>/index.html     该书报告（单文件）
+ming/                 《明朝那些事儿》分层版报告（index.html + assets/，CI 生成）
+src/                  平台与构建脚本
+  build_hub.py        门户生成器（扫 books/*/manifest.json）
+  build.py            统一构建入口（--target standalone|web、--check）
+  merge.py            数据聚合 / generate_report.py 最终模型
+  audit_final.py      深审（ERROR 即退出非 0）
+  validators.py       结构不变量（12 组规则）
+  core/               共享核心：年份解析/经纬度校验/势力结构化/图布局
+web/                  前端真源：template/index.html + css/app.css + js/app.js
+data/                 聚合数据源与增量勘误层（data.json 是单一数据源）
+tests/                单元测试 + tests/browser_check.py（无头浏览器自检）
+docs/                 文档：docs/add_a_book.md（新增一本书）、docs/history/
+legacy/               已停用脚本归档（分片时代遗留，见 legacy/README.md）
+```
+
+## 一本书是怎么拆出来的
+
+```
+原文 → 分章 → 抽取（人物/地点/事件/关系/时间）→ 聚合 → 校验 → 报告
+```
+
+1. **分章**：按目录切分，保留章节长度用于密度诊断；
+2. **抽取**：逐章产出五元组候选，`data/extract_raw.json` 存原始结果；
+3. **聚合**：`src/merge.py` 合并为 `data/data.json`，叠加人工勘误层
+   （`manual_corrections.json` / `manual_lifespans.json` / `geo_annotations.json` …）；
+4. **校验**：三层门禁（下表）；
+5. **报告**：`src/build.py` 把 `web/` 的模板/样式/脚本内联成单文件。
+
+重跑聚合不会丢人工层——那几个 `manual_*.json` 与 `geo_annotations.json` 是可持续维护的增量。
+
+## 质量门禁
+
+| 层 | 命令 | 拦什么 |
+|---|---|---|
+| 构建门禁 | `python src/build.py --check` | 结构不变量 12 组规则 + 内存渲染自检；有 ERROR 直接退出码 2，不产半成品 |
+| 深审 | `python src/audit_final.py` | 业务规则：geo 对账、同名异地、在位区间衔接、分部子图 |
+| 单元测试 | `python tests/run_tests.py` | 共享核心、数据不变量、模板拆分等价性、占位符唯一性、错误 UI 锚点 |
+| 浏览器自检 | `python tests/browser_check.py <产物>` | 本机 Chrome `--dump-dom` 跑 11 个场景（deep link、搜索高亮、地图、双模式图…）+ 启动守卫兜底 |
+
+CI 每次 push/PR 还会先跑**版权合规巡检**（原书全文一旦入库即失败）与
+**模块遮蔽巡检**（任何 `.py` 与标准库同名都会污染 `sys.path[0]`，仅存在就能让 Python 崩掉）。
+
+## 数据纪律
+
+三条铁律，写在代码里也写在流程里：
+
+1. **只用工件数据**——不凭记忆补情节，不臆造坐标与年份，**宁可留空不可猜错**；
+2. **引语必须原文命中**——人物语录先在原书全文里检索到原句才收录，0 命中即弃用；
+3. **文献未核实不写入**——跨学科解读的每条参考文献都经检索核实。
+
+**版权**：原书全文与含正文的中间产物**不入库、不发布**（`.gitignore` 已排除，
+CI 有巡检）。仓库只发布脱敏后的章节索引与聚合结果。换机接续时这两个文件需手动拷贝。
+
+## 新增一本书
+
+放 `books/<id>/` + 一份 `manifest.json`，跑一次 `python src/build_hub.py` 即可，
+平台代码与 CI 都不用改。完整手册见 [`docs/add_a_book.md`](docs/add_a_book.md)。
+
+## 路线图
+
+- [ ] 明书按需加载恢复（2026-10-01 单体 `data.js` 重构后暂停，现状首屏约 5 MB）
+- [ ] 人物卡语录扩面（现 @@ming_quotes@@ 人 → 目标覆盖高频人物，须原文命中）
+- [ ] 洞察长文与图谱实体互跳
+- [ ] 未定位地点与未知年份事件的人工考据（按提及频次排序推进）
+
+历史过程与踩坑记录在 `.workbuddy/`（工程笔记）与 `docs/history/`（重构方案、自查与验收清单）。
+
+## 说明
+
+本项目是个人知识工程：书籍版权归原作者与出版社所有，报告仅作结构化索引与
+学习笔记用途，不分发原文，不用于任何商业场景。
+
+<!-- README_GENERATED_BY src/sync_readme.py -->
+"""
+
+
+def _fmt(n) -> str:
+    try:
+        return "{:,}".format(int(n))
+    except (TypeError, ValueError):
+        return str(n)
 
 
 def _quote_count() -> int:
     with QUOTES.open(encoding="utf-8") as f:
         data = json.load(f)
-    return sum(1 for key, value in data.items() if not str(key).startswith("_") and str(value).strip())
+    return sum(1 for k, v in data.items() if not str(k).startswith("_") and str(v).strip())
 
 
-def render_readme(source: str) -> str:
-    model = G.build_scope("full")
-    m = model["metrics"]
-    chapters = int(m["chapters"]);locations = int(m["locations"]);located = int(m["locatedLocations"])
-    events = int(m["events"]);timed = int(m["timedEvents"]);unknown = int(m["unknownEvents"])
-    characters = int(m["characters"]);relations = int(m["relations"])
-    unlocated = locations - located;located_pct = 100.0 * located / max(locations, 1);quotes = _quote_count()
+def _hub_url(m) -> str:
+    """书单里「报告」列的链接：一律用 Pages 绝对地址（README 在 GitHub 上渲染，
+    相对路径会被解析到 github.com/blob 而不是 Pages）。"""
+    href = HUB.report_href(m)
+    return "%s/%s" % (PAGES, href)
 
-    text = source
-    rows = {
-        "来源章节": "| 来源章节 | %d | 七部全部章节，抽取覆盖 100%% |" % chapters,
-        "地点": "| 地点 | %d（已定位 %d，%.1f%%） | 未定位的 %d 个如实标为「待核验」，不硬填坐标 |" % (locations, located, located_pct, unlocated),
-        "人物": "| 人物 | %d | 含出场章节、别名、势力、身份 |" % characters,
-        "事件": "| 事件 | %d（有年份 %d） | 未知年份 %d 件单独保留，不混入历史顺序 |" % (events, timed, unknown),
-        "关系": "| 关系 | %d | 含亲属、政治、军事、派系等类别 |" % relations,
+
+def _book_rows(manifests) -> str:
+    rows = []
+    for m in manifests:
+        mt = m.get("metrics") or {}
+        kind = KIND_LABELS.get(str(m.get("kind", "other")), str(m.get("kind", "other")))
+        rows.append(
+            "| **%(title)s** | %(author)s | %(kind)s | %(ch)s | %(c)s | %(e)s | %(r)s | [打开](%(url)s) |"
+            % {
+                "title": m.get("title", ""),
+                "author": m.get("author", "—"),
+                "kind": kind,
+                "ch": _fmt(m.get("chapters", 0)),
+                "c": _fmt(mt.get("characters", 0)),
+                "e": _fmt(mt.get("events", 0)),
+                "r": _fmt(mt.get("relations", 0)),
+                "url": _hub_url(m),
+            }
+        )
+    return "\n".join(rows)
+
+
+def render(source: str = None) -> str:
+    manifests, warnings = HUB.load_manifests()
+    if warnings:
+        print("[warn] 书目清单有问题：%s" % warnings, file=sys.stderr)
+    manifests.sort(key=lambda m: (m["_order"], str(m.get("id", ""))))
+
+    totals = {
+        "characters": sum(int((m.get("metrics") or {}).get("characters") or 0) for m in manifests),
+        "events": sum(int((m.get("metrics") or {}).get("events") or 0) for m in manifests),
+        "relations": sum(int((m.get("metrics") or {}).get("relations") or 0) for m in manifests),
     }
-    for label, line in rows.items():
-        text = _replace_one(text, r"^\| %s \|.*$" % re.escape(label), line, "规模表/%s" % label)
+    total_chapters = sum(int(m.get("chapters") or 0) for m in manifests)
 
-    nav = (
-        "**全局叙事**：`总览` `分布` `时间轴` `帝王` `年谱`　·　"
-        "**实体索引**：`人物` `地点` `事件` `关系`　·　"
-        "**探索分析**：`图谱` `地图` `洞察`"
-    )
-    text = _replace_one(text, r"^(?:`总览` .*`洞察`|\*\*全局叙事\*\*：.*)$", nav, "V2 导航摘要")
-    if "<!-- README_V2_JOURNEYS -->" not in text:
-        text = text.replace(nav + "\n", nav + "\n\n<!-- README_V2_JOURNEYS -->\n> V2 首页另提供三条问题导向的探索路径：**人物脉络**、**时间脉络**、**空间与结构**；顶部导航与深链仍使用原有 12 个 view id。\n", 1)
+    # 明书深度指标：直接取最终模型，与页面显示同一口径
+    metrics = G.build_scope("full")["metrics"]
+    locations = int(metrics["locations"])
+    located = int(metrics["locatedLocations"])
 
-    text = _replace_one(text, r"^- \*\*地点\*\*：\d+ 张地点卡", "- **地点**：%d 张地点卡" % locations, "地点视图数量")
-    text = _replace_one(text, r"（\d+ 位(?:核心)?人物的语录均经原文核实，见 `data/character_quotes\.json`）", "（%d 位人物的语录均经原文核实，见 `data/character_quotes.json`）" % quotes, "人物语录覆盖")
+    tokens = {
+        "pages": PAGES,
+        "repo": REPO,
+        "book_count": len(manifests),
+        "total_characters": _fmt(totals["characters"]),
+        "total_events": _fmt(totals["events"]),
+        "total_relations": _fmt(totals["relations"]),
+        "total_chapters": _fmt(total_chapters),
+        "book_rows": _book_rows(manifests),
+        "ming_chapters": _fmt(metrics["chapters"]),
+        "ming_characters": _fmt(metrics["characters"]),
+        "ming_events": _fmt(metrics["events"]),
+        "ming_relations": _fmt(metrics["relations"]),
+        "ming_locations": _fmt(locations),
+        "ming_located": _fmt(located),
+        "ming_located_pct": "%.1f%%" % (100.0 * located / max(locations, 1)),
+        "ming_quotes": _fmt(_quote_count()),
+    }
 
-    text = re.sub(
-        r"^基于《明朝那些事儿》七部 156 章全文抽取整理的.*$",
-        "基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库，报告位于 `/ming/`。本仓库整体是**多书拆解聚合平台**：根路径为书库门户（`src/build_hub.py` 扫 `books/*/manifest.json` 生成），每本书一份自包含报告置于 `books/<id>/`；新增书籍只需放入目录并附一份 `manifest.json`，无需改动平台代码（见 `docs/add_a_book.md`）。",
-        text, count=1, flags=re.MULTILINE,
-    )
-    text = _replace_one(text, r"^GitHub Pages：.*$", "GitHub Pages：`https://cochranek.github.io/book-meal/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版，站内目录名仍是 `ming/`，与仓库名无关）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版", "在线入口")
-    text = text.replace("python src/build.py                 # 构建全书单文件 index.html", "python src/build.py                 # 构建全书单文件 standalone.html")
-    text = re.sub(
-        r"^\| `--target standalone\\\|web` \|.*$",
-        "| `--target standalone\\|web` | 默认 `standalone`＝CSS/JS/DATA 全内联到 `standalone.html`；`web`＝输出分层骨架与 `assets/`，由发布流程落到 `ming/`。门户根 `index.html` 不由本脚本产生，而由 `src/build_hub.py` 扫 `books/*/manifest.json` 生成 |",
-        text, count=1, flags=re.MULTILINE,
-    )
-    text = re.sub(
-        r"^`standalone` 构建.*$",
-        "`standalone` 构建内联完整最终 DATA 为单文件；`web` 构建产出分层骨架 + `assets/`（`app.css` / `app.js` / 单体 `data.js`），由发布同步工作流落到 `ming/` 下。门户与各书报告的聚合关系见 `docs/add_a_book.md`。",
-        text, count=1, flags=re.MULTILINE,
-    )
-
-    marker = "<!-- README_STATS_SYNC -->"
-    note = "> 上表的章节 / 地点 / 人物 / 事件 / 关系统计由 `src/sync_readme.py` 从最终模型自动刷新；发布同步工作流会同时维护书库门户（根 `index.html`）、`ming/` 分层版与 `standalone.html` 离线版。"
-    if marker not in text:
-        anchor = "| 年谱 | 165 人 | 主要人物生卒横向展开，与年号对位 |\n"
-        if anchor not in text: raise SystemExit("README 同步锚点异常（规模表尾部）")
-        text = text.replace(anchor, anchor + "\n" + marker + "\n" + note + "\n", 1)
-    else:
-        text = _replace_one(text, r"^> 上表的章节 / 地点 / 人物 / 事件 / 关系统计由 `src/sync_readme\.py`.*$", note, "V10 发布说明")
+    text = source if source is not None else TEMPLATE
+    for key, value in tokens.items():
+        text = text.replace("@@%s@@" % key, str(value))
     return text
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description="同步 README 中的最终模型统计与交付说明")
-    parser.add_argument("--check", action="store_true", help="只检查 README 是否已同步")
+    parser = argparse.ArgumentParser(description="生成 README.md（模板 + 工件数据）")
+    parser.add_argument("--check", action="store_true", help="只检查 README 是否与模板一致")
     args = parser.parse_args(argv)
-    source = README.read_text(encoding="utf-8");updated = render_readme(source)
+
+    updated = render()
+    for marker in ("@@", "{esc(", "{" + "{"):
+        if marker in updated:
+            print("[error] 产物残留未替换占位符：%s" % marker, file=sys.stderr)
+            return 2
+
+    source = README.read_text(encoding="utf-8") if README.exists() else ""
     if updated == source:
-        print("README 已与最终模型和 V10 交付架构一致");return 0
+        print("README 已是最新（%d 字符）" % len(updated))
+        return 0
     if args.check:
-        print("README 与最终模型或 V10 交付架构不一致；请运行 python src/sync_readme.py", file=sys.stderr);return 1
+        print("README 与模板/工件数据不一致，请运行 python src/sync_readme.py", file=sys.stderr)
+        return 1
+
     README.write_text(updated, encoding="utf-8")
-    print("README 已同步：%d → %d 字符" % (len(source), len(updated)))
+    print("README 已生成：%d → %d 字符" % (len(source), len(updated)))
     return 0
 
 

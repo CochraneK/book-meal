@@ -1,5 +1,0 @@
-AUDIT.md
-paper
-PAPER_PLAN.md
-_patch_generic.py
-_stats.py

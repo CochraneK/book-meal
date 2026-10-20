@@ -53,9 +53,9 @@ jobs:
         run: python src/sync_experience.py
 
       - name: 同步 README 最终模型
-        # 注：sync_readme_v11/v12/v13 是旧 V11–V13 分片架构的遗留，随 2026-10-01
-        # 「单体 data.js」重构已失效（README 锚点不存在，--check 必 FAIL），故不纳入本流程；
-        # 相关脚本与 README 说明待后续清理，见 README「已知待修」。
+        # src/sync_readme.py 是模板渲染器：README 全文由它生成，数字来自
+        # books/*/manifest.json 与明书最终模型。旧 sync_readme_v11/v12/v13
+        # （分片时代遗留）已归档到 legacy/，不再纳入本流程。
         run: python src/sync_readme.py
 
       - name: 构建双交付产物 + 聚合门户

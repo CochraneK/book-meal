@@ -1,326 +1,175 @@
-# 明朝那些事儿知识库
+# Book-Meal · 拆书知识库
 
-基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库，报告位于 `/ming/`。本仓库整体是**多书拆解聚合平台**：根路径为书库门户（`src/build_hub.py` 扫 `books/*/manifest.json` 生成），每本书一份自包含报告置于 `books/<id>/`；新增书籍只需放入目录并附一份 `manifest.json`，无需改动平台代码（见 `docs/add_a_book.md`）。
+**把一本长篇小说，拆成一份能查、能点、能离线带走的知识库。**
 
-## 在线查看
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-在线书库-8a2f2f?logo=githubpages)](https://cochranek.github.io/book-meal/)
+[![CI](https://github.com/CochraneK/book-meal/actions/workflows/ci.yml/badge.svg)](https://github.com/CochraneK/book-meal/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.13-3776ab?logo=python)](https://www.python.org/)
+[![依赖](https://img.shields.io/badge/dependencies-none-brightgreen)]()
+[![形态](https://img.shields.io/badge/报告-单文件离线-blueviolet)]()
 
-GitHub Pages：`https://cochranek.github.io/book-meal/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版，站内目录名仍是 `ming/`，与仓库名无关）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版
+**4 本书 · 1,018 章 · 1,805 人物 · 6,938 事件 · 4,426 关系**
 
-## 仓库结构（多书聚合平台）
+[打开书库 →](https://cochranek.github.io/book-meal/)
 
-```
-index.html              书库门户（src/build_hub.py 生成，勿手改）
-standalone.html         明书完整离线单文件（build.py --target standalone 生成）
-sw.js                   Service Worker（同源 stale-while-revalidate）
-books/
-  <id>/
-    manifest.json       书目名片：书名 / 作者 / 类型 / 指标 / 入口 / 更新时间
-    index.html          该书报告（单文件，或分层骨架）
-    assets/             分层资源（可选）
-  ming/                 《明朝那些事儿》（index.html + assets/，由 CI 生成）
-  tiancai/              《天才基本法》
-  feitu/                《我在废土世界扫垃圾》
-  swdw/                 《小说维度晋升，我在天幕当评委》
-src/build_hub.py        门户生成器（扫 books/*/manifest.json → 根 index.html）
-docs/add_a_book.md      新增一本书的运行手册
-```
+---
 
-门户指标取自各书 `manifest.json` 的 `metrics`，不加载任何一本书的 payload，因此永远轻量。
-新增一本书 = 放入 `books/<id>/` + 一份 `manifest.json`，平台代码与 CI 都不用改。
+## 这是什么
 
-## 当前规模
+一个**多书拆解聚合平台**。每本书从原文抽取实体与关系，聚合成知识图谱，
+最终产出一份**单文件 HTML 报告**：不引任何 CDN、不需要服务端，双击就能打开，
+断网也能用。
 
-| 实体 | 数量 | 说明 |
+根路径是书库门户，点卡片进各书报告。新增一本书 = 放一个目录 + 一份
+`manifest.json`，平台代码和 CI 都不用改。
+
+## 在线入口
+
+| 入口 | 地址 | 说明 |
 |---|---|---|
-| 来源章节 | 156 | 七部全部章节，抽取覆盖 100% |
-| 地点 | 583（已定位 553，94.9%） | 未定位的 30 个如实标为「待核验」，不硬填坐标 |
-| 人物 | 1231 | 含出场章节、别名、势力、身份 |
-| 事件 | 1106（有年份 1104） | 未知年份 2 件单独保留，不混入历史顺序 |
-| 关系 | 2324 | 含亲属、政治、军事、派系等类别 |
-| 在位年表 | 17 帝 | 洪武—崇祯，色带与年谱、大事热度对齐 |
-| 年谱 | 165 人 | 主要人物生卒横向展开，与年号对位 |
+| 书库门户 | [`https://cochranek.github.io/book-meal/`](https://cochranek.github.io/book-meal/) | 全部书目卡片，按类型筛选 |
+| 《明朝那些事儿》 | [`https://cochranek.github.io/book-meal/ming/`](https://cochranek.github.io/book-meal/ming/) | 拆得最深的一本，12 个视图 |
+| 离线单文件 | [`https://cochranek.github.io/book-meal/standalone.html`](https://cochranek.github.io/book-meal/standalone.html) | 约 5 MB，右键另存即可带走 |
 
-<!-- README_STATS_SYNC -->
-> 上表的章节 / 地点 / 人物 / 事件 / 关系统计由 `src/sync_readme.py` 从最终模型自动刷新；发布同步工作流会同时维护书库门户（根 `index.html`）、`ming/` 分层版与 `standalone.html` 离线版。
+## 书单
 
-## 报告视图（12 个）
+<!-- 下表由 src/sync_readme.py 从 books/*/manifest.json 生成，勿手改 -->
 
-**全局叙事**：`总览` `分布` `时间轴` `帝王` `年谱`　·　**实体索引**：`人物` `地点` `事件` `关系`　·　**探索分析**：`图谱` `地图` `洞察`
+| 书名 | 作者 | 类型 | 章 | 人物 | 事件 | 关系 | 报告 |
+|---|---|---|--:|--:|--:|--:|---|
+| **明朝那些事儿** | 当年明月 | 历史 | 156 | 1,231 | 1,106 | 2,324 | [打开](https://cochranek.github.io/book-meal/ming/index.html) |
+| **天才基本法** | 长洱 | 现代现实 | 221 | 140 | 1,399 | 482 | [打开](https://cochranek.github.io/book-meal/books/tiancai/index.html) |
+| **我在废土世界扫垃圾** | 有花在野 | 幻想世界 | 439 | 379 | 4,386 | 1,606 | [打开](https://cochranek.github.io/book-meal/books/feitu/index.html) |
+| **小说维度晋升，我在天幕当评委** | 白水瓶子 | 幻想世界 | 202 | 55 | 47 | 14 | [打开](https://cochranek.github.io/book-meal/books/swdw/index.html) |
 
-<!-- README_V2_JOURNEYS -->
-> V2 首页另提供三条问题导向的探索路径：**人物脉络**、**时间脉络**、**空间与结构**；顶部导航与深链仍使用原有 12 个 view id。
+合计 **4 本 · 1,018 章 · 1,805 人物 · 6,938 事件 · 4,426 关系**。
+门户只读各书的 `manifest.json`，不加载任何一本书的 payload，因此永远轻量。
 
-- **总览**：规模指标与数据状态（含未定位地点、未知年份等诚实披露）。
-- **分布**：三层诊断——分部层比较四类抽取量，章节层同时显示总量与每万字密度，结果层展示「章节来源 → 实体 → 关系网络 → 来源追溯」。章节级计数按单章内唯一姓名/古名/事件名统计，实体总量按合并后的全局实体统计，**两个口径不混用**。
-- **图谱**：人物出场热力图（按章节展开高频人物轨迹）、事件类型演变（分部共享尺度）、核心人物关系网络（重复关系聚合到有限邻居）。默认只展示高频人物与主要事件类型，避免挤成不可读的图。关系网络第三块支持**双模式切换**（见下方「关系图双模式」）：「全书人物图」是 **686 人 / 1403 条人物关系**的力导向图（浏览器端实时模拟，可拖拽、缩放、点击高亮邻域），「全书实体图」把地点/机构/政权等非人物端点也作为节点画进来（**741 个实体 / 1467 条关系**，按类型着色并配类型图例）。
-- **地点**：583 张地点卡，支持按古名/今址/别名/区域搜索，同城合并（如北平/顺天府/北京归为一组）。
-- **地图**：圣地巡礼地图，聚焦已定位地点；郑和下西洋航线为独立子视图（停靠点面板附书中相关事件，可点击）。瓦片主源 Esri、失败自动回退 OpenStreetMap，**离线时自动退回 SVG 点位图**（点位仍可点击查看书中介绍）；Leaflet 在首屏空闲时后台预热，点开基本零等待；Service Worker 让重复访问秒开。任一环节失败都会在页面底部弹出**统一提示条**（说明故障 + 「重试」+ 可关闭），不再静默白屏。
-- **人物**：扑克牌尺寸（63×88mm）卡片，**正反面等高同风格**，支持墨玉/宣纸/朱砂三套主题切换；卡背以「书内语录」替代关系行（66 位人物的语录均经原文核实，见 `data/character_quotes.json`）；可翻面、可查看详情、可生成打印页。搜索框**只匹配姓名字段**，无匹配时显示空态（不回落为全量）。势力字段由 `src/core/faction_profile.py` 在构建时**一次性结构化为 朝代/政权/时期/派系/机构/身份类别/官职/籍贯/科举**，详情页按结构化字段分组展示并保留「原串」回查行（见下方「势力字段结构化」）。
-- **事件 / 关系**：全量分页表格，支持按类别筛选与关键词搜索；关系视图顶部会标明当前范围策略（全书 = 全部关系 / 分部 = 诱导子图）。
-- **时间轴**：按数值年份排序，年份待考事件单独成组保留；顶部支持**起止年份区间筛选**（如 1400—1450），区间会写回地址栏（`from`/`to`）便于分享。
-- **帝王**：十七段年号在位色带，年号标签在色带上下交替错行对齐（短命年号不会糊成一团）。
-- **年谱**：165 位主要人物生卒条，底色为在位期；生卒年据通行史料整理，估算值用虚线并标注「需史料核验」。
-- **洞察**：跨学科解读长文，18 学科 + 1 综合收束（历史学·心理学·博物馆学·政治学·社会学·人类学·系统科学·经济学·地理学·法学·军事学·叙事学·性别研究·思想史·国际关系·科学史·艺术·传播学），书内情节驱动，文内引用 APA 7，71 条参考文献全部经检索核实；目录为编号彩色卡片。
+## 为什么不一样
 
-## 打印卡片
+- **坐标落在真实世界**——书里的地名解析到真实经纬度，可直接做「圣地巡礼」；
+  未定位的一律标「待核验」而不硬填坐标：对巡礼场景，错误坐标比缺失更有害。
+- **关系网络有两个口径**——`人物图` 只画人物↔人物，`实体图` 把地点/机构/政权
+  也画进来。两者规模不同、图例不同，页面按当前模式分别渲染，绝不混读。
+- **地址栏即状态**——`person=` `event=` `place=` `era=` `from/to=` 全部写进 URL，
+  复制地址就能分享到同一张卡；搜索支持别名（`崇祯` → 朱由检）。
+- **失败必须可见**——地图瓦片、CDN、Service Worker 任一步失败，页面底部弹出
+  统一提示条（说明故障 + 重试 + 可关闭），不再静默白屏。
+- **离线优先**——CSS/JS/数据全内联进单文件；地图在瓦片全失败时自动退回 SVG 点位图，
+  点位仍可点击查看书中介绍。
+- **数据诚实披露**——未知年份的事件单独成组，未定位地点如实标注，覆盖率与
+  缺口都写在页面上，不拿推断充数据。
 
-人物页可一键生成打印页（正面 / 背面两种模式），扑克牌尺寸 63×88mm：
+## 《明朝那些事儿》：目前拆得最深的一本
 
-- 打印卡**复用屏幕卡的结构与当前所选主题**（墨玉/宣纸/朱砂），正面为「势力 + 姓名 + 一句话」，背面为「身份/籍贯/出身/状态/事件/语录」的整齐键值表。
-- 打印时 `@media print` 会把翻面卡还原成普通块流，正面背面都完整输出、不会被 3D 翻转裁掉。
+七部 **156 章**全文抽取，产出 **1,231 人物 / 1,106 事件 /
+2,324 关系 / 583 地点（已定位 553，94.9%）**，
+其中 66 位人物的书内语录逐条经原文核实。12 个视图：
 
-## 启动报告
+**全局叙事** `总览` `分布` `时间轴` `帝王` `年谱`　·　**实体索引** `人物` `地点` `事件` `关系`　·　**探索分析** `图谱` `地图` `洞察`
 
-在项目根目录执行：
+- **地图**：圣地巡礼底图 + 郑和下西洋航线子视图，离线降级为 SVG 点位图。
+- **人物**：扑克牌尺寸卡片（63×88mm，可翻面），三套主题，可一键生成打印页。
+- **洞察**：18 学科 + 1 综合收束的跨学科长文，文内引用 APA 7，参考文献经检索核实。
+- **分布**：三层诊断（分部 → 章节 → 结果），同时给出总量与每万字密度。
+
+## 快速开始
 
 ```powershell
-python -m http.server 8765 --bind 127.0.0.1
+python -m http.server 8765 --bind 127.0.0.1   # 起个静态服务
+# 打开 http://127.0.0.1:8765/index.html      # 书库门户
 ```
 
-然后打开 `http://127.0.0.1:8765/index.html`。端口被占用时换一个即可。
+报告是单文件静态 HTML，直接双击也能开（本地服务可避开个别浏览器对 `file://` 的限制）。
 
-> 报告是单文件静态 HTML，也可以直接双击打开；但建议用本地 HTTP 服务，避免个别浏览器对 `file://` 的限制。
-
-## 刷新数据
-
-数据链路：`章节正文 → 抽取结果 → 聚合数据 → 静态报告`（全量构建约 2 秒）。
+重新生成全部交付物：
 
 ```powershell
-python src/merge.py                 # 聚合（增量勘误层不会被覆盖）
-python src/build.py                 # 构建全书单文件 standalone.html
-python src/build.py --check         # 只校验不落盘（构建前的门禁）
-python tests/run_tests.py           # 单元测试（无第三方依赖，可直接跑）
+python src/merge.py            # 聚合（增量勘误层不会被覆盖）
+python src/build.py            # 构建明书离线单文件 standalone.html
+python src/build_hub.py        # 重建书库门户 index.html
+python tests/run_tests.py      # 单元测试（纯标准库，无第三方依赖）
 ```
 
-`src/build.py` 是 Phase 4 起的**统一构建入口**（`src/generate_report.py` 只保留数据聚合与模板装载）：
+## 仓库结构
 
-| 参数 | 说明 |
-|---|---|
-| `--scope full\|p1..p7` | 构建全书或某一部（分部产物为 `report_pN.html`） |
-| `--target standalone\|web` | 默认 `standalone`＝CSS/JS/DATA 全内联到 `standalone.html`；`web`＝输出分层骨架与 `assets/`，由发布流程落到 `ming/`。门户根 `index.html` 不由本脚本产生，而由 `src/build_hub.py` 扫 `books/*/manifest.json` 生成 |
-| `--out 路径` | 覆盖输出位置 |
-| `--check` | 跑完聚合与全部校验后不写文件，ERROR 时以退出码 2 中止 |
-| `--json 路径` | 把校验结论导出为 JSON |
+```
+index.html            书库门户（src/build_hub.py 生成，勿手改）
+standalone.html       明书完整离线单文件（src/build.py 生成）
+sw.js                 Service Worker（同源 stale-while-revalidate）
+books/                每本书一个目录
+  <id>/manifest.json  书目名片：书名/作者/类型/指标/入口/更新时间
+  <id>/index.html     该书报告（单文件）
+ming/                 《明朝那些事儿》分层版报告（index.html + assets/，CI 生成）
+src/                  平台与构建脚本
+  build_hub.py        门户生成器（扫 books/*/manifest.json）
+  build.py            统一构建入口（--target standalone|web、--check）
+  merge.py            数据聚合 / generate_report.py 最终模型
+  audit_final.py      深审（ERROR 即退出非 0）
+  validators.py       结构不变量（12 组规则）
+  core/               共享核心：年份解析/经纬度校验/势力结构化/图布局
+web/                  前端真源：template/index.html + css/app.css + js/app.js
+data/                 聚合数据源与增量勘误层（data.json 是单一数据源）
+tests/                单元测试 + tests/browser_check.py（无头浏览器自检）
+docs/                 文档：docs/add_a_book.md（新增一本书）、docs/history/
+legacy/               已停用脚本归档（分片时代遗留，见 legacy/README.md）
+```
 
-构建时会把 `web/template/index.html`（骨架）＋ `web/css/app.css` ＋ `web/js/app.js` 内联回单文件；三者拼回来的结果与拆分前的模板**逐字节一致**，由 `tests/test_template.py` 守着。
+## 一本书是怎么拆出来的
 
-- `data/data.json` 是聚合后的单一数据源。
-- `data/geo_annotations.json`（地点坐标/类型标注）、`data/manual_relations.json`（人工关系）、`data/manual_corrections.json`（勘误）、`data/manual_lifespans.json`（年谱）、`data/manual_persons.json`（补录人物）、`data/derived_chapter_persons.json`（文本反查出场）**重跑聚合不会丢失**，是可持续维护的增量层。
-- 分布诊断还读取 `data/extract_raw.json`（章节级原始抽取）与 `data/chapters.json`（正文长度）。每万字密度用于识别章节长度影响；非均匀分布本身不等于抽取错误，需结合内容类型与史料核验判断。
-- `data/chapters.json` 只在本地存在；**没有它也能正常构建**（章节标题取自 `extract_raw.json`，仅缺少字数统计），因此 CI 可以在不含原书全文的情况下完整跑通。
+```
+原文 → 分章 → 抽取（人物/地点/事件/关系/时间）→ 聚合 → 校验 → 报告
+```
 
-## 分享与深链（URL 参数）
+1. **分章**：按目录切分，保留章节长度用于密度诊断；
+2. **抽取**：逐章产出五元组候选，`data/extract_raw.json` 存原始结果；
+3. **聚合**：`src/merge.py` 合并为 `data/data.json`，叠加人工勘误层
+   （`manual_corrections.json` / `manual_lifespans.json` / `geo_annotations.json` …）；
+4. **校验**：三层门禁（下表）；
+5. **报告**：`src/build.py` 把 `web/` 的模板/样式/脚本内联成单文件。
 
-地址栏即状态，复制地址即可分享当前视图：
+重跑聚合不会丢人工层——那几个 `manual_*.json` 与 `geo_annotations.json` 是可持续维护的增量。
 
-| 参数 | 示例 | 行为 |
+## 质量门禁
+
+| 层 | 命令 | 拦什么 |
 |---|---|---|
-| `view` | `#view=characters` | 切到指定视图（12 个视图 id 之一） |
-| `person` | `#view=characters&person=于谦` | 预填人物搜索、滚动定位并闪烁该卡片（**支持别名**，如 `person=王阳明`） |
-| `detail` | `#view=characters&person=于谦&detail=1` | 在上面的基础上直接打开详情弹窗 |
-| `event` | `#view=events&event=event-0001` | 打开事件详情弹窗（也接受事件名） |
-| `place` | `#place=七顶山` | 打开地点详情（地图视图下则展开右侧停靠面板） |
-| `era` | `#view=dynasty&era=万历` | 帝王视图中展开该年号 |
-| `map` | `#view=map&map=voyage` | 切换到郑和下西洋航线子视图 |
-| `net` | `#view=visuals&net=entity` | 关系网络模式：`ego`（中心人物邻域，默认）/ `full`（全书人物图）/ `entity`（全书实体图） |
-| `from` / `to` | `#view=timeline&from=1400&to=1450` | 时间轴起止年份区间（含端点；年份待考事件不受影响） |
-| `q` | `#view=characters&q=王阳明` | 预填当前视图的搜索框 |
+| 构建门禁 | `python src/build.py --check` | 结构不变量 12 组规则 + 内存渲染自检；有 ERROR 直接退出码 2，不产半成品 |
+| 深审 | `python src/audit_final.py` | 业务规则：geo 对账、同名异地、在位区间衔接、分部子图 |
+| 单元测试 | `python tests/run_tests.py` | 共享核心、数据不变量、模板拆分等价性、占位符唯一性、错误 UI 锚点 |
+| 浏览器自检 | `python tests/browser_check.py <产物>` | 本机 Chrome `--dump-dom` 跑 11 个场景（deep link、搜索高亮、地图、双模式图…）+ 启动守卫兜底 |
 
-打开任何详情（人物/事件/地点）都会把实体写回地址栏，因此「复制地址 → 另开」看到的是同一张卡。搜索命中的关键词会在列表里高亮（`mark.hl`）。切换视图标签会清掉上一次的实体与区间参数，避免地址栏里堆积互不相关的状态。
+CI 每次 push/PR 还会先跑**版权合规巡检**（原书全文一旦入库即失败）与
+**模块遮蔽巡检**（任何 `.py` 与标准库同名都会污染 `sys.path[0]`，仅存在就能让 Python 崩掉）。
 
-## 失败必须可见（统一提示条）
+## 数据纪律
 
-报告是离线单文件，但仍依赖三类外部资源：地图瓦片、Leaflet CDN、Service Worker。过去这些失败全是空 `catch`——用户只会看到一片空白或降级图，既不知道原因也无法重试。现在统一为**一条底部提示条**（`role=alert`/`status` + `aria-live`，三级配色 + 「重试」+ 关闭，按故障 key 去重）：
+三条铁律，写在代码里也写在流程里：
 
-| 故障 | 表现 | 是否降级 |
-|---|---|---|
-| 完整数据缺失（字段被裁剪） | 红色错误条，列出缺失字段，附「重新加载」 | ❌ 该视图无法使用 |
-| 主脚本未完成初始化（数据畸形/语法错误） | 骨架里的**启动守卫**独立检测，5 秒后渲染红色错误条 | ❌ 页面停在骨架 |
-| 渲染/脚本/异步异常 | 红色错误条，同类异常只报一次，页面其余部分继续可用 | ✅ 局部 |
-| Leaflet CDN 不可达 | 黄色提示条，地图降级为**离线 SVG 点位图 / 航线示意图**（点位与点击详情照常） | ✅ |
-| 底图瓦片全失败 | 先自动切备用源（Esri→OSM）报灰色提示；两者都不通则报黄色提示并可重试 | ✅ 标记仍可见 |
+1. **只用工件数据**——不凭记忆补情节，不臆造坐标与年份，**宁可留空不可猜错**；
+2. **引语必须原文命中**——人物语录先在原书全文里检索到原句才收录，0 命中即弃用；
+3. **文献未核实不写入**——跨学科解读的每条参考文献都经检索核实。
 
-启动守卫之所以必须**独立成一段 `<script>` 并排在主脚本之前**：主脚本一旦解析失败，它内部任何兜底代码都不会执行。这条路径由浏览器自检里「故意注入语法错误」的用例守着。
+**版权**：原书全文与含正文的中间产物**不入库、不发布**（`.gitignore` 已排除，
+CI 有巡检）。仓库只发布脱敏后的章节索引与聚合结果。换机接续时这两个文件需手动拷贝。
 
-打印时提示条自动隐藏（`@media print`），不会印到纸上。
+## 新增一本书
 
+放 `books/<id>/` + 一份 `manifest.json`，跑一次 `python src/build_hub.py` 即可，
+平台代码与 CI 都不用改。完整手册见 [`docs/add_a_book.md`](docs/add_a_book.md)。
 
-## 数据质量审计
+## 路线图
 
-```powershell
-python src/audit_final.py          # 全量（含 p1~p7 分部关系范围检查）
-python src/audit_final.py --quick  # 跳过分部构建，只查全书
-```
+- [ ] 明书按需加载恢复（2026-10-01 单体 `data.js` 重构后暂停，现状首屏约 5 MB）
+- [ ] 人物卡语录扩面（现 66 人 → 目标覆盖高频人物，须原文命中）
+- [ ] 洞察长文与图谱实体互跳
+- [ ] 未定位地点与未知年份事件的人工考据（按提及频次排序推进）
 
-**审计对象是最终模型**：脚本直接调用生产代码 `generate_report.build_scope()` 的输出，不再自己读中间文件另算一套口径，因此页面显示什么、审计就检查什么（例如地点数两侧同为 581，而非 561 vs 581）。
+历史过程与踩坑记录在 `.workbuddy/`（工程笔记）与 `docs/history/`（重构方案、自查与验收清单）。
 
-规则分级 **INFO / WARNING / ERROR**，只要出现 ERROR 就返回非 0，可直接用于 CI 阻断发布：
+## 说明
 
-| 级别 | 规则示例 |
-|---|---|
-| ERROR | 年龄/姓名重复、关系端点标为人物却不在人物表、自环、人物关系图混入非人物、坐标非法、年份字段含数字却解析不出、人物缺 `profile`、`profile.raw` 与原串不一致、人物图节点/边不是实体图子集 |
-| WARNING | 未知年份事件（页面按「年份待考」展示）、同名异地未拆分 |
-| INFO | 规模统计、已定位率、势力字段结构化覆盖率、双模式图口径数字、在位区间衔接（重叠/断档）、分部关系子图规模 |
+本项目是个人知识工程：书籍版权归原作者与出版社所有，报告仅作结构化索引与
+学习笔记用途，不分发原文，不用于任何商业场景。
 
-年份与经纬度判定复用 `src/core/year_parser.py`、`src/core/geo.py`，与页面完全一致；经纬度**禁止** `if not lat` 式判断（0 是合法值），统一用 `is None` + 类型 + 范围 + NaN 四重校验。
-
-### 三层校验，一套规则
-
-| 层 | 命令 | 内容 | 何时用 |
-|---|---|---|---|
-| 构建门禁 | `python src/build.py --check` | `src/validators.py` 的结构不变量（12 组规则：计数自洽、引用不悬空、ID 唯一、坐标合法、人物 profile 自洽、双模式图口径一致、模板占位符已替换）＋内存渲染自检；有 ERROR 直接退出码 2，不产出半成品 | 每次构建前 |
-| 深审 | `python src/audit_final.py` | 上面的不变量（只吸收其 ERROR）＋业务规则：geo 标注对账、同名异地、在位区间衔接、分部诱导子图 | 发布前 |
-| 单元测试 | `python tests/run_tests.py`（或 `pytest tests`） | 44 例：共享核心（年份/经纬度/实体 ID/派系/势力结构化）、数据不变量（含双模式图子集关系与确定性）、模板拆分等价性、占位符唯一性、错误 UI 与守卫锚点 | 改代码后 |
-
-CI（`.github/workflows/ci.yml`）在每次 push / PR 跑：版权合规巡检（`chapters.json`、`明朝那些事儿` 一旦入库即失败）→ Python/JS 语法 → 单元测试 → 构建门禁 → 深审 → 构建产物 + 无头浏览器自检（11 个场景：默认首屏、人物/事件/帝王 deep link、搜索高亮、关系、地图、实体图、人物图、时间轴区间、启动守卫兜底）。**不需要原书全文**即可全绿。
-
-### 关系范围策略
-
-- **全书报告**：保留全部关系（含跨部）。
-- **分部报告（p1~p7）**：关系按**诱导子图**过滤——两端都属于该部范围才保留；页面在关系视图顶部明确标注当前策略，避免把局部图误当全局网络。
-
-### 人物关系图口径
-
-全书关系图节点**只允许人物表内的实体**（方案 A）。像 `东林党 / 东厂 / 内阁 / 后金 / 北京 / 明朝 / 黄河` 这类非人物端点不会作为节点出现（它们仍保留在关系卡片与详情中，并标注端点类型）。当前口径：
-
-```
-人物 1231 → 有人物间关系 686 → 孤立 545（44.3%）
-关系 2324 条 → 其中 72 条含非人物端点，未计入人物关系图
-```
-
-### 关系图双模式（两种口径都必须能查到）
-
-关系网络第三块有**两个模式**，意义不同，绝不可混读（页面上的统计文案、图例、悬浮提示都按当前模式分别渲染）：
-
-| 模式 | 节点口径 | 规模 | 数字该怎么读 |
-|---|---|---|---|
-| 全书人物图（默认 `net=full`） | 只含**人物↔人物**关系（方案 A） | 686 人 / 1403 条 | 「N 人 / M 条人物关系」，另有 72 条含非人物端点的关系被排除并如实标出 |
-| 全书实体图（`net=entity`） | **全部关系端点**：人物 / 地点 / 机构 / 政权 / 其他 | 741 个实体 / 1467 条 | 只能读作「N 个实体」，其中人物 694 位、非人物实体 47 个（机构 12、其他 16、地点 15、政权 4） |
-
-两种图的口径契约由 `tests/test_data_invariants.py` 守着：**人物图的节点与边必须是实体图的子集**（1403 ⊆ 1467）。实体图的节点按类型着色，因此必须同时给出类型图例，否则颜色无从解读。
-
-### 势力字段结构化
-
-`data.json` 里的 `characters[].faction` 是抽取产物，把「政权 · 时期 · 派系 · 身份类别 · 官职 · 籍贯 · 科举 · 备注」全揉在一个字符串里（1231 人产生 473 个互不相同的串，例如 `明朝·兵科给事中（湖广应山人，万历三十五年1607进士）`）。`src/core/faction_profile.py` 在构建时**一次性**把它解析为结构化 `profile`：
-
-```
-regime 明朝 · dynasty 明 · period — · office [兵科给事中] · origin 湖广应山 · jinshi_year 1607
-```
-
-覆盖率（`build.py --check` 会以 INFO 报出）：政权 1161/1231（94.3%）、官职 426、身份类别 320、派系 109、籍贯 26、科举 16。三条设计原则：
-
-1. **宁可留空不可猜错**——没有明确表述的字段一律留空（如「明朝·福建进士」因无年份，`jinshi_year` 就是空，不臆造）；
-2. **词表驱动**——分类依据是显式 token 表，新增脏串只需补词表；
-3. **原串永远可回查**——未经归类的残料进 `note`，`raw` 保留完整原串，详情页显示「原串：…」一行。
-
-前端**不再**用正则从展示串里猜字段含义（旧的 `cleanCardFields()` 正则已改为只作 profile 缺失时的兜底）。契约由 `validators.py` 的 `V-PROFILE-01~06` 拦住：缺 profile、字段不全、`raw` 与 `factionRaw` 不一致、label 为空、派系名拼写漂移，任一出现都是 ERROR。
-
-### 关系端点类型
-
-关系端点不一定是「人」。聚合时按 **人物 → 地点 → 政权 → 派系/机构 → 其他** 判定，页面上用徽标标注，避免读者把 `东林党`、`东厂`、`后金` 误当成真实人物：
-
-| 类型 | 徽标 | 例 |
-|---|---|---|
-| 地点 | 地点 | 土木堡、皇觉寺、鄱阳湖 |
-| 政权 | 政权 | 元朝、明朝、后金、清廷 |
-| 派系/机构 | 派系/机构 | 东林党、浙党、阉党、东厂、内阁、神机营、红巾军 |
-| 其他实体 | 其他实体 | 三杨、五义士、和尚、太监、道统 |
-
-对应的关系类别也细分为「地点关联 / 政权关联 / 派系机构关联 / 其他实体关联」，不再一律打成「地点关联」。
-
-## 已知遗留（需人工判断，非阻塞）
-
-- **CI 断链（2026-10-01「单体 data.js」重构遗留，不阻塞平台运行）**：`src/split_*_asset_v11/v12/v13.py`、
-  `src/check_delivery.py`、`src/check_{time,event,relation}_layers_v1x.py`、`src/sync_readme_v1x.py`
-  均面向旧 V10–V13 分片架构（`boot-data.js` + N 个详情 shard），在单体 `data.js` 下必然失败。
-  `refresh-index.yml` 已停用这些步骤，仅保留 `build.py` ×2 + `check_budget` + `build_hub`；
-  上述脚本待后续按新架构重写或删除。
-- 41 个地点未定位（龙山、猫岛、扫林山等生僻或高度歧义地名），保持「待核验」而**不硬填坐标**——对巡礼场景，错误坐标比缺失更有害。
-- 7 件事件无单一年份（谜案、复合事件、书中仅提及），如实保留在时间轴末尾的「年份待考」组。
-- 约 43.6% 人物无任何关系记录（多为只出场 1 章的次要人物），属覆盖度而非错误。
-- 少数关系端点（应天、洪都、建文帝）因规范名与别名未完全归一，落入「其他实体」。
-- 部分地点 `mentioned_as` 存在跨卡串味（部分为有意的别名扇出）。
-
-## 待办与下一步（接续开发指南）
-
-> 换电脑 clone 本仓库后，按下面清单可继续未完成的工作。工程细节与踩坑见 `.workbuddy/skills/ming-report-engineering/SKILL.md`，历史过程见 `.workbuddy/memory/`。所有改动完成后运行「交付检查」四步，再用 `.dump/_deploy_index_now.py` 部署、`.dump/_sync_docs.py` 同步文档。
-
-### 1. 人物卡语录扩面（优先级：高，工作量：中）
-- 现状：`data/character_quotes.json` 仅 13 人（朱元璋/方孝孺/姚广孝/于谦/杨慎/唐寅/王守仁/戚继光/杨继盛/杨涟/袁崇焕/李自成/朱由检），其余 1218 人无语录（卡上不显示该行）。
-- 扩面方法：候选人物的名言/诗句/口号先在 `明朝那些事儿.txt` 用关键词**命中原文**（0 命中即弃用，绝不凭记忆编造），确认后按现有格式写入 JSON（name 用 `data.json` 的规范名，如"姚广孝"不是"道衍"、"朱由检"不是"崇祯"），重跑 generate_report.py 即可，无需改前端。
-- 候选人物建议：朱棣/张居正/海瑞/卢象昇/孙传庭/杨廷和/夏言/徐阶/高拱/申时行/李成梁/努尔哈赤/皇太极/蓝玉/常遇春/徐达/解缙/于谦外的高频人物（先在原书检索，有原句才收）。
-
-### 2. 洞察实体联动（优先级：高，工作量：中）
-- 现状：洞察 19 节是纯文本，与图谱数据（1231 人物 / 1106 事件 / 581 地点）无跳转。
-- 目标：把各节提到的关键人物/事件/地点变为可点击（点击弹出对应详情卡，复用 `showCharacter/showEvent/showLocation`）；反向在人物/地点详情弹窗加"相关洞察"入口。
-- 实现思路：构建时对每节 html 做实体匹配（按 DATA 人名/事件名/地点古名+别名建索引），命中的替换为 `<button class="link-button" data-xxx>`；注意与 `esc()` 转义顺序。
-
-### 3. 41 个未定位地点考据（优先级：中，工作量：大）
-- 保持「待核验」不硬填坐标（巡礼场景错误坐标比缺失更有害）。清单跑 `python src/audit_final.py` 可见（按提及章数排序，优先补高频）。
-- 每确认一个：进 `src/enrich_geo.py` 的 GAZ（元组顺序 `(lng, lat, 今址, 类型)`，**经度在前**），或 `data/event_places.json` 的 coords，重跑 generate。
-
-### 4. 7 件未知年份事件考证（优先级：中，工作量：小）
-- 清单见时间轴「年份待考」组。查实的写入 `data/manual_corrections.json` 的 `event_years` 分块（注明来源），重跑 merge+generate。
-
-### 5. 数据清洁（优先级：低）
-- 少数关系端点（应天/洪都/建文帝）别名未归一 → `manual_corrections.json` 的 `character_merges`/`location_fixes`。
-- 部分地点 `mentioned_as` 跨卡串味（部分为有意别名扇出，需逐条人工判断）→ `location_fixes`。
-- `父子 张瑾→张軏` 方向存疑 → `relation_fixes.flip`。
-- 约 44.3% 人物无**人物间**关系（545/1231）：**不建议强行补**（多为仅 1 章出场的次要人物）。
-- **同名异地未拆分**：`延安府` 在标注表里有两个真实地点——陕西延安（张献忠籍贯）与朝鲜黄海南道延安（万历援朝战场，黑田长政被赵宪民兵击败处），地点表目前只取了陕西那个。需在 `location_fixes` 里拆成两条，否则朝鲜延安的巡礼点会错落到陕西。`python src/audit_final.py` 的 `R-GEO-03` 会持续提醒。
-- geo 标注里 93 条用的是**旧称**（应天→南京、濠州→凤阳、平江→苏州…），已由 `mentioned_as` 别名关联合并，属正常历史合并，非脏数据（审计以 INFO 列出）。
-
-### 6. 已决策：两处曾与既有约定冲突的方案项
-两项都已按用户指示「都要」落地并验证：
-- **别名搜索**：人物搜索现在同时匹配姓名与别名，走统一的 `DATA.aliasIndex`（444 条）与 `matchesQuery()`；关系/事件/地点筛选共用同一套判定。实测 `崇祯→朱由检`、`崇祯帝→朱由检`、`道衍→姚广孝`、`王阳明→王守仁`、`朱重八→朱元璋`；无命中仍显示空态（不会回退成全部）。deep link 的 `person=` 同样吃别名。
-- **地图预加载**：保留首屏空闲后台预热（消除点开地图的等待），并叠加「鼠标悬停/手指触碰地图入口即立即预热」双保险；Leaflet 与瓦片只在需要时真正注入。二者不再冲突。
-
-### 7. 深层架构重构（方案 Phase 3~6）进度
-| 阶段 | 状态 | 说明 |
-|---|---|---|
-| Phase 1 正确性热修 | ✅ 完成 | 关系图口径、numpy 静默降级、审计空转、`--dense` 丢失、SW 保活等 12 项 |
-| Phase 2 移除 Python 力导布局 | ✅ 完成 | 构建 109.7s → 2.3s，力模拟交给浏览器 |
-| Phase 3 统一数据模型 | ✅ 完成 | `entity_id()` → `person:朱由检`；`relation_id()` → `relation:<sha1[:12]>`（内容寻址，重跑稳定）；characters 增 `id/type/factions/factionRaw/profile`，relation 增 `id/sourceId/targetId/sourceType/targetType`；payload 增 `model: {schemaVersion:3, entityTypes, idIndex}` |
-| Phase 4 拆分单体脚本 | ✅ 完成 | `web/{template,css,js}` 拆分（拼接逐字节等价）＋ `src/build.py` 统一入口（standalone/web 双 target、`--check`）；`generate_report.py` 1606 → 1155 行 |
-| Phase 5 测试与 CI | ✅ 完成 | `src/validators.py`（12 组规则）+ `tests/`（44 例，无第三方依赖）+ GitHub Actions |
-| Phase 6 体验 | ✅ 完成 | URL deep link（person/event/place/era/map/q/**net/from/to**）、搜索命中高亮、tabs `role=tablist` + 方向键导航、**人物图/实体图双模式**（口径已定：人物图＝方案 A 只含人物，实体图＝全部关系端点，页面按模式分别渲染统计/图例/提示）。移动端详情抽屉判定为**不必做**（现有 `dialog` 已自适应 `100vw-32px` / `max-height:90vh`） |
-
-原方案 25 个条目现已全部落地或明确判定为「不必做」；逐条状态、落地证据与量化对比见 `report/Ming_重构验收清单.md`。
-
-### 8. 私有文件手动拷贝（重要：永不入库）
-- 两个文件**故意不在仓库里**：`明朝那些事儿.txt`（原书全文）、`data/chapters.json`（含正文的抽取底稿）。本书版权在作者/出版社手中，网络免费阅读授权不等于可公开再分发，公开仓库分发全文属侵权。
-- 换电脑接续工作前，先用 **U 盘 / 私密网盘 / 局域网**把这两个文件手动拷到新机的相同路径（`明朝那些事儿.txt` 在根目录、`chapters.json` 在 `data/`）。
-- **不拷的后果（实测）**：看报告、部署成品、改洞察/前端、跑 merge（只依赖 extract_raw.json）和 audit_final 都**不受影响**；但 **分布视图的每万字密度全部失真为 0**，且 语录核验（用 txt）、出场反查/召回探测/充分性审计（derive_coverage/discover_persons/audit_chapter_sufficiency 用 chapters.json）**无法执行**——待办 1、3、4 都会卡住。
-- 除这两个文件外，仓库其余内容即完整工作区。
-
-### 9. 工程提醒
-- 构建：`python src/build.py` 全量约 **2 秒**（已移除 Python 端 800 轮力导布局与 numpy 依赖；实测从 109.7 秒降到 2.3 秒）。力导向布局由浏览器端实时模拟完成，Python 只给确定性初始坐标（按势力分扇区 + 螺旋）。
-- 校验：`python src/build.py --check`（构建门禁，ERROR 退出码 2）；`python src/audit_final.py`（深审，ERROR 退出码 1）；`python tests/run_tests.py`（44 例单元测试，纯标准库）。
-- 浏览器自检：`python .dump/_browser_check.py [产物路径]`——用本机 Chrome `--dump-dom` 跑 **11 个场景**（默认首屏、人物/事件/帝王 deep link、搜索高亮、关系、地图、实体图、人物图、时间轴区间、启动守卫）＋1 个「启动守卫」用例（故意注入语法错误，验证兜底提示条真的会渲染）。断言必须用**正则匹配渲染出的标签**，不能裸字符串 `in dom`——产物把 JS 内联在同文件里，源码里本来就有 `flash`、`detail-grid`、`kind-dot` 这些词，裸串会假通过；需要判断「图例里有没有类型色点」这类渲染内断言时，用场景里的 `scoped`（先锚定元素、只在它后面若干字符内匹配）。
-- 单文件体积：全量产物 **约 5.1 MB**（gzip 后约 0.83 MB）。构建时注入用紧凑 JSON（`separators=(",", ":")`），比默认分隔符省约 12%；**数据占位符在全模板里必须只出现一次**——它另外出现在注释/文案里会让整份 payload 被注入两遍、体积凭空翻倍（实测 5.6 MB → 11.4 MB），`tests/test_template.py::test_data_placeholders_appear_exactly_once` 守着这条。
-- 共享核心：`src/core/year_parser.py`（年份解析）、`src/core/geo.py`（经纬度校验）、`src/core/faction_profile.py`（势力结构化）、`src/core/graph_layout.py`（双模式图共享的确定性布局）——生产与审计必须共用，**不要**在别处重新实现。前端模板同理：只改 `web/`，不要在 Python 里再写一份。
-- 部署/同步脚本：`.dump/_deploy_index_now.py`（index.html+sw.js+README.md）、`.dump/_sync_docs.py`（含 web/、tests/、.github/ 的清单同步）。改动前后可用 `.dump/_diff_remote.py` 看本地↔线上差异。
-- 权限：沙箱内跑部署报 401 时用管理员豁免；`gh` 前清代理变量。
-- 本地查看：`python -m http.server 8765`（或任意静态服务器）。
-
-## 交付检查
-
-```powershell
-python -m compileall -q src tests
-python tests/run_tests.py
-python src/merge.py
-python src/build.py                 # 等价于旧的 generate_report.py
-python src/audit_final.py
-python .dump/_browser_check.py      # 需要本机 Chrome
-```
-
-四步全绿（测试 44/44、构建 ERROR 0、审计 ERROR 0、浏览器自检 11/11＋启动守卫）再部署：
-
-```powershell
-python .dump/_deploy_index_now.py   # 线上 index.html + sw.js + README
-python .dump/_sync_docs.py          # 源码/web/tests/.github/文档 全量同步
-```
-
-## 版权
-
-`明朝那些事儿.txt` 与含全书正文的 `data/chapters.json` **不发布**。仓库只发布脱敏后的章节索引与聚合结果。
+<!-- README_GENERATED_BY src/sync_readme.py -->
