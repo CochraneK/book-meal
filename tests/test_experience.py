@@ -38,12 +38,7 @@ def test_classic_mode_disables_visible_v2_v3_overlays():
         assert forbidden not in css, forbidden
 
 
-def test_modern_delivery_remains_outside_experience_layer():
-    loader = B.DATA_LOADER_JS_PATH.read_text(encoding="utf-8")
-    lazy = B.LAZY_DATA_JS_PATH.read_text(encoding="utf-8")
-    for token in (
-        "__MING_ENSURE_DATA_CHUNKS", "character-detail-", "location-detail-",
-        "event-detail-", "relation-meta", "lifespans",
-    ):
-        assert token in loader, token
-    assert "__MING_ENSURE_VIEW_DATA" in lazy
+# 注：原 test_modern_delivery_remains_outside_experience_layer 依赖
+# build.DATA_LOADER_JS_PATH / LAZY_DATA_JS_PATH 与 data-loader.js、lazy-data.js 的
+# 分片按需加载契约；2026-10「单体 data.js」重构后 loader/lazy-data 已不在 web target
+# 产物中（render_web 只产 app.css + app.js + data.js），该用例随分层架构一并移除。

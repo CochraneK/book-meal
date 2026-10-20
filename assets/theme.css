@@ -1,7 +1,0 @@
-/* ===== Classic UI compatibility layer =====
-   Keep the original pre-V1 visual language. This file now carries only
-   non-invasive accessibility behavior; app.css remains the visible skin. */
-.skip-link{position:fixed;left:16px;top:10px;z-index:100;transform:translateY(-180%);padding:8px 12px;border-radius:6px;background:#fffdf8;color:var(--accent);border:1px solid #cdbd9e;font-weight:700;text-decoration:none}.skip-link:focus{transform:translateY(0)}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #b88b35;outline-offset:2px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-@media print{.skip-link{display:none!important}}

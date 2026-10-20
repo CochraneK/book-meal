@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>明朝那些事儿 · 七部全书</title>
+<!-- Leaflet 改为「打开地图视图才按需加载」（见 loadLeaflet），避免首屏被 unpkg 阻塞 -->
+<link rel="stylesheet" href="assets/app.css">
+<style data-generated-from="web/css/theme.css">
+/* THEME_SYNC_START */
+/* ===== Classic UI compatibility layer =====
+   Keep the original pre-V1 visual language. This file now carries only
+   non-invasive accessibility behavior; app.css remains the visible skin. */
+.skip-link{position:fixed;left:16px;top:10px;z-index:100;transform:translateY(-180%);padding:8px 12px;border-radius:6px;background:#fffdf8;color:var(--accent);border:1px solid #cdbd9e;font-weight:700;text-decoration:none}.skip-link:focus{transform:translateY(0)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #b88b35;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+@media print{.skip-link{display:none!important}}
+/* THEME_SYNC_END */
+</style>
+</head>
+<body>
+<header class="app-header"><div class="header-inner">
+  <h1 class="brand">明朝那些事儿 · 七部全书</h1><div id="headerStat" class="header-stat"></div>
+  <nav class="tabs" aria-label="报告视图">
+    <button data-view="overview" class="active">总览</button><button data-view="distribution">分布</button><button data-view="visuals">图谱</button><button data-view="locations">地点</button><button data-view="map">地图</button><button data-view="characters">人物</button><button data-view="events">事件</button><button data-view="relations">关系</button><button data-view="timeline">时间轴</button><button data-view="dynasty">帝王</button><button data-view="chronicle">年谱</button><button data-view="insight">洞察</button>
+  </nav>
+</div></header>
+<main class="shell">
+  <section id="overview" class="view active"></section>
+  <section id="distribution" class="view"></section>
+  <section id="visuals" class="view"></section>
+  <section id="locations" class="view"></section>
+  <section id="map" class="view"><div class="section-head"><div><h2>地图</h2><p>圣地巡礼地图聚焦书中已定位地点；郑和下西洋航线为独立子视图，仅绘制航线与停靠点。</p></div></div><div class="subnav" id="mapSubnav"><button class="active" data-map-mode="pilgrim">圣地巡礼地图</button><button data-map-mode="voyage">郑和下西洋航线</button></div><div class="panel map-wrap" id="pilgrimPanel"><div class="toolbar"><span class="muted grow" id="mapNote"></span></div><div class="map-layout"><div class="map-main"><div id="mapBox" class="map-box"></div></div><aside id="locDock" class="loc-dock" hidden></aside></div></div><div class="panel map-wrap" id="voyagePanel" style="display:none"><div class="toolbar"><span class="muted grow" id="voyageNote"></span></div><div class="map-layout"><div class="map-main"><div id="voyageBox" class="map-box"></div></div><aside id="voyageDock" class="loc-dock" hidden></aside></div></div></section>
+  <section id="characters" class="view"></section>
+  <section id="events" class="view"></section>
+  <section id="relations" class="view"></section>
+  <section id="timeline" class="view"></section>
+  <section id="dynasty" class="view"></section>
+  <section id="chronicle" class="view"></section>
+  <section id="insight" class="view"></section>
+</main>
+<dialog id="detailDialog"><div class="dialog-body"><div class="dialog-head"><h2 id="dialogTitle"></h2><button class="dialog-close" id="dialogClose">关闭</button></div><div id="dialogContent"></div></div></dialog>
+<footer class="muted" style="text-align:center;padding:0 24px 28px;font-size:12px">数据来自章节抽取与人工整理；地点、年份及关系均保留核验状态。</footer>
+<script>
+/* 启动守卫（P3-03）：主脚本内联了整份数据，一旦数据被裁剪或脚本执行抛错，
+   页面会停在空白骨架且毫无提示。这里独立于主脚本先埋一个检查点：
+   5 秒内若主脚本仍未置位 __MING_READY，就渲染一条可见的错误提示与重载入口。
+   本段不依赖任何外部资源，也不受数据注入影响（注意：此处不得书写数据占位符
+   本身，否则字典序注入会把整份 payload 塞进注释里，产物体积直接翻倍）。 */
+window.__MING_BOOTERR='';
+window.addEventListener('error',function(e){if(e&&e.message&&!window.__MING_BOOTERR)window.__MING_BOOTERR=e.message;});
+setTimeout(function(){
+  if(window.__MING_READY)return;
+  var bar=document.createElement('div');
+  bar.className='fail-bar fail-error';
+  bar.setAttribute('role','alert');
+  var msg=document.createElement('span');msg.className='fail-msg';
+  msg.textContent='报告未能完成初始化'+(window.__MING_BOOTERR?'：'+String(window.__MING_BOOTERR).slice(0,160):'（内嵌数据可能缺失或被裁剪）')+'。可重新加载，或改用完整版文件打开。';
+  var acts=document.createElement('span');acts.className='fail-acts';
+  var btn=document.createElement('button');btn.type='button';btn.className='fail-act';btn.textContent='重新加载';
+  btn.addEventListener('click',function(){location.reload();});
+  acts.appendChild(btn);bar.appendChild(msg);bar.appendChild(acts);
+  (document.body||document.documentElement).appendChild(bar);
+},5000);
+</script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<style data-generated-from="web/css/experience.css">
+/* EXPERIENCE_CSS_SYNC_START */
+/* Classic UI mode: no visible V2/V3 product-experience overlays.
+   The online delivery/search infrastructure remains available underneath. */
+/* EXPERIENCE_CSS_SYNC_END */
+</style>
+<script data-generated-from="web/js/experience.js">
+/* EXPERIENCE_SYNC_START */
+/* Classic UI mode.
+   V2/V3's grouped navigation, homepage story, command-palette trigger and graph-reader
+   overlays are intentionally disabled so the original pre-V1 frontend remains visible.
+   Modern delivery/data-loader/lazy-data infrastructure is kept in separate files. */
+window.__MING_EXPERIENCE_READY=true;
+/* EXPERIENCE_SYNC_END */
+</script>
+</body></html>

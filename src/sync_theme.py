@@ -47,7 +47,15 @@ def render_template(source: str, theme: str) -> str:
             r"<style>\n(?=" + re.escape(LEGACY_START) + r").*?</style>",
             re.DOTALL,
         )
-        updated, count = legacy_pattern.subn(lambda _m: block, source, count=1)
+        if legacy_pattern.search(source):
+            updated, count = legacy_pattern.subn(lambda _m: block, source, count=1)
+        elif "</head>" in source:
+            # 模板已重构（2026-10 单体 data.js 版）：旧视觉标记不再存在，
+            # 而首个 <style> 是 build.py 的 INLINE_CSS 占位块、不可占用，
+            # 故退化为在 </head> 前插入镜像块（保持幂等：下次走 generated_pattern）。
+            updated, count = source.replace("</head>", block + "\n</head>", 1), 1
+        else:
+            updated, count = source, 0
     if count != 1:
         raise SystemExit("主题镜像锚点异常：匹配 %d 处" % count)
     if updated.count(SOURCE_ATTR) != 1 or updated.count(START) != 1 or updated.count(END) != 1:

@@ -71,17 +71,22 @@ def render_web(payload: dict, out_dir: Path) -> dict:
 
     body = js.replace(_DATA_CONST, "", 1).replace(_INSIGHT_CONST, "", 1)
     (assets / "app.js").write_text(body, encoding="utf-8")
-    (assets / "data.js").write_text(
+    data_js = (
         "const DATA=%s;\nconst INSIGHT_DATA=%s;\n"
-        % (_json_for_script(payload), _json_for_script(G.INSIGHT_PAYLOAD)),
-        encoding="utf-8",
+        % (_json_for_script(payload), _json_for_script(G.INSIGHT_PAYLOAD))
     )
+    (assets / "data.js").write_text(data_js, encoding="utf-8")
 
     html = skeleton.replace(_STYLE_ANCHOR, '<link rel="stylesheet" href="assets/app.css">')
     html = html.replace(_SCRIPT_ANCHOR, '<script src="assets/data.js"></script>\n<script src="assets/app.js"></script>')
     html = html.replace("__TITLE__", payload["scopeLabel"])
     (out_dir / "index.html").write_text(html, encoding="utf-8")
-    return {"index.html": len(html), "assets/app.css": len(css), "assets/app.js": len(body)}
+    return {
+        "index.html": len(html),
+        "assets/app.css": len(css),
+        "assets/app.js": len(body),
+        "assets/data.js": len(data_js),
+    }
 
 
 def check_render(payload: dict, findings: list) -> list:

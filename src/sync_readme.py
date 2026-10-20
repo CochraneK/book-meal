@@ -63,24 +63,24 @@ def render_readme(source: str) -> str:
 
     text = re.sub(
         r"^基于《明朝那些事儿》七部 156 章全文抽取整理的.*$",
-        "基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库。在线版采用 V10 实体与空间分层按需交付：首页只加载 `boot-data.js`，全局搜索加载轻量 `search-index.js`；人物保留 `data-characters.js` + 16 个人物详情 shard；地点域进一步拆成轻量 `data-locations.js`、8 个 `data-location-detail-00.js` … `07.js`、独立 `data-place-chapters.js` 与 `data-voyages.js`。地点索引和默认地图只取地点摘要，打开单个地点才取其详情 shard + 事件/洞察，切到“按章节”或郑和航线时才补对应数据。同时保留 `standalone.html` 单文件离线版。",
+        "基于《明朝那些事儿》七部 156 章全文抽取整理的静态知识库，报告位于 `/ming/`。本仓库整体是**多书拆解聚合平台**：根路径为书库门户（`src/build_hub.py` 扫 `books/*/manifest.json` 生成），每本书一份自包含报告置于 `books/<id>/`；新增书籍只需放入目录并附一份 `manifest.json`，无需改动平台代码（见 `docs/add_a_book.md`）。",
         text, count=1, flags=re.MULTILINE,
     )
-    text = _replace_one(text, r"^GitHub Pages：.*$", "GitHub Pages：`https://cochranek.github.io/ming/`（根 `index.html` 为 V10 实体与空间分层按需版；`standalone.html` 为可下载 / 双击打开的完整离线版）", "V10 在线入口")
+    text = _replace_one(text, r"^GitHub Pages：.*$", "GitHub Pages：`https://cochranek.github.io/ming/`——根 `/` 为书库门户；`/ming/` 为本书报告（分层版）；`/standalone.html` 为本书可下载 / 双击打开的完整离线版", "在线入口")
     text = text.replace("python src/build.py                 # 构建全书单文件 index.html", "python src/build.py                 # 构建全书单文件 standalone.html")
     text = re.sub(
         r"^\| `--target standalone\\\|web` \|.*$",
-        "| `--target standalone\\|web` | 默认 `standalone`＝CSS/JS/DATA 全内联到 `standalone.html`；`web`＝输出到 `dist/<scope>/`。人物：`data-characters.js` + 16 个 `data-character-detail-*`；地点：`data-locations.js` + 8 个 `data-location-detail-*`，按章节为 `data-place-chapters.js`，航线为 `data-voyages.js`；事件 / 关系 / 时间 / 图谱 / 洞察 / 元数据继续独立按需加载 |",
+        "| `--target standalone\\|web` | 默认 `standalone`＝CSS/JS/DATA 全内联到 `standalone.html`；`web`＝输出分层骨架与 `assets/`，由发布流程落到 `ming/`。门户根 `index.html` 不由本脚本产生，而由 `src/build_hub.py` 扫 `books/*/manifest.json` 生成 |",
         text, count=1, flags=re.MULTILINE,
     )
     text = re.sub(
         r"^`standalone` 构建.*$",
-        "`standalone` 构建继续内联完整最终 DATA；`web` 构建对同一 payload 做可逆传输分区。人物与地点都采用‘轻量摘要 + 详情补丁 + 确定性 shard’，空间的章节索引和航线再独立拆块；加载全部物理块后可逐值恢复原始最终模型。不维护 `data-full.js`、`data-character-details.js`、`data-location-details.js` 或旧 `data-space.js` 单体包。",
+        "`standalone` 构建内联完整最终 DATA 为单文件；`web` 构建产出分层骨架 + `assets/`（`app.css` / `app.js` / 单体 `data.js`），由发布同步工作流落到 `ming/` 下。门户与各书报告的聚合关系见 `docs/add_a_book.md`。",
         text, count=1, flags=re.MULTILINE,
     )
 
     marker = "<!-- README_STATS_SYNC -->"
-    note = "> 上表的章节 / 地点 / 人物 / 事件 / 关系统计由 `src/sync_readme.py` 从最终模型自动刷新；发布同步工作流会同时维护在线 V10 `index.html + assets/` 与离线 `standalone.html`。"
+    note = "> 上表的章节 / 地点 / 人物 / 事件 / 关系统计由 `src/sync_readme.py` 从最终模型自动刷新；发布同步工作流会同时维护书库门户（根 `index.html`）、`ming/` 分层版与 `standalone.html` 离线版。"
     if marker not in text:
         anchor = "| 年谱 | 165 人 | 主要人物生卒横向展开，与年号对位 |\n"
         if anchor not in text: raise SystemExit("README 同步锚点异常（规模表尾部）")

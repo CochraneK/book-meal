@@ -1,0 +1,20 @@
+{
+  "id": "ming",
+  "order": 1,
+  "title": "明朝那些事儿",
+  "subtitle": "圣地巡礼知识库",
+  "author": "当年明月",
+  "kind": "history",
+  "desc": "基于《明朝那些事儿》七部 156 章全文抽取整理的单文件知识库报告。以「圣地巡礼」为第一使用场景：把书中提到的地点落到真实坐标上，并保留每条记录的来源章节与核验状态。12 个视图含地图、人物卡、关系网络、时间轴与帝王年谱。",
+  "accent": "#8a2f2f",
+  "metrics": {
+    "characters": 1231,
+    "events": 1106,
+    "relations": 2324
+  },
+  "chapters": 156,
+  "report": "index.html",
+  "external": false,
+  "updated": "2026-10-02",
+  "note": "分层版 + 离线单文件"
+}

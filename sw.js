@@ -11,8 +11,10 @@
 // v8：洞察实体联动 + 书内语录扩面（app.js / app.css 有变更，属前端改动，必须 bump）。
 // v9：自查轮修前端 2 处（详情弹窗里跳洞察要先关弹窗，否则被 top-layer 挡住；洞察链接找不到目标改为可见提示）
 //     + 地点卡把「别称」与「书中提及」拆成两块渲染（app.js 有变更，必须 bump）。
+// v10：仓库改造为多书聚合平台——根路径从明书报告变为书库门户，明书报告下沉 /ming/，
+//     资源路径由 /assets/ 变为 /ming/assets/。bump 以清空旧命名空间下的过期缓存。
 const CACHE_PREFIX = 'ming-report-';
-const CACHE = CACHE_PREFIX + 'v9';
+const CACHE = CACHE_PREFIX + 'v10';
 
 self.addEventListener('install', () => { self.skipWaiting(); });
 

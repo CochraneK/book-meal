@@ -50,6 +50,9 @@ jobs:
       - name: 构建冒烟（standalone，不落盘）
         run: python src/build.py --check
 
+      - name: 聚合门户校验（不落盘）
+        run: python src/build_hub.py --check
+
       - name: 数据审计
         run: python src/audit_final.py --quick
 

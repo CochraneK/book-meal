@@ -7,6 +7,7 @@ on:
       - "src/**"
       - "web/**"
       - "data/**"
+      - "books/**"
       - "sw.js"
       - ".github/workflows/refresh-index.yml"
   workflow_dispatch:
@@ -18,10 +19,10 @@ concurrency:
   group: refresh-generated-index
   cancel-in-progress: false
 
-jobs:
-  refresh:
-    if: github.actor != 'github-actions[bot]'
-    name: 重建在线 V13 分层版、离线版与 README 统计
+  jobs:
+    refresh:
+      if: github.actor != 'github-actions[bot]'
+      name: 重建聚合门户、明书分层版、离线版与 README 统计
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -51,35 +52,29 @@ jobs:
       - name: 同步 V3 / V13 产品体验镜像
         run: python src/sync_experience.py
 
-      - name: 同步 README 最终模型与 V13 交付说明
-        run: |
-          python src/sync_readme.py
-          python src/sync_readme_v11.py
-          python src/sync_readme_v12.py
-          python src/sync_readme_v13.py
-          python src/sync_readme_v13.py --check
+      - name: 同步 README 最终模型
+        # 注：sync_readme_v11/v12/v13 是旧 V11–V13 分片架构的遗留，随 2026-10-01
+        # 「单体 data.js」重构已失效（README 锚点不存在，--check 必 FAIL），故不纳入本流程；
+        # 相关脚本与 README 说明待后续清理，见 README「已知待修」。
+        run: python src/sync_readme.py
 
-      - name: 构建 V13 双交付产物
+      - name: 构建双交付产物 + 聚合门户
         shell: bash
         run: |
           rm -rf .ci/publish
           python src/build.py --scope full --target web --out .ci/publish --quiet
-          python src/split_time_asset_v11.py .ci/publish
-          python src/split_time_asset_v11.py .ci/publish --check
-          python src/split_event_asset_v12.py .ci/publish
-          python src/split_event_asset_v12.py .ci/publish --check
-          python src/split_relation_asset_v13.py .ci/publish
-          python src/split_relation_asset_v13.py .ci/publish --check
           python src/build.py --scope full --target standalone --out standalone.html --quiet
-          rm -rf assets
-          cp .ci/publish/index.html index.html
-          cp -R .ci/publish/assets assets
-          cmp -s .ci/publish/sw.js sw.js
-          python src/check_delivery.py .ci/publish
-          python src/check_time_layers_v11.py .ci/publish
-          python src/check_event_layers_v12.py .ci/publish
-          python src/check_relation_layers_v13.py .ci/publish
+          # 多书聚合平台（2026-10-20 起）：
+          #   根 index.html   = 书库门户，由 build_hub.py 扫 books/*/manifest.json 生成
+          #   ming/          = 《明朝那些事儿》报告（web 分层骨架 + assets）
+          #   standalone.html = 明书完整离线单文件（保留在根，作为可下载交付形态）
+          # 旧架构的 V11/V12/V13 分片后处理与分层校验随单体 data.js 重构一并停用。
+          rm -rf assets ming
+          mkdir -p ming
+          cp .ci/publish/index.html ming/index.html
+          cp -R .ci/publish/assets ming/assets
           python src/check_budget.py standalone.html
+          python src/build_hub.py --quiet
 
       - name: 仅在公开产物变化时回写 main
         shell: bash
@@ -89,12 +84,14 @@ jobs:
             echo "main 已有更新；放弃本次旧快照回写，由更新提交触发的新任务负责。"
             exit 0
           fi
-          if git diff --quiet -- web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html assets; then
-            echo "源码镜像、README、在线 V13 分层版与离线版均已一致，无需提交。"
+          if git diff --quiet -- web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html ming/index.html ming/assets; then
+            echo "源码镜像、README、聚合门户、明书分层版与离线版均已一致，无需提交。"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html assets
-          git commit -m "chore: publish layered relation, event, time and space web data"
+          git add web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html ming/index.html ming/assets
+          # 根 assets/ 已下沉到 ming/assets/（旧架构遗留），从索引中移除
+          git rm -r -q --cached --ignore-unmatch assets
+          git commit -m "chore: publish book hub and ming layered report"
           git push origin HEAD:main
