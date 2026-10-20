@@ -36,6 +36,12 @@ jobs:
           fi
           echo "未发现原书全文文件 ✓"
 
+      # 模块遮蔽巡检：任何 `.py` 若与标准库模块同名，会污染同目录脚本的 sys.path[0]，
+      # 仅存在就能让「任何」Python 进程在启动时崩掉（2026-10-20 的 .dump/_bisect.py 事故）。
+      # 必须排在一切 Python 步骤之前。
+      - name: 模块遮蔽巡检
+        run: python src/check_module_shadow.py
+
       - name: Python 语法检查
         run: python -m compileall -q src tests
 

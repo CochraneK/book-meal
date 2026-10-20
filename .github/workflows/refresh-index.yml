@@ -19,10 +19,10 @@ concurrency:
   group: refresh-generated-index
   cancel-in-progress: false
 
-  jobs:
-    refresh:
-      if: github.actor != 'github-actions[bot]'
-      name: 重建聚合门户、明书分层版、离线版与 README 统计
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    name: 重建聚合门户、明书分层版、离线版与 README 统计
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
