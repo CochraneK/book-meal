@@ -63,6 +63,23 @@
 - **25 项：✅23 / 🟡1（P2-02 `from`/`to` 保留显示名是有意决策）/ ⏸1（P2-09 `.workbuddy/memory` 有意入库做接续指南）**。**方案项已全部闭环，不要再当 TODO 找**；唯一「不必做」是移动端详情抽屉（dialog 已自适应）。
 - 量化：构建 109.7s→≈2s；单文件 11.39MB→5.27MB（−54%）；测试 0→55；validators 10→12 组；浏览器自检 0→14 场景。
 
+## 站点发布：Actions 部署 + 白名单（2026-10-21 改）
+- **Pages 已改为 `build_type=workflow`**（原来 legacy：从 `main` 根目录整仓发布）。
+  仓库里有什么网上就能下载什么，是 legacy 的固有行为；改完后站点内容只来自
+  `src/build_dist.py` 挑出的白名单：`index.html` / `standalone.html` / `sw.js` /
+  `ming/` / `books/`。`src/ data/ web/ tests/ docs/ legacy/ teardown/ README.md`
+  一律不上传（实测全部 404）。产物 26 文件 / 14.4MB，部署约 25s。
+- **改白名单只动 `build_dist.py` 顶部的 `PUBLISH_FILES` / `PUBLISH_DIRS`**；
+  新增一本书落在 `books/<id>/` 下就自动包含。组装完还有一道禁忌闸
+  （产物里出现 `.txt` / `.py` / `.md` / `quotes.json` / `data.json` 即失败），
+  `ci.yml` 与 `deploy-pages.yml` 各跑一次。
+- **切模式的 API 怪癖**：`gh api -X PATCH repos/<o>/<r>/pages -f build_type=workflow`
+  **返回 404**；`PUT`（带 `source[branch]=main`、`source[path]=/`）才生效。
+  改完用 `gh api repos/<o>/<r>/pages` 看 `build_type` 确认。
+- **产物必须带 `.nojekyll`**：否则 Jekyll 会跳过下划线开头的目录并把 `.md` 渲染成页面。
+- **别拿线上字节数判「版本落后」**：Pages 发布时会把 CRLF 转成 LF，
+  线上文件比本地少「行数」个字节（门户 10457→10338）。要比就 diff 去掉 `\r` 后的内容。
+
 ## 拆书工程（teardown/）——三本书的抽取与报告
 - 书目：两本走五元组流水线 `teardown/src/generate_report.py` —— `tiancai`《天才基本法》、
   `feitu`《我在废土世界扫垃圾》；一本独立报告 `swdw`《小说维度晋升，我在天幕当评委》，
