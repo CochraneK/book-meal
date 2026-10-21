@@ -172,24 +172,58 @@ CASES = [
 ]
 
 
+# 投毒点：主脚本里的一条常量声明。改成非法语句后整段 <script> 解析失败，
+# 主脚本一行都不执行，正好模拟「产物被截断 / 浏览器不认某语法」的极端情形。
+GUARD_ANCHOR = "const REL_CAT_COLORS="
+GUARD_POISON = "const __BROKEN__=;" + GUARD_ANCHOR
+
+
 def check_boot_guard():
     """故意制造语法错误，验证骨架里的启动守卫确实会渲染出可见错误条。
 
     产物把 JS 内联在同一文件里，所以不能只断言 'fail-bar' 出现在源码里；
     必须匹配守卫运行时真实拼出来的 DOM 属性（class + role）。
+
+    两种产物形态要分别处理：standalone 的 JS 就在 HTML 里，直接改这一个文件；
+    **web（分离资源）形态的 JS 被外置到 assets/*.js**，注入点根本不在 index.html 里——
+    早期版本只扫 HTML，于是对着线上 ming/ 这种形态恒 FAIL（假警报），
+    等于启动守卫在真实部署形态下长期没被覆盖。这里改为整目录拷贝后再投毒。
     """
     if not TARGET.exists():
         print("跳过启动守卫自检：目标文件不存在")
         return 0
+
     doc = TARGET.read_text(encoding="utf-8")
-    # 在主脚本里插一条语法错误：整段 <script> 解析失败 → 主脚本一行都不执行
-    poisoned = doc.replace("const REL_CAT_COLORS=", "const __BROKEN__=;const REL_CAT_COLORS=", 1)
-    if poisoned == doc:
-        print("FAIL 启动守卫自检：未找到注入点 const REL_CAT_COLORS=")
-        return 1
+    site_root = None          # 需要拷贝的产物根目录（web 形态才非 None）
+    if GUARD_ANCHOR in doc:
+        poisoned_html = doc.replace(GUARD_ANCHOR, GUARD_POISON, 1)
+        poisoned_asset = None
+    else:
+        poisoned_html = None
+        poisoned_asset = None
+        for cand in sorted((TARGET.parent / "assets").glob("*.js")):
+            try:
+                text = cand.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError):
+                continue
+            if GUARD_ANCHOR in text:
+                poisoned_asset = (cand.relative_to(TARGET.parent), text.replace(GUARD_ANCHOR, GUARD_POISON, 1))
+                break
+        if poisoned_asset is None:
+            print("FAIL 启动守卫自检：index.html 与 assets/*.js 里都没有注入点 %s" % GUARD_ANCHOR)
+            return 1
+
     with tempfile.TemporaryDirectory() as tmp:
-        broken = Path(tmp) / "index.html"
-        broken.write_text(poisoned, encoding="utf-8")
+        if poisoned_asset is None:
+            broken = Path(tmp) / TARGET.name
+            broken.write_text(poisoned_html, encoding="utf-8")
+        else:
+            # 把产物目录整个拷进来再改写其中一个 js，保持相对引用不变
+            site_root = Path(tmp) / "site"
+            shutil.copytree(TARGET.parent, site_root, dirs_exist_ok=True)
+            rel, text = poisoned_asset
+            (site_root / rel).write_text(text, encoding="utf-8")
+            broken = site_root / TARGET.name
         with tempfile.TemporaryDirectory() as prof:
             cmd = [
                 CHROME, "--headless=new", "--disable-gpu", "--no-first-run",
