@@ -61,14 +61,22 @@ jobs:
       - name: 前端脚本语法检查
         run: node --check web/js/app.js
 
-      # 必须排在单元测试**之前**：单元测试里的 verify_papers.py 要读
-      # papers/_metrics.json，而它是 papers_prep.py 的中间产物（不入版本控制），
-      # 干净 checkout 里没有。放在测试之后会让单元测试在 CI 上必挂
-      # （2026-10-21 首次跑就是这样），而在本地因为产物常驻反而看不出来。
+      # 两点讲究，改之前先看：
+      #
+      # 1. 必须排在单元测试**之前**：单元测试里的 verify_papers.py 要读
+      #    papers/_metrics.json，而它是 papers_prep.py 的中间产物（不入版本控制），
+      #    干净 checkout 里没有。放在测试之后会让单元测试在 CI 上必挂
+      #    （2026-10-21 首次跑就是这样），本地因为产物常驻反而看不出来。
+      #
+      # 2. 有意**不跑** papers_render.py：
+      #    它会把 _metrics.json 回填到 papers/<slug>/<slug>.md 覆盖交付文本，
+      #    而干净 checkout 没有 quotes.json，_metrics.json 的 q_* 是 0——
+      #    跑它会把论文里正确的「171 条（91.2%）」静默写成「0 条（0%）」。
+      #    2026-10-21 调试时真踩过一次。render 留在本地有完整数据时执行，
+      #    papers_render.py 里也加了同样的守卫，双保险。
       - name: 重新生成派生产物
         run: |
           python src/papers_prep.py
-          python src/papers_render.py
           python src/perspectives_prep.py
 
       - name: 单元测试

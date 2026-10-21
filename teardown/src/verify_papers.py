@@ -160,8 +160,11 @@ def flat_numbers(obj, acc):
 
 def check_metrics(metrics, errs):
     skipped = []
+    # 记录「因缺本地私有数据而无从复算」的指标名，① 与 ② 两处共同跳过。
+    unavailable = {}
     for tag, book in BOOKS.items():
         fresh = recompute(book)
+        unavailable[book] = {k for k, v in fresh.items() if v is None}
         for k, v in fresh.items():
             if v is None:
                 skipped.append("%s.%s" % (tag, k))
@@ -178,9 +181,15 @@ def check_metrics(metrics, errs):
         # 明确告知跳过了什么，别让人以为检查过全是绿的
         print("[跳过] 依赖本地私有数据（data/<book>/quotes.json，不入库）：%s"
               % "、".join(skipped))
-        # ② 与学科视角文档对齐
+        # ② 与学科视角文档对齐。
+        # unavailable 里的指标必须跳过：干净 checkout 上 papers_prep.py 在缺
+        # quotes.json 时会把 q_* 算成 0，而 VP.CANON 是写死的真值 171/156/91.2，
+        # 两边永远不可能相等——不跳过就是恒定失败，掩盖真正的漂移。
         canon = VP.CANON.get(book, {})
         for mk, ck in CROSS.items():
+            if mk in unavailable[book]:
+                skipped.append("%s.%s(cross)" % (tag, mk))
+                continue
             if ck in canon and metrics[book].get(mk) != canon[ck]:
                 errs.append("[②] %s.%s=%s 与 perspectives canonical %s=%s 不一致"
                             % (tag, mk, metrics[book].get(mk), ck, canon[ck]))
@@ -232,6 +241,9 @@ def check_paper(slug, path, metrics, refs, errs):
     allowed = set()
     for tag in BOOKS:
         flat_numbers(metrics[BOOKS[tag]], allowed)
+        # 补 canonical 进白名单：缺 quotes.json 时 _metrics.json 里的 q_* 是 0，
+        # 而正文引用的是写死的真值（171/156/91.2），不补这条会恒定失败。
+        flat_numbers(VP.CANON.get(BOOKS[tag], {}), allowed)
     allowed |= ALLOW_NUMBERS
     allowed |= {str(i) for i in range(0, 16)}
     for m in re.finditer(r"(\d+(?:\.\d+)?)%", body):

@@ -216,6 +216,22 @@ def make_figure(slug, metrics, outdir):
 
 def main():
     metrics = load_metrics()
+    # 守卫：本脚本会把 metrics 回填到已入库的交付文本 papers/<slug>/<slug>.md 里覆盖。
+    # 若输入依赖的私有数据不在（data/<book>/quotes.json 不入版本控制），
+    # metrics 里的 q_* 会是 0，跑一次就会把论文里正确的
+    # 「天才 25 条（40%）/ 废土 171 条（91.2%）」静默写成「0 条（0%）」——
+    # 2026-10-21 调试时确实发生过，而且不跑 diff 根本看不出来。
+    # 宁可拒绝执行，也不写一个错误的交付物。
+    missing = [b for b in metrics if not os.path.exists(
+        os.path.join(ROOT, "data", b, "quotes.json"))]
+    if missing:
+        raise SystemExit(
+            "缺少本地私有数据 data/<book>/quotes.json：%s\n"
+            "  papers_render 会把 metrics 回填到交付文本，缺这份数据会把金句相关数字\n"
+            "  写成 0 并覆盖正确内容。请先备好数据再跑；\n"
+            "  CI 上应跳过本步骤（见 .github/workflows/ci-teardown.yml）。"
+            % "、".join(missing)
+        )
     refs = load_refs()
     srcs = sorted(f for f in os.listdir(SRC) if f.endswith(".md"))
     if not srcs:

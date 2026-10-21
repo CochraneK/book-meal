@@ -167,6 +167,15 @@ def main():
 
         print(f"\n===== {book} =====")
         for view in VIEWS:
+            # quotes 视图的数据来自 data/<book>/quotes.json——抽取出来的原文引语，
+            # 受版权保护、不入版本控制。干净 checkout（CI）里没有它，报告里这个
+            # 视图必然是空的。这时标 SKIP 并说明原因，而不是判 FAIL：
+            # 缺数据不等于渲染坏了，判 FAIL 只会让 CI 恒定红并且掩盖真问题。
+            if view == "quotes" and not os.path.exists(
+                    os.path.join(BASE, "data", book, "quotes.json")):
+                print(f"  [SKIP] {view:<13} 依赖 data/{book}/quotes.json"
+                      f"（本地私有数据，不入库）")
+                continue
             r = run_view(chrome, tmp, view)
             ok = r["active"] and r["markers"] and r["html_len"] >= MIN_HTML \
                 and not r["errors"] and not r["extra"]
