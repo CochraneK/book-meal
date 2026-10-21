@@ -17,7 +17,27 @@ import subprocess
 import sys
 import tempfile
 
-NODE = "C:/Users/cunyi/.workbuddy/binaries/node/versions/22.22.2-6/node.exe"
+# 曾经的写法是写死本机那一个绝对 Windows 路径，结果在 Linux runner 上
+# subprocess 直接 FileNotFoundError（2026-10-21 拆书工程第一次进 CI 就挂在这）。
+# 构建期只用它做一次 JS 语法自检，找不到就跳过——不该让「没装 node」
+# 变成构建失败，那是环境问题不是代码问题。
+NODE_WIN = "C:/Users/cunyi/.workbuddy/binaries/node/versions/22.22.2-6/node.exe"
+
+
+def find_node():
+    """按 环境变量 → PATH → 本机已知位置 的顺序找 node；找不到返回 None。"""
+    import shutil
+    for key in ("NODE_BIN", "NODE"):
+        v = os.environ.get(key)
+        if v and os.path.exists(v):
+            return v
+    for name in ("node", "node.exe"):
+        p = shutil.which(name)
+        if p:
+            return p
+    if os.path.exists(NODE_WIN):
+        return NODE_WIN
+    return None
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from md_to_html import md_to_html  # noqa: E402  长文 Markdown → 报告内嵌 HTML
 from insight_link import build_insight_index, extend_linked  # noqa: E402  学科视角/论文 ↔ 实体 联动索引
@@ -347,16 +367,20 @@ def build(book_id):
     if css.count("{") - css.count("}") != 0:
         raise RuntimeError("CSS 花括号不平衡，终止构建")
 
-    # 自检 2：JS 语法（node --check）
-    with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as f:
-        f.write(js)
-        tmp_js = f.name
-    try:
-        r = subprocess.run([NODE, "--check", tmp_js], capture_output=True, text=True)
-        if r.returncode != 0:
-            raise RuntimeError("JS 语法错误：\n" + (r.stderr or r.stdout))
-    finally:
-        os.unlink(tmp_js)
+    # 自检 2：JS 语法（node --check）。找不到 node 就跳过并说明，不因此中断构建。
+    node = find_node()
+    if not node:
+        print("[warn] 未找到 node，跳过 JS 语法自检（装好 node 或设 NODE_BIN 即会启用）")
+    else:
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as f:
+            f.write(js)
+            tmp_js = f.name
+        try:
+            r = subprocess.run([node, "--check", tmp_js], capture_output=True, text=True)
+            if r.returncode != 0:
+                raise RuntimeError("JS 语法错误：\n" + (r.stderr or r.stdout))
+        finally:
+            os.unlink(tmp_js)
 
     # 自检 3：数据占位符唯一
     if tpl.count("__DATA__") != 1:

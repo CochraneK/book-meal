@@ -1,8 +1,19 @@
-# 明朝项目长期记忆（MEMORY.md）
+# book-meal 项目长期记忆（MEMORY.md）
 
-## 项目身份
-- **Ming**：本地 `D:\2026\WB项目\明朝`；GitHub `CochraneK/ming`（public）；在线 https://cochranek.github.io/ming/ 。
-- **参考实现**：通用流程在 `~/.workbuddy/skills/novel-spacetime-knowledge-graph/`（做同类小说**复制本项目 `src/` 再改**）；项目专属细节在 `.workbuddy/skills/ming-report-engineering/`。两者勿混用。
+## 项目身份（2026-10-21 两仓合并后）
+- **book-meal**：本地 `D:\2026\WB项目\book-meal`；GitHub `CochraneK/book-meal`（public）；
+  站点 https://cochranek.github.io/book-meal/ 。
+- **本地与远端都只有这一个仓库**。此前是两个互不相干的本地目录：平台仓（当时叫「明朝」）
+  与拆书工程（无版本控制）。2026-10-21 把拆书工程整体搬成 `teardown/` 子目录，
+  平台仓同时改名为 book-meal。
+- **两套 `src/` `web/` `data/` 并存**：根级的属于《明朝那些事儿》，
+  `teardown/` 下的属于其余三本。视图集合完全不同，不合并是刻意决定。
+- **参考实现**：通用流程在 `~/.workbuddy/skills/novel-spacetime-knowledge-graph/`（做同类小说**复制本项目 `src/` 再改**）；项目专属细节在 `.workbuddy/skills/ming-report-engineering/`。拆书类任务加载用户级 skill `book-teardown-pipeline`（`~/.workbuddy/skills/`）。三者勿混用。
+- **记忆只有一份**：`.workbuddy/memory/`。原拆书工程的日志已并入
+  （重名文件加 `-teardown` 后缀），`teardown/.workbuddy` 已删除。
+- **CI 两条**：`ci.yml`（平台，每次 push）与 `ci-teardown.yml`（拆书工程，
+  仅 `teardown/**` 变更触发 + 每周一 03:17 UTC + 手动）。两条共用
+  `tests/check_copyright.py` 做版权巡检。
 
 ## 现状与规模（2026-09-14 自查轮）
 - **规模**：章节 156 / 地点 583（定位 553=**94.9%**，未定位 30）/ 人物 1231 / 事件 1106（待考 **2**）/ 关系 2324 / 在位 17 帝 / 年谱 165 人。`data.json` 地点 563（`event_places.json` 注入 +20，非 bug）。
@@ -51,6 +62,62 @@
 ## 方案落地终态（`report/Ming_重构验收清单.md`）
 - **25 项：✅23 / 🟡1（P2-02 `from`/`to` 保留显示名是有意决策）/ ⏸1（P2-09 `.workbuddy/memory` 有意入库做接续指南）**。**方案项已全部闭环，不要再当 TODO 找**；唯一「不必做」是移动端详情抽屉（dialog 已自适应）。
 - 量化：构建 109.7s→≈2s；单文件 11.39MB→5.27MB（−54%）；测试 0→55；validators 10→12 组；浏览器自检 0→14 场景。
+
+## 拆书工程（teardown/）——三本书的抽取与报告
+- 书目：两本走五元组流水线 `teardown/src/generate_report.py` —— `tiancai`《天才基本法》、
+  `feitu`《我在废土世界扫垃圾》；一本独立报告 `swdw`《小说维度晋升，我在天幕当评委》，
+  由 `teardown/src/build_swdw_report.py` 单独生成。
+  swdw 的 `data.json` 是**世界级 schema**（meta/mechanism/worlds/rule_evolution/
+  yu_arc/chapter_index），**不是**五元组 schema——**绝不能**喂给 `build()`（会 KeyError）。
+  `config.json` 用 `standalone:true` 标记它，`generate_report.main()` 会跳过。
+- **发布同步**：`teardown/src/publish_books.py`（平台根目录＝本工程的父目录）。
+  `--check` 只报差距不写盘、落后返回 1。比对**忽略 `meta.generated` 时间戳**——
+  每次构建都会刷新它，不忽略的话「重跑了一遍构建但没改任何东西」会被判成需要同步，
+  在 CI 里等于每次都失败。
+- **清单真源分工**：内容字段（title/desc/metrics/chapters/chars）由 `build_manifest.py`
+  从 `config.json` + `data.json` 派生；排版字段（`order`/`glyph`/`subtitle`/`note`/`external`）
+  属平台专有，同步时原样保留。平台描述写得更好 → 改 `config.json` 的 desc 再重跑。
+- **swdw 数据来源**：整本 KG 是从回收站找回的 `data/swdw/analysis/_t.js` 用 vm 沙箱抽出的。
+  原始分章 TXT 仅 181/202 章，但 KG 已覆盖全 202 章——**不必补章、不必重跑抽取**。
+  源站 zhys.tw 有 Cloudflare，命令行抓不到。
+- **三本书总览形态**（2026-10-21，commit `91f04bf`）：tiancai/feitu 共用拆书前端
+  `teardown/web/`，总览固定五段 `ovFlags → ovStats → (ovSpark|ovEvent) → ovClaims → ovAudit`。
+  「数据体检」区**必须常驻 DOM、只用 CSS 收起**（check_report 的 overview MARKERS
+  依赖「数据规模/数据状态/出场最多人物」，改成条件渲染会直接判失败）。
+  sparkline 按**叙事线名字**着色而非段序。swdw 是七世界卡片墙 + 可折叠档案。
+
+## 版权巡检（两条 CI 共用，改动前必读）
+`tests/check_copyright.py` 四道闸，每道都做过负向验证：
+1. **名单**：三本原著文件名 + `chapters.json`
+2. **`data/` 树内禁扩展名黑名单**（.txt/.html/.xml/.epub…）
+3. **体积**：`.txt` > 200KB；`data/` 下非 json 文件 > 1MB
+4. **内容特征**：json 里任一字符串值 > 8000 字符即判为疑似正文
+
+两个已踩过的坑：
+- **必须 `git -c core.quotepath=false ls-files`**。默认开启时中文路径会输出成
+  八进制转义，名单比对永远匹配不到、`os.path.isfile` 也找不到文件，被静默跳过。
+  合并前的旧 CI 写的是 `git ls-files | grep '明朝那些事儿'`，**这道守卫从来没生效过**。
+- swdw 的正文按章拆成 `data/swdw/chapters/0001.txt…0160.txt`，文件名是纯数字、
+  单个体积才 7KB，名单和体积闸都抓不住 → 这就是第 2 道闸（位置+扩展名）的来历。
+
+`teardown/.gitignore` 是拆书侧规则的真源（gitee 子目录 .gitignore 会正常生效），
+根 `.gitignore` 只写明指向它，避免两边不同步却以为都守住了。
+
+## CI · 拆书工程：依赖本地私有数据的校验要「跳过」而不是「判失败」
+这个工程从没进过 CI，第一次跑暴露出一整类问题：若干校验依赖**不入库的私有数据**
+（`data/<book>/quotes.json` 原文引语、`papers/_metrics.json` 中间产物），
+代码把「文件不存在」当 0 处理，于是干净 checkout 上恒定报假漂移。
+
+统一做法：缺失时指标取 `None`，比对环节打 `[SKIP]` 并明说缺哪个文件，
+然后跳过；有数据时照常校验。这样本地的检查力一点没丢，CI 也不再误报。
+涉及：`verify_perspectives.py`（对白三项 + must_contain）、
+`verify_papers.py`（①②③⑤ 四处）、`sync_readme.py`（金句行）、
+`check_report.py`（quotes 视图）。
+
+**`papers_render.py` 会改写已入库的交付文本**（把 `_metrics.json` 回填到
+`papers/<slug>/<slug>.md`）。缺 quotes 时 metrics 里 q_* 是 0，跑一次就会把论文里
+正确的「天才 25 条（40%）/ 废土 171 条（91.2%）」静默写成「0 条（0%）」——
+调试时真踩过。已加守卫（缺数据拒绝执行），CI 里也不再跑它。
 
 ## 剩余待办（内容层，低优先）
 1. **未定位地点 30 个**：多为漠北蒙古草原地名（15 世纪定位困难且有争议），按纪律不动；`车迟国` 已标 `status:"非实地"`。

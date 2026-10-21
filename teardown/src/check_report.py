@@ -64,10 +64,28 @@ MIN_HTML = 400  # 视图内 DOM 字符数下限，低于此基本等于空白
 
 
 def find_chrome():
-    for p in CHROME_CANDIDATES:
+    """优先 CHROME_BIN（CI 里指向 google-chrome），否则 PATH → 本机常见路径。
+
+    原来只列了三条 Windows 绝对路径，在 Linux runner 上必然抛
+    RuntimeError（拆书工程 2026-10-21 第一次进 CI 时才被发现）。
+    这里与平台侧 tests/browser_check.py 保持同一种探测顺序。
+    """
+    env = os.environ.get("CHROME_BIN")
+    if env and os.path.exists(env):
+        return env
+    import shutil
+    for name in ("google-chrome", "chrome", "chromium", "chromium-browser"):
+        found = shutil.which(name)
+        if found:
+            return found
+    for p in CHROME_CANDIDATES + [
+        "/usr/bin/google-chrome",
+        "/usr/bin/chromium",
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    ]:
         if os.path.exists(p):
             return p
-    raise RuntimeError("未找到 Chrome / Edge")
+    return None
 
 
 def instrument(src_html):
@@ -153,6 +171,13 @@ def run_view(chrome, path, view):
 
 def main():
     chrome = find_chrome()
+    if not chrome:
+        # 这是门禁脚本，跳过就等于没验证，所以判失败而不是静默通过；
+        # 但要说清是环境问题、以及怎么补，别让人误以为报告坏了。
+        print("[FAIL] 未找到 Chrome / Chromium，无法做无头视图自检。")
+        print("       CI 上由 browser-actions/setup-chrome 提供；本机可用 "
+              "CHROME_BIN=<路径> 指定，或安装 Chrome。")
+        return 1
     books = sys.argv[1:] or ["tiancai", "feitu"]
     bad = 0
     for book in books:
