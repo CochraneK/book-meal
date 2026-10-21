@@ -109,6 +109,7 @@ def _card(m) -> str:
     kind_label = KIND_LABELS.get(kind, kind)
     metrics = m.get("metrics") or {}
     ch = m.get("chapters")
+    glyph = str(m.get("glyph") or (m.get("title") or "")[:1])
 
     badges = []
     if m.get("external"):
@@ -117,91 +118,113 @@ def _card(m) -> str:
         badges.append('<span class="bdg bdg-note">%s</span>' % esc(m.get("note")))
     badge_html = "".join(badges)
 
-    metrics_html = "".join(
-        '<div class="mt"><b>%s</b><span>%s</span></div>' % (esc(metrics.get(key)), esc(label))
+    stats_html = "".join(
+        '<div><b>%s</b><span>%s</span></div>' % (esc(metrics.get(key)), esc(label))
         for key, label in (("characters", "人物"), ("events", "事件"), ("relations", "关系"))
     )
+    if ch:
+        stats_html += '<div><b>%s</b><span>章</span></div>' % esc(ch)
 
-    chapters_html = (
-        '<span class="ch">%s 章</span>' % esc(ch) if ch else ""
+    meta_line = " · ".join(
+        x for x in (m.get("author", ""), m.get("subtitle", "")) if x
     )
 
     return (
         '<article class="card" data-kind="{kind}" style="--accent:{accent}">'
-        '<div class="card-hd">'
-        '<span class="bdg bdg-kind">{kind_label}</span>{badges}'
-        "</div>"
+        '<div class="cover" aria-hidden="true"><span class="glyph">{glyph}</span>'
+        '<span class="cover-kind">{kind_label}</span></div>'
+        '<div class="body">'
+        '<div class="k-row"><span class="bdg bdg-kind">{kind_label}</span>{badges}</div>'
         "<h2>{title}</h2>"
-        '<p class="author">{author}</p>'
+        '<p class="author">{meta}</p>'
         '<p class="desc">{desc}</p>'
-        '<div class="mts">{metrics_html}</div>'
-        '<div class="card-ft">'
-        "<span>{updated}{chapters}</span>"
-        '<a class="open" href="{href}">打开报告 →</a>'
-        "</div>"
-        "</article>"
+        '<div class="mts">{stats_html}</div>'
+        '<div class="ft"><span>{updated}</span>'
+        '<a class="open" href="{href}">打开报告 <i>→</i></a></div>'
+        "</div></article>"
     ).format(
         kind=esc(kind),
-        accent=esc(m.get("accent", "#5a4b8c")),
+        accent=esc(m.get("accent", "#8a4a2f")),
+        glyph=esc(glyph),
         kind_label=esc(kind_label),
         badges=badge_html,
         title=esc(m.get("title")),
-        author=esc(m.get("author", "")),
+        meta=esc(meta_line),
         desc=esc(m.get("desc", "")),
-        metrics_html=metrics_html,
-        updated=esc(m.get("updated", "")),
-        chapters=chapters_html,
+        stats_html=stats_html,
+        updated=("更新 " + esc(m.get("updated"))) if m.get("updated") else "",
         href=esc(report_href(m)),
     )
 
-
 CSS = """
 :root{
-  --bg:#f6f4ef; --panel:#ffffff; --ink:#2b2620; --ink-soft:#6f675c;
-  --line:#e3ddd2; --accent:#5a4b8c; --chip:#efeae0;
+  --bg:#f2eee6; --paper:#fffdf8; --ink:#27231f; --muted:#716960;
+  --line:#ded6c9; --accent:#8d3025; --gold:#b88b35;
+  --shadow:0 8px 24px rgba(42,31,21,.08);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
-  line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin:0 auto;padding:48px 24px 64px}
-header.hub{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:28px}
-h1{font-size:30px;margin:0 0 6px;letter-spacing:.5px}
-.sub{color:var(--ink-soft);font-size:14px;margin:0 0 22px}
-.summary{display:flex;flex-wrap:wrap;gap:28px}
-.summary .sm{display:flex;flex-direction:column}
-.summary .sm b{font-size:26px;font-variant-numeric:tabular-nums}
-.summary .sm span{font-size:12px;color:var(--ink-soft);letter-spacing:1px}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
-.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink-soft);
-  border-radius:999px;padding:5px 14px;font-size:13px;cursor:pointer;transition:.15s}
+  font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:40px 24px 64px}
+.hero{display:grid;grid-template-columns:1.45fr 1fr;gap:24px;align-items:center;
+  background:linear-gradient(180deg,#342c25,#2a241f);color:#f7efe2;
+  border-radius:14px;padding:34px 36px;margin-bottom:22px;box-shadow:var(--shadow)}
+.kicker{margin:0 0 10px;color:#d8bf86;font-size:13px;letter-spacing:.2em}
+.hero h1{margin:0;font-size:34px;line-height:1.22;color:#fff;font-weight:800;letter-spacing:.01em}
+.lede{margin:14px 0 0;color:#dfd0c1;font-size:14px;line-height:1.7;max-width:52ch}
+.hero-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
+.hero-stats>div{background:rgba(255,255,255,.06);border:1px solid rgba(200,168,106,.28);border-radius:10px;padding:12px 14px}
+.hero-stats dd{margin:0;font-size:28px;line-height:1.05;font-weight:800;color:#f3e3c4;font-variant-numeric:tabular-nums}
+.hero-stats dt{margin-top:4px;color:#cdbfa9;font-size:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--muted);
+  border-radius:999px;padding:6px 15px;font-size:13px;cursor:pointer;transition:.15s}
 .chip:hover{border-color:var(--accent);color:var(--ink)}
 .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(316px,1fr));gap:20px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;
-  padding:20px 22px 18px;display:flex;flex-direction:column;
-  border-left:4px solid var(--accent);box-shadow:0 1px 2px rgba(43,38,32,.04)}
-.card-hd{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
-.bdg{font-size:11px;padding:2px 9px;border-radius:999px;letter-spacing:.5px;white-space:nowrap}
-.bdg-kind{background:#eef0f6;color:#4a4f6b}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px}
+.card{display:flex;background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;box-shadow:0 2px 9px rgba(50,40,30,.05);
+  transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.cover{flex:0 0 96px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  padding:18px 8px 12px;color:#fff;background:var(--accent);
+  background:linear-gradient(160deg,var(--accent),color-mix(in srgb,var(--accent) 60%,#1d1713))}
+.glyph{font-family:'Songti SC','STSong','SimSun',serif;font-size:42px;font-weight:700;line-height:1;margin-top:8px}
+.cover-kind{font-size:10px;letter-spacing:.18em;opacity:.85;writing-mode:vertical-rl}
+.body{flex:1;min-width:0;padding:16px 18px 14px;display:flex;flex-direction:column}
+.k-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.bdg{font-size:11px;padding:1px 8px;border-radius:999px;letter-spacing:.04em;white-space:nowrap}
+.bdg-kind{background:#f3ece0;color:#8a6a2a}
 .bdg-ext{background:#e8f1ec;color:#2f6b4f}
-.bdg-note{background:#f4ecf8;color:#6b4a8c}
-.card h2{font-size:19px;margin:0 0 2px}
-.author{font-size:13px;color:var(--ink-soft);margin:0 0 10px}
-.desc{font-size:13.5px;color:#4a443b;margin:0 0 16px;flex:1}
-.mts{display:flex;gap:22px;border-top:1px dashed var(--line);padding-top:12px;margin-bottom:12px}
-.mt{display:flex;flex-direction:column}
-.mt b{font-size:19px;font-variant-numeric:tabular-nums}
-.mt span{font-size:11px;color:var(--ink-soft)}
-.card-ft{display:flex;justify-content:space-between;align-items:center;
-  font-size:12px;color:var(--ink-soft)}
-.card-ft .ch{margin-left:8px}
-.open{color:var(--accent);text-decoration:none;font-weight:600;font-size:13px}
-.open:hover{text-decoration:underline}
-footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
-  font-size:12px;color:var(--ink-soft)}
-.empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:48px 0}
-@media (max-width:560px){.wrap{padding:28px 16px}.summary{gap:18px}}
+.bdg-note{background:#f6efe4;color:#86632a}
+.card h2{margin:0;font-size:20px;line-height:1.3;color:#2f2822}
+.author{margin:3px 0 0;font-size:12px;color:var(--muted)}
+.desc{margin:10px 0 14px;font-size:13px;color:#4a443b;flex:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.mts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;
+  border-top:1px dashed var(--line);padding-top:10px;margin-bottom:10px}
+.mts b{display:block;font-size:16px;font-variant-numeric:tabular-nums;color:#3a3029}
+.mts span{font-size:10.5px;color:var(--muted)}
+.ft{display:flex;justify-content:space-between;align-items:center;gap:8px;
+  font-size:11.5px;color:var(--muted)}
+.open{color:var(--accent);text-decoration:none;font-weight:700;font-size:12.5px;white-space:nowrap}
+.open i{font-style:normal;transition:transform .15s}
+.open:hover i{display:inline-block;transform:translateX(2px)}
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:48px 0}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero h1{font-size:28px}.hero-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:640px){
+  .wrap{padding:24px 14px 48px}
+  .hero{padding:24px 22px}
+  .hero h1{font-size:25px}
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid{grid-template-columns:1fr}
+  .card{flex-direction:column}
+  .cover{flex:none;width:100%;height:84px;flex-direction:row;justify-content:flex-start;gap:12px;padding:0 18px}
+  .glyph{margin:0;font-size:32px}
+  .cover-kind{writing-mode:horizontal-tb}
+}
 """
 
 JS = """
@@ -263,16 +286,19 @@ def render(manifests, warnings, base: Path = BASE) -> str:
         "<title>书库 · 拆书平台</title>\n"
         "<style>%s</style>\n</head>\n<body>\n"
         '<div class="wrap">\n'
-        '<header class="hub">\n'
-        "<h1>书库 · 拆书平台</h1>\n"
-        '<p class="sub">长篇小说与知识类书籍的结构化拆解：五元组知识图谱、地点坐标、'
-        "关系网络与多视角分析。每本书一份单文件离线报告。</p>\n"
-        '<div class="summary">\n'
-        '<div class="sm"><b>%d</b><span>本书</span></div>\n'
-        '<div class="sm"><b>%d</b><span>人物</span></div>\n'
-        '<div class="sm"><b>%d</b><span>事件</span></div>\n'
-        '<div class="sm"><b>%d</b><span>关系</span></div>\n'
-        "</div>\n</header>\n"
+        '<header class="hero">\n'
+        "<div>\n"
+        '<p class="kicker">书库 · 拆书平台</p>\n'
+        "<h1>%d 本书，拆成可读的结构</h1>\n"
+        '<p class="lede">长篇小说与知识类书籍的结构化拆解：五元组知识图谱、地点坐标、'
+        "关系网络与多视角分析。每本书一份单文件离线报告，按章节保留来源与核验状态。</p>\n"
+        "</div>\n"
+        '<dl class="hero-stats">\n'
+        '<div><dd>%d</dd><dt>本书</dt></div>\n'
+        '<div><dd>%d</dd><dt>人物</dt></div>\n'
+        '<div><dd>%d</dd><dt>事件</dt></div>\n'
+        '<div><dd>%d</dd><dt>关系</dt></div>\n'
+        "</dl>\n</header>\n"
         '<nav class="filters">%s</nav>\n'
         '<main class="grid">%s</main>\n'
         "%s"
@@ -285,6 +311,7 @@ def render(manifests, warnings, base: Path = BASE) -> str:
     ) % (
         CSS,
         len(manifests),
+        len(manifests),
         total["characters"],
         total["events"],
         total["relations"],
@@ -293,7 +320,6 @@ def render(manifests, warnings, base: Path = BASE) -> str:
         warn_html,
         JS,
     )
-
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="生成多书聚合门户（根 index.html）")

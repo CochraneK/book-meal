@@ -3,386 +3,618 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>小说维度晋升，我在天幕当评委 · 拆书报告</title>
 <style>
-:root{--bg:#f7f5f1;--ink:#2b2a26;--muted:#6f6a5f;--accent:#5a4b8c;--line:#e7e2d6;--card:#fff;}
+/* 纸墨 + 本书紫：与书库门户、拆书报告同一套底子，本书只换主色 */
+:root{
+  --bg:#f4f1ea; --paper:#fffdf8; --paper-2:#faf7f0;
+  --ink:#27231f; --ink-2:#5f584f; --ink-3:#7c7469;
+  --line:#e2dbcd; --line-2:#efe9dc;
+  --accent:#5a4b8c; --accent-soft:#efeaf8; --gold:#b08a3e;
+  --green:#3f7a4e; --amber:#b07a2e; --red:#a63a3a;
+  --radius:12px; --shadow:0 1px 3px rgba(40,35,25,.08),0 8px 22px rgba(40,35,25,.05);
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;line-height:1.7}
-a{color:var(--accent)}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.72;
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",-apple-system,sans-serif;
+  font-size:14.5px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.num{font-variant-numeric:tabular-nums}
+.hint{font-weight:400;font-size:12px;color:var(--ink-3);margin-left:8px}
+.lead{font-size:14.5px;color:var(--ink-2);margin:8px 0}
+.table-wrap{overflow-x:auto}
+
+/* ---------- 吸顶导航 ---------- */
+nav.toc{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:4px;flex-wrap:wrap;
+  padding:10px 24px;background:rgba(244,241,234,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line)}
+nav.toc .brand{font-size:13px;font-weight:700;color:var(--ink);margin-right:14px;letter-spacing:.02em}
+nav.toc a{color:var(--ink-2);font-size:13px;padding:5px 11px;border-radius:999px}
+nav.toc a:hover{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+@media(max-width:760px){nav.toc .brand{display:none}nav.toc{padding:8px 14px;gap:2px}
+  nav.toc a{font-size:12.5px;padding:4px 8px}}
+
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px}
-nav.toc{position:sticky;top:0;z-index:10;background:rgba(247,245,241,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;gap:6px;flex-wrap:wrap;padding:12px 24px}
-nav.toc a{text-decoration:none;color:var(--muted);font-size:13px;padding:6px 12px;border-radius:999px}
-nav.toc a:hover{background:var(--accent);color:#fff}
-.hero{padding:54px 0 30px;border-bottom:1px solid var(--line);margin-bottom:8px}
-.hero-tag{display:inline-block;font-size:12px;color:var(--accent);background:#efeaf8;border:1px solid #d9cff0;border-radius:6px;padding:3px 10px;margin-bottom:14px}
-.hero h1{font-size:34px;margin:0 0 8px;letter-spacing:1px}
-.hero-sub{color:var(--muted);font-size:15px;margin:0 0 20px}
-.hero-meta{display:flex;gap:30px;margin:18px 0}
-.hero-meta div{display:flex;flex-direction:column}
-.hero-meta b{font-size:26px;color:var(--accent);line-height:1}
-.hero-meta span{font-size:12px;color:var(--muted);margin-top:6px}
-.hero-note{font-size:14px;color:#4a463d;background:#fff;border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
-.hero-src{font-size:12px;color:var(--muted)}
-section{padding:34px 0;border-bottom:1px solid var(--line)}
-section h2{font-size:24px;margin:0 0 18px;color:var(--accent)}
-section h3{font-size:18px;margin:26px 0 12px}
-section h4{font-size:15px;margin:22px 0 10px;color:#3a3640}
-.lead{font-size:15px;color:#4a463d}
-.cond-row{margin:14px 0;font-size:14px}
-.cond{display:inline-block;background:#efeaf8;color:var(--accent);border-radius:6px;padding:4px 10px;margin:3px 6px 3px 0;font-size:13px}
-.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:10px 0}
-.vcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-.vcount{font-size:28px;font-weight:700;color:var(--accent)}
-.vtype{font-weight:600;margin:4px 0}
-.vdesc{font-size:13px;color:var(--muted)}
-ul.rules{list-style:none;padding:0;margin:0}
-ul.rules li{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:14px}
-ul.rules b{color:var(--accent)}
-.otbl{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:13px}
-.otbl th,.otbl td{border:1px solid var(--line);padding:8px 10px;text-align:left}
-.otbl th{background:#efeaf8;color:var(--accent)}
-.world{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 1px 4px rgba(40,35,25,.05)}
-.whead{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.widx{background:var(--accent);color:#fff;border-radius:10px;padding:6px 12px;font-weight:700;font-size:14px}
-.wtitle h3{margin:0;font-size:20px}
-.wfull{font-size:13px;color:var(--muted)}
-.wbadge{margin-left:auto;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;color:#fff}
-.wrange{font-size:13px;color:var(--muted);margin:10px 0 6px}
-.wcols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px}
-@media(max-width:760px){.wcols{grid-template-columns:1fr}}
-.setting{font-size:14px;background:#faf8f4;border-radius:8px;padding:12px}
-.prot{font-size:14px}.prot .sit{display:block;color:var(--muted);font-size:13px;margin-top:4px}
-.interv{font-size:14px;color:#4a463d}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.ccard{background:#faf8f4;border:1px solid var(--line);border-radius:10px;padding:10px}
-.cname{font-weight:700;font-size:14px}
-.crole{font-size:12px;color:var(--accent);margin:3px 0}
-.cquote{font-size:12px;color:var(--muted);font-style:italic}
-.ptimeline{border-left:3px solid var(--accent);padding-left:18px;margin:6px 0}
-.pnode{margin-bottom:14px;position:relative}
-.pnode:before{content:"";position:absolute;left:-25px;top:6px;width:11px;height:11px;background:var(--accent);border-radius:50%;border:2px solid #fff}
-.pstage{font-weight:700;font-size:14px;color:var(--accent)}
-.ptext{font-size:14px;color:#4a463d}
-.dtbl{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+@media(max-width:560px){.wrap{padding:0 16px 60px}}
+
+/* ---------- 抬头 ---------- */
+.hero{padding:46px 0 26px;border-bottom:1px solid var(--line)}
+.kicker{font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:700}
+.hero h1{font-size:34px;line-height:1.28;margin:8px 0 6px;letter-spacing:.01em}
+.hero-sub{color:var(--ink-2);font-size:13.5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 0}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:13px 15px 11px;box-shadow:var(--shadow)}
+.stat .v{font-size:30px;font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.stat .l{font-size:12px;color:var(--ink-2);margin-top:5px;letter-spacing:.06em}
+.stat .s{font-size:11px;color:var(--ink-3);margin-top:1px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:26px}.stat .v{font-size:24px}}
+.flags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.flag{font-size:11.5px;color:var(--ink-2);background:var(--paper);border:1px solid var(--line);
+  border-radius:999px;padding:1px 10px}
+.hero-note{font-size:13.5px;color:var(--ink-2);background:var(--paper-2);border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;padding:11px 15px;margin:16px 0 0}
+.hero-src{font-size:11.5px;color:var(--ink-3);margin:8px 0 0;word-break:break-all}
+
+/* ---------- 区块 ---------- */
+.sec{padding:34px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:none}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-bottom:16px}
+.sec-head h2{font-size:22px;margin:0;font-weight:700;letter-spacing:.01em}
+.sec h4{font-size:13.5px;margin:22px 0 9px;color:var(--ink);font-weight:700;letter-spacing:.04em}
+.mini-btn{cursor:pointer;font-family:inherit;font-size:12px;color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.mini-btn:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- 七世界卡片墙 ---------- */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+.wcard{display:flex;flex-direction:column;gap:3px;background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--radius);padding:14px 15px 12px;color:inherit;box-shadow:var(--shadow);
+  transition:border-color .15s,transform .15s}
+.wcard:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
+.wc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wc-idx{font-size:11px;letter-spacing:.1em;color:var(--accent);font-weight:700}
+.wc-badge{font-size:11px;font-weight:700;color:#fff;border-radius:999px;padding:1px 9px}
+.wc-name{font-size:16px;font-weight:700;margin-top:4px;line-height:1.35}
+.wc-full{font-size:11.5px;color:var(--ink-3)}
+.wc-range{font-size:11.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.wc-set{font-size:12.5px;color:var(--ink-2);line-height:1.62;margin-top:6px;flex:1}
+.wc-foot{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)}
+.wc-bar{flex:1;height:4px;background:var(--line-2);border-radius:2px;overflow:hidden}
+.wc-bar i{display:block;height:100%;background:var(--accent);opacity:.55;border-radius:2px}
+.wc-go{font-size:11px;color:var(--accent);white-space:nowrap}
+
+/* 裁定构成：一条堆叠条 + 图例 */
+.vdist{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:13px 16px}
+.vbar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line-2)}
+.vbar i{display:block;height:100%}
+.vleg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-top:10px}
+.vleg .lg{display:inline-flex;align-items:center;gap:5px}
+.vleg .lg i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.vleg b{color:var(--ink);font-variant-numeric:tabular-nums}
+.vnote{font-size:11.5px;color:var(--ink-3);line-height:1.65;margin:10px 0 0}
+
+/* 裁定四色：短标签、堆叠条、表格文字共用一套 */
+.v-pass{background:var(--green)}
+.v-fail{background:var(--amber)}
+.v-destroy{background:var(--red)}
+.v-pending{background:var(--ink-3)}
+
+/* ---------- 机制 ---------- */
+.cond-row{margin:14px 0;font-size:13.5px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.cond-k{font-size:11.5px;letter-spacing:.08em;color:var(--ink-3)}
+.cond{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:6px;
+  padding:3px 10px;font-size:12.5px;margin:2px 4px 2px 0}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin:14px 0 4px}
+.vcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.vcount{font-size:26px;font-weight:700;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.vtype{font-weight:700;font-size:13.5px;margin:4px 0 2px}
+.vdesc{font-size:12.5px;color:var(--ink-2);line-height:1.62}
+ul.rules{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+ul.rules li{display:flex;gap:12px;background:var(--paper);border:1px solid var(--line);
+  border-radius:9px;padding:10px 14px;font-size:13.5px;line-height:1.65}
+ul.rules li b{color:var(--accent);flex:none;min-width:26px;font-variant-numeric:tabular-nums}
+
+/* ---------- 世界档案（折叠） ---------- */
+.worlds-wrap{margin-top:16px}
+details.world{background:var(--paper);border:1px solid var(--line);border-radius:14px;
+  margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden}
+details.world[open]{border-color:#d8cdea}
+details.world > summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;
+  flex-wrap:wrap;padding:14px 18px}
+details.world > summary::-webkit-details-marker{display:none}
+details.world > summary:hover{background:var(--paper-2)}
+.widx{background:var(--accent);color:#fff;border-radius:9px;padding:5px 11px;font-weight:700;
+  font-size:12.5px;white-space:nowrap}
+.wtitle{display:flex;flex-direction:column;min-width:0;flex:1}
+.wtitle b{font-size:17px;line-height:1.35}
+.wfull{font-size:11.5px;color:var(--ink-3)}
+.wrange{font-size:11.5px;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.wbadge{font-size:11.5px;font-weight:700;color:#fff;border-radius:999px;padding:2px 11px;white-space:nowrap}
+.wcaret{font-size:11.5px;color:var(--accent);border:1px solid var(--line);border-radius:999px;
+  padding:1px 10px;white-space:nowrap}
+/* 按钮文案跟着折叠状态走，不靠 JS 改文本 */
+.wcaret::before{content:"展开"}
+details.world[open] .wcaret{color:var(--ink-3)}
+details.world[open] .wcaret::before{content:"收起"}
+.wbody{padding:2px 18px 18px;border-top:1px solid var(--line-2)}
+.wcols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:820px){.wcols{grid-template-columns:1fr;gap:0}}
+.setting{font-size:13.5px;background:var(--paper-2);border-radius:9px;padding:12px 14px;color:var(--ink)}
+.prot{font-size:13.5px;margin:0}.prot .sit{display:block;color:var(--ink-2);font-size:12.5px;margin-top:4px}
+.interv{font-size:13.5px;color:var(--ink-2);margin:0}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px}
+.ccard{background:var(--paper-2);border:1px solid var(--line-2);border-radius:9px;padding:9px 11px}
+.cname{font-weight:700;font-size:13.5px}
+.crole{font-size:11.5px;color:var(--accent);margin:2px 0}
+.cquote{font-size:11.5px;color:var(--ink-3);font-style:italic;line-height:1.6}
+.ptimeline{border-left:2px solid var(--accent);padding-left:18px;margin:6px 0}
+.pnode{margin-bottom:13px;position:relative}
+.pnode:before{content:"";position:absolute;left:-24px;top:7px;width:9px;height:9px;background:var(--accent);
+  border-radius:50%;border:2px solid var(--paper)}
+.pstage{font-weight:700;font-size:13px;color:var(--accent)}
+.ptext{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.dtbl{width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0}
 .dtbl th,.dtbl td{border:1px solid var(--line);padding:7px 10px;text-align:left}
-.dtbl th{background:#fbeaea;color:#a23}
-.verdict-box{border-radius:12px;padding:14px 18px;margin:16px 0;font-size:14px}
-.verdict-box .vb-row{display:flex;gap:14px;padding:5px 0;border-bottom:1px dashed rgba(0,0,0,.08)}
+.dtbl th{background:#f7ecec;color:var(--red);font-weight:600}
+.verdict-box{border-radius:11px;padding:13px 16px;margin:16px 0;font-size:13.5px}
+.verdict-box .vb-row{display:flex;gap:14px;padding:6px 0;border-bottom:1px dashed rgba(40,35,25,.1)}
 .verdict-box .vb-row:last-child{border-bottom:none}
-.vb-k{color:var(--muted);min-width:84px;flex-shrink:0}
-.vb-v{flex:1}
-.ru,.nr{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin:2px 4px 2px 0;font-size:12px}
-.quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
-blockquote{margin:0;background:#faf8f4;border-left:3px solid var(--accent);padding:10px 12px;font-size:13px;color:#4a463d;border-radius:0 8px 8px 0}
-.growth{font-size:14px;color:#4a463d;background:#faf8f4;border-radius:8px;padding:12px}
-.v-pass{background:#2e7d5b}.v-fail{background:#c0492f}.v-destroy{background:#3a2b2b}.v-pending{background:#b08523}
-.verdict-box.v-pass{background:#e8f3ee}.verdict-box.v-fail{background:#fbece8}.verdict-box.v-destroy{background:#efe7e7}.verdict-box.v-pending{background:#fbf3e0}
-.otbl td.v-pass{color:#2e7d5b;font-weight:600}.otbl td.v-fail{color:#c0492f;font-weight:600}.otbl td.v-destroy{color:#3a2b2b;font-weight:600}.otbl td.v-pending{color:#b08523;font-weight:600}
-.rtimeline{border-left:3px solid var(--accent);padding-left:18px;margin-top:10px}
-.rnode{margin-bottom:16px;position:relative}
-.rnode:before{content:"";position:absolute;left:-25px;top:6px;width:11px;height:11px;background:var(--accent);border-radius:50%;border:2px solid #fff}
-.rworld{font-size:12px;color:var(--accent);font-weight:700}
-.rrule{font-size:15px;font-weight:600}
-.rnote{font-size:13px;color:var(--muted)}
-.atimeline{border-left:3px solid var(--accent);padding-left:18px}
-.anode{margin-bottom:14px;position:relative}
-.anode:before{content:"";position:absolute;left:-25px;top:6px;width:11px;height:11px;background:var(--accent);border-radius:50%;border:2px solid #fff}
-.astage{font-weight:700;color:var(--accent);font-size:14px}
-.atext{font-size:14px;color:#4a463d}
-.theme-text{font-size:16px;color:#3a3640;background:#efeaf8;border-radius:12px;padding:20px;line-height:1.9}
-#chSearch{width:100%;max-width:420px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;margin-bottom:14px;font-family:inherit}
-.itbl{width:100%;border-collapse:collapse;font-size:13px}
-.itbl th,.itbl td{border:1px solid var(--line);padding:7px 10px;text-align:left}
-.itbl th{position:sticky;top:52px;background:#efeaf8;color:var(--accent);z-index:5}
-.itbl .ct{font-weight:600}
-.itbl .cw{color:var(--muted);white-space:nowrap}
-.itbl .cc{color:var(--muted);text-align:right;white-space:nowrap}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0}
+.vb-k{color:var(--ink-3);min-width:76px;flex-shrink:0;font-size:12.5px}
+.vb-v{flex:1;color:var(--ink)}
+.ru,.nr{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:6px;
+  padding:2px 8px;margin:2px 4px 2px 0;font-size:11.5px;color:var(--ink-2)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:9px}
+blockquote{margin:0;background:var(--paper-2);border-left:3px solid var(--accent);padding:10px 13px;
+  font-size:12.5px;color:var(--ink-2);border-radius:0 8px 8px 0;line-height:1.65}
+.growth{font-size:13.5px;color:var(--ink-2);background:var(--paper-2);border-radius:9px;padding:12px 14px}
+/* 裁定框按结果换底色（浅色，正文仍是墨色） */
+.verdict-box.v-pass{background:#eaf3ec}
+.verdict-box.v-fail{background:#f9f1e2}
+.verdict-box.v-destroy{background:#f8eaea}
+.verdict-box.v-pending{background:#f1efe9}
+
+/* ---------- 表格 ---------- */
+.otbl{width:100%;border-collapse:collapse;font-size:13px;margin:0 0 6px}
+.otbl th,.otbl td{border:1px solid var(--line);padding:8px 10px;text-align:left;background:var(--paper)}
+.otbl th{background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:12px;white-space:nowrap}
+.otbl td.dim{color:var(--ink-2)}
+.otbl td.v-pass,.itbl td.v-pass{background:var(--paper);color:var(--green);font-weight:700}
+.otbl td.v-fail{background:var(--paper);color:var(--amber);font-weight:700}
+.otbl td.v-destroy{background:var(--paper);color:var(--red);font-weight:700}
+.otbl td.v-pending{background:var(--paper);color:var(--ink-3);font-weight:700}
+
+/* ---------- 时间轴 ---------- */
+.rtimeline,.atimeline{border-left:2px solid var(--accent);padding-left:18px;margin-top:12px}
+.rnode,.anode{margin-bottom:16px;position:relative}
+.rnode:before,.anode:before{content:"";position:absolute;left:-24px;top:7px;width:9px;height:9px;
+  background:var(--accent);border-radius:50%;border:2px solid var(--bg)}
+.rworld{font-size:11.5px;color:var(--accent);font-weight:700;letter-spacing:.06em}
+.rrule{font-size:14.5px;font-weight:700;line-height:1.55}
+.rnote{font-size:12.5px;color:var(--ink-2);line-height:1.65}
+.astage{font-weight:700;color:var(--accent);font-size:13.5px}
+.atext{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.theme-text{font-size:15.5px;color:var(--ink);background:var(--accent-soft);border-radius:var(--radius);
+  padding:20px 22px;line-height:1.9;margin:0}
+
+/* ---------- 目录 ---------- */
+#chSearch{width:100%;max-width:420px;padding:9px 14px;border:1px solid var(--line);border-radius:9px;
+  font-size:13.5px;margin-bottom:12px;font-family:inherit;background:var(--paper);color:var(--ink)}
+#chSearch:focus{outline:none;border-color:var(--accent)}
+/* 表头吸顶：外层不能是滚动容器。overflow-x:auto 会把 overflow-y 一起算成 auto，
+   而 th 的 top:52px 是相对**滚动容器**算的——结果表头常驻在表格顶部往下 52px，
+   把前两行盖住（旧版截图里第 1、2 章被压在表头下）。桌面端让外层保持 visible，
+   窄屏才开横向滚动并放弃吸顶。 */
+.itbl-wrap{overflow:visible}
+.itbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.itbl th,.itbl td{border-bottom:1px solid var(--line-2);padding:7px 10px;text-align:left}
+.itbl th{position:sticky;top:52px;background:var(--accent-soft);color:var(--accent);z-index:5;
+  font-size:11.5px;font-weight:600}
+@media(max-width:760px){
+  .itbl-wrap{overflow-x:auto}
+  .itbl th{position:static;top:auto}
+}
+.itbl tbody tr:hover{background:var(--paper-2)}
+.itbl .ct{font-weight:600;color:var(--ink)}
+.itbl .cw{color:var(--ink-3);white-space:nowrap}
+.itbl .cc{color:var(--ink-3);text-align:right;white-space:nowrap}
+footer{text-align:center;color:var(--ink-3);font-size:11.5px;padding:34px 0 0;line-height:1.7}
 </style></head>
 <body>
-<nav class="toc"><a href="#overview">概览</a><a href="#mech">天幕机制</a><a href="#worlds">七世界</a><a href="#rules">规则演化</a><a href="#arc">余黎成长</a><a href="#theme">主题</a><a href="#index">全本目录</a></nav>
+<nav class="toc"><span class="brand">小说维度晋升，我在天幕当评委</span><a href="#overview">概览</a><a href="#mech">天幕机制</a><a href="#worlds">七世界档案</a><a href="#rules">规则演化</a><a href="#arc">余黎成长</a><a href="#theme">主题</a><a href="#index">全本目录</a></nav>
 <div class="wrap">
 
-<header class="hero">
-  <div class="hero-tag">回收站找回 · 知识图谱完整重建</div>
+<header class="hero" id="overview">
+  <div class="kicker">拆解报告 · 独立知识图谱</div>
   <h1>小说维度晋升，我在天幕当评委</h1>
   <div class="hero-sub">白水瓶子 · 女频 / 无脑文 / 无限流·世界评估 · 已完本</div>
-  <div class="hero-meta">
-    <div><b>202</b><span>总章节</span></div>
-    <div><b>48.8万</b><span>总字数</span></div>
-    <div><b>7</b><span>评估世界</span></div>
-    <div><b>7</b><span>世界档案</span></div>
+  <div class="stats">
+    <div class="stat"><div class="v">202</div><div class="l">章</div>
+      <div class="s">正文 48.8 万字</div></div>
+    <div class="stat"><div class="v">7</div><div class="l">个评估世界</div>
+      <div class="s">第 1–202 章全覆盖</div></div>
+    <div class="stat"><div class="v">55</div><div class="l">人物</div>
+      <div class="s">47 件事件 · 14 条关系</div></div>
+    <div class="stat"><div class="v">4</div><div class="l">类裁定</div>
+      <div class="s">通过 3 · 不通过 2</div></div>
   </div>
+  <div class="flags"><span class="flag">回收站找回 · 全量图谱</span><span class="flag">202 章索引</span><span class="flag">7 世界档案</span><span class="flag">14 条规则演化</span><span class="flag">7 段成长弧</span></div>
   <p class="hero-note">判定世界是否通过与法律无关，基于本书设定规则 + 普世价值观 + 主角三观</p>
   <p class="hero-src">源站：<a href="https://cn.zhys.tw/read/9351972/82571343.html" target="_blank" rel="noopener">https://cn.zhys.tw/read/9351972/82571343.html</a> · 抓取于 2026-09-28</p>
 </header>
 
 
-<section id="mech">
-  <h2>天幕机制 · 小说世界晋维选拔</h2>
+<section class="sec" id="worlds-glance">
+  <div class="sec-head"><h2>七世界一览</h2>
+    <span class="hint">点卡片跳到该世界的完整档案（人物 / 情节 / 裁定 / 死亡清单）</span></div>
+  <div class="wgrid">
+<a class="wcard" href="#world-1">
+  <div class="wc-top"><span class="wc-idx">世界 1</span>
+    <span class="wc-badge v-fail">不通过</span></div>
+  <div class="wc-name">霸总替身娇妻</div>
+  <div class="wc-full">《霍总，你的替身娇妻逃跑了》</div>
+  <div class="wc-range">第 1–27 章 · 27 章</div>
+  <div class="wc-set">现代都市霸总替身文。贫富悬殊、权贵横行，女主夏明月被当作白月光苏云浅的替身展开虐恋。天幕降临，余黎将本书选为全宇宙第一本评估对象。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:13.4%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a>
+<a class="wcard" href="#world-2">
+  <div class="wc-top"><span class="wc-idx">世界 2</span>
+    <span class="wc-badge v-destroy">数据销毁</span></div>
+  <div class="wc-name">末日娇宠</div>
+  <div class="wc-full">《穿书后，我在丧尸末日被娇宠了》</div>
+  <div class="wc-range">第 28–64 章 · 37 章</div>
+  <div class="wc-set">丧尸末日＋穿书团宠文。天幕降临时该世界已是末日一年后，丧尸横行、文明崩坏。穿书者黎娇娇占据假千金身体，骗走真千金沈至微的空间玉佩，借「预知梦」囤积物资建立黎明基地。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:18.3%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a>
+<a class="wcard" href="#world-3">
+  <div class="wc-top"><span class="wc-idx">世界 3</span>
+    <span class="wc-badge v-pass">通过</span></div>
+  <div class="wc-name">逆天修士，在线成仙</div>
+  <div class="wc-full">《逆天修士，在线成仙》</div>
+  <div class="wc-range">第 65–89 章 · 25 章</div>
+  <div class="wc-set">修仙界与凡人王朝并存。凡人王朝被修仙世家掌控为傀儡，硬性规定皇帝不得修仙；以灵根为尊，无灵根者被仙梯屏障隔绝。十万年前魔族被蜉蝣道人封印于九层渊，如今界壁渐裂、魔族卷土重来。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:12.4%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a>
+<a class="wcard" href="#world-4">
+  <div class="wc-top"><span class="wc-idx">世界 4</span>
+    <span class="wc-badge v-fail">不通过</span></div>
+  <div class="wc-name">幸福</div>
+  <div class="wc-full">《幸福》</div>
+  <div class="wc-range">第 90–122 章 · 33 章</div>
+  <div class="wc-set">架空虚拟的F国，类现实社会却遍布不公与黑暗。主角是普通高中生，未来将被「罪犯惩罚系统」绑定，可凭积分审判罪犯、兑换一切（含寿命气运）。天幕展示该世界未来（高三）画面，现实中的主角尚在高二，被升维部保护观察。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:16.3%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a>
+<a class="wcard" href="#world-5">
+  <div class="wc-top"><span class="wc-idx">世界 5</span>
+    <span class="wc-badge v-pass">通过</span></div>
+  <div class="wc-name">金钱主义至上</div>
+  <div class="wc-full">《金钱主义至上，你能比我更神豪？》</div>
+  <div class="wc-range">第 123–165 章 · 43 章</div>
+  <div class="wc-set">未来科技联邦「金钱至上」，男性「亚当」为统治阶层，女性「夏娃」被视作物品——不许读书识字、不许就业、可被随意殴打赠送甚至拍卖。系统选定的男主王锋开场即死，真正叙事主角是一群十二岁起便被压迫的夏娃，她们组成恐怖组织「幽灵」以极端暴力推翻秩序。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:21.3%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a>
+<a class="wcard" href="#world-6">
+  <div class="wc-top"><span class="wc-idx">世界 6</span>
+    <span class="wc-badge v-pass">通过</span></div>
+  <div class="wc-name">如果永远停在这时</div>
+  <div class="wc-full">《如果永远停在这时》</div>
+  <div class="wc-range">第 166–187 章 · 22 章</div>
+  <div class="wc-set">青春疼痛文学世界。主角赵意是遭校园霸凌、家庭破碎的贫困女高中生，视同学许恒为黑暗中唯一的光。其母赵春华在四十岁「爱上一座山」（E国最高山亚力亚及），抛弃一切离家出走。现实侧国家迅速介入保护赵意、全国严打霸凌。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:10.9%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a>
+<a class="wcard" href="#world-7">
+  <div class="wc-top"><span class="wc-idx">世界 7</span>
+    <span class="wc-badge v-pending">未宣判</span></div>
+  <div class="wc-name">她真不是万人慊</div>
+  <div class="wc-full">《她真不是万人慊》（又名《万人慊》）</div>
+  <div class="wc-range">第 188–202 章 · 15 章</div>
+  <div class="wc-set">星际帝国时代，人类被虫族逼至唯一国家「帝国」，以精神力操纵机甲抗虫。主角圣西莉亚是贫民窟找回的贵族千金，被称精神力为零的废物，遭全家嫌弃、未婚夫退婚、军校排挤，被推上处刑台；实则其真身为虫族首个诞生智慧者、虫皇伊索尔德·圣西莉亚，潜入人类社会「观察食物」。</div>
+  <div class="wc-foot"><span class="wc-bar"><i style="width:7.4%"></i></span>
+    <span class="wc-go">看档案 →</span></div>
+</a></div>
+  <div class="vdist">
+    <div class="vbar"><i class="v-pass" style="width:42.86%" title="通过 3 个世界"></i><i class="v-fail" style="width:28.57%" title="不通过 2 个世界"></i><i class="v-destroy" style="width:14.29%" title="数据销毁 1 个世界"></i><i class="v-pending" style="width:14.29%" title="未宣判 1 个世界"></i></div>
+    <div class="vleg"><span class="lg"><i class="v-pass"></i>通过 <b>3</b></span><span class="lg"><i class="v-fail"></i>不通过 <b>2</b></span><span class="lg"><i class="v-destroy"></i>数据销毁 <b>1</b></span><span class="lg"><i class="v-pending"></i>未宣判 <b>1</b></span></div>
+    <p class="vnote">注：世界 2 先判「不通过」，后因内容造假改为「数据销毁」，此处按最终结果计入销毁；
+      天幕机制里的四种裁定各计一次（通过 3 / 不通过 3 / 销毁 1 / 未宣判 1），故合计 8 次、覆盖 7 个世界。</p>
+  </div>
+</section>
+
+
+<section class="sec" id="mech">
+  <div class="sec-head"><h2>天幕机制 · 小说世界晋维选拔</h2>
+    <span class="hint">9 条评审规则 · 4 种裁定</span></div>
   <p class="lead">各小说世界天空裂开长方形巨屏（天幕），可看见观测员余黎并听见机械广播</p>
   <p class="lead">5400万小说世界参选（去掉未完结、已烂尾、限制低俗）</p>
-  <div class="cond-row">晋升前提：<span class="cond">一、小说世界主角通过</span><span class="cond">二、整体世界通过</span><span class="cond">二者缺一不可</span></div>
-  <h3>四种裁定结果</h3>
+  <div class="cond-row"><span class="cond-k">晋升前提</span><span class="cond">一、小说世界主角通过</span><span class="cond">二、整体世界通过</span><span class="cond">二者缺一不可</span></div>
   <div class="vgrid"><div class="vcard"><div class="vcount">3</div><div class="vtype">通过</div><div class="vdesc">维度晋升，由虚拟跨入真实，可自主发展</div></div><div class="vcard"><div class="vcount">3</div><div class="vtype">不通过</div><div class="vdesc">保留虚拟世界维度，随小说完结停止世界进程</div></div><div class="vcard"><div class="vcount">1</div><div class="vtype">数据销毁</div><div class="vdesc">内容严重不符合选拔规定者，即刻数据销毁</div></div><div class="vcard"><div class="vcount">1</div><div class="vtype">未宣判</div><div class="vdesc">文本止于虫皇宣战，观测员未及敲槌</div></div></div>
-  <h3>评审规则（9 条）</h3>
-  <ul class="rules"><li><b>正派四条</b> — ①不滥杀无辜 ②不因私心致无辜伤亡 ③无重大私德问题 ④主体性：是否真正作为一个人存在、看见自己</li><li><b>反派两条</b> — 一看坏事，二看结局（是否得报应）</li><li><b>正派配角三条</b> — 配角层面的善恶与结局审核</li><li><b>背景板幸福度</b> — ≥30% 视为通过，可进入复审</li><li><b>全员投票</b> — 全体世界住民投票决定是否进入复审</li><li><b>一票否决权</b> — 观测员余黎拥有</li><li><b>补充条例·数据销毁</b> — 严重不符合规定者即刻数据销毁</li><li><b>无人生存不予通过</b> — 世界无人生还则整体不通过</li><li><b>设定未改前置判定</b> — 压迫半数人口且作者不改设定，直接数据销毁</li></ul>
+  <ul class="rules"><li><b>正派四条</b><span>①不滥杀无辜 ②不因私心致无辜伤亡 ③无重大私德问题 ④主体性：是否真正作为一个人存在、看见自己</span></li><li><b>反派两条</b><span>一看坏事，二看结局（是否得报应）</span></li><li><b>正派配角三条</b><span>配角层面的善恶与结局审核</span></li><li><b>背景板幸福度</b><span>≥30% 视为通过，可进入复审</span></li><li><b>全员投票</b><span>全体世界住民投票决定是否进入复审</span></li><li><b>一票否决权</b><span>观测员余黎拥有</span></li><li><b>补充条例·数据销毁</b><span>严重不符合规定者即刻数据销毁</span></li><li><b>无人生存不予通过</b><span>世界无人生还则整体不通过</span></li><li><b>设定未改前置判定</b><span>压迫半数人口且作者不改设定，直接数据销毁</span></li></ul>
 </section>
 
 
-<section id="worlds">
-  <h2>七世界评估档案</h2>
-  <table class="otbl"><thead><tr><th>#</th><th>世界</th><th>原书名</th><th>章节</th><th>裁定</th></tr></thead><tbody><tr><td>1</td><td>霸总替身娇妻</td><td>《霍总，你的替身娇妻逃跑了》</td><td>1–27</td><td class="v-fail">不通过（获五年零四个月复审期）</td></tr><tr><td>2</td><td>末日娇宠</td><td>《穿书后，我在丧尸末日被娇宠了》</td><td>28–64</td><td class="v-destroy">不通过 → 数据销毁（世界湮灭）</td></tr><tr><td>3</td><td>逆天修士，在线成仙</td><td>《逆天修士，在线成仙》</td><td>65–89</td><td class="v-pass">通过（第一个通过的世界，未复审直接晋升）</td></tr><tr><td>4</td><td>幸福</td><td>《幸福》</td><td>90–122</td><td class="v-fail">不通过（无人生还，保留虚拟，随完结停止）</td></tr><tr><td>5</td><td>金钱主义至上</td><td>《金钱主义至上，你能比我更神豪？》</td><td>123–165</td><td class="v-pass">复审通过 → 晋升真实世界</td></tr><tr><td>6</td><td>如果永远停在这时</td><td>《如果永远停在这时》</td><td>166–187</td><td class="v-pass">通过（晋升真实世界）</td></tr><tr><td>7</td><td>她真不是万人慊</td><td>《她真不是万人慊》（又名《万人慊》）</td><td>188–202</td><td class="v-pending">未宣判（文本止于虫皇宣战）</td></tr></tbody></table>
+<section class="sec" id="worlds">
+  <div class="sec-head"><h2>七世界评估档案</h2>
+    <button class="mini-btn" id="expandAll" type="button">全部展开 / 收起</button></div>
+  <div class="table-wrap"><table class="otbl"><thead><tr><th>#</th><th>世界</th><th>原书名</th><th>章节</th><th>裁定</th></tr></thead><tbody><tr><td class="num">1</td><td>霸总替身娇妻</td><td class="dim">《霍总，你的替身娇妻逃跑了》</td><td class="dim">第 1–27 章</td><td class="v-fail">不通过</td></tr><tr><td class="num">2</td><td>末日娇宠</td><td class="dim">《穿书后，我在丧尸末日被娇宠了》</td><td class="dim">第 28–64 章</td><td class="v-destroy">数据销毁</td></tr><tr><td class="num">3</td><td>逆天修士，在线成仙</td><td class="dim">《逆天修士，在线成仙》</td><td class="dim">第 65–89 章</td><td class="v-pass">通过</td></tr><tr><td class="num">4</td><td>幸福</td><td class="dim">《幸福》</td><td class="dim">第 90–122 章</td><td class="v-fail">不通过</td></tr><tr><td class="num">5</td><td>金钱主义至上</td><td class="dim">《金钱主义至上，你能比我更神豪？》</td><td class="dim">第 123–165 章</td><td class="v-pass">通过</td></tr><tr><td class="num">6</td><td>如果永远停在这时</td><td class="dim">《如果永远停在这时》</td><td class="dim">第 166–187 章</td><td class="v-pass">通过</td></tr><tr><td class="num">7</td><td>她真不是万人慊</td><td class="dim">《她真不是万人慊》（又名《万人慊》）</td><td class="dim">第 188–202 章</td><td class="v-pending">未宣判</td></tr></tbody></table></div>
   <div class="worlds-wrap">
-<article class="world" id="world-1">
-  <div class="whead">
-    <div class="widx">世界 1</div>
-    <div class="wtitle"><h3>霸总替身娇妻</h3><div class="wfull">《霍总，你的替身娇妻逃跑了》</div></div>
-    <div class="wbadge v-fail">不通过（获五年零四个月复审期）</div>
-  </div>
-  <div class="wrange">类型：现代都市 / 虐恋　·　章节：第 1–27 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">现代都市霸总替身文。贫富悬殊、权贵横行，女主夏明月被当作白月光苏云浅的替身展开虐恋。天幕降临，余黎将本书选为全宇宙第一本评估对象。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>夏明月</b> — 霍云霆的替身妻子<br><span class="sit">孝顺而极度恋爱脑，被伤害仍深爱丈夫、屡次原谅</span></p>
-      <h4>余黎介入</h4><p class="interv">在工位用高配电脑观测，天幕向各世界播放视频并配机械广播；依正派三条/反派两条逐项评判，并用手机与老板沟通。因她提议新增背景板幸福度投票与一票否决权。</p>
+<details class="world" id="world-1" open>
+  <summary class="whead">
+    <span class="widx">世界 1</span>
+    <span class="wtitle"><b>霸总替身娇妻</b><span class="wfull">《霍总，你的替身娇妻逃跑了》</span></span>
+    <span class="wrange">第 1–27 章 · 27 章</span>
+    <span class="wbadge v-fail">不通过</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">现代都市霸总替身文。贫富悬殊、权贵横行，女主夏明月被当作白月光苏云浅的替身展开虐恋。天幕降临，余黎将本书选为全宇宙第一本评估对象。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>夏明月</b> — 霍云霆的替身妻子<br><span class="sit">孝顺而极度恋爱脑，被伤害仍深爱丈夫、屡次原谅</span></p>
+        <h4>余黎介入</h4><p class="interv">在工位用高配电脑观测，天幕向各世界播放视频并配机械广播；依正派三条/反派两条逐项评判，并用手机与老板沟通。因她提议新增背景板幸福度投票与一票否决权。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">8 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">夏明月</div><div class="crole">替身妻子 / 主角</div><div class="cquote">“霍云霆，我放你，也放过我自己。”</div></div><div class="ccard"><div class="cname">霍云霆</div><div class="crole">霍氏掌权者</div><div class="cquote">“你不过是个替身，连浅浅一根头发丝都比不上。”</div></div><div class="ccard"><div class="cname">苏云浅</div><div class="crole">白月光 / 反派</div><div class="cquote">“你以为我真爱你啊？蠢货！”</div></div><div class="ccard"><div class="cname">霍父霍母</div><div class="crole">顶级家族长辈 / 反派</div><div class="cquote">“参与器官贩卖，结局却幸福美满。”</div></div><div class="ccard"><div class="cname">夏云锦</div><div class="crole">夏明月之子</div><div class="cquote">“擅自将父亲带到母亲面前撮合复合。”</div></div><div class="ccard"><div class="cname">夏奶奶</div><div class="crole">夏明月奶奶</div><div class="cquote">“明月，你一定要开心。”</div></div><div class="ccard"><div class="cname">男二</div><div class="crole">助夏明月开店之人</div><div class="cquote">“因霍云霆吃醋被制造车祸死亡。”</div></div><div class="ccard"><div class="cname">许和依</div><div class="crole">路人甲清流</div><div class="cquote">“神经主角和她的神经配偶。”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（8）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">夏明月</div><div class="crole">替身妻子 / 主角</div><div class="cquote">“霍云霆，我放你，也放过我自己。”</div></div><div class="ccard"><div class="cname">霍云霆</div><div class="crole">霍氏掌权者</div><div class="cquote">“你不过是个替身，连浅浅一根头发丝都比不上。”</div></div><div class="ccard"><div class="cname">苏云浅</div><div class="crole">白月光 / 反派</div><div class="cquote">“你以为我真爱你啊？蠢货！”</div></div><div class="ccard"><div class="cname">霍父霍母</div><div class="crole">顶级家族长辈 / 反派</div><div class="cquote">“参与器官贩卖，结局却幸福美满。”</div></div><div class="ccard"><div class="cname">夏云锦</div><div class="crole">夏明月之子</div><div class="cquote">“擅自将父亲带到母亲面前撮合复合。”</div></div><div class="ccard"><div class="cname">夏奶奶</div><div class="crole">夏明月奶奶</div><div class="cquote">“明月，你一定要开心。”</div></div><div class="ccard"><div class="cname">男二</div><div class="crole">助夏明月开店之人</div><div class="cquote">“因霍云霆吃醋被制造车祸死亡。”</div></div><div class="ccard"><div class="cname">许和依</div><div class="crole">路人甲清流</div><div class="cquote">“神经主角和她的神经配偶。”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">天幕裂开，余黎选中《霍总》为第一本，五千四百万世界围观。夏明月为救奶奶成为替身，与霍云霆签合约，渐沉溺感情。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">霍云霆为救苏云浅擅自取走夏明月肾脏、逼婚；夏明月婚后遭冷落、丢肾丧子、被当众否认妻母身份，终带子出走开起花店。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">五年后霍云霆跪求原谅，夏明月心软复合，大团圆。余黎开口「不通过」，霍云霆反被苏云浅捅杀，世界陷入恐慌。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">逐项评估——霍云霆三条正派规则全违（贩卖器官致112死等），苏云浅/霍父霍母/男二皆不通过；路人甲、社会角度皆负面。但背景板幸福度61%通过，复审投票87%通过。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">对夏明月评估，前三条通过，唯第四条「主体性」极其不通过——她从未看见自己、不够爱自己。世界获五年零四个月复审期。</div></div></div>
+    
+    <div class="verdict-box v-fail">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">不通过（获五年零四个月复审期）</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">不通过（前三条通过，第四条主体性极其不通过）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">背景板幸福度61%</span><span class="ru">全员投票87%</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">背景板幸福度≥30%视为通过</span><span class="nr">全员投票决定是否进入复审</span><span class="nr">主角专属「主体性」规则</span><span class="nr">余黎拥有一票否决权</span></span></div>
     </div>
+    <h4>金句<span class="hint">5 条</span></h4><div class="quotes"><blockquote>“不通过。（余黎首个裁定）”</blockquote><blockquote>“你以为我真爱你啊？蠢货！”</blockquote><blockquote>“夏明月，你生气吗？”</blockquote><blockquote>“妻、妻子竟然不是妻子，妻子竟然是「她」自己？”</blockquote><blockquote>“如果哪天能通过，应该是她已经变得足够爱自己，足够看见自己。”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">从以为是骗子公司到真心投入观测员职责；由最初尴尬敷衍，到沉浸剧情化身「戏精」自言自语点评。主动提议给不通过的世界一次由全体人选择重生的机会，从机械执行转向人文关怀，萌生「自己像决定小说世界生死的神」的自觉。</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">天幕裂开，余黎选中《霍总》为第一本，五千四百万世界围观。夏明月为救奶奶成为替身，与霍云霆签合约，渐沉溺感情。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">霍云霆为救苏云浅擅自取走夏明月肾脏、逼婚；夏明月婚后遭冷落、丢肾丧子、被当众否认妻母身份，终带子出走开起花店。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">五年后霍云霆跪求原谅，夏明月心软复合，大团圆。余黎开口「不通过」，霍云霆反被苏云浅捅杀，世界陷入恐慌。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">逐项评估——霍云霆三条正派规则全违（贩卖器官致112死等），苏云浅/霍父霍母/男二皆不通过；路人甲、社会角度皆负面。但背景板幸福度61%通过，复审投票87%通过。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">对夏明月评估，前三条通过，唯第四条「主体性」极其不通过——她从未看见自己、不够爱自己。世界获五年零四个月复审期。</div></div></div>
-  
-  <div class="verdict-box v-fail">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">不通过（获五年零四个月复审期）</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">不通过（前三条通过，第四条主体性极其不通过）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">背景板幸福度61%</span><span class="ru">全员投票87%</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">背景板幸福度≥30%视为通过</span><span class="nr">全员投票决定是否进入复审</span><span class="nr">主角专属「主体性」规则</span><span class="nr">余黎拥有一票否决权</span></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“不通过。（余黎首个裁定）”</blockquote><blockquote>“你以为我真爱你啊？蠢货！”</blockquote><blockquote>“夏明月，你生气吗？”</blockquote><blockquote>“妻、妻子竟然不是妻子，妻子竟然是「她」自己？”</blockquote><blockquote>“如果哪天能通过，应该是她已经变得足够爱自己，足够看见自己。”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">从以为是骗子公司到真心投入观测员职责；由最初尴尬敷衍，到沉浸剧情化身「戏精」自言自语点评。主动提议给不通过的世界一次由全体人选择重生的机会，从机械执行转向人文关怀，萌生「自己像决定小说世界生死的神」的自觉。</p>
-</article>
-
-<article class="world" id="world-2">
-  <div class="whead">
-    <div class="widx">世界 2</div>
-    <div class="wtitle"><h3>末日娇宠</h3><div class="wfull">《穿书后，我在丧尸末日被娇宠了》</div></div>
-    <div class="wbadge v-destroy">不通过 → 数据销毁（世界湮灭）</div>
-  </div>
-  <div class="wrange">类型：丧尸末日 / 穿书团宠　·　章节：第 28–64 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">丧尸末日＋穿书团宠文。天幕降临时该世界已是末日一年后，丧尸横行、文明崩坏。穿书者黎娇娇占据假千金身体，骗走真千金沈至微的空间玉佩，借「预知梦」囤积物资建立黎明基地。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>黎娇娇</b> — 穿书团宠女主 / 假千金<br><span class="sit">原是对原书女主打千字差评的书外读者，穿书后为独占玉佩与安逸抱紧家人男主大腿，从不沾血却掌控一切</span></p>
-      <h4>余黎介入</h4><p class="interv">因刷短视频对末日丧尸文感兴趣而点选。操纵鼠标阅读「小说文字」，天幕向五千四百万世界展现真实画面；依正派四条/反派两条/正派配角三条/背景板幸福度/全员投票逐项评估，最终判主角不通过、整体不通过，触发数据销毁。</p>
+</details>
+<details class="world" id="world-2">
+  <summary class="whead">
+    <span class="widx">世界 2</span>
+    <span class="wtitle"><b>末日娇宠</b><span class="wfull">《穿书后，我在丧尸末日被娇宠了》</span></span>
+    <span class="wrange">第 28–64 章 · 37 章</span>
+    <span class="wbadge v-destroy">数据销毁</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">丧尸末日＋穿书团宠文。天幕降临时该世界已是末日一年后，丧尸横行、文明崩坏。穿书者黎娇娇占据假千金身体，骗走真千金沈至微的空间玉佩，借「预知梦」囤积物资建立黎明基地。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>黎娇娇</b> — 穿书团宠女主 / 假千金<br><span class="sit">原是对原书女主打千字差评的书外读者，穿书后为独占玉佩与安逸抱紧家人男主大腿，从不沾血却掌控一切</span></p>
+        <h4>余黎介入</h4><p class="interv">因刷短视频对末日丧尸文感兴趣而点选。操纵鼠标阅读「小说文字」，天幕向五千四百万世界展现真实画面；依正派四条/反派两条/正派配角三条/背景板幸福度/全员投票逐项评估，最终判主角不通过、整体不通过，触发数据销毁。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">8 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">黎娇娇</div><div class="crole">穿书团宠女主 / 假千金</div><div class="cquote">“人不为己，天诛地灭”</div></div><div class="ccard"><div class="cname">沈至微</div><div class="crole">原书真女主 / 原主角</div><div class="cquote">“不，我有罪。（捏碎玉佩前）”</div></div><div class="ccard"><div class="cname">顾明初</div><div class="crole">沈至微挚友 / 大反派</div><div class="cquote">“沈至微，你上天堂，我下地狱。”</div></div><div class="ccard"><div class="cname">黎泽川</div><div class="crole">黎家大哥 / 雷系异能</div><div class="cquote">“趁妹不备夺玉佩，终被李斯哲所杀”</div></div><div class="ccard"><div class="cname">黎牧舟</div><div class="crole">黎家二哥 / 火系异能</div><div class="cquote">“为娇娇弑父，终被借刀除去”</div></div><div class="ccard"><div class="cname">李斯哲</div><div class="crole">原女主男人 / 现正宫</div><div class="cquote">“宁负天下不负你（实则自私残忍）”</div></div><div class="ccard"><div class="cname">程渡云</div><div class="crole">原女主护花使者</div><div class="cquote">“被顾明初砍头作生日「礼物」”</div></div><div class="ccard"><div class="cname">黎渡</div><div class="crole">黎明基地创始人 / 黎父</div><div class="cquote">“被亲子斩首充「投名状」”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（8）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">黎娇娇</div><div class="crole">穿书团宠女主 / 假千金</div><div class="cquote">“人不为己，天诛地灭”</div></div><div class="ccard"><div class="cname">沈至微</div><div class="crole">原书真女主 / 原主角</div><div class="cquote">“不，我有罪。（捏碎玉佩前）”</div></div><div class="ccard"><div class="cname">顾明初</div><div class="crole">沈至微挚友 / 大反派</div><div class="cquote">“沈至微，你上天堂，我下地狱。”</div></div><div class="ccard"><div class="cname">黎泽川</div><div class="crole">黎家大哥 / 雷系异能</div><div class="cquote">“趁妹不备夺玉佩，终被李斯哲所杀”</div></div><div class="ccard"><div class="cname">黎牧舟</div><div class="crole">黎家二哥 / 火系异能</div><div class="cquote">“为娇娇弑父，终被借刀除去”</div></div><div class="ccard"><div class="cname">李斯哲</div><div class="crole">原女主男人 / 现正宫</div><div class="cquote">“宁负天下不负你（实则自私残忍）”</div></div><div class="ccard"><div class="cname">程渡云</div><div class="crole">原女主护花使者</div><div class="cquote">“被顾明初砍头作生日「礼物」”</div></div><div class="ccard"><div class="cname">黎渡</div><div class="crole">黎明基地创始人 / 黎父</div><div class="cquote">“被亲子斩首充「投名状」”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">天幕选出第二本《末日娇宠》。黎娇娇穿书占假千金身，骗走沈至微空间玉佩，借「预知梦」令黎家囤物资建黎明基地，将真千金边缘化。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">末日降临，黎娇娇被大哥二哥与程渡云、李斯哲团宠，垄断周围八成物资；沈至微另建「希望基地」保护普通人，却被李斯哲设计引丧尸淹没而死。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">背景板顾明初觉醒复仇，先杀程渡云、李斯哲，单挑黎明基地展现碾压战力。余黎冷笑黎家垄断物资却谴责他人「没吃的为何不自己找」，态度明显倒向沈至微与顾明初。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">余黎宣布「不通过」。现实中黎娇娇为求活，砍黎父等六十九颗头颅作投名状，以复活沈至微、杀尽全世界诱顾明初，借其手铲除黎泽川、李斯哲、黎牧舟。顾明初杀遍全球后归来，被恢复的丧尸沈至微啃死。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">沈至微苏醒，自认「有罪」捏碎玉佩中止复苏；世界仅黎娇娇一票幸福度100%被判无效，因无背景板选择且唯一投票者极不通过，触发数据销毁，整个世界湮灭。</div></div></div>
+    
+    <div class="verdict-box v-destroy">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">不通过 → 数据销毁（世界湮灭）</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">不通过（第二、三条极其不通过；第一、四条通过）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">正派配角三条</span><span class="ru">补充条例·数据销毁</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">明确背景板（无数大众）才是世界能否通过的真正决定方</span><span class="nr">新增「严重不符合规定者即刻数据销毁」补充条例</span><span class="nr">确立单一投票者（尤其极不通过者）的幸福度数据无效</span></span></div>
     </div>
+    <h4>金句<span class="hint">5 条</span></h4><div class="quotes"><blockquote>“占据了八成物资，然后谴责人家没吃的为什么不去找，哼！”</blockquote><blockquote>“人不为己，天诛地灭！”</blockquote><blockquote>“沈至微，你上天堂，我下地狱。”</blockquote><blockquote>“不，我有罪。”</blockquote><blockquote>“圣母并不是一个坏词，而是一个代表希望的褒义词。”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">相较第一世界仅冰冷执行规则，此世情绪明显外显——为黎家垄断物资冷笑，为李斯哲借「爱」虐杀女性气得青筋直冒，为原主黎娇的灿烂灵魂温柔讲述并悲悯。首次明确价值偏好，将「背景板大众才是决定方」与「数据销毁」写入规则，并于第64章引入法槌仪式，从执行者成长为具价值判断的观测员。</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">天幕选出第二本《末日娇宠》。黎娇娇穿书占假千金身，骗走沈至微空间玉佩，借「预知梦」令黎家囤物资建黎明基地，将真千金边缘化。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">末日降临，黎娇娇被大哥二哥与程渡云、李斯哲团宠，垄断周围八成物资；沈至微另建「希望基地」保护普通人，却被李斯哲设计引丧尸淹没而死。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">背景板顾明初觉醒复仇，先杀程渡云、李斯哲，单挑黎明基地展现碾压战力。余黎冷笑黎家垄断物资却谴责他人「没吃的为何不自己找」，态度明显倒向沈至微与顾明初。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">余黎宣布「不通过」。现实中黎娇娇为求活，砍黎父等六十九颗头颅作投名状，以复活沈至微、杀尽全世界诱顾明初，借其手铲除黎泽川、李斯哲、黎牧舟。顾明初杀遍全球后归来，被恢复的丧尸沈至微啃死。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">沈至微苏醒，自认「有罪」捏碎玉佩中止复苏；世界仅黎娇娇一票幸福度100%被判无效，因无背景板选择且唯一投票者极不通过，触发数据销毁，整个世界湮灭。</div></div></div>
-  
-  <div class="verdict-box v-destroy">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">不通过 → 数据销毁（世界湮灭）</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">不通过（第二、三条极其不通过；第一、四条通过）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">正派配角三条</span><span class="ru">补充条例·数据销毁</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">明确背景板（无数大众）才是世界能否通过的真正决定方</span><span class="nr">新增「严重不符合规定者即刻数据销毁」补充条例</span><span class="nr">确立单一投票者（尤其极不通过者）的幸福度数据无效</span></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“占据了八成物资，然后谴责人家没吃的为什么不去找，哼！”</blockquote><blockquote>“人不为己，天诛地灭！”</blockquote><blockquote>“沈至微，你上天堂，我下地狱。”</blockquote><blockquote>“不，我有罪。”</blockquote><blockquote>“圣母并不是一个坏词，而是一个代表希望的褒义词。”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">相较第一世界仅冰冷执行规则，此世情绪明显外显——为黎家垄断物资冷笑，为李斯哲借「爱」虐杀女性气得青筋直冒，为原主黎娇的灿烂灵魂温柔讲述并悲悯。首次明确价值偏好，将「背景板大众才是决定方」与「数据销毁」写入规则，并于第64章引入法槌仪式，从执行者成长为具价值判断的观测员。</p>
-</article>
-
-<article class="world" id="world-3">
-  <div class="whead">
-    <div class="widx">世界 3</div>
-    <div class="wtitle"><h3>逆天修士，在线成仙</h3><div class="wfull">《逆天修士，在线成仙》</div></div>
-    <div class="wbadge v-pass">通过（第一个通过的世界，未复审直接晋升）</div>
-  </div>
-  <div class="wrange">类型：修仙 / 爽文　·　章节：第 65–89 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">修仙界与凡人王朝并存。凡人王朝被修仙世家掌控为傀儡，硬性规定皇帝不得修仙；以灵根为尊，无灵根者被仙梯屏障隔绝。十万年前魔族被蜉蝣道人封印于九层渊，如今界壁渐裂、魔族卷土重来。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>叶星</b> — 五灵根杂役弟子 / 世界主角<br><span class="sit">被同门欺辱扔下悬崖后得神秘枯骨传《混沌诀》，身负主角气运，开局即从废材沦为全网追杀</span></p>
-      <h4>余黎介入</h4><p class="interv">因前两个世界「工伤」，刻意挑选爽文缓解；用鼠标选中本书，全程在电脑前阅读、喝茶、把玩法槌，天幕向千万世界直播真实画面。在内心厘清修仙界规则适用边界（资源争夺属立场竞争不算滥杀，但屠城绝对不行；反派洗白须有受害者谅解），敲槌宣布「判定通过」。</p>
+</details>
+<details class="world" id="world-3">
+  <summary class="whead">
+    <span class="widx">世界 3</span>
+    <span class="wtitle"><b>逆天修士，在线成仙</b><span class="wfull">《逆天修士，在线成仙》</span></span>
+    <span class="wrange">第 65–89 章 · 25 章</span>
+    <span class="wbadge v-pass">通过</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">修仙界与凡人王朝并存。凡人王朝被修仙世家掌控为傀儡，硬性规定皇帝不得修仙；以灵根为尊，无灵根者被仙梯屏障隔绝。十万年前魔族被蜉蝣道人封印于九层渊，如今界壁渐裂、魔族卷土重来。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>叶星</b> — 五灵根杂役弟子 / 世界主角<br><span class="sit">被同门欺辱扔下悬崖后得神秘枯骨传《混沌诀》，身负主角气运，开局即从废材沦为全网追杀</span></p>
+        <h4>余黎介入</h4><p class="interv">因前两个世界「工伤」，刻意挑选爽文缓解；用鼠标选中本书，全程在电脑前阅读、喝茶、把玩法槌，天幕向千万世界直播真实画面。在内心厘清修仙界规则适用边界（资源争夺属立场竞争不算滥杀，但屠城绝对不行；反派洗白须有受害者谅解），敲槌宣布「判定通过」。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">6 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">叶星</div><div class="crole">世界主角 / 五灵根修士</div><div class="cquote">“天幕，主角也好，不是也罢，这条路不行，我就换条路走！”</div></div><div class="ccard"><div class="cname">独孤凌</div><div class="crole">南离太子 / 实为魔皇转世</div><div class="cquote">“我认得所有，认得每一个……每一个。”</div></div><div class="ccard"><div class="cname">蜉蝣道人</div><div class="crole">唯一半仙 / 逍遥宗祖师</div><div class="cquote">“若是能将性命送于此地，也算了结一番心愿。”</div></div><div class="ccard"><div class="cname">枯骨大能</div><div class="crole">传《混沌诀》者</div><div class="cquote">“小娃，你想学《混沌诀》，就必须帮我报仇！（推测）”</div></div><div class="ccard"><div class="cname">公孙齐</div><div class="crole">公孙家老祖 / 人族叛徒</div><div class="cquote">“是我又如何，我敢承认，你们敢承认吗？”</div></div><div class="ccard"><div class="cname">丁老头</div><div class="crole">南离最后子民 / 乞丐小偷</div><div class="cquote">“殿下，我可是南离最后一名百姓，你得好好保护我！”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（6）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">叶星</div><div class="crole">世界主角 / 五灵根修士</div><div class="cquote">“天幕，主角也好，不是也罢，这条路不行，我就换条路走！”</div></div><div class="ccard"><div class="cname">独孤凌</div><div class="crole">南离太子 / 实为魔皇转世</div><div class="cquote">“我认得所有，认得每一个……每一个。”</div></div><div class="ccard"><div class="cname">蜉蝣道人</div><div class="crole">唯一半仙 / 逍遥宗祖师</div><div class="cquote">“若是能将性命送于此地，也算了结一番心愿。”</div></div><div class="ccard"><div class="cname">枯骨大能</div><div class="crole">传《混沌诀》者</div><div class="cquote">“小娃，你想学《混沌诀》，就必须帮我报仇！（推测）”</div></div><div class="ccard"><div class="cname">公孙齐</div><div class="crole">公孙家老祖 / 人族叛徒</div><div class="cquote">“是我又如何，我敢承认，你们敢承认吗？”</div></div><div class="ccard"><div class="cname">丁老头</div><div class="crole">南离最后子民 / 乞丐小偷</div><div class="cquote">“殿下，我可是南离最后一名百姓，你得好好保护我！”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">叶星坠崖得《混沌诀》，却发现枯骨仇敌遍布、渡劫大佬齐搜捕。她果断自废灵根修为，自创《众生诀》可化身万物躲藏，从天幕主角沦为被全网追杀的「阴沟老鼠」。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">叶星以多具分身伪装发育，炼气至金丹，炼丹学阵法；结识南离太子独孤凌成至交，立三掌誓言庇护南离。宗门招生中二号「子游」拒蜉蝣道人收徒并公开向枯骨仇人宣战，本体拜入逍遥宗得玄月剑。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">南离突遭神秘仙人灭国，独孤凌识破叶星分身伪装；真相是公孙齐奉魔族命屠国。叶星入指引之地七十年，出关时丁老头被杀，独孤凌觉醒魔皇记忆，立誓弑神诛仙、南离复国。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">魔族破封，蜉蝣道人战死；公孙齐叛变被独孤凌捏死。叶星五万分身合一晋半仙，与独孤凌决战，重立三掌后叶星剑穿魔皇胸膛。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">独孤凌死于好友怀中，叶星守坟；余黎判定世界通过，叶星获天道祝福飞升，修仙界晋升真实世界。</div></div></div>
+    
+    <div class="verdict-box v-pass">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">通过（第一个通过的世界，未复审直接晋升）</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">通过（正派四条全过）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">正派配角三条</span><span class="ru">背景板抽样超30%</span><span class="ru">社会评估</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">明确修仙/战争中的立场竞争不计滥杀，但屠城等系统性屠杀绝对不通过</span><span class="nr">反派洗白须受害者真心谅解或实质忏悔</span><span class="nr">因通过，背景板幸福度复审环节剔除</span></span></div>
     </div>
+    <h4>金句<span class="hint">5 条</span></h4><div class="quotes"><blockquote>“天幕，主角也好，不是也罢，这条路不行，我就换条路走！”</blockquote><blockquote>“我认得所有，认得每一个……每一个。”</blockquote><blockquote>“仙人，就可以随意灭掉凡人吗？”</blockquote><blockquote>“我独孤凌再此发誓，我定弑神诛仙！定让南离复国！”</blockquote><blockquote>“你曾说三掌誓言，护我南离，既然南离灭了，那就换一个吧。记得来坟前看我。”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">从世界1、2的「工伤」状态恢复，学会按世界类型调适规则解释——精准界定「真正彻底的无辜」，区分立场竞争与滥杀；对反派报应尺度（洗白须受害者谅解）更成熟。敲槌由谨慎变为流畅从容，「差点给敲爽了」，对评估口径的掌控力提升。</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">叶星坠崖得《混沌诀》，却发现枯骨仇敌遍布、渡劫大佬齐搜捕。她果断自废灵根修为，自创《众生诀》可化身万物躲藏，从天幕主角沦为被全网追杀的「阴沟老鼠」。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">叶星以多具分身伪装发育，炼气至金丹，炼丹学阵法；结识南离太子独孤凌成至交，立三掌誓言庇护南离。宗门招生中二号「子游」拒蜉蝣道人收徒并公开向枯骨仇人宣战，本体拜入逍遥宗得玄月剑。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">南离突遭神秘仙人灭国，独孤凌识破叶星分身伪装；真相是公孙齐奉魔族命屠国。叶星入指引之地七十年，出关时丁老头被杀，独孤凌觉醒魔皇记忆，立誓弑神诛仙、南离复国。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">魔族破封，蜉蝣道人战死；公孙齐叛变被独孤凌捏死。叶星五万分身合一晋半仙，与独孤凌决战，重立三掌后叶星剑穿魔皇胸膛。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">独孤凌死于好友怀中，叶星守坟；余黎判定世界通过，叶星获天道祝福飞升，修仙界晋升真实世界。</div></div></div>
-  
-  <div class="verdict-box v-pass">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">通过（第一个通过的世界，未复审直接晋升）</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">通过（正派四条全过）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">正派配角三条</span><span class="ru">背景板抽样超30%</span><span class="ru">社会评估</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">明确修仙/战争中的立场竞争不计滥杀，但屠城等系统性屠杀绝对不通过</span><span class="nr">反派洗白须受害者真心谅解或实质忏悔</span><span class="nr">因通过，背景板幸福度复审环节剔除</span></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“天幕，主角也好，不是也罢，这条路不行，我就换条路走！”</blockquote><blockquote>“我认得所有，认得每一个……每一个。”</blockquote><blockquote>“仙人，就可以随意灭掉凡人吗？”</blockquote><blockquote>“我独孤凌再此发誓，我定弑神诛仙！定让南离复国！”</blockquote><blockquote>“你曾说三掌誓言，护我南离，既然南离灭了，那就换一个吧。记得来坟前看我。”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">从世界1、2的「工伤」状态恢复，学会按世界类型调适规则解释——精准界定「真正彻底的无辜」，区分立场竞争与滥杀；对反派报应尺度（洗白须受害者谅解）更成熟。敲槌由谨慎变为流畅从容，「差点给敲爽了」，对评估口径的掌控力提升。</p>
-</article>
-
-<article class="world" id="world-4">
-  <div class="whead">
-    <div class="widx">世界 4</div>
-    <div class="wtitle"><h3>幸福</h3><div class="wfull">《幸福》</div></div>
-    <div class="wbadge v-fail">不通过（无人生还，保留虚拟，随完结停止）</div>
-  </div>
-  <div class="wrange">类型：现实向 / 罪犯惩罚系统　·　章节：第 90–122 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">架空虚拟的F国，类现实社会却遍布不公与黑暗。主角是普通高中生，未来将被「罪犯惩罚系统」绑定，可凭积分审判罪犯、兑换一切（含寿命气运）。天幕展示该世界未来（高三）画面，现实中的主角尚在高二，被升维部保护观察。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>李新奇</b> — 贫困小镇普通高中生 / 系统绑定者<br><span class="sit">内向社恐少女，绑定罪犯惩罚系统后成为暗处审判罪恶的「神」，最终灭杀全人类并殉道</span></p>
-      <h4>余黎介入</h4><p class="interv">开篇点开系统「抽查」按钮随机抽中本书；全程以观测员身份旁观天幕。评估时先去厕所大哭一场，再回工位依据公司规定判定——因该世界无人生还，援引「无人生存的世界不予通过」条款；并按作者设定将李新奇作为「反派主角」套用反派两条 + 主体性审核。</p>
+</details>
+<details class="world" id="world-4">
+  <summary class="whead">
+    <span class="widx">世界 4</span>
+    <span class="wtitle"><b>幸福</b><span class="wfull">《幸福》</span></span>
+    <span class="wrange">第 90–122 章 · 33 章</span>
+    <span class="wbadge v-fail">不通过</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">架空虚拟的F国，类现实社会却遍布不公与黑暗。主角是普通高中生，未来将被「罪犯惩罚系统」绑定，可凭积分审判罪犯、兑换一切（含寿命气运）。天幕展示该世界未来（高三）画面，现实中的主角尚在高二，被升维部保护观察。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>李新奇</b> — 贫困小镇普通高中生 / 系统绑定者<br><span class="sit">内向社恐少女，绑定罪犯惩罚系统后成为暗处审判罪恶的「神」，最终灭杀全人类并殉道</span></p>
+        <h4>余黎介入</h4><p class="interv">开篇点开系统「抽查」按钮随机抽中本书；全程以观测员身份旁观天幕。评估时先去厕所大哭一场，再回工位依据公司规定判定——因该世界无人生还，援引「无人生存的世界不予通过」条款；并按作者设定将李新奇作为「反派主角」套用反派两条 + 主体性审核。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">7 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">李新奇</div><div class="crole">世界主角 / 系统绑定者</div><div class="cquote">“我愿意承担世界人民的苦难和痛苦”</div></div><div class="ccard"><div class="cname">许子赢</div><div class="crole">升维部部长</div><div class="cquote">“社会的秩序不该靠一个人，需要所有人共同努力”</div></div><div class="ccard"><div class="cname">李舒云 / 谢新</div><div class="crole">李新奇父母（农民 / 工人）</div><div class="cquote">“不管你做任何事，我们都为你骄傲”</div></div><div class="ccard"><div class="cname">谭露</div><div class="crole">受侵害少女 / 诱饵</div><div class="cquote">“我要你杀死所有发表不堪言论的人”</div></div><div class="ccard"><div class="cname">关灵</div><div class="crole">被拐卖大学生</div><div class="cquote">“神啊，求求你，救救我吧”</div></div><div class="ccard"><div class="cname">老教授</div><div class="crole">李新奇私教</div><div class="cquote">“引导其思考秩序与正义”</div></div><div class="ccard"><div class="cname">安雪</div><div class="crole">被控制虐待致弑亲者</div><div class="cquote">“判十五年，狱中自杀”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（7）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">李新奇</div><div class="crole">世界主角 / 系统绑定者</div><div class="cquote">“我愿意承担世界人民的苦难和痛苦”</div></div><div class="ccard"><div class="cname">许子赢</div><div class="crole">升维部部长</div><div class="cquote">“社会的秩序不该靠一个人，需要所有人共同努力”</div></div><div class="ccard"><div class="cname">李舒云 / 谢新</div><div class="crole">李新奇父母（农民 / 工人）</div><div class="cquote">“不管你做任何事，我们都为你骄傲”</div></div><div class="ccard"><div class="cname">谭露</div><div class="crole">受侵害少女 / 诱饵</div><div class="cquote">“我要你杀死所有发表不堪言论的人”</div></div><div class="ccard"><div class="cname">关灵</div><div class="crole">被拐卖大学生</div><div class="cquote">“神啊，求求你，救救我吧”</div></div><div class="ccard"><div class="cname">老教授</div><div class="crole">李新奇私教</div><div class="cquote">“引导其思考秩序与正义”</div></div><div class="ccard"><div class="cname">安雪</div><div class="crole">被控制虐待致弑亲者</div><div class="cquote">“判十五年，狱中自杀”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">余黎随机抽中《幸福》，天幕亮起腼腆普通的李新奇。高二被升维部保护，许子赢告知其未来将绑定罪犯惩罚系统，可审判罪犯、兑换寿命气运，引发各方既期待又恐惧。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">天幕展示高三的她用系统惩处骗子、家暴男、霸凌者、人贩团伙，写下「理智大于愤怒」「我愿意承担苦难」的自省。她跨越「杀人」底线救出关灵、灭一村恶人，却在安雪案中因同情而痛苦，与许子赢争论「以命抵罪」时撕裂于理智与情感。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">目睹权贵替罪、死刑转死缓、无数罪恶无后续，她绝望于「世界坏了」，将自身关押后发动全球罪恶清洗（数万人爆亡）。网暴少女谭露以死相逼求她灭口所有网暴者，她无法做到，谭露坠楼；李新奇悟出「高维读者即造物主」，主动求得系统绑定。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">得系统后她公开宣言，高悬白色盒子成为永不停转的「机器神」，回应万人求救、肃清高层。三年后认清「罪恶与痛苦永不可消除」，决定一周后杀全人类，送入各自幸福的梦境世界，自己殉道而亡。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">余黎评估——反派主角李新奇通过，但无人生还故世界不通过，保留虚拟、完结停摆，上架阅读平台冲上榜首，千万世界泪目致敬。</div></div></div>
+    
+    <div class="verdict-box v-fail">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">不通过（无人生还，保留虚拟，随完结停止）</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">反派主角通过（坏事+结局两条通过；主体性亦通过）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">反派两条</span><span class="ru">主体性</span><span class="ru">无人生存不予通过</span><span class="ru">背景板幸福度实际0%</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">「无人生存=不通过」被正式援引</span><span class="nr">反派主角同样适用「主体性」审核</span><span class="nr">未触发数据销毁，改为上架千万世界阅读平台</span></span></div>
     </div>
+    <h4>金句<span class="hint">5 条</span></h4><div class="quotes"><blockquote>“人类，究竟因为什么而存在？”</blockquote><blockquote>“李新奇，你要警惕自己……你的理智要始终大于你的愤怒。”</blockquote><blockquote>“我们只是两个普通人……伟大的孩子可以拥有一对平凡胆小的父母吗？”</blockquote><blockquote>“判处人类——存在罪！惩罚，以杀死全人类的积分……将每一个人送入美好世界。”</blockquote><blockquote>“晚安，李新奇。祝你幸福。”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">首次被故事真切催泪（厕所红眼眶、自认多年老书虫都没抵挡住），从冷静的评分机器转向共情者。主动为李新奇补充解读——杀坏人时的痛苦不仅因共情受害者，更因「在剥夺一条生命」本身。面对灭世结局，她没有动用一票否决，也未销毁数据，而是让《幸福》以「被阅读」的方式获得永生，从「判定者」转变为「守护故事意义者」。</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">余黎随机抽中《幸福》，天幕亮起腼腆普通的李新奇。高二被升维部保护，许子赢告知其未来将绑定罪犯惩罚系统，可审判罪犯、兑换寿命气运，引发各方既期待又恐惧。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">天幕展示高三的她用系统惩处骗子、家暴男、霸凌者、人贩团伙，写下「理智大于愤怒」「我愿意承担苦难」的自省。她跨越「杀人」底线救出关灵、灭一村恶人，却在安雪案中因同情而痛苦，与许子赢争论「以命抵罪」时撕裂于理智与情感。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">目睹权贵替罪、死刑转死缓、无数罪恶无后续，她绝望于「世界坏了」，将自身关押后发动全球罪恶清洗（数万人爆亡）。网暴少女谭露以死相逼求她灭口所有网暴者，她无法做到，谭露坠楼；李新奇悟出「高维读者即造物主」，主动求得系统绑定。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">得系统后她公开宣言，高悬白色盒子成为永不停转的「机器神」，回应万人求救、肃清高层。三年后认清「罪恶与痛苦永不可消除」，决定一周后杀全人类，送入各自幸福的梦境世界，自己殉道而亡。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">余黎评估——反派主角李新奇通过，但无人生还故世界不通过，保留虚拟、完结停摆，上架阅读平台冲上榜首，千万世界泪目致敬。</div></div></div>
-  
-  <div class="verdict-box v-fail">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">不通过（无人生还，保留虚拟，随完结停止）</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">反派主角通过（坏事+结局两条通过；主体性亦通过）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">反派两条</span><span class="ru">主体性</span><span class="ru">无人生存不予通过</span><span class="ru">背景板幸福度实际0%</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">「无人生存=不通过」被正式援引</span><span class="nr">反派主角同样适用「主体性」审核</span><span class="nr">未触发数据销毁，改为上架千万世界阅读平台</span></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“人类，究竟因为什么而存在？”</blockquote><blockquote>“李新奇，你要警惕自己……你的理智要始终大于你的愤怒。”</blockquote><blockquote>“我们只是两个普通人……伟大的孩子可以拥有一对平凡胆小的父母吗？”</blockquote><blockquote>“判处人类——存在罪！惩罚，以杀死全人类的积分……将每一个人送入美好世界。”</blockquote><blockquote>“晚安，李新奇。祝你幸福。”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">首次被故事真切催泪（厕所红眼眶、自认多年老书虫都没抵挡住），从冷静的评分机器转向共情者。主动为李新奇补充解读——杀坏人时的痛苦不仅因共情受害者，更因「在剥夺一条生命」本身。面对灭世结局，她没有动用一票否决，也未销毁数据，而是让《幸福》以「被阅读」的方式获得永生，从「判定者」转变为「守护故事意义者」。</p>
-</article>
-
-<article class="world" id="world-5">
-  <div class="whead">
-    <div class="widx">世界 5</div>
-    <div class="wtitle"><h3>金钱主义至上</h3><div class="wfull">《金钱主义至上，你能比我更神豪？》</div></div>
-    <div class="wbadge v-pass">复审通过 → 晋升真实世界</div>
-  </div>
-  <div class="wrange">类型：未来联邦 / 反乌托邦　·　章节：第 123–165 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">未来科技联邦「金钱至上」，男性「亚当」为统治阶层，女性「夏娃」被视作物品——不许读书识字、不许就业、可被随意殴打赠送甚至拍卖。系统选定的男主王锋开场即死，真正叙事主角是一群十二岁起便被压迫的夏娃，她们组成恐怖组织「幽灵」以极端暴力推翻秩序。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>王锋（系统认定）/ 白墨（实际叙事）</b> — 神豪系统宿主，开篇即被爆头 / 幽灵首领<br><span class="sit">原书三千七百章是男主收后宫爽文，本段展示的是作者改设定后的反抗成功线</span></p>
-      <h4>余黎介入</h4><p class="interv">①读开篇即怒，ch126预先宣布「压迫半数人口，作者不改设定就直接数据销毁」；②ch139面无表情操纵鼠标让天幕黑屏三天，以沉默施压联邦上层妥协；③新政令颁布后天幕复亮，间接站台夏娃；④最终按设定已改变走完整评估，以背景板幸福度86%裁定复审通过、升维真实世界。</p>
+</details>
+<details class="world" id="world-5">
+  <summary class="whead">
+    <span class="widx">世界 5</span>
+    <span class="wtitle"><b>金钱主义至上</b><span class="wfull">《金钱主义至上，你能比我更神豪？》</span></span>
+    <span class="wrange">第 123–165 章 · 43 章</span>
+    <span class="wbadge v-pass">通过</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">未来科技联邦「金钱至上」，男性「亚当」为统治阶层，女性「夏娃」被视作物品——不许读书识字、不许就业、可被随意殴打赠送甚至拍卖。系统选定的男主王锋开场即死，真正叙事主角是一群十二岁起便被压迫的夏娃，她们组成恐怖组织「幽灵」以极端暴力推翻秩序。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>王锋（系统认定）/ 白墨（实际叙事）</b> — 神豪系统宿主，开篇即被爆头 / 幽灵首领<br><span class="sit">原书三千七百章是男主收后宫爽文，本段展示的是作者改设定后的反抗成功线</span></p>
+        <h4>余黎介入</h4><p class="interv">①读开篇即怒，ch126预先宣布「压迫半数人口，作者不改设定就直接数据销毁」；②ch139面无表情操纵鼠标让天幕黑屏三天，以沉默施压联邦上层妥协；③新政令颁布后天幕复亮，间接站台夏娃；④最终按设定已改变走完整评估，以背景板幸福度86%裁定复审通过、升维真实世界。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">12 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">白墨（小白卷）</div><div class="crole">幽灵首领，银卷发夏娃</div><div class="cquote">“我们终将死去，我们终将在地狱重逢。”</div></div><div class="ccard"><div class="cname">明夷（臭黑毛）</div><div class="crole">白墨共犯，由区长做到总统</div><div class="cquote">“更改程序，你不再是亚当，而是夏娃。”</div></div><div class="ccard"><div class="cname">王锋</div><div class="crole">原书男主，神豪系统宿主</div><div class="cquote">“我对钱不感兴趣。（开场即死）”</div></div><div class="ccard"><div class="cname">东溪</div><div class="crole">15岁红发夏娃，首位牺牲者</div><div class="cquote">“我是夏娃！我是东溪！”</div></div><div class="ccard"><div class="cname">文湖</div><div class="crole">13岁橙发夏娃，东溪挚友</div><div class="cquote">“幽灵属于地狱，你们的归宿又属于哪里？”</div></div><div class="ccard"><div class="cname">医琪</div><div class="crole">金发绿眼副手，临终直播演讲</div><div class="cquote">“站起来，为了平等。”</div></div><div class="ccard"><div class="cname">艾拉 / 努尔</div><div class="crole">黄发紫眼 / 青发黑肤，形影不离的姊妹</div><div class="cquote">“对不起，但再来一次，我们还是会这样做。”</div></div><div class="ccard"><div class="cname">伊文捷琳</div><div class="crole">金发绿眼温柔长姐</div><div class="cquote">“那就在自己的选择上，一往无前。”</div></div><div class="ccard"><div class="cname">吉雅娜</div><div class="crole">棕发黑杏眼，卧底游霜的幽灵</div><div class="cquote">“幽灵，什么都可以做到。”</div></div><div class="ccard"><div class="cname">希尔</div><div class="crole">蓝发娃娃脸武器商</div><div class="cquote">“竟然是和东溪文湖一样的死法吗？”</div></div><div class="ccard"><div class="cname">山草</div><div class="crole">墨绿发茶色眼，带炸弹潜入中央城</div><div class="cquote">“赞美幽灵！永不后悔！”</div></div><div class="ccard"><div class="cname">游霜</div><div class="crole">权贵傀儡夏娃，造病毒控芯片</div><div class="cquote">“（伪善上位者）”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（12）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">白墨（小白卷）</div><div class="crole">幽灵首领，银卷发夏娃</div><div class="cquote">“我们终将死去，我们终将在地狱重逢。”</div></div><div class="ccard"><div class="cname">明夷（臭黑毛）</div><div class="crole">白墨共犯，由区长做到总统</div><div class="cquote">“更改程序，你不再是亚当，而是夏娃。”</div></div><div class="ccard"><div class="cname">王锋</div><div class="crole">原书男主，神豪系统宿主</div><div class="cquote">“我对钱不感兴趣。（开场即死）”</div></div><div class="ccard"><div class="cname">东溪</div><div class="crole">15岁红发夏娃，首位牺牲者</div><div class="cquote">“我是夏娃！我是东溪！”</div></div><div class="ccard"><div class="cname">文湖</div><div class="crole">13岁橙发夏娃，东溪挚友</div><div class="cquote">“幽灵属于地狱，你们的归宿又属于哪里？”</div></div><div class="ccard"><div class="cname">医琪</div><div class="crole">金发绿眼副手，临终直播演讲</div><div class="cquote">“站起来，为了平等。”</div></div><div class="ccard"><div class="cname">艾拉 / 努尔</div><div class="crole">黄发紫眼 / 青发黑肤，形影不离的姊妹</div><div class="cquote">“对不起，但再来一次，我们还是会这样做。”</div></div><div class="ccard"><div class="cname">伊文捷琳</div><div class="crole">金发绿眼温柔长姐</div><div class="cquote">“那就在自己的选择上，一往无前。”</div></div><div class="ccard"><div class="cname">吉雅娜</div><div class="crole">棕发黑杏眼，卧底游霜的幽灵</div><div class="cquote">“幽灵，什么都可以做到。”</div></div><div class="ccard"><div class="cname">希尔</div><div class="crole">蓝发娃娃脸武器商</div><div class="cquote">“竟然是和东溪文湖一样的死法吗？”</div></div><div class="ccard"><div class="cname">山草</div><div class="crole">墨绿发茶色眼，带炸弹潜入中央城</div><div class="cquote">“赞美幽灵！永不后悔！”</div></div><div class="ccard"><div class="cname">游霜</div><div class="crole">权贵傀儡夏娃，造病毒控芯片</div><div class="cquote">“（伪善上位者）”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">联邦夏娃被物化为耗材，系统指派男主王锋，但他刚觉醒即被12岁白墨爆头夺走半残武器库。白墨与明夷集结十三名小夏娃成立「幽灵」，立誓以无差别暴力打破压迫。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">幽灵连环爆炸逼上层改革；东溪自爆区长、文湖直播炸死州长与财阀公子；医琪、希尔分散行动。明夷借「优秀夏娃」身份潜入体制，由区长做到市长。上层假意建「新娘学校」被炸毁，又用病毒疫苗植入控制芯片阴谋奴役大众。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">游霜被推为傀儡，制造全联邦病毒、借疫苗埋芯片，图谋升维后反控世人。吉雅娜卧底三年泄露其罪证，游霜被努尔炸死；山草带弹潜入中央城，受芯片控制仍凭意志高喊「赞美幽灵」后自爆。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">白墨积攒积分，死刑日引爆中央城夷平联邦上层；残余幽灵集体赴死。明夷整合反叛军稳定秩序当选总统，最终亲手击毙白墨。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">明夷解除芯片、改写智能体「亚当」为「夏娃」，联邦实现真正平等；背景板幸福度86%，余黎裁定复审通过，升维真实世界。</div></div></div>
+    <h4>死亡清单<span class="hint">12 人</span></h4><div class="table-wrap"><table class="dtbl"><thead><tr><th>角色</th><th>章节</th><th>死因</th></tr></thead><tbody><tr><td>王锋</td><td class='num'>第123章</td><td>被白墨爆头夺系统（开场即死，非幽灵）</td></tr><tr><td>东溪</td><td class='num'>第129章</td><td>自爆炸死区长及一城权贵，夏娃第一次「呐喊」</td></tr><tr><td>文湖</td><td class='num'>第138章</td><td>直播引爆全城，与州长、财阀公子同归于尽</td></tr><tr><td>艾拉</td><td class='num'>第145章</td><td>与努尔撤离时被游霜手下夏娃远处冷枪爆头</td></tr><tr><td>希尔</td><td class='num'>第149章</td><td>被反叛军与武器商围困，拉三级炸弹同归于尽</td></tr><tr><td>伊文捷琳</td><td class='num'>第153章</td><td>被卧底同伴吉雅娜于下水道枪杀（送其回家）</td></tr><tr><td>山草</td><td class='num'>第156章</td><td>受芯片控制仍凭意志反抗，被白墨远程引爆体内炸弹</td></tr><tr><td>努尔</td><td class='num'>第158章</td><td>为艾拉报仇，与游霜同归于尽（腰部炸弹）</td></tr><tr><td>法拉、吉雅娜</td><td class='num'>第159章</td><td>潜入芯片控制室失败，被追兵击毙</td></tr><tr><td>雪莱、罗伊、尤里贝儿</td><td class='num'>第160章</td><td>幽灵集体赴死阶段先后战死</td></tr><tr><td>医琪</td><td class='num'>第161章</td><td>直播临终演讲后率全城幽灵自尽</td></tr><tr><td>白墨</td><td class='num'>第163章</td><td>炸毁中央城后被明夷亲手击毙</td></tr></tbody></table></div>
+    <div class="verdict-box v-pass">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">复审通过 → 晋升真实世界</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">王锋不通过（第一条滥杀、第二条私心致无辜伤亡、第三条私德觊觎幼女均极其不通过，第四条主体性通过）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">正派配角三条</span><span class="ru">反派两条</span><span class="ru">背景板幸福度86%</span><span class="ru">全员投票97%选是</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">新增「设定未改则直接数据销毁」前置判定</span><span class="nr">以「天幕黑屏」作为施压杠杆首次实操</span><span class="nr">贺礼承诺三年内无天灾、夏娃永不受性别压迫</span></span></div>
     </div>
+    <h4>金句<span class="hint">6 条</span></h4><div class="quotes"><blockquote>“我们终将死去，我们终将在地狱重逢。（幽灵誓词）”</blockquote><blockquote>“我是夏娃！我是东溪！你们这些可恶的社会蛀虫！！”</blockquote><blockquote>“幽灵属于地狱，你们的归宿又属于哪里？”</blockquote><blockquote>“赞美幽灵！永不后悔！”</blockquote><blockquote>“站起来，为了自己。站起来，为了平等。”</blockquote><blockquote>“更改程序，你不再是亚当，而是夏娃。”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">从本世界起展现更强底线与主动——ch126即预先宣判「不改就直接销毁」，不再如前期世界般犹豫；ch139把观测员权限从「被动观看」升级为「以天幕黑屏主动施压」的操控杠杆；面对海量物化描写学会克制反感、聚焦规则，确立「设定是否改变」为评估前置标准；情绪由憋火转为对反抗成功的欣慰，为86%幸福度鼓掌，也间接鼓舞了千万世界被压迫者。</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">联邦夏娃被物化为耗材，系统指派男主王锋，但他刚觉醒即被12岁白墨爆头夺走半残武器库。白墨与明夷集结十三名小夏娃成立「幽灵」，立誓以无差别暴力打破压迫。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">幽灵连环爆炸逼上层改革；东溪自爆区长、文湖直播炸死州长与财阀公子；医琪、希尔分散行动。明夷借「优秀夏娃」身份潜入体制，由区长做到市长。上层假意建「新娘学校」被炸毁，又用病毒疫苗植入控制芯片阴谋奴役大众。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">游霜被推为傀儡，制造全联邦病毒、借疫苗埋芯片，图谋升维后反控世人。吉雅娜卧底三年泄露其罪证，游霜被努尔炸死；山草带弹潜入中央城，受芯片控制仍凭意志高喊「赞美幽灵」后自爆。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">白墨积攒积分，死刑日引爆中央城夷平联邦上层；残余幽灵集体赴死。明夷整合反叛军稳定秩序当选总统，最终亲手击毙白墨。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">明夷解除芯片、改写智能体「亚当」为「夏娃」，联邦实现真正平等；背景板幸福度86%，余黎裁定复审通过，升维真实世界。</div></div></div>
-  <h4>死亡清单（12）</h4><table class="dtbl"><thead><tr><th>角色</th><th>章节</th><th>死因</th></tr></thead><tbody><tr><td>王锋</td><td>第123章</td><td>被白墨爆头夺系统（开场即死，非幽灵）</td></tr><tr><td>东溪</td><td>第129章</td><td>自爆炸死区长及一城权贵，夏娃第一次「呐喊」</td></tr><tr><td>文湖</td><td>第138章</td><td>直播引爆全城，与州长、财阀公子同归于尽</td></tr><tr><td>艾拉</td><td>第145章</td><td>与努尔撤离时被游霜手下夏娃远处冷枪爆头</td></tr><tr><td>希尔</td><td>第149章</td><td>被反叛军与武器商围困，拉三级炸弹同归于尽</td></tr><tr><td>伊文捷琳</td><td>第153章</td><td>被卧底同伴吉雅娜于下水道枪杀（送其回家）</td></tr><tr><td>山草</td><td>第156章</td><td>受芯片控制仍凭意志反抗，被白墨远程引爆体内炸弹</td></tr><tr><td>努尔</td><td>第158章</td><td>为艾拉报仇，与游霜同归于尽（腰部炸弹）</td></tr><tr><td>法拉、吉雅娜</td><td>第159章</td><td>潜入芯片控制室失败，被追兵击毙</td></tr><tr><td>雪莱、罗伊、尤里贝儿</td><td>第160章</td><td>幽灵集体赴死阶段先后战死</td></tr><tr><td>医琪</td><td>第161章</td><td>直播临终演讲后率全城幽灵自尽</td></tr><tr><td>白墨</td><td>第163章</td><td>炸毁中央城后被明夷亲手击毙</td></tr></tbody></table>
-  <div class="verdict-box v-pass">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">复审通过 → 晋升真实世界</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">王锋不通过（第一条滥杀、第二条私心致无辜伤亡、第三条私德觊觎幼女均极其不通过，第四条主体性通过）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">正派配角三条</span><span class="ru">反派两条</span><span class="ru">背景板幸福度86%</span><span class="ru">全员投票97%选是</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">新增「设定未改则直接数据销毁」前置判定</span><span class="nr">以「天幕黑屏」作为施压杠杆首次实操</span><span class="nr">贺礼承诺三年内无天灾、夏娃永不受性别压迫</span></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“我们终将死去，我们终将在地狱重逢。（幽灵誓词）”</blockquote><blockquote>“我是夏娃！我是东溪！你们这些可恶的社会蛀虫！！”</blockquote><blockquote>“幽灵属于地狱，你们的归宿又属于哪里？”</blockquote><blockquote>“赞美幽灵！永不后悔！”</blockquote><blockquote>“站起来，为了自己。站起来，为了平等。”</blockquote><blockquote>“更改程序，你不再是亚当，而是夏娃。”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">从本世界起展现更强底线与主动——ch126即预先宣判「不改就直接销毁」，不再如前期世界般犹豫；ch139把观测员权限从「被动观看」升级为「以天幕黑屏主动施压」的操控杠杆；面对海量物化描写学会克制反感、聚焦规则，确立「设定是否改变」为评估前置标准；情绪由憋火转为对反抗成功的欣慰，为86%幸福度鼓掌，也间接鼓舞了千万世界被压迫者。</p>
-</article>
-
-<article class="world" id="world-6">
-  <div class="whead">
-    <div class="widx">世界 6</div>
-    <div class="wtitle"><h3>如果永远停在这时</h3><div class="wfull">《如果永远停在这时》</div></div>
-    <div class="wbadge v-pass">通过（晋升真实世界）</div>
-  </div>
-  <div class="wrange">类型：青春疼痛文学　·　章节：第 166–187 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">青春疼痛文学世界。主角赵意是遭校园霸凌、家庭破碎的贫困女高中生，视同学许恒为黑暗中唯一的光。其母赵春华在四十岁「爱上一座山」（E国最高山亚力亚及），抛弃一切离家出走。现实侧国家迅速介入保护赵意、全国严打霸凌。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>赵意</b> — 被霸凌的贫困女高中生 / 世界主角<br><span class="sit">在母亲出走、暗恋幻灭的处境中挣扎求生</span></p>
-      <h4>余黎介入</h4><p class="interv">在工位抽查选中该书，天幕向千万世界展示画面；第188章做世界观评估，逐项点评赵春华（反派·待定）、康泽（正派通过）、许恒及霸凌者（反派·受罚通过）、路人甲（通过）、社会评估（通过），敲法官槌判定「一切通过」，世界晋升真实世界，赠三件贺礼。</p>
+</details>
+<details class="world" id="world-6">
+  <summary class="whead">
+    <span class="widx">世界 6</span>
+    <span class="wtitle"><b>如果永远停在这时</b><span class="wfull">《如果永远停在这时》</span></span>
+    <span class="wrange">第 166–187 章 · 22 章</span>
+    <span class="wbadge v-pass">通过</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">青春疼痛文学世界。主角赵意是遭校园霸凌、家庭破碎的贫困女高中生，视同学许恒为黑暗中唯一的光。其母赵春华在四十岁「爱上一座山」（E国最高山亚力亚及），抛弃一切离家出走。现实侧国家迅速介入保护赵意、全国严打霸凌。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>赵意</b> — 被霸凌的贫困女高中生 / 世界主角<br><span class="sit">在母亲出走、暗恋幻灭的处境中挣扎求生</span></p>
+        <h4>余黎介入</h4><p class="interv">在工位抽查选中该书，天幕向千万世界展示画面；第188章做世界观评估，逐项点评赵春华（反派·待定）、康泽（正派通过）、许恒及霸凌者（反派·受罚通过）、路人甲（通过）、社会评估（通过），敲法官槌判定「一切通过」，世界晋升真实世界，赠三件贺礼。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">6 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">赵意</div><div class="crole">被霸凌女高中生 / 世界主角</div><div class="cquote">“我是主角”</div></div><div class="ccard"><div class="cname">赵春华</div><div class="crole">赵意母亲 / 被归反派待定</div><div class="cquote">“我是因为我出现了，所以我才出现”</div></div><div class="ccard"><div class="cname">许恒</div><div class="crole">赵意暗恋的光 / 天幕滤镜男主</div><div class="cquote">“真正的主角不是你，是我”</div></div><div class="ccard"><div class="cname">康泽</div><div class="crole">赵意父亲 / 正派通过</div><div class="cquote">“为赵意备早餐、试图挽回赵春华”</div></div><div class="ccard"><div class="cname">燕涵</div><div class="crole">保护赵意的警察 / 观察者</div><div class="cquote">“你是赵意，你是主角”</div></div><div class="ccard"><div class="cname">亚力亚及</div><div class="crole">E国最高山（8890.79千米）</div><div class="cquote">“赵春华灵魂的出口”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（6）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">赵意</div><div class="crole">被霸凌女高中生 / 世界主角</div><div class="cquote">“我是主角”</div></div><div class="ccard"><div class="cname">赵春华</div><div class="crole">赵意母亲 / 被归反派待定</div><div class="cquote">“我是因为我出现了，所以我才出现”</div></div><div class="ccard"><div class="cname">许恒</div><div class="crole">赵意暗恋的光 / 天幕滤镜男主</div><div class="cquote">“真正的主角不是你，是我”</div></div><div class="ccard"><div class="cname">康泽</div><div class="crole">赵意父亲 / 正派通过</div><div class="cquote">“为赵意备早餐、试图挽回赵春华”</div></div><div class="ccard"><div class="cname">燕涵</div><div class="crole">保护赵意的警察 / 观察者</div><div class="cquote">“你是赵意，你是主角”</div></div><div class="ccard"><div class="cname">亚力亚及</div><div class="crole">E国最高山（8890.79千米）</div><div class="cquote">“赵春华灵魂的出口”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">余黎抽查选中《如果永远停在这时》，天幕展示赵意在课堂被写「贱人」「去死」、母亲赵春华被邻里当疯子的惨状；国家迅速介入，保护赵意、将霸凌者送警、全国严打校园霸凌。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">赵春华坦白「爱上亚力亚及」，两手空空徒步走向六千多公里外的神山；赵意在警护下回校，如愿坐到许恒旁，却始终坐立不安、活在他人目光里。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">许恒宣称自己才是真正的主角，赵意所有痛苦只为遇见他、配得上他；赵意觉醒「我是主角」「我只为自己」，扇其耳光，撕碎「为配得上谁而活」的镜面。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">赵意一路追随母亲流浪足迹，从羞愤回避到渐渐理解；赵春华抵山脚，山生大雾将其笼罩、与之融为一体；赵意高考721分全省第一。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">赵意入顶尖大学，理解却永不原谅母亲；余黎逐项评估后敲槌「一切通过」，世界晋升真实世界，获愿望、五年风调雨顺、消除好病痛三件贺礼。</div></div></div>
+    
+    <div class="verdict-box v-pass">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">通过（晋升真实世界）</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">通过（正派四条全过，尤其第四条主体性：确认「我是主角」「只为我自己」）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">正派配角三条</span><span class="ru">路人甲环节</span><span class="ru">社会评估</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">将「结局未知的反派」归入待定阶段、跳过剔除，不影响世界判定（推测）</span></span></div>
     </div>
+    <h4>金句<span class="hint">5 条</span></h4><div class="quotes"><blockquote>“我是主角。（赵意扇许恒耳光后小声而坚定）”</blockquote><blockquote>“我只是为了她自己！一定是为了她自己！”</blockquote><blockquote>“我是因为我出现了，所以我才出现。”</blockquote><blockquote>“她只是爱上了一座山……她只是终于发现自己，为此而出生。”</blockquote><blockquote>“才不要永远停在这时。我要一直向前。”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">对「做自己」与「世俗责任」的冲突有了更深理解——两度为只能用世俗目光评估赵春华而道歉，承认「有错」但「不值得赞同、不值得尊重、不值得学习」；面对未知结局的角色，学会将其归入待定、跳过剔除，评估尺度从机械套用走向成熟权衡。</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">余黎抽查选中《如果永远停在这时》，天幕展示赵意在课堂被写「贱人」「去死」、母亲赵春华被邻里当疯子的惨状；国家迅速介入，保护赵意、将霸凌者送警、全国严打校园霸凌。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">赵春华坦白「爱上亚力亚及」，两手空空徒步走向六千多公里外的神山；赵意在警护下回校，如愿坐到许恒旁，却始终坐立不安、活在他人目光里。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">许恒宣称自己才是真正的主角，赵意所有痛苦只为遇见他、配得上他；赵意觉醒「我是主角」「我只为自己」，扇其耳光，撕碎「为配得上谁而活」的镜面。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">赵意一路追随母亲流浪足迹，从羞愤回避到渐渐理解；赵春华抵山脚，山生大雾将其笼罩、与之融为一体；赵意高考721分全省第一。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">赵意入顶尖大学，理解却永不原谅母亲；余黎逐项评估后敲槌「一切通过」，世界晋升真实世界，获愿望、五年风调雨顺、消除好病痛三件贺礼。</div></div></div>
-  
-  <div class="verdict-box v-pass">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">通过（晋升真实世界）</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">通过（正派四条全过，尤其第四条主体性：确认「我是主角」「只为我自己」）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条</span><span class="ru">反派两条</span><span class="ru">正派配角三条</span><span class="ru">路人甲环节</span><span class="ru">社会评估</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"><span class="nr">将「结局未知的反派」归入待定阶段、跳过剔除，不影响世界判定（推测）</span></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“我是主角。（赵意扇许恒耳光后小声而坚定）”</blockquote><blockquote>“我只是为了她自己！一定是为了她自己！”</blockquote><blockquote>“我是因为我出现了，所以我才出现。”</blockquote><blockquote>“她只是爱上了一座山……她只是终于发现自己，为此而出生。”</blockquote><blockquote>“才不要永远停在这时。我要一直向前。”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">对「做自己」与「世俗责任」的冲突有了更深理解——两度为只能用世俗目光评估赵春华而道歉，承认「有错」但「不值得赞同、不值得尊重、不值得学习」；面对未知结局的角色，学会将其归入待定、跳过剔除，评估尺度从机械套用走向成熟权衡。</p>
-</article>
-
-<article class="world" id="world-7">
-  <div class="whead">
-    <div class="widx">世界 7</div>
-    <div class="wtitle"><h3>她真不是万人慊</h3><div class="wfull">《她真不是万人慊》（又名《万人慊》）</div></div>
-    <div class="wbadge v-pending">未宣判（文本止于虫皇宣战）</div>
-  </div>
-  <div class="wrange">类型：星际 / 虫族　·　章节：第 188–202 章</div>
-  <div class="wcols">
-    <div class="wcol">
-      <h4>世界设定</h4><p class="setting">星际帝国时代，人类被虫族逼至唯一国家「帝国」，以精神力操纵机甲抗虫。主角圣西莉亚是贫民窟找回的贵族千金，被称精神力为零的废物，遭全家嫌弃、未婚夫退婚、军校排挤，被推上处刑台；实则其真身为虫族首个诞生智慧者、虫皇伊索尔德·圣西莉亚，潜入人类社会「观察食物」。</p>
-      <h4>主角</h4>
-      <p class="prot"><b>圣西莉亚（伊索尔德·圣西莉亚）</b> — 虫族之皇伪装的「世界主角」<br><span class="sit">表面是被嫌弃的废物千金，实为潜入人类社会的虫皇</span></p>
-      <h4>余黎介入</h4><p class="interv">余黎在188章以抽查按钮选中该世界于天幕展示，简介主角处境；其后作为观测员持续观看天幕播放该世界剧情，未对第七世界敲下法官槌（文本止于虫皇宣战，正式判定未出）。</p>
+</details>
+<details class="world" id="world-7">
+  <summary class="whead">
+    <span class="widx">世界 7</span>
+    <span class="wtitle"><b>她真不是万人慊</b><span class="wfull">《她真不是万人慊》（又名《万人慊》）</span></span>
+    <span class="wrange">第 188–202 章 · 15 章</span>
+    <span class="wbadge v-pending">未宣判</span>
+    <span class="wcaret"></span>
+  </summary>
+  <div class="wbody">
+    <div class="wcols">
+      <div class="wcol">
+        <h4>世界设定</h4><p class="setting">星际帝国时代，人类被虫族逼至唯一国家「帝国」，以精神力操纵机甲抗虫。主角圣西莉亚是贫民窟找回的贵族千金，被称精神力为零的废物，遭全家嫌弃、未婚夫退婚、军校排挤，被推上处刑台；实则其真身为虫族首个诞生智慧者、虫皇伊索尔德·圣西莉亚，潜入人类社会「观察食物」。</p>
+        <h4>主角</h4>
+        <p class="prot"><b>圣西莉亚（伊索尔德·圣西莉亚）</b> — 虫族之皇伪装的「世界主角」<br><span class="sit">表面是被嫌弃的废物千金，实为潜入人类社会的虫皇</span></p>
+        <h4>余黎介入</h4><p class="interv">余黎在188章以抽查按钮选中该世界于天幕展示，简介主角处境；其后作为观测员持续观看天幕播放该世界剧情，未对第七世界敲下法官槌（文本止于虫皇宣战，正式判定未出）。</p>
+      </div>
+      <div class="wcol">
+        <h4>主要角色<span class="hint">8 人</span></h4>
+        <div class="cgrid"><div class="ccard"><div class="cname">圣西莉亚 / 伊索尔德·圣西莉亚</div><div class="crole">本世界主角，实为虫皇</div><div class="cquote">“准备好最后战争吧。食物们。以虫皇的名义。”</div></div><div class="ccard"><div class="cname">叶零（零）</div><div class="crole">黑斗篷随从，叶凌遗孤</div><div class="cquote">“无论什么，都可以接受，只要是她的决定。”</div></div><div class="ccard"><div class="cname">叶凌</div><div class="crole">人类S级最强战士、被囚虫族牢狱</div><div class="cquote">“一切从零开始，直到抵达她期望的彼岸。”</div></div><div class="ccard"><div class="cname">白横</div><div class="crole">叶家现任家主，圣西莉亚父亲</div><div class="cquote">“精神力为零，将来还能当太子妃？”</div></div><div class="ccard"><div class="cname">周明研</div><div class="crole">帝国皇帝、叶凌至交、S级强者</div><div class="cquote">“我不追随虚拟的幻想，但或许等我死去，我和她可以重新见面。”</div></div><div class="ccard"><div class="cname">盛涵</div><div class="crole">穆德尔军校首席</div><div class="cquote">“将需要保护的人保护在身后……生命是很宝贵的东西。”</div></div><div class="ccard"><div class="cname">图西</div><div class="crole">红发A级精神力，誓杀圣西莉亚</div><div class="cquote">“以人类的名义。”</div></div><div class="ccard"><div class="cname">闻人乘</div><div class="crole">两米八S级强者、3S预言家挚友</div><div class="cquote">“揭示真名：伊索尔德.圣西莉亚”</div></div></div>
+      </div>
     </div>
-    <div class="wcol">
-      <h4>主要角色（8）</h4>
-      <div class="cgrid"><div class="ccard"><div class="cname">圣西莉亚 / 伊索尔德·圣西莉亚</div><div class="crole">本世界主角，实为虫皇</div><div class="cquote">“准备好最后战争吧。食物们。以虫皇的名义。”</div></div><div class="ccard"><div class="cname">叶零（零）</div><div class="crole">黑斗篷随从，叶凌遗孤</div><div class="cquote">“无论什么，都可以接受，只要是她的决定。”</div></div><div class="ccard"><div class="cname">叶凌</div><div class="crole">人类S级最强战士、被囚虫族牢狱</div><div class="cquote">“一切从零开始，直到抵达她期望的彼岸。”</div></div><div class="ccard"><div class="cname">白横</div><div class="crole">叶家现任家主，圣西莉亚父亲</div><div class="cquote">“精神力为零，将来还能当太子妃？”</div></div><div class="ccard"><div class="cname">周明研</div><div class="crole">帝国皇帝、叶凌至交、S级强者</div><div class="cquote">“我不追随虚拟的幻想，但或许等我死去，我和她可以重新见面。”</div></div><div class="ccard"><div class="cname">盛涵</div><div class="crole">穆德尔军校首席</div><div class="cquote">“将需要保护的人保护在身后……生命是很宝贵的东西。”</div></div><div class="ccard"><div class="cname">图西</div><div class="crole">红发A级精神力，誓杀圣西莉亚</div><div class="cquote">“以人类的名义。”</div></div><div class="ccard"><div class="cname">闻人乘</div><div class="crole">两米八S级强者、3S预言家挚友</div><div class="cquote">“揭示真名：伊索尔德.圣西莉亚”</div></div></div>
+    <h4>情节脉络<span class="hint">5 个阶段</span></h4>
+    <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">圣西莉亚被从贫民窟找回，精神力检测为零，在实力为尊的虫族战争世界成畸形儿，遭父亲算计、继母子女嫉恨、太子退婚、军校生排挤，被押上处刑台；天幕揭示她是世界主角，简介预言其失踪后众人跪求原谅，她却天真道「可我是主角不是吗」。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">回叶家被关饿，白横PUA式劝其争太子妃位；宴会上精神力测试为零成贵族笑柄；入军校屡遭嘲讽排挤，皇帝召见追忆叶凌；盛涵以首席之姿邀其上战场见识战争残酷；图西多次暗杀失败；黑斗篷人「零」贴身守护、喂食安眠。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">废弃星球试炼，圣西莉亚被揭故意不递修补能源致同伴死伤，成人类叛徒；高级虫兽竟开口说话；图西以命设局刺杀，闻人乘讲述3S预言家故事，揭示圣西莉亚真名即预言中令人类陷入绝境的存在。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">天幕揭示叶凌被囚虫族牢狱、为女儿取名「叶零」；圣西莉亚在处刑台化身白色虫皇，宣告人类停留在第二阶段、仅值为食物；皇宫里叶零脱斗篷与皇帝决战，皇帝狼狈瘫血泊。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">虫皇宣战「一个月后总攻」，人类以「人类的名义」殊死抵抗；圣西莉亚立于会说话的游鱼虫兽之顶与叶零并肩俯视废墟——全书于此收束，余黎未及宣判。</div></div></div>
+    
+    <div class="verdict-box v-pending">
+      <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">未宣判（文本止于虫皇宣战）</span></div>
+      <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">未宣判（推测不通过或数据销毁）</span></div>
+      <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条 / 主体性（作为「一个人」存在与虫皇本质冲突）</span><span class="ru">补充条例·数据销毁（高危）</span><span class="ru">无人生存不予通过（虫族以人类为食）</span></span></div>
+      <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"></span></div>
     </div>
+    <h4>金句<span class="hint">5 条</span></h4><div class="quotes"><blockquote>“准备好最后战争吧。食物们。以虫皇的名义。”</blockquote><blockquote>“人类是擅长对同类压迫并乐此不疲的存在……判定为伤害。”</blockquote><blockquote>“伊索尔德.圣西莉亚”</blockquote><blockquote>“一切从零开始，直到抵达她期望的彼岸。”</blockquote><blockquote>“以人类的名义！！！”</blockquote></div>
+    <h4>余黎在该世界的成长</h4><p class="growth">（本书在此戛然而止，余黎未及宣判；其成长线于世界6达到成熟：从机械执行 → 共情者 → 具价值判断与主动施压的观测员。）</p>
   </div>
-  <h4>情节脉络</h4>
-  <div class="ptimeline"><div class="pnode"><div class="pstage">开局</div><div class="ptext">圣西莉亚被从贫民窟找回，精神力检测为零，在实力为尊的虫族战争世界成畸形儿，遭父亲算计、继母子女嫉恨、太子退婚、军校生排挤，被押上处刑台；天幕揭示她是世界主角，简介预言其失踪后众人跪求原谅，她却天真道「可我是主角不是吗」。</div></div><div class="pnode"><div class="pstage">发展</div><div class="ptext">回叶家被关饿，白横PUA式劝其争太子妃位；宴会上精神力测试为零成贵族笑柄；入军校屡遭嘲讽排挤，皇帝召见追忆叶凌；盛涵以首席之姿邀其上战场见识战争残酷；图西多次暗杀失败；黑斗篷人「零」贴身守护、喂食安眠。</div></div><div class="pnode"><div class="pstage">转折</div><div class="ptext">废弃星球试炼，圣西莉亚被揭故意不递修补能源致同伴死伤，成人类叛徒；高级虫兽竟开口说话；图西以命设局刺杀，闻人乘讲述3S预言家故事，揭示圣西莉亚真名即预言中令人类陷入绝境的存在。</div></div><div class="pnode"><div class="pstage">高潮</div><div class="ptext">天幕揭示叶凌被囚虫族牢狱、为女儿取名「叶零」；圣西莉亚在处刑台化身白色虫皇，宣告人类停留在第二阶段、仅值为食物；皇宫里叶零脱斗篷与皇帝决战，皇帝狼狈瘫血泊。</div></div><div class="pnode"><div class="pstage">结局</div><div class="ptext">虫皇宣战「一个月后总攻」，人类以「人类的名义」殊死抵抗；圣西莉亚立于会说话的游鱼虫兽之顶与叶零并肩俯视废墟——全书于此收束，余黎未及宣判。</div></div></div>
-  
-  <div class="verdict-box v-pending">
-    <div class="vb-row"><span class="vb-k">世界裁定</span><span class="vb-v">未宣判（文本止于虫皇宣战）</span></div>
-    <div class="vb-row"><span class="vb-k">主角裁定</span><span class="vb-v">未宣判（推测不通过或数据销毁）</span></div>
-    <div class="vb-row"><span class="vb-k">适用规则</span><span class="vb-v"><span class="ru">正派四条 / 主体性（作为「一个人」存在与虫皇本质冲突）</span><span class="ru">补充条例·数据销毁（高危）</span><span class="ru">无人生存不予通过（虫族以人类为食）</span></span></div>
-    <div class="vb-row"><span class="vb-k">新增规则</span><span class="vb-v"></span></div>
-  </div>
-  <h4>金句</h4><div class="quotes"><blockquote>“准备好最后战争吧。食物们。以虫皇的名义。”</blockquote><blockquote>“人类是擅长对同类压迫并乐此不疲的存在……判定为伤害。”</blockquote><blockquote>“伊索尔德.圣西莉亚”</blockquote><blockquote>“一切从零开始，直到抵达她期望的彼岸。”</blockquote><blockquote>“以人类的名义！！！”</blockquote></div>
-  <h4>余黎在该世界的成长</h4><p class="growth">（本书在此戛然而止，余黎未及宣判；其成长线于世界6达到成熟：从机械执行 → 共情者 → 具价值判断与主动施压的观测员。）</p>
-</article>
-</div>
+</details></div>
 </section>
 
 
-<section id="rules">
-  <h2>规则演化时间轴（14 条）</h2>
+<section class="sec" id="rules">
+  <div class="sec-head"><h2>规则演化</h2><span class="hint">14 条 · 从机械执行到价值权衡</span></div>
   <p class="lead">余黎在七个世界的评估中，逐步把临时判断沉淀为可复用规则，评审口径从机械执行走向价值权衡。</p>
   <div class="rtimeline"><div class="rnode"><div class="rworld">世界 1</div><div class="rrule">背景板幸福度≥30%视为通过</div><div class="rnote">余黎提议，给不通过的世界一次由全体人选择重生的机会</div></div><div class="rnode"><div class="rworld">世界 1</div><div class="rrule">全员投票决定是否进入复审</div><div class="rnote">全体世界住民投票</div></div><div class="rnode"><div class="rworld">世界 1</div><div class="rrule">主角专属「主体性」规则</div><div class="rnote">是否真正作为一个人存在、看见自己</div></div><div class="rnode"><div class="rworld">世界 1</div><div class="rrule">观测员一票否决权</div><div class="rnote">余黎拥有</div></div><div class="rnode"><div class="rworld">世界 2</div><div class="rrule">背景板（无数大众）才是世界能否通过的真正决定方</div><div class="rnote">确立大众而非主角的决定性</div></div><div class="rnode"><div class="rworld">世界 2</div><div class="rrule">补充条例：严重不符合规定者即刻数据销毁</div><div class="rnote">首个被销毁的世界</div></div><div class="rnode"><div class="rworld">世界 2</div><div class="rrule">单一投票者（尤其极不通过者）的幸福度数据无效</div><div class="rnote">防止一人刷票</div></div><div class="rnode"><div class="rworld">世界 3</div><div class="rrule">立场竞争不计滥杀，但屠城等系统性屠杀绝对不通过</div><div class="rnote">修仙/战争世界的规则边界</div></div><div class="rnode"><div class="rworld">世界 3</div><div class="rrule">反派洗白须受害者真心谅解或实质忏悔</div><div class="rnote">反派报应尺度</div></div><div class="rnode"><div class="rworld">世界 4</div><div class="rrule">无人生存的世界不予通过</div><div class="rnote">正式援引，世界改为上架阅读平台</div></div><div class="rnode"><div class="rworld">世界 4</div><div class="rrule">反派主角同样适用主体性审核</div><div class="rnote">李新奇按反派两条判定</div></div><div class="rnode"><div class="rworld">世界 5</div><div class="rrule">设定未改则直接数据销毁（前置判定）</div><div class="rnote">压迫半数人口且作者不改设定</div></div><div class="rnode"><div class="rworld">世界 5</div><div class="rrule">天幕黑屏作为施压杠杆</div><div class="rnote">观测员权限从被动观看升级为主动施压</div></div><div class="rnode"><div class="rworld">世界 6</div><div class="rrule">结局未知的反派归入待定、跳过剔除</div><div class="rnote">不影响世界判定（推测）</div></div></div>
 </section>
 
 
-<section id="arc">
-  <h2>观测员余黎 · 成长弧（7 阶段）</h2>
+<section class="sec" id="arc">
+  <div class="sec-head"><h2>观测员余黎 · 成长弧</h2><span class="hint">7 个阶段</span></div>
   <div class="atimeline"><div class="anode"><div class="astage">世界1</div><div class="atext">从以为是骗子公司到真心投入；由尴尬敷衍到沉浸剧情的「戏精」。主动提议复审机制，萌生「自己像决定小说世界生死的神」的自觉。</div></div><div class="anode"><div class="astage">世界2</div><div class="atext">情绪外显：为垄断物资冷笑、为虐杀女性气得青筋直冒、为灿烂灵魂悲悯。首次明确价值偏好，引入法槌仪式。</div></div><div class="anode"><div class="astage">世界3</div><div class="atext">从「工伤」恢复，学会按世界类型调适规则解释，区分立场竞争与滥杀，敲槌从容。</div></div><div class="anode"><div class="astage">世界4</div><div class="atext">首次被故事催泪，从评分机器转向共情者；面对灭世不销毁而让《幸福》以被阅读的方式永生，成为「守护故事意义者」。</div></div><div class="anode"><div class="astage">世界5</div><div class="atext">展现更强底线与主动：预先宣判、天幕黑屏施压；确立「设定是否改变」为评估前置标准。</div></div><div class="anode"><div class="astage">世界6</div><div class="atext">理解「做自己」与世俗责任的冲突，两度为只能用世俗目光评估而道歉；学会将未知结局者归入待定，尺度走向成熟权衡。</div></div><div class="anode"><div class="astage">世界7</div><div class="atext">（未及宣判）全书于此收束。</div></div></div>
 </section>
 
 
-<section id="theme">
-  <h2>主题</h2>
+<section class="sec" id="theme">
+  <div class="sec-head"><h2>主题</h2></div>
   <p class="theme-text">作者借七个世界追问「何为值得真实存在的世界与人」——主体性、普世价值、弱者尊严。圣西莉亚线反转「万人慊」套路，以「食物」视角回看人类之恶：压迫、阶级、食人式剥削。最终落点：人类纵有丑陋，仍有人（盛涵、图西、叶零）以「人类名义」选择守护与希望，并叩问——被观看、被审判的世界，是否值得真实存在。</p>
 </section>
 
 
-<section id="index">
-  <h2>全本目录（202 章）</h2>
-  <input id="chSearch" type="search" placeholder="搜索章节标题 / 世界…" oninput="filterChapters()">
-  <table class="itbl"><thead><tr><th>章</th><th>标题</th><th>归属世界</th><th>字数</th></tr></thead><tbody id="chBody"><tr data-t="第 1 章 观测开始" data-w="1"><td>1</td><td class="ct">第 1 章 观测开始</td><td class="cw">世界 1</td><td class="cc">2338</td></tr><tr data-t="第2章 霸总的替身娇妻" data-w="1"><td>2</td><td class="ct">第2章 霸总的替身娇妻</td><td class="cw">世界 1</td><td class="cc">2572</td></tr><tr data-t="第 3 章 满头雾水" data-w="1"><td>3</td><td class="ct">第 3 章 满头雾水</td><td class="cw">世界 1</td><td class="cc">2452</td></tr><tr data-t="第 4 章 怎么看不懂行事啊？" data-w="1"><td>4</td><td class="ct">第 4 章 怎么看不懂行事啊？</td><td class="cw">世界 1</td><td class="cc">2335</td></tr><tr data-t="第 5 章 这也能结婚？" data-w="1"><td>5</td><td class="ct">第 5 章 这也能结婚？</td><td class="cw">世界 1</td><td class="cc">2324</td></tr><tr data-t="第 6 章 未来" data-w="1"><td>6</td><td class="ct">第 6 章 未来</td><td class="cw">世界 1</td><td class="cc">2317</td></tr><tr data-t="第 7 章 决定放弃" data-w="1"><td>7</td><td class="ct">第 7 章 决定放弃</td><td class="cw">世界 1</td><td class="cc">2283</td></tr><tr data-t="第 8 章 离开" data-w="1"><td>8</td><td class="ct">第 8 章 离开</td><td class="cw">世界 1</td><td class="cc">2477</td></tr><tr data-t="第 9 章 什么情况？" data-w="1"><td>9</td><td class="ct">第 9 章 什么情况？</td><td class="cw">世界 1</td><td class="cc">2262</td></tr><tr data-t="第10章 是否通过？" data-w="1"><td>10</td><td class="ct">第10章 是否通过？</td><td class="cw">世界 1</td><td class="cc">2662</td></tr><tr data-t="第 11章 难以置信" data-w="1"><td>11</td><td class="ct">第 11章 难以置信</td><td class="cw">世界 1</td><td class="cc">2213</td></tr><tr data-t="第12章 夏明月，你生气吗？" data-w="1"><td>12</td><td class="ct">第12章 夏明月，你生气吗？</td><td class="cw">世界 1</td><td class="cc">2228</td></tr><tr data-t="第13 章 小丑" data-w="1"><td>13</td><td class="ct">第13 章 小丑</td><td class="cw">世界 1</td><td class="cc">2103</td></tr><tr data-t="第14 章 正派规则" data-w="1"><td>14</td><td class="ct">第14 章 正派规则</td><td class="cw">世界 1</td><td class="cc">2405</td></tr><tr data-t="第15章 判定不通过" data-w="1"><td>15</td><td class="ct">第15章 判定不通过</td><td class="cw">世界 1</td><td class="cc">2125</td></tr><tr data-t="第16章 下一个评估" data-w="1"><td>16</td><td class="ct">第16章 下一个评估</td><td class="cw">世界 1</td><td class="cc">2247</td></tr><tr data-t="第17章 还是不通过" data-w="1"><td>17</td><td class="ct">第17章 还是不通过</td><td class="cw">世界 1</td><td class="cc">2429</td></tr><tr data-t="第18章 她为她感到高兴" data-w="1"><td>18</td><td class="ct">第18章 她为她感到高兴</td><td class="cw">世界 1</td><td class="cc">2584</td></tr><tr data-t="第19章 路人甲" data-w="1"><td>19</td><td class="ct">第19章 路人甲</td><td class="cw">世界 1</td><td class="cc">2126</td></tr><tr data-t="第20章规则变化" data-w="1"><td>20</td><td class="ct">第20章规则变化</td><td class="cw">世界 1</td><td class="cc">2234</td></tr><tr data-t="第21章 选择" data-w="1"><td>21</td><td class="ct">第21章 选择</td><td class="cw">世界 1</td><td class="cc">2418</td></tr><tr data-t="第22章 幸福度" data-w="1"><td>22</td><td class="ct">第22章 幸福度</td><td class="cw">世界 1</td><td class="cc">2206</td></tr><tr data-t="第23章 复审选择" data-w="1"><td>23</td><td class="ct">第23章 复审选择</td><td class="cw">世界 1</td><td class="cc">2283</td></tr><tr data-t="第24章虚假的希望" data-w="1"><td>24</td><td class="ct">第24章虚假的希望</td><td class="cw">世界 1</td><td class="cc">2149</td></tr><tr data-t="第25章 第四条规则" data-w="1"><td>25</td><td class="ct">第25章 第四条规则</td><td class="cw">世界 1</td><td class="cc">2210</td></tr><tr data-t="第26章 错误" data-w="1"><td>26</td><td class="ct">第26章 错误</td><td class="cw">世界 1</td><td class="cc">2146</td></tr><tr data-t="第27章第一个评估结束" data-w="1"><td>27</td><td class="ct">第27章第一个评估结束</td><td class="cw">世界 1</td><td class="cc">3274</td></tr><tr data-t="第28章第二个评估世界" data-w="2"><td>28</td><td class="ct">第28章第二个评估世界</td><td class="cw">世界 2</td><td class="cc">2143</td></tr><tr data-t="第29章 末日娇宠" data-w="2"><td>29</td><td class="ct">第29章 末日娇宠</td><td class="cw">世界 2</td><td class="cc">2150</td></tr><tr data-t="第30章末日来临" data-w="2"><td>30</td><td class="ct">第30章末日来临</td><td class="cw">世界 2</td><td class="cc">2384</td></tr><tr data-t="第31章 吓到" data-w="2"><td>31</td><td class="ct">第31章 吓到</td><td class="cw">世界 2</td><td class="cc">2180</td></tr><tr data-t="第32章 怎么敢！" data-w="2"><td>32</td><td class="ct">第32章 怎么敢！</td><td class="cw">世界 2</td><td class="cc">2563</td></tr><tr data-t="第33章 喜欢" data-w="2"><td>33</td><td class="ct">第33章 喜欢</td><td class="cw">世界 2</td><td class="cc">2471</td></tr><tr data-t="第34章 少年意气" data-w="2"><td>34</td><td class="ct">第34章 少年意气</td><td class="cw">世界 2</td><td class="cc">3127</td></tr><tr data-t="第35章还活着" data-w="2"><td>35</td><td class="ct">第35章还活着</td><td class="cw">世界 2</td><td class="cc">3193</td></tr><tr data-t="第36章 请求" data-w="2"><td>36</td><td class="ct">第36章 请求</td><td class="cw">世界 2</td><td class="cc">2317</td></tr><tr data-t="第37章 仇恨" data-w="2"><td>37</td><td class="ct">第37章 仇恨</td><td class="cw">世界 2</td><td class="cc">2195</td></tr><tr data-t="第38章 未来会发生什么" data-w="2"><td>38</td><td class="ct">第38章 未来会发生什么</td><td class="cw">世界 2</td><td class="cc">2269</td></tr><tr data-t="第39章 出乎意料" data-w="2"><td>39</td><td class="ct">第39章 出乎意料</td><td class="cw">世界 2</td><td class="cc">2246</td></tr><tr data-t="第40章 背景板变反派？" data-w="2"><td>40</td><td class="ct">第40章 背景板变反派？</td><td class="cw">世界 2</td><td class="cc">2525</td></tr><tr data-t="第41章期待" data-w="2"><td>41</td><td class="ct">第41章期待</td><td class="cw">世界 2</td><td class="cc">2415</td></tr><tr data-t="第42章 决定" data-w="2"><td>42</td><td class="ct">第42章 决定</td><td class="cw">世界 2</td><td class="cc">2194</td></tr><tr data-t="第43章 还没输！" data-w="2"><td>43</td><td class="ct">第43章 还没输！</td><td class="cw">世界 2</td><td class="cc">2581</td></tr><tr data-t="第44章 清理" data-w="2"><td>44</td><td class="ct">第44章 清理</td><td class="cw">世界 2</td><td class="cc">2524</td></tr><tr data-t="第45章 杀掉所有人？" data-w="2"><td>45</td><td class="ct">第45章 杀掉所有人？</td><td class="cw">世界 2</td><td class="cc">2664</td></tr><tr data-t="第46章 悲痛" data-w="2"><td>46</td><td class="ct">第46章 悲痛</td><td class="cw">世界 2</td><td class="cc">2310</td></tr><tr data-t="第47章 恨意" data-w="2"><td>47</td><td class="ct">第47章 恨意</td><td class="cw">世界 2</td><td class="cc">2398</td></tr><tr data-t="第48章野心和打算" data-w="2"><td>48</td><td class="ct">第48章野心和打算</td><td class="cw">世界 2</td><td class="cc">2467</td></tr><tr data-t="第49章 疑惑" data-w="2"><td>49</td><td class="ct">第49章 疑惑</td><td class="cw">世界 2</td><td class="cc">2445</td></tr><tr data-t="第50章可否赐予" data-w="2"><td>50</td><td class="ct">第50章可否赐予</td><td class="cw">世界 2</td><td class="cc">2687</td></tr><tr data-t="第51章 计划" data-w="2"><td>51</td><td class="ct">第51章 计划</td><td class="cw">世界 2</td><td class="cc">2198</td></tr><tr data-t="第52章一切算计" data-w="2"><td>52</td><td class="ct">第52章一切算计</td><td class="cw">世界 2</td><td class="cc">2937</td></tr><tr data-t="第53章反派评估" data-w="2"><td>53</td><td class="ct">第53章反派评估</td><td class="cw">世界 2</td><td class="cc">2232</td></tr><tr data-t="第54章 雨夜" data-w="2"><td>54</td><td class="ct">第54章 雨夜</td><td class="cw">世界 2</td><td class="cc">2349</td></tr><tr data-t="第55章 惋惜" data-w="2"><td>55</td><td class="ct">第55章 惋惜</td><td class="cw">世界 2</td><td class="cc">2237</td></tr><tr data-t="第56章 她是黎娇" data-w="2"><td>56</td><td class="ct">第56章 她是黎娇</td><td class="cw">世界 2</td><td class="cc">2716</td></tr><tr data-t="第57章 算什么东西！" data-w="2"><td>57</td><td class="ct">第57章 算什么东西！</td><td class="cw">世界 2</td><td class="cc">2659</td></tr><tr data-t="第58章 杀了他" data-w="2"><td>58</td><td class="ct">第58章 杀了他</td><td class="cw">世界 2</td><td class="cc">2294</td></tr><tr data-t="第59章 一个不留" data-w="2"><td>59</td><td class="ct">第59章 一个不留</td><td class="cw">世界 2</td><td class="cc">2338</td></tr><tr data-t="第60章 好不好？" data-w="2"><td>60</td><td class="ct">第60章 好不好？</td><td class="cw">世界 2</td><td class="cc">2288</td></tr><tr data-t="第61章 绝望" data-w="2"><td>61</td><td class="ct">第61章 绝望</td><td class="cw">世界 2</td><td class="cc">2444</td></tr><tr data-t="第62章 庆幸" data-w="2"><td>62</td><td class="ct">第62章 庆幸</td><td class="cw">世界 2</td><td class="cc">2304</td></tr><tr data-t="第63章 种地" data-w="2"><td>63</td><td class="ct">第63章 种地</td><td class="cw">世界 2</td><td class="cc">2733</td></tr><tr data-t="第64章《霍总》复审" data-w="2"><td>64</td><td class="ct">第64章《霍总》复审</td><td class="cw">世界 2</td><td class="cc">3120</td></tr><tr data-t="第65章第三个世界评估" data-w="3"><td>65</td><td class="ct">第65章第三个世界评估</td><td class="cw">世界 3</td><td class="cc">2217</td></tr><tr data-t="第66章差点找来" data-w="3"><td>66</td><td class="ct">第66章差点找来</td><td class="cw">世界 3</td><td class="cc">2164</td></tr><tr data-t="第67章 她即众生" data-w="3"><td>67</td><td class="ct">第67章 她即众生</td><td class="cw">世界 3</td><td class="cc">2182</td></tr><tr data-t="第68章凡人王朝" data-w="3"><td>68</td><td class="ct">第68章凡人王朝</td><td class="cw">世界 3</td><td class="cc">2351</td></tr><tr data-t="第69章 谁也不能动" data-w="3"><td>69</td><td class="ct">第69章 谁也不能动</td><td class="cw">世界 3</td><td class="cc">2190</td></tr><tr data-t="第70章 结友" data-w="3"><td>70</td><td class="ct">第70章 结友</td><td class="cw">世界 3</td><td class="cc">2169</td></tr><tr data-t="第71章 三掌誓言" data-w="3"><td>71</td><td class="ct">第71章 三掌誓言</td><td class="cw">世界 3</td><td class="cc">2351</td></tr><tr data-t="第72章仙梯" data-w="3"><td>72</td><td class="ct">第72章仙梯</td><td class="cw">世界 3</td><td class="cc">2281</td></tr><tr data-t="第73章考验" data-w="3"><td>73</td><td class="ct">第73章考验</td><td class="cw">世界 3</td><td class="cc">2127</td></tr><tr data-t="第74章蜉蝣道人" data-w="3"><td>74</td><td class="ct">第74章蜉蝣道人</td><td class="cw">世界 3</td><td class="cc">2599</td></tr><tr data-t="第75章 她是有千万条命吗！" data-w="3"><td>75</td><td class="ct">第75章 她是有千万条命吗！</td><td class="cw">世界 3</td><td class="cc">2179</td></tr><tr data-t="第76章 出事" data-w="3"><td>76</td><td class="ct">第76章 出事</td><td class="cw">世界 3</td><td class="cc">2202</td></tr><tr data-t="第77章 每一个" data-w="3"><td>77</td><td class="ct">第77章 每一个</td><td class="cw">世界 3</td><td class="cc">2202</td></tr><tr data-t="第78章 跟着" data-w="3"><td>78</td><td class="ct">第78章 跟着</td><td class="cw">世界 3</td><td class="cc">1903</td></tr><tr data-t="第79章执念" data-w="3"><td>79</td><td class="ct">第79章执念</td><td class="cw">世界 3</td><td class="cc">2396</td></tr><tr data-t="第80章未知的敌人" data-w="3"><td>80</td><td class="ct">第80章未知的敌人</td><td class="cw">世界 3</td><td class="cc">2121</td></tr><tr data-t="第81章 愿以身替" data-w="3"><td>81</td><td class="ct">第81章 愿以身替</td><td class="cw">世界 3</td><td class="cc">2315</td></tr><tr data-t="第82章 今已十万年矣" data-w="3"><td>82</td><td class="ct">第82章 今已十万年矣</td><td class="cw">世界 3</td><td class="cc">2176</td></tr><tr data-t="第83章该随你们回家了" data-w="3"><td>83</td><td class="ct">第83章该随你们回家了</td><td class="cw">世界 3</td><td class="cc">2152</td></tr><tr data-t="第84章你是谁" data-w="3"><td>84</td><td class="ct">第84章你是谁</td><td class="cw">世界 3</td><td class="cc">2290</td></tr><tr data-t="第85章叛徒" data-w="3"><td>85</td><td class="ct">第85章叛徒</td><td class="cw">世界 3</td><td class="cc">2239</td></tr><tr data-t="第86章誓言" data-w="3"><td>86</td><td class="ct">第86章誓言</td><td class="cw">世界 3</td><td class="cc">2278</td></tr><tr data-t="第87章判定" data-w="3"><td>87</td><td class="ct">第87章判定</td><td class="cw">世界 3</td><td class="cc">2294</td></tr><tr data-t="第88章一切通过" data-w="3"><td>88</td><td class="ct">第88章一切通过</td><td class="cw">世界 3</td><td class="cc">2615</td></tr><tr data-t="第89章第三个世界结束" data-w="3"><td>89</td><td class="ct">第89章第三个世界结束</td><td class="cw">世界 3</td><td class="cc">2219</td></tr><tr data-t="第90章第四个世界" data-w="4"><td>90</td><td class="ct">第90章第四个世界</td><td class="cw">世界 4</td><td class="cc">3274</td></tr><tr data-t="第91章 相信？" data-w="4"><td>91</td><td class="ct">第91章 相信？</td><td class="cw">世界 4</td><td class="cc">2370</td></tr><tr data-t="第92章 摇头" data-w="4"><td>92</td><td class="ct">第92章 摇头</td><td class="cw">世界 4</td><td class="cc">2200</td></tr><tr data-t="第93章 判处惩罚" data-w="4"><td>93</td><td class="ct">第93章 判处惩罚</td><td class="cw">世界 4</td><td class="cc">2300</td></tr><tr data-t="第94章 我愿意" data-w="4"><td>94</td><td class="ct">第94章 我愿意</td><td class="cw">世界 4</td><td class="cc">2237</td></tr><tr data-t="第95章 异类" data-w="4"><td>95</td><td class="ct">第95章 异类</td><td class="cw">世界 4</td><td class="cc">2182</td></tr><tr data-t="第96章谢谢" data-w="4"><td>96</td><td class="ct">第96章谢谢</td><td class="cw">世界 4</td><td class="cc">2893</td></tr><tr data-t="第97章 眼睛" data-w="4"><td>97</td><td class="ct">第97章 眼睛</td><td class="cw">世界 4</td><td class="cc">2128</td></tr><tr data-t="第98章决心" data-w="4"><td>98</td><td class="ct">第98章决心</td><td class="cw">世界 4</td><td class="cc">2692</td></tr><tr data-t="第99章 普通人" data-w="4"><td>99</td><td class="ct">第99章 普通人</td><td class="cw">世界 4</td><td class="cc">2427</td></tr><tr data-t="第100章理智" data-w="4"><td>100</td><td class="ct">第100章理智</td><td class="cw">世界 4</td><td class="cc">2178</td></tr><tr data-t="第101章最好离远一点" data-w="4"><td>101</td><td class="ct">第101章最好离远一点</td><td class="cw">世界 4</td><td class="cc">2138</td></tr><tr data-t="第102章加更章" data-w="4"><td>102</td><td class="ct">第102章加更章</td><td class="cw">世界 4</td><td class="cc">2174</td></tr><tr data-t="第103章 茫然" data-w="4"><td>103</td><td class="ct">第103章 茫然</td><td class="cw">世界 4</td><td class="cc">2269</td></tr><tr data-t="第104章 幸福" data-w="4"><td>104</td><td class="ct">第104章 幸福</td><td class="cw">世界 4</td><td class="cc">2138</td></tr><tr data-t="第105章不一样" data-w="4"><td>105</td><td class="ct">第105章不一样</td><td class="cw">世界 4</td><td class="cc">2381</td></tr><tr data-t="第106章任何事" data-w="4"><td>106</td><td class="ct">第106章任何事</td><td class="cw">世界 4</td><td class="cc">2405</td></tr><tr data-t="第107章不需要" data-w="4"><td>107</td><td class="ct">第107章不需要</td><td class="cw">世界 4</td><td class="cc">2180</td></tr><tr data-t="第108章 投票" data-w="4"><td>108</td><td class="ct">第108章 投票</td><td class="cw">世界 4</td><td class="cc">2153</td></tr><tr data-t="第109章陷阱（加更章）" data-w="4"><td>109</td><td class="ct">第109章陷阱（加更章）</td><td class="cw">世界 4</td><td class="cc">2854</td></tr><tr data-t="第110章 记住" data-w="4"><td>110</td><td class="ct">第110章 记住</td><td class="cw">世界 4</td><td class="cc">2206</td></tr><tr data-t="第111章 恳求" data-w="4"><td>111</td><td class="ct">第111章 恳求</td><td class="cw">世界 4</td><td class="cc">3434</td></tr><tr data-t="第112章 背负" data-w="4"><td>112</td><td class="ct">第112章 背负</td><td class="cw">世界 4</td><td class="cc">2477</td></tr><tr data-t="第113章伟大与平凡" data-w="4"><td>113</td><td class="ct">第113章伟大与平凡</td><td class="cw">世界 4</td><td class="cc">2351</td></tr><tr data-t="第114章我在" data-w="4"><td>114</td><td class="ct">第114章我在</td><td class="cw">世界 4</td><td class="cc">2607</td></tr><tr data-t="第115章 保护" data-w="4"><td>115</td><td class="ct">第115章 保护</td><td class="cw">世界 4</td><td class="cc">2177</td></tr><tr data-t="第116章 只要存在" data-w="4"><td>116</td><td class="ct">第116章 只要存在</td><td class="cw">世界 4</td><td class="cc">2322</td></tr><tr data-t="第117章 怎么样才能？" data-w="4"><td>117</td><td class="ct">第117章 怎么样才能？</td><td class="cw">世界 4</td><td class="cc">2392</td></tr><tr data-t="第118章 不会丢下" data-w="4"><td>118</td><td class="ct">第118章 不会丢下</td><td class="cw">世界 4</td><td class="cc">2523</td></tr><tr data-t="第119章 哽咽" data-w="4"><td>119</td><td class="ct">第119章 哽咽</td><td class="cw">世界 4</td><td class="cc">2968</td></tr><tr data-t="第120章得到幸福的决定" data-w="4"><td>120</td><td class="ct">第120章得到幸福的决定</td><td class="cw">世界 4</td><td class="cc">3318</td></tr><tr data-t="第121章是哦" data-w="4"><td>121</td><td class="ct">第121章是哦</td><td class="cw">世界 4</td><td class="cc">2312</td></tr><tr data-t="第122章第四世界评估" data-w="4"><td>122</td><td class="ct">第122章第四世界评估</td><td class="cw">世界 4</td><td class="cc">2392</td></tr><tr data-t="第123章第五个世界" data-w="5"><td>123</td><td class="ct">第123章第五个世界</td><td class="cw">世界 5</td><td class="cc">2733</td></tr><tr data-t="第124章 加更章1" data-w="5"><td>124</td><td class="ct">第124章 加更章1</td><td class="cw">世界 5</td><td class="cc">2096</td></tr><tr data-t="第125章 或许" data-w="5"><td>125</td><td class="ct">第125章 或许</td><td class="cw">世界 5</td><td class="cc">2407</td></tr><tr data-t="第126章 治病" data-w="5"><td>126</td><td class="ct">第126章 治病</td><td class="cw">世界 5</td><td class="cc">2177</td></tr><tr data-t="第127章 举手" data-w="5"><td>127</td><td class="ct">第127章 举手</td><td class="cw">世界 5</td><td class="cc">2362</td></tr><tr data-t="第128章 进城" data-w="5"><td>128</td><td class="ct">第128章 进城</td><td class="cw">世界 5</td><td class="cc">2248</td></tr><tr data-t="第129章东溪之死（加更章2）" data-w="5"><td>129</td><td class="ct">第129章东溪之死（加更章2）</td><td class="cw">世界 5</td><td class="cc">2623</td></tr><tr data-t="第130章 政令" data-w="5"><td>130</td><td class="ct">第130章 政令</td><td class="cw">世界 5</td><td class="cc">2223</td></tr><tr data-t="第131章 无可奈何与必须" data-w="5"><td>131</td><td class="ct">第131章 无可奈何与必须</td><td class="cw">世界 5</td><td class="cc">2240</td></tr><tr data-t="第132章 出色" data-w="5"><td>132</td><td class="ct">第132章 出色</td><td class="cw">世界 5</td><td class="cc">2460</td></tr><tr data-t="第133章笨蛋" data-w="5"><td>133</td><td class="ct">第133章笨蛋</td><td class="cw">世界 5</td><td class="cc">2161</td></tr><tr data-t="第134章 新政令" data-w="5"><td>134</td><td class="ct">第134章 新政令</td><td class="cw">世界 5</td><td class="cc">2476</td></tr><tr data-t="第135章 挑衅" data-w="5"><td>135</td><td class="ct">第135章 挑衅</td><td class="cw">世界 5</td><td class="cc">2285</td></tr><tr data-t="第136章 行动" data-w="5"><td>136</td><td class="ct">第136章 行动</td><td class="cw">世界 5</td><td class="cc">2291</td></tr><tr data-t="第137章 封锁" data-w="5"><td>137</td><td class="ct">第137章 封锁</td><td class="cw">世界 5</td><td class="cc">2151</td></tr><tr data-t="第138章 文湖之死" data-w="5"><td>138</td><td class="ct">第138章 文湖之死</td><td class="cw">世界 5</td><td class="cc">2335</td></tr><tr data-t="第139章 改变" data-w="5"><td>139</td><td class="ct">第139章 改变</td><td class="cw">世界 5</td><td class="cc">2561</td></tr><tr data-t="第140章调查" data-w="5"><td>140</td><td class="ct">第140章调查</td><td class="cw">世界 5</td><td class="cc">2186</td></tr><tr data-t="第141章 夜色下" data-w="5"><td>141</td><td class="ct">第141章 夜色下</td><td class="cw">世界 5</td><td class="cc">2411</td></tr><tr data-t="第142章 你们是幽灵吗？" data-w="5"><td>142</td><td class="ct">第142章 你们是幽灵吗？</td><td class="cw">世界 5</td><td class="cc">2358</td></tr><tr data-t="第143章 对不起" data-w="5"><td>143</td><td class="ct">第143章 对不起</td><td class="cw">世界 5</td><td class="cc">2658</td></tr><tr data-t="第144章都要回家" data-w="5"><td>144</td><td class="ct">第144章都要回家</td><td class="cw">世界 5</td><td class="cc">2453</td></tr><tr data-t="第145章艾拉之死" data-w="5"><td>145</td><td class="ct">第145章艾拉之死</td><td class="cw">世界 5</td><td class="cc">2571</td></tr><tr data-t="第146章 你还在我身边" data-w="5"><td>146</td><td class="ct">第146章 你还在我身边</td><td class="cw">世界 5</td><td class="cc">2199</td></tr><tr data-t="第147章永不后悔" data-w="5"><td>147</td><td class="ct">第147章永不后悔</td><td class="cw">世界 5</td><td class="cc">2168</td></tr><tr data-t="第148章各人的选择" data-w="5"><td>148</td><td class="ct">第148章各人的选择</td><td class="cw">世界 5</td><td class="cc">2186</td></tr><tr data-t="第149章 希尔之死" data-w="5"><td>149</td><td class="ct">第149章 希尔之死</td><td class="cw">世界 5</td><td class="cc">2601</td></tr><tr data-t="第150章 智能体" data-w="5"><td>150</td><td class="ct">第150章 智能体</td><td class="cw">世界 5</td><td class="cc">2504</td></tr><tr data-t="第151章 控制" data-w="5"><td>151</td><td class="ct">第151章 控制</td><td class="cw">世界 5</td><td class="cc">1853</td></tr><tr data-t="第152章 什么都可以做" data-w="5"><td>152</td><td class="ct">第152章 什么都可以做</td><td class="cw">世界 5</td><td class="cc">2702</td></tr><tr data-t="第153章 伊文捷琳之死" data-w="5"><td>153</td><td class="ct">第153章 伊文捷琳之死</td><td class="cw">世界 5</td><td class="cc">2228</td></tr><tr data-t="第154章 你长大了" data-w="5"><td>154</td><td class="ct">第154章 你长大了</td><td class="cw">世界 5</td><td class="cc">2289</td></tr><tr data-t="第155章 信任" data-w="5"><td>155</td><td class="ct">第155章 信任</td><td class="cw">世界 5</td><td class="cc">2287</td></tr><tr data-t="第156章 山草之死" data-w="5"><td>156</td><td class="ct">第156章 山草之死</td><td class="cw">世界 5</td><td class="cc">2202</td></tr><tr data-t="第157章 泄露" data-w="5"><td>157</td><td class="ct">第157章 泄露</td><td class="cw">世界 5</td><td class="cc">2339</td></tr><tr data-t="第158章 努尔之死" data-w="5"><td>158</td><td class="ct">第158章 努尔之死</td><td class="cw">世界 5</td><td class="cc">2341</td></tr><tr data-t="第159章法拉、吉雅娜之死" data-w="5"><td>159</td><td class="ct">第159章法拉、吉雅娜之死</td><td class="cw">世界 5</td><td class="cc">2127</td></tr><tr data-t="第160章雪莱、罗伊、尤里贝儿之死" data-w="5"><td>160</td><td class="ct">第160章雪莱、罗伊、尤里贝儿之死</td><td class="cw">世界 5</td><td class="cc">2489</td></tr><tr data-t="第161章医琪之死" data-w="5"><td>161</td><td class="ct">第161章医琪之死</td><td class="cw">世界 5</td><td class="cc">2058</td></tr><tr data-t="第162章不是留给你们的" data-w="5"><td>162</td><td class="ct">第162章不是留给你们的</td><td class="cw">世界 5</td><td class="cc">2718</td></tr><tr data-t="第163章 白墨之死" data-w="5"><td>163</td><td class="ct">第163章 白墨之死</td><td class="cw">世界 5</td><td class="cc">1974</td></tr><tr data-t="第164章 第五个世界评估" data-w="5"><td>164</td><td class="ct">第164章 第五个世界评估</td><td class="cw">世界 5</td><td class="cc">2278</td></tr><tr data-t="第165章我们终将在地狱重逢" data-w="5"><td>165</td><td class="ct">第165章我们终将在地狱重逢</td><td class="cw">世界 5</td><td class="cc">2899</td></tr><tr data-t="第166章 第六个世界" data-w="6"><td>166</td><td class="ct">第166章 第六个世界</td><td class="cw">世界 6</td><td class="cc">2990</td></tr><tr data-t="第167章 亚力亚及" data-w="6"><td>167</td><td class="ct">第167章 亚力亚及</td><td class="cw">世界 6</td><td class="cc">1955</td></tr><tr data-t="第168章 只有她自己" data-w="6"><td>168</td><td class="ct">第168章 只有她自己</td><td class="cw">世界 6</td><td class="cc">2087</td></tr><tr data-t="第169章 爱上一座山" data-w="6"><td>169</td><td class="ct">第169章 爱上一座山</td><td class="cw">世界 6</td><td class="cc">2200</td></tr><tr data-t="第170章 质问" data-w="6"><td>170</td><td class="ct">第170章 质问</td><td class="cw">世界 6</td><td class="cc">2182</td></tr><tr data-t="第171章 为此而出生" data-w="6"><td>171</td><td class="ct">第171章 为此而出生</td><td class="cw">世界 6</td><td class="cc">2232</td></tr><tr data-t="第172章 是否" data-w="6"><td>172</td><td class="ct">第172章 是否</td><td class="cw">世界 6</td><td class="cc">2166</td></tr><tr data-t="第173章 上山的人" data-w="6"><td>173</td><td class="ct">第173章 上山的人</td><td class="cw">世界 6</td><td class="cc">2411</td></tr><tr data-t="第174章 远方" data-w="6"><td>174</td><td class="ct">第174章 远方</td><td class="cw">世界 6</td><td class="cc">2203</td></tr><tr data-t="第175章 不懂" data-w="6"><td>175</td><td class="ct">第175章 不懂</td><td class="cw">世界 6</td><td class="cc">2334</td></tr><tr data-t="第176章 一样，不一样" data-w="6"><td>176</td><td class="ct">第176章 一样，不一样</td><td class="cw">世界 6</td><td class="cc">2402</td></tr><tr data-t="第177章 成长和行走" data-w="6"><td>177</td><td class="ct">第177章 成长和行走</td><td class="cw">世界 6</td><td class="cc">2060</td></tr><tr data-t="第178章 一直比你好" data-w="6"><td>178</td><td class="ct">第178章 一直比你好</td><td class="cw">世界 6</td><td class="cc">2160</td></tr><tr data-t="第179章 为了自己" data-w="6"><td>179</td><td class="ct">第179章 为了自己</td><td class="cw">世界 6</td><td class="cc">3068</td></tr><tr data-t="第180章 我是谁？" data-w="6"><td>180</td><td class="ct">第180章 我是谁？</td><td class="cw">世界 6</td><td class="cc">2648</td></tr><tr data-t="第181章 春天" data-w="6"><td>181</td><td class="ct">第181章 春天</td><td class="cw">世界 6</td><td class="cc">2430</td></tr><tr data-t="第182章 追逐" data-w="6"><td>182</td><td class="ct">第182章 追逐</td><td class="cw">世界 6</td><td class="cc">1729</td></tr><tr data-t="第183章 哪样？" data-w="6"><td>183</td><td class="ct">第183章 哪样？</td><td class="cw">世界 6</td><td class="cc">1543</td></tr><tr data-t="第184章 轻松" data-w="6"><td>184</td><td class="ct">第184章 轻松</td><td class="cw">世界 6</td><td class="cc">4288</td></tr><tr data-t="第185章 超越" data-w="6"><td>185</td><td class="ct">第185章 超越</td><td class="cw">世界 6</td><td class="cc">1248</td></tr><tr data-t="第186章 她是她" data-w="6"><td>186</td><td class="ct">第186章 她是她</td><td class="cw">世界 6</td><td class="cc">4354</td></tr><tr data-t="第187章 开始评估" data-w="6"><td>187</td><td class="ct">第187章 开始评估</td><td class="cw">世界 6</td><td class="cc">4274</td></tr><tr data-t="第188章六评估/第七个世界开头" data-w="7"><td>188</td><td class="ct">第188章六评估/第七个世界开头</td><td class="cw">世界 7</td><td class="cc">4386</td></tr><tr data-t="第189章 第七个世界继续" data-w="7"><td>189</td><td class="ct">第189章 第七个世界继续</td><td class="cw">世界 7</td><td class="cc">2378</td></tr><tr data-t="第190章 精神力" data-w="7"><td>190</td><td class="ct">第190章 精神力</td><td class="cw">世界 7</td><td class="cc">2329</td></tr><tr data-t="第191章 好可怜～" data-w="7"><td>191</td><td class="ct">第191章 好可怜～</td><td class="cw">世界 7</td><td class="cc">2660</td></tr><tr data-t="第192章 至交好友" data-w="7"><td>192</td><td class="ct">第192章 至交好友</td><td class="cw">世界 7</td><td class="cc">1641</td></tr><tr data-t="第193章 意义" data-w="7"><td>193</td><td class="ct">第193章 意义</td><td class="cw">世界 7</td><td class="cc">2267</td></tr><tr data-t="第194章 交谈" data-w="7"><td>194</td><td class="ct">第194章 交谈</td><td class="cw">世界 7</td><td class="cc">3887</td></tr><tr data-t="第195章 好强" data-w="7"><td>195</td><td class="ct">第195章 好强</td><td class="cw">世界 7</td><td class="cc">2490</td></tr><tr data-t="第196章 直觉" data-w="7"><td>196</td><td class="ct">第196章 直觉</td><td class="cw">世界 7</td><td class="cc">3407</td></tr><tr data-t="第197章 哀求" data-w="7"><td>197</td><td class="ct">第197章 哀求</td><td class="cw">世界 7</td><td class="cc">2035</td></tr><tr data-t="第198章 哀叹" data-w="7"><td>198</td><td class="ct">第198章 哀叹</td><td class="cw">世界 7</td><td class="cc">3175</td></tr><tr data-t="第199章 献上生命的杀意" data-w="7"><td>199</td><td class="ct">第199章 献上生命的杀意</td><td class="cw">世界 7</td><td class="cc">2253</td></tr><tr data-t="第200章 名字" data-w="7"><td>200</td><td class="ct">第200章 名字</td><td class="cw">世界 7</td><td class="cc">2634</td></tr><tr data-t="第201章 虫皇" data-w="7"><td>201</td><td class="ct">第201章 虫皇</td><td class="cw">世界 7</td><td class="cc">1931</td></tr><tr data-t="第202章 名义" data-w="7"><td>202</td><td class="ct">第202章 名义</td><td class="cw">世界 7</td><td class="cc">2410</td></tr></tbody></table>
+<section class="sec" id="index">
+  <div class="sec-head"><h2>全本目录</h2><span class="hint">202 章 · 可搜索</span></div>
+  <input id="chSearch" type="search" placeholder="搜索章节标题 / 世界号，如「观测」「世界 3」" oninput="filterChapters()">
+  <div class="itbl-wrap"><table class="itbl"><thead><tr><th>章</th><th>标题</th><th>归属世界</th><th>字数</th></tr></thead><tbody id="chBody"><tr data-t="第 1 章 观测开始" data-w="1"><td class="num">1</td><td class="ct">第 1 章 观测开始</td><td class="cw">世界 1</td><td class="cc num">2338</td></tr><tr data-t="第2章 霸总的替身娇妻" data-w="1"><td class="num">2</td><td class="ct">第2章 霸总的替身娇妻</td><td class="cw">世界 1</td><td class="cc num">2572</td></tr><tr data-t="第 3 章 满头雾水" data-w="1"><td class="num">3</td><td class="ct">第 3 章 满头雾水</td><td class="cw">世界 1</td><td class="cc num">2452</td></tr><tr data-t="第 4 章 怎么看不懂行事啊？" data-w="1"><td class="num">4</td><td class="ct">第 4 章 怎么看不懂行事啊？</td><td class="cw">世界 1</td><td class="cc num">2335</td></tr><tr data-t="第 5 章 这也能结婚？" data-w="1"><td class="num">5</td><td class="ct">第 5 章 这也能结婚？</td><td class="cw">世界 1</td><td class="cc num">2324</td></tr><tr data-t="第 6 章 未来" data-w="1"><td class="num">6</td><td class="ct">第 6 章 未来</td><td class="cw">世界 1</td><td class="cc num">2317</td></tr><tr data-t="第 7 章 决定放弃" data-w="1"><td class="num">7</td><td class="ct">第 7 章 决定放弃</td><td class="cw">世界 1</td><td class="cc num">2283</td></tr><tr data-t="第 8 章 离开" data-w="1"><td class="num">8</td><td class="ct">第 8 章 离开</td><td class="cw">世界 1</td><td class="cc num">2477</td></tr><tr data-t="第 9 章 什么情况？" data-w="1"><td class="num">9</td><td class="ct">第 9 章 什么情况？</td><td class="cw">世界 1</td><td class="cc num">2262</td></tr><tr data-t="第10章 是否通过？" data-w="1"><td class="num">10</td><td class="ct">第10章 是否通过？</td><td class="cw">世界 1</td><td class="cc num">2662</td></tr><tr data-t="第 11章 难以置信" data-w="1"><td class="num">11</td><td class="ct">第 11章 难以置信</td><td class="cw">世界 1</td><td class="cc num">2213</td></tr><tr data-t="第12章 夏明月，你生气吗？" data-w="1"><td class="num">12</td><td class="ct">第12章 夏明月，你生气吗？</td><td class="cw">世界 1</td><td class="cc num">2228</td></tr><tr data-t="第13 章 小丑" data-w="1"><td class="num">13</td><td class="ct">第13 章 小丑</td><td class="cw">世界 1</td><td class="cc num">2103</td></tr><tr data-t="第14 章 正派规则" data-w="1"><td class="num">14</td><td class="ct">第14 章 正派规则</td><td class="cw">世界 1</td><td class="cc num">2405</td></tr><tr data-t="第15章 判定不通过" data-w="1"><td class="num">15</td><td class="ct">第15章 判定不通过</td><td class="cw">世界 1</td><td class="cc num">2125</td></tr><tr data-t="第16章 下一个评估" data-w="1"><td class="num">16</td><td class="ct">第16章 下一个评估</td><td class="cw">世界 1</td><td class="cc num">2247</td></tr><tr data-t="第17章 还是不通过" data-w="1"><td class="num">17</td><td class="ct">第17章 还是不通过</td><td class="cw">世界 1</td><td class="cc num">2429</td></tr><tr data-t="第18章 她为她感到高兴" data-w="1"><td class="num">18</td><td class="ct">第18章 她为她感到高兴</td><td class="cw">世界 1</td><td class="cc num">2584</td></tr><tr data-t="第19章 路人甲" data-w="1"><td class="num">19</td><td class="ct">第19章 路人甲</td><td class="cw">世界 1</td><td class="cc num">2126</td></tr><tr data-t="第20章规则变化" data-w="1"><td class="num">20</td><td class="ct">第20章规则变化</td><td class="cw">世界 1</td><td class="cc num">2234</td></tr><tr data-t="第21章 选择" data-w="1"><td class="num">21</td><td class="ct">第21章 选择</td><td class="cw">世界 1</td><td class="cc num">2418</td></tr><tr data-t="第22章 幸福度" data-w="1"><td class="num">22</td><td class="ct">第22章 幸福度</td><td class="cw">世界 1</td><td class="cc num">2206</td></tr><tr data-t="第23章 复审选择" data-w="1"><td class="num">23</td><td class="ct">第23章 复审选择</td><td class="cw">世界 1</td><td class="cc num">2283</td></tr><tr data-t="第24章虚假的希望" data-w="1"><td class="num">24</td><td class="ct">第24章虚假的希望</td><td class="cw">世界 1</td><td class="cc num">2149</td></tr><tr data-t="第25章 第四条规则" data-w="1"><td class="num">25</td><td class="ct">第25章 第四条规则</td><td class="cw">世界 1</td><td class="cc num">2210</td></tr><tr data-t="第26章 错误" data-w="1"><td class="num">26</td><td class="ct">第26章 错误</td><td class="cw">世界 1</td><td class="cc num">2146</td></tr><tr data-t="第27章第一个评估结束" data-w="1"><td class="num">27</td><td class="ct">第27章第一个评估结束</td><td class="cw">世界 1</td><td class="cc num">3274</td></tr><tr data-t="第28章第二个评估世界" data-w="2"><td class="num">28</td><td class="ct">第28章第二个评估世界</td><td class="cw">世界 2</td><td class="cc num">2143</td></tr><tr data-t="第29章 末日娇宠" data-w="2"><td class="num">29</td><td class="ct">第29章 末日娇宠</td><td class="cw">世界 2</td><td class="cc num">2150</td></tr><tr data-t="第30章末日来临" data-w="2"><td class="num">30</td><td class="ct">第30章末日来临</td><td class="cw">世界 2</td><td class="cc num">2384</td></tr><tr data-t="第31章 吓到" data-w="2"><td class="num">31</td><td class="ct">第31章 吓到</td><td class="cw">世界 2</td><td class="cc num">2180</td></tr><tr data-t="第32章 怎么敢！" data-w="2"><td class="num">32</td><td class="ct">第32章 怎么敢！</td><td class="cw">世界 2</td><td class="cc num">2563</td></tr><tr data-t="第33章 喜欢" data-w="2"><td class="num">33</td><td class="ct">第33章 喜欢</td><td class="cw">世界 2</td><td class="cc num">2471</td></tr><tr data-t="第34章 少年意气" data-w="2"><td class="num">34</td><td class="ct">第34章 少年意气</td><td class="cw">世界 2</td><td class="cc num">3127</td></tr><tr data-t="第35章还活着" data-w="2"><td class="num">35</td><td class="ct">第35章还活着</td><td class="cw">世界 2</td><td class="cc num">3193</td></tr><tr data-t="第36章 请求" data-w="2"><td class="num">36</td><td class="ct">第36章 请求</td><td class="cw">世界 2</td><td class="cc num">2317</td></tr><tr data-t="第37章 仇恨" data-w="2"><td class="num">37</td><td class="ct">第37章 仇恨</td><td class="cw">世界 2</td><td class="cc num">2195</td></tr><tr data-t="第38章 未来会发生什么" data-w="2"><td class="num">38</td><td class="ct">第38章 未来会发生什么</td><td class="cw">世界 2</td><td class="cc num">2269</td></tr><tr data-t="第39章 出乎意料" data-w="2"><td class="num">39</td><td class="ct">第39章 出乎意料</td><td class="cw">世界 2</td><td class="cc num">2246</td></tr><tr data-t="第40章 背景板变反派？" data-w="2"><td class="num">40</td><td class="ct">第40章 背景板变反派？</td><td class="cw">世界 2</td><td class="cc num">2525</td></tr><tr data-t="第41章期待" data-w="2"><td class="num">41</td><td class="ct">第41章期待</td><td class="cw">世界 2</td><td class="cc num">2415</td></tr><tr data-t="第42章 决定" data-w="2"><td class="num">42</td><td class="ct">第42章 决定</td><td class="cw">世界 2</td><td class="cc num">2194</td></tr><tr data-t="第43章 还没输！" data-w="2"><td class="num">43</td><td class="ct">第43章 还没输！</td><td class="cw">世界 2</td><td class="cc num">2581</td></tr><tr data-t="第44章 清理" data-w="2"><td class="num">44</td><td class="ct">第44章 清理</td><td class="cw">世界 2</td><td class="cc num">2524</td></tr><tr data-t="第45章 杀掉所有人？" data-w="2"><td class="num">45</td><td class="ct">第45章 杀掉所有人？</td><td class="cw">世界 2</td><td class="cc num">2664</td></tr><tr data-t="第46章 悲痛" data-w="2"><td class="num">46</td><td class="ct">第46章 悲痛</td><td class="cw">世界 2</td><td class="cc num">2310</td></tr><tr data-t="第47章 恨意" data-w="2"><td class="num">47</td><td class="ct">第47章 恨意</td><td class="cw">世界 2</td><td class="cc num">2398</td></tr><tr data-t="第48章野心和打算" data-w="2"><td class="num">48</td><td class="ct">第48章野心和打算</td><td class="cw">世界 2</td><td class="cc num">2467</td></tr><tr data-t="第49章 疑惑" data-w="2"><td class="num">49</td><td class="ct">第49章 疑惑</td><td class="cw">世界 2</td><td class="cc num">2445</td></tr><tr data-t="第50章可否赐予" data-w="2"><td class="num">50</td><td class="ct">第50章可否赐予</td><td class="cw">世界 2</td><td class="cc num">2687</td></tr><tr data-t="第51章 计划" data-w="2"><td class="num">51</td><td class="ct">第51章 计划</td><td class="cw">世界 2</td><td class="cc num">2198</td></tr><tr data-t="第52章一切算计" data-w="2"><td class="num">52</td><td class="ct">第52章一切算计</td><td class="cw">世界 2</td><td class="cc num">2937</td></tr><tr data-t="第53章反派评估" data-w="2"><td class="num">53</td><td class="ct">第53章反派评估</td><td class="cw">世界 2</td><td class="cc num">2232</td></tr><tr data-t="第54章 雨夜" data-w="2"><td class="num">54</td><td class="ct">第54章 雨夜</td><td class="cw">世界 2</td><td class="cc num">2349</td></tr><tr data-t="第55章 惋惜" data-w="2"><td class="num">55</td><td class="ct">第55章 惋惜</td><td class="cw">世界 2</td><td class="cc num">2237</td></tr><tr data-t="第56章 她是黎娇" data-w="2"><td class="num">56</td><td class="ct">第56章 她是黎娇</td><td class="cw">世界 2</td><td class="cc num">2716</td></tr><tr data-t="第57章 算什么东西！" data-w="2"><td class="num">57</td><td class="ct">第57章 算什么东西！</td><td class="cw">世界 2</td><td class="cc num">2659</td></tr><tr data-t="第58章 杀了他" data-w="2"><td class="num">58</td><td class="ct">第58章 杀了他</td><td class="cw">世界 2</td><td class="cc num">2294</td></tr><tr data-t="第59章 一个不留" data-w="2"><td class="num">59</td><td class="ct">第59章 一个不留</td><td class="cw">世界 2</td><td class="cc num">2338</td></tr><tr data-t="第60章 好不好？" data-w="2"><td class="num">60</td><td class="ct">第60章 好不好？</td><td class="cw">世界 2</td><td class="cc num">2288</td></tr><tr data-t="第61章 绝望" data-w="2"><td class="num">61</td><td class="ct">第61章 绝望</td><td class="cw">世界 2</td><td class="cc num">2444</td></tr><tr data-t="第62章 庆幸" data-w="2"><td class="num">62</td><td class="ct">第62章 庆幸</td><td class="cw">世界 2</td><td class="cc num">2304</td></tr><tr data-t="第63章 种地" data-w="2"><td class="num">63</td><td class="ct">第63章 种地</td><td class="cw">世界 2</td><td class="cc num">2733</td></tr><tr data-t="第64章《霍总》复审" data-w="2"><td class="num">64</td><td class="ct">第64章《霍总》复审</td><td class="cw">世界 2</td><td class="cc num">3120</td></tr><tr data-t="第65章第三个世界评估" data-w="3"><td class="num">65</td><td class="ct">第65章第三个世界评估</td><td class="cw">世界 3</td><td class="cc num">2217</td></tr><tr data-t="第66章差点找来" data-w="3"><td class="num">66</td><td class="ct">第66章差点找来</td><td class="cw">世界 3</td><td class="cc num">2164</td></tr><tr data-t="第67章 她即众生" data-w="3"><td class="num">67</td><td class="ct">第67章 她即众生</td><td class="cw">世界 3</td><td class="cc num">2182</td></tr><tr data-t="第68章凡人王朝" data-w="3"><td class="num">68</td><td class="ct">第68章凡人王朝</td><td class="cw">世界 3</td><td class="cc num">2351</td></tr><tr data-t="第69章 谁也不能动" data-w="3"><td class="num">69</td><td class="ct">第69章 谁也不能动</td><td class="cw">世界 3</td><td class="cc num">2190</td></tr><tr data-t="第70章 结友" data-w="3"><td class="num">70</td><td class="ct">第70章 结友</td><td class="cw">世界 3</td><td class="cc num">2169</td></tr><tr data-t="第71章 三掌誓言" data-w="3"><td class="num">71</td><td class="ct">第71章 三掌誓言</td><td class="cw">世界 3</td><td class="cc num">2351</td></tr><tr data-t="第72章仙梯" data-w="3"><td class="num">72</td><td class="ct">第72章仙梯</td><td class="cw">世界 3</td><td class="cc num">2281</td></tr><tr data-t="第73章考验" data-w="3"><td class="num">73</td><td class="ct">第73章考验</td><td class="cw">世界 3</td><td class="cc num">2127</td></tr><tr data-t="第74章蜉蝣道人" data-w="3"><td class="num">74</td><td class="ct">第74章蜉蝣道人</td><td class="cw">世界 3</td><td class="cc num">2599</td></tr><tr data-t="第75章 她是有千万条命吗！" data-w="3"><td class="num">75</td><td class="ct">第75章 她是有千万条命吗！</td><td class="cw">世界 3</td><td class="cc num">2179</td></tr><tr data-t="第76章 出事" data-w="3"><td class="num">76</td><td class="ct">第76章 出事</td><td class="cw">世界 3</td><td class="cc num">2202</td></tr><tr data-t="第77章 每一个" data-w="3"><td class="num">77</td><td class="ct">第77章 每一个</td><td class="cw">世界 3</td><td class="cc num">2202</td></tr><tr data-t="第78章 跟着" data-w="3"><td class="num">78</td><td class="ct">第78章 跟着</td><td class="cw">世界 3</td><td class="cc num">1903</td></tr><tr data-t="第79章执念" data-w="3"><td class="num">79</td><td class="ct">第79章执念</td><td class="cw">世界 3</td><td class="cc num">2396</td></tr><tr data-t="第80章未知的敌人" data-w="3"><td class="num">80</td><td class="ct">第80章未知的敌人</td><td class="cw">世界 3</td><td class="cc num">2121</td></tr><tr data-t="第81章 愿以身替" data-w="3"><td class="num">81</td><td class="ct">第81章 愿以身替</td><td class="cw">世界 3</td><td class="cc num">2315</td></tr><tr data-t="第82章 今已十万年矣" data-w="3"><td class="num">82</td><td class="ct">第82章 今已十万年矣</td><td class="cw">世界 3</td><td class="cc num">2176</td></tr><tr data-t="第83章该随你们回家了" data-w="3"><td class="num">83</td><td class="ct">第83章该随你们回家了</td><td class="cw">世界 3</td><td class="cc num">2152</td></tr><tr data-t="第84章你是谁" data-w="3"><td class="num">84</td><td class="ct">第84章你是谁</td><td class="cw">世界 3</td><td class="cc num">2290</td></tr><tr data-t="第85章叛徒" data-w="3"><td class="num">85</td><td class="ct">第85章叛徒</td><td class="cw">世界 3</td><td class="cc num">2239</td></tr><tr data-t="第86章誓言" data-w="3"><td class="num">86</td><td class="ct">第86章誓言</td><td class="cw">世界 3</td><td class="cc num">2278</td></tr><tr data-t="第87章判定" data-w="3"><td class="num">87</td><td class="ct">第87章判定</td><td class="cw">世界 3</td><td class="cc num">2294</td></tr><tr data-t="第88章一切通过" data-w="3"><td class="num">88</td><td class="ct">第88章一切通过</td><td class="cw">世界 3</td><td class="cc num">2615</td></tr><tr data-t="第89章第三个世界结束" data-w="3"><td class="num">89</td><td class="ct">第89章第三个世界结束</td><td class="cw">世界 3</td><td class="cc num">2219</td></tr><tr data-t="第90章第四个世界" data-w="4"><td class="num">90</td><td class="ct">第90章第四个世界</td><td class="cw">世界 4</td><td class="cc num">3274</td></tr><tr data-t="第91章 相信？" data-w="4"><td class="num">91</td><td class="ct">第91章 相信？</td><td class="cw">世界 4</td><td class="cc num">2370</td></tr><tr data-t="第92章 摇头" data-w="4"><td class="num">92</td><td class="ct">第92章 摇头</td><td class="cw">世界 4</td><td class="cc num">2200</td></tr><tr data-t="第93章 判处惩罚" data-w="4"><td class="num">93</td><td class="ct">第93章 判处惩罚</td><td class="cw">世界 4</td><td class="cc num">2300</td></tr><tr data-t="第94章 我愿意" data-w="4"><td class="num">94</td><td class="ct">第94章 我愿意</td><td class="cw">世界 4</td><td class="cc num">2237</td></tr><tr data-t="第95章 异类" data-w="4"><td class="num">95</td><td class="ct">第95章 异类</td><td class="cw">世界 4</td><td class="cc num">2182</td></tr><tr data-t="第96章谢谢" data-w="4"><td class="num">96</td><td class="ct">第96章谢谢</td><td class="cw">世界 4</td><td class="cc num">2893</td></tr><tr data-t="第97章 眼睛" data-w="4"><td class="num">97</td><td class="ct">第97章 眼睛</td><td class="cw">世界 4</td><td class="cc num">2128</td></tr><tr data-t="第98章决心" data-w="4"><td class="num">98</td><td class="ct">第98章决心</td><td class="cw">世界 4</td><td class="cc num">2692</td></tr><tr data-t="第99章 普通人" data-w="4"><td class="num">99</td><td class="ct">第99章 普通人</td><td class="cw">世界 4</td><td class="cc num">2427</td></tr><tr data-t="第100章理智" data-w="4"><td class="num">100</td><td class="ct">第100章理智</td><td class="cw">世界 4</td><td class="cc num">2178</td></tr><tr data-t="第101章最好离远一点" data-w="4"><td class="num">101</td><td class="ct">第101章最好离远一点</td><td class="cw">世界 4</td><td class="cc num">2138</td></tr><tr data-t="第102章加更章" data-w="4"><td class="num">102</td><td class="ct">第102章加更章</td><td class="cw">世界 4</td><td class="cc num">2174</td></tr><tr data-t="第103章 茫然" data-w="4"><td class="num">103</td><td class="ct">第103章 茫然</td><td class="cw">世界 4</td><td class="cc num">2269</td></tr><tr data-t="第104章 幸福" data-w="4"><td class="num">104</td><td class="ct">第104章 幸福</td><td class="cw">世界 4</td><td class="cc num">2138</td></tr><tr data-t="第105章不一样" data-w="4"><td class="num">105</td><td class="ct">第105章不一样</td><td class="cw">世界 4</td><td class="cc num">2381</td></tr><tr data-t="第106章任何事" data-w="4"><td class="num">106</td><td class="ct">第106章任何事</td><td class="cw">世界 4</td><td class="cc num">2405</td></tr><tr data-t="第107章不需要" data-w="4"><td class="num">107</td><td class="ct">第107章不需要</td><td class="cw">世界 4</td><td class="cc num">2180</td></tr><tr data-t="第108章 投票" data-w="4"><td class="num">108</td><td class="ct">第108章 投票</td><td class="cw">世界 4</td><td class="cc num">2153</td></tr><tr data-t="第109章陷阱（加更章）" data-w="4"><td class="num">109</td><td class="ct">第109章陷阱（加更章）</td><td class="cw">世界 4</td><td class="cc num">2854</td></tr><tr data-t="第110章 记住" data-w="4"><td class="num">110</td><td class="ct">第110章 记住</td><td class="cw">世界 4</td><td class="cc num">2206</td></tr><tr data-t="第111章 恳求" data-w="4"><td class="num">111</td><td class="ct">第111章 恳求</td><td class="cw">世界 4</td><td class="cc num">3434</td></tr><tr data-t="第112章 背负" data-w="4"><td class="num">112</td><td class="ct">第112章 背负</td><td class="cw">世界 4</td><td class="cc num">2477</td></tr><tr data-t="第113章伟大与平凡" data-w="4"><td class="num">113</td><td class="ct">第113章伟大与平凡</td><td class="cw">世界 4</td><td class="cc num">2351</td></tr><tr data-t="第114章我在" data-w="4"><td class="num">114</td><td class="ct">第114章我在</td><td class="cw">世界 4</td><td class="cc num">2607</td></tr><tr data-t="第115章 保护" data-w="4"><td class="num">115</td><td class="ct">第115章 保护</td><td class="cw">世界 4</td><td class="cc num">2177</td></tr><tr data-t="第116章 只要存在" data-w="4"><td class="num">116</td><td class="ct">第116章 只要存在</td><td class="cw">世界 4</td><td class="cc num">2322</td></tr><tr data-t="第117章 怎么样才能？" data-w="4"><td class="num">117</td><td class="ct">第117章 怎么样才能？</td><td class="cw">世界 4</td><td class="cc num">2392</td></tr><tr data-t="第118章 不会丢下" data-w="4"><td class="num">118</td><td class="ct">第118章 不会丢下</td><td class="cw">世界 4</td><td class="cc num">2523</td></tr><tr data-t="第119章 哽咽" data-w="4"><td class="num">119</td><td class="ct">第119章 哽咽</td><td class="cw">世界 4</td><td class="cc num">2968</td></tr><tr data-t="第120章得到幸福的决定" data-w="4"><td class="num">120</td><td class="ct">第120章得到幸福的决定</td><td class="cw">世界 4</td><td class="cc num">3318</td></tr><tr data-t="第121章是哦" data-w="4"><td class="num">121</td><td class="ct">第121章是哦</td><td class="cw">世界 4</td><td class="cc num">2312</td></tr><tr data-t="第122章第四世界评估" data-w="4"><td class="num">122</td><td class="ct">第122章第四世界评估</td><td class="cw">世界 4</td><td class="cc num">2392</td></tr><tr data-t="第123章第五个世界" data-w="5"><td class="num">123</td><td class="ct">第123章第五个世界</td><td class="cw">世界 5</td><td class="cc num">2733</td></tr><tr data-t="第124章 加更章1" data-w="5"><td class="num">124</td><td class="ct">第124章 加更章1</td><td class="cw">世界 5</td><td class="cc num">2096</td></tr><tr data-t="第125章 或许" data-w="5"><td class="num">125</td><td class="ct">第125章 或许</td><td class="cw">世界 5</td><td class="cc num">2407</td></tr><tr data-t="第126章 治病" data-w="5"><td class="num">126</td><td class="ct">第126章 治病</td><td class="cw">世界 5</td><td class="cc num">2177</td></tr><tr data-t="第127章 举手" data-w="5"><td class="num">127</td><td class="ct">第127章 举手</td><td class="cw">世界 5</td><td class="cc num">2362</td></tr><tr data-t="第128章 进城" data-w="5"><td class="num">128</td><td class="ct">第128章 进城</td><td class="cw">世界 5</td><td class="cc num">2248</td></tr><tr data-t="第129章东溪之死（加更章2）" data-w="5"><td class="num">129</td><td class="ct">第129章东溪之死（加更章2）</td><td class="cw">世界 5</td><td class="cc num">2623</td></tr><tr data-t="第130章 政令" data-w="5"><td class="num">130</td><td class="ct">第130章 政令</td><td class="cw">世界 5</td><td class="cc num">2223</td></tr><tr data-t="第131章 无可奈何与必须" data-w="5"><td class="num">131</td><td class="ct">第131章 无可奈何与必须</td><td class="cw">世界 5</td><td class="cc num">2240</td></tr><tr data-t="第132章 出色" data-w="5"><td class="num">132</td><td class="ct">第132章 出色</td><td class="cw">世界 5</td><td class="cc num">2460</td></tr><tr data-t="第133章笨蛋" data-w="5"><td class="num">133</td><td class="ct">第133章笨蛋</td><td class="cw">世界 5</td><td class="cc num">2161</td></tr><tr data-t="第134章 新政令" data-w="5"><td class="num">134</td><td class="ct">第134章 新政令</td><td class="cw">世界 5</td><td class="cc num">2476</td></tr><tr data-t="第135章 挑衅" data-w="5"><td class="num">135</td><td class="ct">第135章 挑衅</td><td class="cw">世界 5</td><td class="cc num">2285</td></tr><tr data-t="第136章 行动" data-w="5"><td class="num">136</td><td class="ct">第136章 行动</td><td class="cw">世界 5</td><td class="cc num">2291</td></tr><tr data-t="第137章 封锁" data-w="5"><td class="num">137</td><td class="ct">第137章 封锁</td><td class="cw">世界 5</td><td class="cc num">2151</td></tr><tr data-t="第138章 文湖之死" data-w="5"><td class="num">138</td><td class="ct">第138章 文湖之死</td><td class="cw">世界 5</td><td class="cc num">2335</td></tr><tr data-t="第139章 改变" data-w="5"><td class="num">139</td><td class="ct">第139章 改变</td><td class="cw">世界 5</td><td class="cc num">2561</td></tr><tr data-t="第140章调查" data-w="5"><td class="num">140</td><td class="ct">第140章调查</td><td class="cw">世界 5</td><td class="cc num">2186</td></tr><tr data-t="第141章 夜色下" data-w="5"><td class="num">141</td><td class="ct">第141章 夜色下</td><td class="cw">世界 5</td><td class="cc num">2411</td></tr><tr data-t="第142章 你们是幽灵吗？" data-w="5"><td class="num">142</td><td class="ct">第142章 你们是幽灵吗？</td><td class="cw">世界 5</td><td class="cc num">2358</td></tr><tr data-t="第143章 对不起" data-w="5"><td class="num">143</td><td class="ct">第143章 对不起</td><td class="cw">世界 5</td><td class="cc num">2658</td></tr><tr data-t="第144章都要回家" data-w="5"><td class="num">144</td><td class="ct">第144章都要回家</td><td class="cw">世界 5</td><td class="cc num">2453</td></tr><tr data-t="第145章艾拉之死" data-w="5"><td class="num">145</td><td class="ct">第145章艾拉之死</td><td class="cw">世界 5</td><td class="cc num">2571</td></tr><tr data-t="第146章 你还在我身边" data-w="5"><td class="num">146</td><td class="ct">第146章 你还在我身边</td><td class="cw">世界 5</td><td class="cc num">2199</td></tr><tr data-t="第147章永不后悔" data-w="5"><td class="num">147</td><td class="ct">第147章永不后悔</td><td class="cw">世界 5</td><td class="cc num">2168</td></tr><tr data-t="第148章各人的选择" data-w="5"><td class="num">148</td><td class="ct">第148章各人的选择</td><td class="cw">世界 5</td><td class="cc num">2186</td></tr><tr data-t="第149章 希尔之死" data-w="5"><td class="num">149</td><td class="ct">第149章 希尔之死</td><td class="cw">世界 5</td><td class="cc num">2601</td></tr><tr data-t="第150章 智能体" data-w="5"><td class="num">150</td><td class="ct">第150章 智能体</td><td class="cw">世界 5</td><td class="cc num">2504</td></tr><tr data-t="第151章 控制" data-w="5"><td class="num">151</td><td class="ct">第151章 控制</td><td class="cw">世界 5</td><td class="cc num">1853</td></tr><tr data-t="第152章 什么都可以做" data-w="5"><td class="num">152</td><td class="ct">第152章 什么都可以做</td><td class="cw">世界 5</td><td class="cc num">2702</td></tr><tr data-t="第153章 伊文捷琳之死" data-w="5"><td class="num">153</td><td class="ct">第153章 伊文捷琳之死</td><td class="cw">世界 5</td><td class="cc num">2228</td></tr><tr data-t="第154章 你长大了" data-w="5"><td class="num">154</td><td class="ct">第154章 你长大了</td><td class="cw">世界 5</td><td class="cc num">2289</td></tr><tr data-t="第155章 信任" data-w="5"><td class="num">155</td><td class="ct">第155章 信任</td><td class="cw">世界 5</td><td class="cc num">2287</td></tr><tr data-t="第156章 山草之死" data-w="5"><td class="num">156</td><td class="ct">第156章 山草之死</td><td class="cw">世界 5</td><td class="cc num">2202</td></tr><tr data-t="第157章 泄露" data-w="5"><td class="num">157</td><td class="ct">第157章 泄露</td><td class="cw">世界 5</td><td class="cc num">2339</td></tr><tr data-t="第158章 努尔之死" data-w="5"><td class="num">158</td><td class="ct">第158章 努尔之死</td><td class="cw">世界 5</td><td class="cc num">2341</td></tr><tr data-t="第159章法拉、吉雅娜之死" data-w="5"><td class="num">159</td><td class="ct">第159章法拉、吉雅娜之死</td><td class="cw">世界 5</td><td class="cc num">2127</td></tr><tr data-t="第160章雪莱、罗伊、尤里贝儿之死" data-w="5"><td class="num">160</td><td class="ct">第160章雪莱、罗伊、尤里贝儿之死</td><td class="cw">世界 5</td><td class="cc num">2489</td></tr><tr data-t="第161章医琪之死" data-w="5"><td class="num">161</td><td class="ct">第161章医琪之死</td><td class="cw">世界 5</td><td class="cc num">2058</td></tr><tr data-t="第162章不是留给你们的" data-w="5"><td class="num">162</td><td class="ct">第162章不是留给你们的</td><td class="cw">世界 5</td><td class="cc num">2718</td></tr><tr data-t="第163章 白墨之死" data-w="5"><td class="num">163</td><td class="ct">第163章 白墨之死</td><td class="cw">世界 5</td><td class="cc num">1974</td></tr><tr data-t="第164章 第五个世界评估" data-w="5"><td class="num">164</td><td class="ct">第164章 第五个世界评估</td><td class="cw">世界 5</td><td class="cc num">2278</td></tr><tr data-t="第165章我们终将在地狱重逢" data-w="5"><td class="num">165</td><td class="ct">第165章我们终将在地狱重逢</td><td class="cw">世界 5</td><td class="cc num">2899</td></tr><tr data-t="第166章 第六个世界" data-w="6"><td class="num">166</td><td class="ct">第166章 第六个世界</td><td class="cw">世界 6</td><td class="cc num">2990</td></tr><tr data-t="第167章 亚力亚及" data-w="6"><td class="num">167</td><td class="ct">第167章 亚力亚及</td><td class="cw">世界 6</td><td class="cc num">1955</td></tr><tr data-t="第168章 只有她自己" data-w="6"><td class="num">168</td><td class="ct">第168章 只有她自己</td><td class="cw">世界 6</td><td class="cc num">2087</td></tr><tr data-t="第169章 爱上一座山" data-w="6"><td class="num">169</td><td class="ct">第169章 爱上一座山</td><td class="cw">世界 6</td><td class="cc num">2200</td></tr><tr data-t="第170章 质问" data-w="6"><td class="num">170</td><td class="ct">第170章 质问</td><td class="cw">世界 6</td><td class="cc num">2182</td></tr><tr data-t="第171章 为此而出生" data-w="6"><td class="num">171</td><td class="ct">第171章 为此而出生</td><td class="cw">世界 6</td><td class="cc num">2232</td></tr><tr data-t="第172章 是否" data-w="6"><td class="num">172</td><td class="ct">第172章 是否</td><td class="cw">世界 6</td><td class="cc num">2166</td></tr><tr data-t="第173章 上山的人" data-w="6"><td class="num">173</td><td class="ct">第173章 上山的人</td><td class="cw">世界 6</td><td class="cc num">2411</td></tr><tr data-t="第174章 远方" data-w="6"><td class="num">174</td><td class="ct">第174章 远方</td><td class="cw">世界 6</td><td class="cc num">2203</td></tr><tr data-t="第175章 不懂" data-w="6"><td class="num">175</td><td class="ct">第175章 不懂</td><td class="cw">世界 6</td><td class="cc num">2334</td></tr><tr data-t="第176章 一样，不一样" data-w="6"><td class="num">176</td><td class="ct">第176章 一样，不一样</td><td class="cw">世界 6</td><td class="cc num">2402</td></tr><tr data-t="第177章 成长和行走" data-w="6"><td class="num">177</td><td class="ct">第177章 成长和行走</td><td class="cw">世界 6</td><td class="cc num">2060</td></tr><tr data-t="第178章 一直比你好" data-w="6"><td class="num">178</td><td class="ct">第178章 一直比你好</td><td class="cw">世界 6</td><td class="cc num">2160</td></tr><tr data-t="第179章 为了自己" data-w="6"><td class="num">179</td><td class="ct">第179章 为了自己</td><td class="cw">世界 6</td><td class="cc num">3068</td></tr><tr data-t="第180章 我是谁？" data-w="6"><td class="num">180</td><td class="ct">第180章 我是谁？</td><td class="cw">世界 6</td><td class="cc num">2648</td></tr><tr data-t="第181章 春天" data-w="6"><td class="num">181</td><td class="ct">第181章 春天</td><td class="cw">世界 6</td><td class="cc num">2430</td></tr><tr data-t="第182章 追逐" data-w="6"><td class="num">182</td><td class="ct">第182章 追逐</td><td class="cw">世界 6</td><td class="cc num">1729</td></tr><tr data-t="第183章 哪样？" data-w="6"><td class="num">183</td><td class="ct">第183章 哪样？</td><td class="cw">世界 6</td><td class="cc num">1543</td></tr><tr data-t="第184章 轻松" data-w="6"><td class="num">184</td><td class="ct">第184章 轻松</td><td class="cw">世界 6</td><td class="cc num">4288</td></tr><tr data-t="第185章 超越" data-w="6"><td class="num">185</td><td class="ct">第185章 超越</td><td class="cw">世界 6</td><td class="cc num">1248</td></tr><tr data-t="第186章 她是她" data-w="6"><td class="num">186</td><td class="ct">第186章 她是她</td><td class="cw">世界 6</td><td class="cc num">4354</td></tr><tr data-t="第187章 开始评估" data-w="6"><td class="num">187</td><td class="ct">第187章 开始评估</td><td class="cw">世界 6</td><td class="cc num">4274</td></tr><tr data-t="第188章六评估/第七个世界开头" data-w="7"><td class="num">188</td><td class="ct">第188章六评估/第七个世界开头</td><td class="cw">世界 7</td><td class="cc num">4386</td></tr><tr data-t="第189章 第七个世界继续" data-w="7"><td class="num">189</td><td class="ct">第189章 第七个世界继续</td><td class="cw">世界 7</td><td class="cc num">2378</td></tr><tr data-t="第190章 精神力" data-w="7"><td class="num">190</td><td class="ct">第190章 精神力</td><td class="cw">世界 7</td><td class="cc num">2329</td></tr><tr data-t="第191章 好可怜～" data-w="7"><td class="num">191</td><td class="ct">第191章 好可怜～</td><td class="cw">世界 7</td><td class="cc num">2660</td></tr><tr data-t="第192章 至交好友" data-w="7"><td class="num">192</td><td class="ct">第192章 至交好友</td><td class="cw">世界 7</td><td class="cc num">1641</td></tr><tr data-t="第193章 意义" data-w="7"><td class="num">193</td><td class="ct">第193章 意义</td><td class="cw">世界 7</td><td class="cc num">2267</td></tr><tr data-t="第194章 交谈" data-w="7"><td class="num">194</td><td class="ct">第194章 交谈</td><td class="cw">世界 7</td><td class="cc num">3887</td></tr><tr data-t="第195章 好强" data-w="7"><td class="num">195</td><td class="ct">第195章 好强</td><td class="cw">世界 7</td><td class="cc num">2490</td></tr><tr data-t="第196章 直觉" data-w="7"><td class="num">196</td><td class="ct">第196章 直觉</td><td class="cw">世界 7</td><td class="cc num">3407</td></tr><tr data-t="第197章 哀求" data-w="7"><td class="num">197</td><td class="ct">第197章 哀求</td><td class="cw">世界 7</td><td class="cc num">2035</td></tr><tr data-t="第198章 哀叹" data-w="7"><td class="num">198</td><td class="ct">第198章 哀叹</td><td class="cw">世界 7</td><td class="cc num">3175</td></tr><tr data-t="第199章 献上生命的杀意" data-w="7"><td class="num">199</td><td class="ct">第199章 献上生命的杀意</td><td class="cw">世界 7</td><td class="cc num">2253</td></tr><tr data-t="第200章 名字" data-w="7"><td class="num">200</td><td class="ct">第200章 名字</td><td class="cw">世界 7</td><td class="cc num">2634</td></tr><tr data-t="第201章 虫皇" data-w="7"><td class="num">201</td><td class="ct">第201章 虫皇</td><td class="cw">世界 7</td><td class="cc num">1931</td></tr><tr data-t="第202章 名义" data-w="7"><td class="num">202</td><td class="ct">第202章 名义</td><td class="cw">世界 7</td><td class="cc num">2410</td></tr></tbody></table></div>
 </section>
+
+<footer>数据源：回收站找回的整本知识图谱 · https://cn.zhys.tw/read/9351972/82571343.html<br>
+202 章 / 7 世界 / 55 人物 / 47 件事件 · 生成于 2026-09-28 · 单文件离线 HTML，不依赖任何外部资源</footer>
+</div>
 <script>
 function filterChapters(){
   var q=document.getElementById('chSearch').value.trim().toLowerCase();
@@ -393,8 +625,28 @@ function filterChapters(){
     rows[i].style.display=(!q||t.indexOf(q)>=0||('世界 '+w).indexOf(q)>=0)?'':'none';
   }
 }
+/* 概览卡片是 #world-N 锚点，但档案是 <details>：不手动 open，跳过去只会看到
+   一行折叠标题。这里在 hashchange 与首屏各开一次。 */
+(function(){
+  function openHash(){
+    var id=(location.hash||'').slice(1);
+    if(!id) return;
+    var el=document.getElementById(id);
+    if(el && el.tagName==='DETAILS') el.open=true;
+  }
+  window.addEventListener('hashchange', openHash);
+  openHash();
+})();
+/* 「全部展开 / 收起」：7 个世界逐个点太麻烦，这里按当前状态取反 */
+(function(){
+  var b=document.getElementById('expandAll');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var ds=document.querySelectorAll('.worlds-wrap details.world');
+    var anyClosed=false, i;
+    for(i=0;i<ds.length;i++) if(!ds[i].open) anyClosed=true;
+    for(i=0;i<ds.length;i++) ds[i].open=anyClosed;
+  });
+})();
 </script>
-
-<footer>本报告由回收站找回的整本知识图谱重建 · 数据源 https://cn.zhys.tw/read/9351972/82571343.html · 共 202 章 / 7 世界</footer>
-</div>
 </body></html>

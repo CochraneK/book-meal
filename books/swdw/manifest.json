@@ -2,10 +2,11 @@
   "id": "swdw",
   "order": 4,
   "title": "小说维度晋升，我在天幕当评委",
+  "glyph": "维",
   "subtitle": "无限流·世界评估",
   "author": "白水瓶子",
   "kind": "fictional_world",
-  "desc": "维度晋升·天幕评估七世界。知识图谱含 meta / 天幕机制 / 7 世界人物·情节·判定·死亡清单 / 规则演化 / 余黎成长弧 / 全 202 章索引。",
+  "desc": "维度晋升·天幕评估七世界。知识图谱含 meta / 天幕机制 / 7 世界人物·情节·判定·死亡清单 / 规则演化 / 余黎成长弧 / 全 202 章索引；首屏七世界卡片墙可直接跳档案。",
   "accent": "#5a4b8c",
   "metrics": {
     "characters": 55,
@@ -15,6 +16,6 @@
   "chapters": 202,
   "report": "index.html",
   "external": false,
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "note": "独立报告"
 }

@@ -2,6 +2,7 @@
   "id": "tiancai",
   "order": 2,
   "title": "天才基本法",
+  "glyph": "天",
   "subtitle": "奥数·双时间线",
   "author": "长洱",
   "kind": "modern_real",
@@ -15,6 +16,6 @@
   "chapters": 221,
   "report": "index.html",
   "external": false,
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "note": ""
 }

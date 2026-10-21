@@ -2,6 +2,7 @@
   "id": "ming",
   "order": 1,
   "title": "明朝那些事儿",
+  "glyph": "明",
   "subtitle": "圣地巡礼知识库",
   "author": "当年明月",
   "kind": "history",
@@ -15,6 +16,6 @@
   "chapters": 156,
   "report": "ming/index.html",
   "external": false,
-  "updated": "2026-10-02",
+  "updated": "2026-10-21",
   "note": "分层版 + 离线单文件"
 }
