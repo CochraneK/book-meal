@@ -40,5 +40,7 @@ def test_classic_mode_disables_visible_v2_v3_overlays():
 
 # 注：原 test_modern_delivery_remains_outside_experience_layer 依赖
 # build.DATA_LOADER_JS_PATH / LAZY_DATA_JS_PATH 与 data-loader.js、lazy-data.js 的
-# 分片按需加载契约；2026-10「单体 data.js」重构后 loader/lazy-data 已不在 web target
-# 产物中（render_web 只产 app.css + app.js + data.js），该用例随分层架构一并移除。
+# 分片按需加载契约；2026-10「单体 data.js」重构期间该用例随分层架构一并移除。
+# 2026-10-21 已恢复按需加载（boot data.js + data-<域>.js 分块，loader/lazy-data
+# 重新回到 web target 产物），分块契约现由 test_visual_polish.py 的
+# test_web_target_reports_all_assets 覆盖；本文件仅保留体验层（experience.js）检查。

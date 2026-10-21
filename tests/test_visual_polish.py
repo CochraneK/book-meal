@@ -66,23 +66,52 @@ def test_classic_theme_does_not_reskin_base_app_css():
 
 
 def test_web_target_reports_all_assets():
-    """web target 产物不变量（2026-10「单体 data.js」架构）：
+    """web target 产物不变量（2026-10-21 恢复「按需加载」架构）：
 
-    骨架 + ``app.css`` + ``app.js`` + 单体 ``data.js``，四者均落盘、均被记录且非空；
-    旧 V10–V13 分片文件（boot-data / search-index / data-loader / lazy-data /
-    详情 shard 等）一律不再产出。``sw.js`` 是仓库级静态文件，不由 target 产出，
-    由 refresh-index 工作流原样保留在仓库根。
+    骨架 + ``app.css`` + ``app.js`` + **boot** ``data.js`` + 运行时加载器
+    ``data-loader.js`` / ``lazy-data.js`` + 每个数据域一个 ``data-<域>.js``。
+    全部落盘、全部被 ``render_web`` 记录且非空。
+
+    boot 必须只含元数据：数据域键在 boot 里被置空占位，真正的数据在分块里，
+    因此 boot 体积远小于全量（这条是「按需加载没有退化成单体」的护栏）。
+
+    旧 V10–V13 分片文件（boot-data / search-index / 详情 shard 等）仍不产出。
+    ``sw.js`` 是仓库级静态文件，不由 target 产出，由 refresh-index 工作流
+    原样保留在仓库根。
     """
     payload = _support.payload("full")
     with tempfile.TemporaryDirectory() as td:
         out = Path(td)
         written = B.render_web(payload, out)
-        expected = {"index.html", "assets/app.css", "assets/app.js", "assets/data.js"}
+        expected = {
+            "index.html", "assets/app.css", "assets/app.js", "assets/data.js",
+            "assets/data-loader.js", "assets/lazy-data.js",
+        }
+        expected |= {"assets/data-%s.js" % name for name in B.CHUNK_MAP}
         for name in expected:
             assert (out / name).exists(), "web target 缺少 %s" % name
             assert name in written and written[name] > 0
+
+        # boot 只保留元数据：体积必须远小于各分块之和（否则说明又退回单体）
+        chunk_bytes = sum(
+            (out / "assets" / ("data-%s.js" % name)).stat().st_size
+            for name in B.CHUNK_MAP
+        )
+        assert chunk_bytes > 0
+        boot_bytes = (out / "assets" / "data.js").stat().st_size
+        assert boot_bytes * 4 < chunk_bytes, \
+            "boot data.js 过大（%d B vs 分块合计 %d B），按需加载已退化" % (
+                boot_bytes, chunk_bytes)
+
+        # 首屏脚本顺序：先有 DATA，再装加载器，再跑 app，最后装懒加载门控
+        html = (out / "index.html").read_text(encoding="utf-8")
+        order = [html.find('src="assets/%s"' % n) for n in
+                 ("data.js", "data-loader.js", "app.js", "lazy-data.js")]
+        assert all(pos >= 0 for pos in order), "index.html 缺少必要脚本：%s" % order
+        assert order == sorted(order), "脚本顺序错误：%s" % order
+
         obsolete = (
-            "boot-data.js", "search-index.js", "data-loader.js", "lazy-data.js",
+            "boot-data.js", "search-index.js",
             "theme.css", "experience.css", "experience.js",
             "data-full.js", "data-character-details.js", "data-location-details.js",
             "data-event-details.js", "data-space.js",

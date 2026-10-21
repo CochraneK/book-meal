@@ -133,8 +133,10 @@ def render_web(payload: dict, out_dir: Path) -> dict:
     # 各数据域分块
     written = {
         "index.html": 0,
-        "assets/app.css": len(css),
-        "assets/data.js": len(data_js),
+        "assets/app.css": (assets / "app.css").stat().st_size,
+        "assets/data.js": (assets / "data.js").stat().st_size,
+        "assets/data-loader.js": (assets / "data-loader.js").stat().st_size,
+        "assets/lazy-data.js": (assets / "lazy-data.js").stat().st_size,
     }
     for name, keys in CHUNK_MAP.items():
         chunk = {k: payload[k] for k in keys if k in payload}
@@ -145,7 +147,7 @@ def render_web(payload: dict, out_dir: Path) -> dict:
     # app.js：剥离内联数据常量（数据改由 data.js + 分块提供）
     body = js.replace(_DATA_CONST, "", 1).replace(_INSIGHT_CONST, "", 1)
     (assets / "app.js").write_text(body, encoding="utf-8")
-    written["assets/app.js"] = len(body)
+    written["assets/app.js"] = (assets / "app.js").stat().st_size
 
     # index.html：脚本顺序 data.js → data-loader.js → app.js → lazy-data.js
     # （data-loader 需 DATA；lazy-data 需 setView + __MING_ENSURE_*，故在 app.js 之后）
@@ -237,7 +239,7 @@ def main(argv=None) -> int:
         written = render_web(payload, out)
         print("[3/3] 分离资源已生成 %s" % out)
         for name, size in written.items():
-            print("      %-16s %d 字符" % (name, size))
+            print("      %-32s %7.1f KB" % (name, size / 1024.0))
     return 0
 
 
