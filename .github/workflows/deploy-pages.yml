@@ -1,0 +1,56 @@
+name: Deploy · Pages
+
+# 站点内容只来自 src/build_dist.py 挑出的白名单（index.html / standalone.html /
+# sw.js / ming/ / books/），仓库里的工程文件（src/ data/ teardown/ tests/ 等）
+# 根本不会被上传——切换前 legacy 模式是整仓发布，那些文件都能被直接下载。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一次部署，但不取消排队的（取消会让站点停在半新半旧）
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # 站点发布前再过一次版权闸门：白名单复制理论上碰不到原著，
+      # 但这是发布链路上的最后一道，值得多花几秒。
+      - name: 版权巡检
+        run: python tests/check_copyright.py
+
+      - name: 组装发布目录
+        run: python src/build_dist.py --out _site
+
+      - name: 校验产物完整且与仓库一致
+        run: python src/build_dist.py --check --out _site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
