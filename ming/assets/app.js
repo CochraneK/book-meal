@@ -10,6 +10,7 @@ const LOC_INDEX={};
 DATA.locations.forEach(l=>{LOC_INDEX[l.ancient]=l;(l.mentionedAs||[]).forEach(a=>{if(!LOC_INDEX[a])LOC_INDEX[a]=l})});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-loc-chip]');if(b){const x=LOC_INDEX[b.dataset.locChip];if(x)showLocation(x)}});
 document.addEventListener('click',e=>{const t=e.target.closest('#mgToggle');if(t){state.cleanExpanded=!state.cleanExpanded;state.rendered.overview=false;renderOverview();state.rendered.overview=true;}});
+document.addEventListener('click',e=>{const t=e.target.closest('#ovAuditToggle');if(t){state.auditExpanded=!state.auditExpanded;state.rendered.overview=false;renderOverview();state.rendered.overview=true;}});
 function eventLocationChips(ev){
   const s=ev.location||'';
   if(!s.trim())return '<span class="muted">未标注</span>';
@@ -113,7 +114,7 @@ const esc=value=>displayText(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt
 function matchesQuery(hay,raw){const q=String(raw==null?'':raw).trim().toLowerCase();if(!q)return true;const h=String(hay||'').toLowerCase();if(h.includes(q))return true;const canon=(DATA.aliasIndex||{})[String(raw).trim()];return !!canon&&h.includes(String(canon).toLowerCase());}
 const shortStatus=s=>{if(!s)return s;if(s.includes('待核验'))return '待核验';return s;};
 const pageSize=36;
-const state={dynastyEra:'',mapMode:'pilgrim',showMarkers:true,cleanExpanded:false,view:'overview',locMode:'index',locPage:1,locQuery:'',locRegion:'全部区域',chapterPage:1,distributionPage:1,distributionPart:'全部七部',distributionSort:'order',visualPart:'全部',visualPerson:'',netMode:'ego',charPage:1,charQuery:'',charPart:'',charFaction:'全部势力',charMinor:false,eventPage:1,eventQuery:'',eventType:'全部类型',eventCategory:'全部类别',relationPage:1,relationQuery:'',relationCategory:'全部类别',timelinePage:1,timelineCategory:'全部类别',timelineFrom:'',timelineTo:'',printMode:null,cardTheme:'thm-ink',rendered:{}};
+const state={dynastyEra:'',mapMode:'pilgrim',showMarkers:true,cleanExpanded:false,auditExpanded:false,view:'overview',locMode:'index',locPage:1,locQuery:'',locRegion:'全部区域',chapterPage:1,distributionPage:1,distributionPart:'全部七部',distributionSort:'order',visualPart:'全部',visualPerson:'',netMode:'ego',charPage:1,charQuery:'',charPart:'',charFaction:'全部势力',charMinor:false,eventPage:1,eventQuery:'',eventType:'全部类型',eventCategory:'全部类别',relationPage:1,relationQuery:'',relationCategory:'全部类别',timelinePage:1,timelineCategory:'全部类别',timelineFrom:'',timelineTo:'',printMode:null,cardTheme:'thm-ink',rendered:{}};
 const metrics=DATA.metrics;
 const chapterLabel=key=>DATA.chapters[key]?.title||key;
 const chapterChips=items=>(items||[]).slice(0,6).map(x=>`<span class="source-chip" title="${esc(x.title)}">${esc(x.title)}</span>`).join('')+((items||[]).length>6?`<span class="source-chip">+${items.length-6}章</span>`:'');
@@ -217,11 +218,111 @@ document.querySelectorAll('[data-view="map"]').forEach(b=>{
   b.addEventListener('touchstart',kick,{once:true,passive:true});
 });
 function renderOverview(){
- $('#headerStat').textContent=`${metrics.chapters}章 · ${metrics.characters}人 · ${metrics.events}件事件 · ${metrics.relations}条关系`;
- $('#overview').innerHTML=`<div class="section-head"><div><h2>知识库总览</h2><p>${esc(DATA.scopeLabel)} · 抽取结果与人工整理的统一出口</p></div><span class="status draft">结果仍需史料核验</span></div><div class="summary-hero"><div class="hero-copy"><h2>${esc(DATA.scopeLabel)}</h2><p>从章节、人物、地点、事件、关系和时间六个入口查看同一份结构化数据。每条记录都保留来源章节，未定位地点与未知年份不会被静默丢弃。</p><div class="hero-note">来源章节 ${metrics.chapters} · 已定位地点 ${metrics.locatedLocations}/${metrics.locations} · 有数值年份事件 ${metrics.timedEvents}/${metrics.events}</div></div><div class="metric-grid"><div class="metric"><span class="value">${metrics.characters}</span><span class="label">人物实体</span></div><div class="metric"><span class="value">${metrics.locations}</span><span class="label">地点实体</span></div><div class="metric"><span class="value">${metrics.events}</span><span class="label">事件实体</span></div><div class="metric"><span class="value">${metrics.relations}</span><span class="label">关系记录</span></div></div></div><div class="panel"><div class="section-head"><div><h2 style="font-size:18px">数据状态</h2><p>输出口径明确区分实体总量、已定位数量和待核验记录。</p></div></div><div class="quality-grid"><div class="quality"><strong>${metrics.locatedLocations}/${metrics.locations} 个地点已定位</strong><span>其余地点仍可在地点索引和章节视图中查看</span></div><div class="quality"><strong>${metrics.unknownEvents} 件事件年份待考</strong><span>保留在事件索引，不会从结果中消失</span></div><div class="quality"><strong>${metrics.relations} 条关系完整保留</strong><span>关系索引支持分页查看，不在人物卡中截断</span></div><div class="quality"><strong>章节来源可追溯</strong><span>人物、地点、事件和关系均关联章节标题</span></div></div></div>`;
- $('#overview').insertAdjacentHTML('beforeend', distributionTeaser());
- $('#overview').insertAdjacentHTML('beforeend', cleaningPanel());
+  $('#headerStat').textContent=`${metrics.chapters}章 · ${metrics.characters}人 · ${metrics.events}件事件 · ${metrics.relations}条关系`;
+  $('#overview').innerHTML=[ovHead(),ovHero(metrics),ovRow(DATA.distribution),ovAudit(metrics,DATA.distribution,!!state.auditExpanded)].join('');
 }
+function ovHead(){
+  return `<div class="ov-head"><div><h2>知识库总览</h2><p>${esc(DATA.scopeLabel)} · 章节抽取与人工整理的统一出口</p></div><span class="status draft">结果仍需史料核验</span></div>`;
+}
+function ovHero(m){
+  return `<section class="ov-hero">
+    <div class="ov-hero-copy">
+      <p class="ov-kicker">明朝那些事儿</p>
+      <h2 class="ov-title">七部全书 · ${m.chapters} 章</h2>
+      <p class="ov-lede">从章节、人物、地点、事件、关系和时间六个入口查看同一份结构化数据。每条记录都保留来源章节，未定位地点与未知年份不会被静默丢弃。</p>
+    </div>
+    <dl class="ov-stats">
+      <div><dd>${m.characters}</dd><dt>人物实体</dt></div>
+      <div><dd>${m.locations}</dd><dt>地点实体</dt></div>
+      <div><dd>${m.events}</dd><dt>事件实体</dt></div>
+      <div><dd>${m.relations}</dd><dt>关系记录</dt></div>
+    </dl>
+    <ul class="ov-flags">
+      <li><b>${m.locatedLocations}/${m.locations}</b> 地点已定位</li>
+      <li><b>${m.unknownEvents}</b> 件事件年份待考</li>
+      <li><b>${m.timedEvents}/${m.events}</b> 事件有数值年份</li>
+      <li>全部记录关联来源章节</li>
+    </ul>
+  </section>`;
+}
+function ovRow(d){
+  const left=distSparkCard(d), right=categoryCard();
+  if(!left&&!right)return '';
+  if(!right)return `<div class="ov-row ov-row-single">${left}</div>`;
+  if(!left)return `<div class="ov-row ov-row-single">${right}</div>`;
+  return `<div class="ov-row">${left}${right}</div>`;
+}
+const OV_PART_COLORS=['#8d3025','#a8562f','#b88b35','#527b5c','#476b86','#6a5a86','#7a5a4a'];
+function distSparkCard(d){
+  if(!d||!d.chapters||!d.chapters.length)return '';
+  const ch=d.chapters,s=(d.stats&&d.stats.total)||null;
+  const max=Math.max.apply(null,ch.map(c=>c.total))||1;
+  const groups=[];
+  ch.forEach(c=>{
+    let g=groups.filter(x=>x.key===c.partKey)[0];
+    if(!g){g={key:c.partKey,title:c.part,items:[]};groups.push(g);}
+    g.items.push(c);
+  });
+  const gHtml=groups.map((g,i)=>{
+    const color=OV_PART_COLORS[i%OV_PART_COLORS.length];
+    const bars=g.items.map(c=>{
+      const h=Math.max(4,Math.round(c.total*74/max));
+      return `<i style="height:${h}px;background:${color}" title="${esc(c.title)} · ${c.total} 条"></i>`;
+    }).join('');
+    return `<div class="ov-part" title="${esc(g.title)} · ${g.items.length} 章"><div class="ov-bars">${bars}</div><span>${esc(String(g.title).split(' · ')[0])}</span></div>`;
+  }).join('');
+  const sorted=ch.slice().sort((a,b)=>b.total-a.total);
+  const hi=sorted[0],lo=sorted[sorted.length-1];
+  return `<section class="ov-panel">
+    <div class="ov-panel-head"><h3>章节抽取分布</h3><span>${ch.length} 章 · 每根柱 = 一章的实体条数</span></div>
+    <div class="ov-spark">${gHtml}</div>
+    <dl class="ov-figs">
+      <div><dt>中位数</dt><dd>${s?Math.round(s.median):'—'}</dd></div>
+      <div><dt>最高</dt><dd>${hi.total}<em>${esc(hi.title)}</em></dd></div>
+      <div><dt>最低</dt><dd>${lo.total}<em>${esc(lo.title)}</em></dd></div>
+      <div><dt>离散度 CV</dt><dd>${s?s.cv:'—'}</dd></div>
+    </dl>
+  </section>`;
+}
+function categoryCard(){
+  const c=DATA.cleaning||{};
+  const rel=Object.entries(c.relation_categories||{}).sort((a,b)=>b[1]-a[1]);
+  const ev=Object.entries(c.event_categories||{}).sort((a,b)=>b[1]-a[1]);
+  if(!rel.length&&!ev.length)return '';
+  const block=(items,colorFn,unit)=>{
+    const tot=items.reduce((a,b)=>a+b[1],0)||1;
+    const segs=items.map(([k,v])=>`<span style="width:${(v*100/tot).toFixed(2)}%;background:${colorFn(k)}" title="${esc(k)} ${v}${unit}（${(v*100/tot).toFixed(1)}%）"></span>`).join('');
+    const leg=items.slice(0,6).map(([k,v])=>`<span><i class="cat-dot" style="--cat:${colorFn(k)}"></i>${esc(k)} <b>${v}</b></span>`).join('');
+    return `<div class="cat-dist">${segs}</div><div class="ov-cat-legend">${leg}</div>`;
+  };
+  const relTotal=rel.reduce((a,b)=>a+b[1],0),evTotal=ev.reduce((a,b)=>a+b[1],0);
+  const relHtml=rel.length?`<p class="ov-cat-label">关系类别 · ${relTotal} 条</p>${block(rel,relCatColor,'条')}`:'';
+  const evHtml=ev.length?`<p class="ov-cat-label">事件类别 · ${evTotal} 件</p>${block(ev,eventCatColor,'件')}`:'';
+  return `<section class="ov-panel">
+    <div class="ov-panel-head"><h3>关系与事件分类</h3><span>自由文本标签已归入固定类别</span></div>
+    <div class="ov-cat">${relHtml}${evHtml}</div>
+  </section>`;
+}
+function ovAudit(m,d,open){
+  const cv=(d&&d.stats&&d.stats.total)?d.stats.total.cv:'—';
+  return `<section class="ov-audit">
+    <button class="ov-audit-bar" id="ovAuditToggle" aria-expanded="${open?'true':'false'}" aria-controls="ovAuditBody">
+      <i class="ov-caret">${open?'▾':'▸'}</i><b>数据体检</b>
+      <span>${m.locatedLocations}/${m.locations} 地点已定位 · ${m.unknownEvents} 件年份待考 · 章节抽取 CV ${cv} · 清洗与合并明细</span>
+    </button>
+    <div class="ov-audit-body" id="ovAuditBody"${open?'':' hidden'}>
+      ${qualityPanel()}
+      ${distributionTeaser()}
+      ${cleaningPanel()}
+    </div>
+  </section>`;
+}
+function qualityPanel(){
+  const m=metrics;
+  return `<div class="panel"><div class="section-head"><div><h2 style="font-size:18px">数据状态</h2><p>输出口径明确区分实体总量、已定位数量和待核验记录。</p></div></div><div class="quality-grid"><div class="quality"><strong>${m.locatedLocations}/${m.locations} 个地点已定位</strong><span>其余地点仍可在地点索引和章节视图中查看</span></div><div class="quality"><strong>${m.unknownEvents} 件事件年份待考</strong><span>保留在事件索引，不会从结果中消失</span></div><div class="quality"><strong>${m.relations} 条关系完整保留</strong><span>关系索引支持分页查看，不在人物卡中截断</span></div><div class="quality"><strong>章节来源可追溯</strong><span>人物、地点、事件和关系均关联章节标题</span></div></div></div>`;
+}
+
+
 function cleaningPanel(){const c=DATA.cleaning||{};if(!c.relation_categories&&!c.person_merged_names)return '';const relTotal=Object.values(c.relation_categories||{}).reduce((a,b)=>a+b,0)||1;const evTotal=Object.values(c.event_categories||{}).reduce((a,b)=>a+b,0)||1;const relSegs=Object.entries(c.relation_categories||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span style="width:${(v*100/relTotal).toFixed(2)}%;background:${relCatColor(k)}" title="${esc(k)} ${v}条（${(v*100/relTotal).toFixed(1)}%）"></span>`).join('');const evSegs=Object.entries(c.event_categories||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span style="width:${(v*100/evTotal).toFixed(2)}%;background:${eventCatColor(k)}" title="${esc(k)} ${v}件（${(v*100/evTotal).toFixed(1)}%）"></span>`).join('');const relLegend=Object.entries(c.relation_categories||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span><i class="cat-dot" style="--cat:${relCatColor(k)};margin-right:4px"></i>${esc(k)} <b>${v}</b></span>`).join('');const evLegend=Object.entries(c.event_categories||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span><i class="cat-dot" style="--cat:${eventCatColor(k)};margin-right:4px"></i>${esc(k)} <b>${v}</b></span>`).join('');const merged=(c.person_merged_names||[]).map(n=>`<span class="source-chip">${esc(n)}</span>`).join('')||'<span class="muted">本轮无合并</span>';const mergeGroups=Object.entries(c.location_merge_groups||{});const MG_LIMIT=16;const mgShown=state.cleanExpanded?mergeGroups:mergeGroups.slice(0,MG_LIMIT);const mergeHtml=mergeGroups.length?mgShown.map(([k,v])=>`<span class="merge-chip"><b>${esc(k)}</b><i>←</i>${v.map(x=>`<em>${esc(x)}</em>`).join('、')}</span>`).join('')+(mergeGroups.length>MG_LIMIT?`<button class="merge-more" id="mgToggle">${state.cleanExpanded?'收起 ▲':'展开其余 '+(mergeGroups.length-MG_LIMIT)+' 组 ▼'}</button>`:''):'<span class="muted">无</span>';return `<div class="panel"><div class="section-head"><div><h2 style="font-size:18px">数据清洗与分类</h2><p>同一人物异名、同城古地名已在聚合层合并；关系与事件的自由文本标签归入固定类别。</p></div><span class="status">聚合层处理</span></div><div class="clean-grid"><div class="clean-card"><strong>人物同名合并 ${c.person_merged_names?c.person_merged_names.length:0} 组</strong><span>异名并入规范名，章节与别名保留</span><div class="clean-chips">${merged}</div></div><div class="clean-card span-2"><strong>地点同城合并 ${mergeGroups.length} 组 · 自环剔除 ${c.selfloop_dropped||0} 条</strong><div class="merge-chips">${mergeHtml}</div></div><div class="clean-card"><strong>关系类别归一 ${relTotal} 条</strong><div class="cat-dist">${relSegs}</div><div class="cat-legend">${relLegend}</div></div><div class="clean-card"><strong>事件类别归一 ${evTotal} 件</strong><div class="cat-dist">${evSegs}</div><div class="cat-legend">${evLegend}</div></div></div></div>`;}
 function renderInsight(){
   const D=INSIGHT_DATA;
