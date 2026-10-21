@@ -100,6 +100,10 @@ def recompute(book):
     alias_pct = pct(sum(1 for c in chars if c.get("aliases")), n_ch)
     q = load(os.path.join(BASE, "data", book, "quotes.json"), {})
     qm = q.get("meta", {})
+    # quotes.json 是抽取出来的原文引语，受版权保护、不入版本控制。
+    # 缺它时对白三项无从复算——必须记为 None 而不是 0：
+    # 记 0 会与 canonical 的 171/156/91.2 对不上，在 CI 上表现为假漂移。
+    HAS_QUOTES = bool(qm)
     info = tb.get("情报对话", 0) + tb.get("密谋博弈", 0)
     fight = tb.get("战斗", 0)
     conf = tb.get("冲突对峙", 0)
@@ -140,6 +144,8 @@ def recompute(book):
         "alias_total": alias_total, "alias_pct": alias_pct,
         "q_picked": qm.get("picked", 0), "q_attr": qm.get("attributed", 0),
         "q_pct": pct(qm.get("attributed", 0), qm.get("picked", 0)),
+        # 供调用方判断这三个指标能否参与比对（缺 quotes.json 时为 False）
+        "has_quotes": HAS_QUOTES,
         "info": info, "info_pct": pct(info, n_ev),
         "law_ratio": round(inst / (conf + fight), 2) if (conf + fight) else 0.0,
         "rescue_pairs": len({(r["from"], r["to"]) for r in rels if r.get("rel_base") == "救助"}),
@@ -312,9 +318,10 @@ def main():
             ("度中心性 top1", got["top1"], canon["top1"]),
             ("别名总数", got["alias_total"], canon["alias_total"]),
             ("有别名 %", got["alias_pct"], canon["alias_pct"]),
-            ("对白入选", got["q_picked"], canon["q_picked"]),
-            ("对白可归属", got["q_attr"], canon["q_attr"]),
-            ("对白归属 %", got["q_pct"], canon["q_pct"]),
+            # 缺 quotes.json 时置 None，由下方的比对循环判为「跳过」而非「不一致」
+            ("对白入选", got["q_picked"] if got["has_quotes"] else None, canon["q_picked"]),
+            ("对白可归属", got["q_attr"] if got["has_quotes"] else None, canon["q_attr"]),
+            ("对白归属 %", (got["q_pct"] if got["has_quotes"] else None), canon["q_pct"]),
             ("信息类事件", got["info"], canon["info"]),
             ("信息类 %", got["info_pct"], canon["info_pct"]),
             ("秩序/暴力比", got["law_ratio"], canon["law_ratio"]),
@@ -323,6 +330,12 @@ def main():
             ("性别可判定 %", got["gender_pct"], canon["gender_pct"]),
         ]
         for label, g, c in checks:
+            if g is None:
+                # 输入数据不在版本库里（原文引语），无从复算——跳过而非判失败。
+                # 这样本地有数据时仍会真校验，CI 上也不会用假失败骗人。
+                print("  [SKIP] %s: 依赖 data/%s/quotes.json（本地私有数据，不入库）"
+                      % (label, book))
+                continue
             same = (abs(g - c) < 0.05) if isinstance(g, float) else (g == c)
             flag = "OK " if same else "FAIL"
             if not same:
@@ -344,7 +357,9 @@ def main():
             "%.1f%%" % got["iso_pct"],
             "%.1f%%" % got["max_comp_pct"],
             "%.1f%%" % got["alias_pct"],
-            "%.1f%%" % got["q_pct"],
+            # 缺 quotes.json 时 q_pct 是 0.0，这个串多半不在文档里——
+            # 那时是在惩罚「没有数据」，而不是抓住了文档漂移，故跳过。
+        ] + (["%.1f%%" % got["q_pct"]] if got["has_quotes"] else []) + [
             "%.1f%%" % got["info_pct"],
             "%.2f" % got["law_ratio"],
             str(got["pairs"]), str(got["top1"]), str(got["rescue_pairs"]),

@@ -23,7 +23,10 @@ data/**/*.txt
 data/*/_batch_*.json
 data/*/quotes.json
 data/_pilot_*.json
-data/*/duplicate_report.json
+# duplicate_report.json 不在排除名单里——它只有 {threshold, pairs:[{a,b,sim,chars}],
+# dup_chapters} 这类数值，没有一句正文，属可公开的质控指标。
+# 曾经把它和 quotes.json 一起挡掉，结果 README 里的「源文本重复」一行在 CI 上
+# 永远算成 0 对（本地有文件所以看不出问题），2026-10-21 首次进 CI 才暴露。
 
 # =====================================================================
 # 生成物 / 本地产物（CI 会重新生成，无需入库）

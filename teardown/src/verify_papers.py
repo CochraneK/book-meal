@@ -91,6 +91,11 @@ def recompute(book):
     qp = os.path.join(ROOT, "data", book, "quotes.json")
     if os.path.exists(qp):
         q = json.load(open(qp, encoding="utf-8")).get("meta", {})
+    # quotes.json 是抽取出来的原文引语，受版权保护、不入版本控制。
+    # 缺失时这三个指标必须是 None（= 无从计算），不能是 0：
+    # 取 0 会让它和 metrics 里真算出来的 25/10/40.0 对不上，
+    # 在没这份文件的 CI 上表现为「数据漂移」误报。
+    HAS_QUOTES = bool(q)
     res = {(r["from"], r["to"]) for r in rels if r.get("rel_base") == "救助"}
     mut = {x for x in res if (x[1], x[0]) in res}
     APPEL = ["同学", "老师", "叔", "哥", "姐", "老板", "队长", "阿姨", "主任", "医生"]
@@ -109,8 +114,9 @@ def recompute(book):
         "top1_loc_n": (lc.most_common(1)[0][1] if lc else 0),
         "top1_loc_pct": pct(lc.most_common(1)[0][1] if lc else 0, len(evs)),
         "top10_loc_pct": pct(sum(v for _, v in lc.most_common(10)), len(evs)),
-        "q_picked": q.get("picked", 0), "q_attr": q.get("attributed", 0),
-        "q_pct": pct(q.get("attributed", 0), q.get("picked", 0)),
+        "q_picked": (q.get("picked") if HAS_QUOTES else None),
+        "q_attr": (q.get("attributed") if HAS_QUOTES else None),
+        "q_pct": (pct(q.get("attributed", 0), q.get("picked", 0)) if HAS_QUOTES else None),
         "alias_total": sum(len(c.get("aliases") or []) for c in chars),
         "alias_pct": pct(sum(1 for c in chars if c.get("aliases")), len(chars)),
         "rescue": len(res), "rescue_mutual": len(mut) // 2,
@@ -153,9 +159,13 @@ def flat_numbers(obj, acc):
 
 
 def check_metrics(metrics, errs):
+    skipped = []
     for tag, book in BOOKS.items():
         fresh = recompute(book)
         for k, v in fresh.items():
+            if v is None:
+                skipped.append("%s.%s" % (tag, k))
+                continue
             got = metrics[book].get(k)
             if isinstance(v, dict):
                 for kk, vv in v.items():
@@ -164,6 +174,10 @@ def check_metrics(metrics, errs):
             else:
                 if got != v:
                     errs.append("[①] %s.%s 漂移：metrics=%s 复算=%s" % (tag, k, got, v))
+    if skipped:
+        # 明确告知跳过了什么，别让人以为检查过全是绿的
+        print("[跳过] 依赖本地私有数据（data/<book>/quotes.json，不入库）：%s"
+              % "、".join(skipped))
         # ② 与学科视角文档对齐
         canon = VP.CANON.get(book, {})
         for mk, ck in CROSS.items():

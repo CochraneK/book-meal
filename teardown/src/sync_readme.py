@@ -44,9 +44,14 @@ def stats(book):
     loc_base = {l.get("type_base", "") for l in loc}
     rel_base = {r.get("rel_base", "") for r in rel}
 
-    q = load(os.path.join("data", book, "quotes.json"), {})
-    qm = q.get("meta", {}) if isinstance(q, dict) else {}
-    dup = load(os.path.join("data", book, "duplicate_report.json"), {})
+    # 注意用 None 而不是 {} 作缺省：这两份是本地私有数据，不入版本控制。
+    #   quotes.json            —— 抽取出来的原文引语（受版权保护）
+    #   duplicate_report.json  —— 已改为可入库，但历史 clone 里可能没有
+    # 缺失时对应行必须是 None（＝无从计算），后续比对会跳过；
+    # 若当 {} 处理，会算成「对白 ? 条」并被判为与 README 不一致，CI 上误报。
+    q = load(os.path.join("data", book, "quotes.json"), None)
+    qm = (q.get("meta", {}) if isinstance(q, dict) else None) or ({} if q else None)
+    dup = load(os.path.join("data", book, "duplicate_report.json"), None)
     dup_ch = len(dup.get("dup_chapters", []) or [])
 
     return {
@@ -56,10 +61,11 @@ def stats(book):
         "同章上下文事件": str(len(data.get("other_events", []))),
         "类型归约": "事件 %d 类 / 地点 %d 类 / 关系 %d 类"
                     % (len(ev_base), len(loc_base), len(rel_base)),
-        "金句": "对白 %s 条（%s 位说话人）+ 叙述 %s 条"
-                % (qm.get("picked", "?"), qm.get("speakers", "?"), qm.get("narr_picked", "?")),
-        "源文本重复": ("%d 对（涉及 %d 章）" % (len(dup.get("pairs", []) or []), dup_ch))
-                     if dup.get("pairs") else "0 对",
+        "金句": ("对白 %s 条（%s 位说话人）+ 叙述 %s 条"
+                 % (qm.get("picked", "?"), qm.get("speakers", "?"), qm.get("narr_picked", "?"))
+                 if qm is not None else None),
+        "源文本重复": (("%d 对（涉及 %d 章）" % (len(dup.get("pairs", []) or []), dup_ch))
+                      if dup and dup.get("pairs") else ("0 对" if dup else None)),
     }
 
 
@@ -83,6 +89,7 @@ def main():
     path = os.path.join(BASE, "README.md")
     md = io.open(path, encoding="utf-8").read()
     diffs = []
+    skipped = []
 
     for label in AUTO_ROWS:
         m = row_re(label).search(md)
@@ -94,6 +101,11 @@ def main():
             diffs.append("行「%s」不是两列" % label)
             continue
         new = [st["tiancai"][label], st["feitu"][label]]
+        # None = 依赖本地私有数据（原文引语等，不入版本控制），无从实算。
+        # 这时跳过，而不是拿「? 条」去跟 README 比——那是在惩罚没有数据。
+        if any(v is None for v in new):
+            skipped.append(label)
+            continue
         # 比较时剥离加粗标记（README 里部分单元格是 **粗体**），写回时保留原样式
         if [norm(c) for c in cells] != [norm(c) for c in new]:
             diffs.append("%-12s README %s → 实算 %s" % (label, cells, new))
@@ -107,6 +119,9 @@ def main():
         io.open(path, "w", encoding="utf-8").write(md)
         print("[write] README「当前状态」表已刷新 %d 行" % len(AUTO_ROWS))
         return 0
+    if skipped:
+        print("[跳过] 依赖本地私有数据（data/<book>/quotes.json 等，不入库）：%s"
+              % "、".join(skipped))
     if diffs:
         print("[FAIL] README 与实算不一致（%d 处）：" % len(diffs))
         for d in diffs:
