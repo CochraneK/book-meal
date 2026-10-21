@@ -160,9 +160,19 @@ def main(argv=None):
             return 2
         targets = [t for t in targets if t[0] in wanted]
 
-    changed_copy, changed_manifest, problems, rows = [], [], [], []
+    changed_copy, changed_manifest, problems, skipped, rows = [], [], [], [], []
 
     for bid, entry in targets:
+        # 私有输入不全时**必须拒绝同步**，而不只是「报落后」：
+        # 缺 quotes.json 时构建出的报告会少掉金句内容（tiancai 0.96MB → 0.93MB），
+        # 拿它去覆盖平台副本，等于把线上那份完整的**降级**成残缺版。
+        # CI 是干净 checkout，永远缺这份数据——所以那里只应做检查、不该真同步。
+        if not entry.get("standalone") and not os.path.exists(
+                os.path.join(BASE, "data", bid, "quotes.json")):
+            # 记为跳过而不是错误：CI 是干净 checkout，永远缺这份数据，
+            # 判失败只会让每条 CI 都红。但必须打印出来，别让人误以为同步过了。
+            skipped.append(bid)
+            continue
         report_name = entry.get("report") or (bid + ".html")
         src_path = os.path.join(BASE, "out", report_name)
         local_man = load_json(os.path.join(BASE, "data", bid, "manifest.json"))
@@ -218,6 +228,10 @@ def main(argv=None):
 
     if args.check:
         dirty = [b for b, _, hs, ms, _ in rows if hs != "same" or ms != "same"]
+        if skipped:
+            print("\n[跳过] 本机缺少 data/<book>/quotes.json（本地私有数据，不入库），"
+                  "产物不完整：%s" % "、".join(skipped))
+            print("       这些书未做比对——用残缺产物覆盖平台副本会把它降级。")
         if problems:
             print("\n[check] 失败：%d 个问题（见上）" % len(problems))
             return 1
