@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "ming",
+  "title": "明朝那些事儿",
+  "author": "当年明月",
+  "kind": "history",
+  "desc": "全景式明朝历史：人物 / 事件 / 关系 / 年号 / 航海的时空图谱。独立成站，外部书。",
+  "accent": "#b8862f",
+  "report": "../明朝/standalone.html",
+  "status": "external",
+  "metrics": {
+    "characters": 1231,
+    "events": 1106,
+    "relations": 2324
+  },
+  "chapters": null,
+  "chars": null,
+  "updated": "2026-10-21"
+}

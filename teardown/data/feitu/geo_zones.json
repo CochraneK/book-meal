@@ -1,0 +1,51 @@
+[
+ {
+  "key": "cloud",
+  "label": "网络/云端",
+  "cx": 88,
+  "cy": 13,
+  "r": 8
+ },
+ {
+  "key": "north",
+  "label": "极北之地",
+  "cx": 50,
+  "cy": 8,
+  "r": 9
+ },
+ {
+  "key": "instance",
+  "label": "副本空间",
+  "cx": 50,
+  "cy": 50,
+  "r": 26
+ },
+ {
+  "key": "polluted",
+  "label": "污染区",
+  "cx": 50,
+  "cy": 50,
+  "r": 45
+ },
+ {
+  "key": "wasteland",
+  "label": "墙外废土",
+  "cx": 50,
+  "cy": 50,
+  "r": 34
+ },
+ {
+  "key": "wall_in",
+  "label": "墙内核心",
+  "cx": 50,
+  "cy": 50,
+  "r": 14
+ },
+ {
+  "key": "unzoned",
+  "label": "未归类",
+  "cx": 50,
+  "cy": 50,
+  "r": 48
+ }
+]

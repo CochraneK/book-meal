@@ -24,17 +24,11 @@ jobs:
         with:
           node-version: "22"
 
-      # 版权合规：原书全文（明朝那些事儿.txt）与含正文的 data/chapters.json
-      # 是本地私有文件，绝不能出现在仓库里。放最前面，失败即停。
+      # 版权合规：统一由 tests/check_copyright.py 把关（名单 + .txt 体积 + json 内容特征），
+      # 两本书合并进同一仓库后两边共用这一份实现，不会出现「一条改了另一条没改」。
+      # 放最前面，失败即停。
       - name: 版权合规巡检
-        run: |
-          bad=$(git ls-files | grep -Ei 'chapters\.json|明朝那些事儿' || true)
-          if [ -n "$bad" ]; then
-            echo "::error::仓库里出现了不该公开的原书全文文件（见下），请立即移除："
-            echo "$bad"
-            exit 1
-          fi
-          echo "未发现原书全文文件 ✓"
+        run: python tests/check_copyright.py
 
       # 模块遮蔽巡检：任何 `.py` 若与标准库模块同名，会污染同目录脚本的 sys.path[0]，
       # 仅存在就能让「任何」Python 进程在启动时崩掉（2026-10-20 的 .dump/_bisect.py 事故）。

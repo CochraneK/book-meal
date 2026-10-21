@@ -1,0 +1,2562 @@
+{
+ "红星福利院": {
+  "coords": [
+   25.14,
+   71.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "院长办公室": {
+  "coords": [
+   32.24,
+   64.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "专诸巷": {
+  "coords": [
+   39.94,
+   70.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "公园": {
+  "coords": [
+   73.44,
+   72.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "红星小学": {
+  "coords": [
+   76.19,
+   36.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "实验小学": {
+  "coords": [
+   64.47,
+   35.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "新村": {
+  "coords": [
+   21.61,
+   67.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "会议室": {
+  "coords": [
+   71.06,
+   32.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "公交车": {
+  "coords": [
+   58.37,
+   68.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "打卤面店": {
+  "coords": [
+   30.7,
+   64.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院停车场": {
+  "coords": [
+   30.43,
+   64.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "医院附近街道": {
+  "coords": [
+   31.74,
+   65.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "专诸巷284号": {
+  "coords": [
+   45.05,
+   65.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "阶梯教室": {
+  "coords": [
+   31.49,
+   29.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "黑板": {
+  "coords": [
+   29.88,
+   26.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "福利院": {
+  "coords": [
+   35.31,
+   63.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "医院": {
+  "coords": [
+   39.94,
+   66.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "公园门卫室": {
+  "coords": [
+   35.58,
+   71.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "门卫室": {
+  "coords": [
+   27.88,
+   63.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "公园池塘": {
+  "coords": [
+   62.03,
+   60.36
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "学校附近小公园": {
+  "coords": [
+   79.42,
+   24.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "新华书店": {
+  "coords": [
+   54.61,
+   69.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "市中心小平房": {
+  "coords": [
+   43.97,
+   60.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "香樟树下": {
+  "coords": [
+   68.41,
+   61.93
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "烧烤摊": {
+  "coords": [
+   27.04,
+   69.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院小食堂": {
+  "coords": [
+   32.93,
+   62.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "铁板鱿鱼摊": {
+  "coords": [
+   65.87,
+   62.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "教学楼下": {
+  "coords": [
+   40.15,
+   28.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "奥数课教室": {
+  "coords": [
+   71.52,
+   31.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "公园杂物间": {
+  "coords": [
+   63.91,
+   63.93
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "安宁市实验小学": {
+  "coords": [
+   67.44,
+   29.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "专诸巷小院": {
+  "coords": [
+   25.19,
+   72.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "大学生活动中心": {
+  "coords": [
+   27.72,
+   26.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "安宁市红星福利院": {
+  "coords": [
+   34.67,
+   59.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院门口台阶": {
+  "coords": [
+   30.78,
+   75.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "院墙": {
+  "coords": [
+   27.65,
+   65.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "宿舍": {
+  "coords": [
+   40.61,
+   63.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "巷口": {
+  "coords": [
+   29.62,
+   72.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "家": {
+  "coords": [
+   32.44,
+   64.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "大学生活动中心二楼会议室": {
+  "coords": [
+   36.22,
+   21.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "奥数教室": {
+  "coords": [
+   68.78,
+   24.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "安宁市街道": {
+  "coords": [
+   65.84,
+   73.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "兴趣班": {
+  "coords": [
+   68.31,
+   29.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "实验小学门口街道": {
+  "coords": [
+   63.63,
+   35.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "致远楼101": {
+  "coords": [
+   32.08,
+   19.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "派出所": {
+  "coords": [
+   75.03,
+   65.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "老林家": {
+  "coords": [
+   41.17,
+   70.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "厨房": {
+  "coords": [
+   37.84,
+   71.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "咖啡厅": {
+  "coords": [
+   53.22,
+   64.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "致远楼": {
+  "coords": [
+   25.49,
+   31.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "三味大学": {
+  "coords": [
+   34.98,
+   29.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "红星小学五年级十班教室": {
+  "coords": [
+   74.7,
+   28.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "天井": {
+  "coords": [
+   31.17,
+   64.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "市实小": {
+  "coords": [
+   70.34,
+   21.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "实验小学门口": {
+  "coords": [
+   70.53,
+   28.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "咖啡店": {
+  "coords": [
+   63.45,
+   70.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "小巷": {
+  "coords": [
+   34.12,
+   56.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "新村外烧烤摊": {
+  "coords": [
+   28.49,
+   72.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "教室（奥数课）": {
+  "coords": [
+   74.31,
+   33.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "小院": {
+  "coords": [
+   32.65,
+   60.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "安宁市": {
+  "coords": [
+   41.4,
+   42.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "outskirt"
+ },
+ "小公园": {
+  "coords": [
+   78.17,
+   27.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "五年级（10）班考场": {
+  "coords": [
+   73.44,
+   37.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "市实验小学": {
+  "coords": [
+   77.71,
+   29.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "实验小学五年级（10）班": {
+  "coords": [
+   70.51,
+   22.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "林朝夕家": {
+  "coords": [
+   37.25,
+   57.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "巷口路灯下": {
+  "coords": [
+   30.24,
+   61.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "实验小学奥数提优班": {
+  "coords": [
+   76.88,
+   28.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "喷泉": {
+  "coords": [
+   78.13,
+   35.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "架空长廊": {
+  "coords": [
+   27.63,
+   27.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "餐厅": {
+  "coords": [
+   61.86,
+   61.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "2号楼3层": {
+  "coords": [
+   44.28,
+   62.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "小食堂": {
+  "coords": [
+   39.89,
+   59.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院小单间": {
+  "coords": [
+   23.43,
+   63.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "汤圆店": {
+  "coords": [
+   32.45,
+   70.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "老居民区": {
+  "coords": [
+   44.32,
+   71.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "亭子": {
+  "coords": [
+   70.72,
+   70.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "老汤圆店": {
+  "coords": [
+   61.13,
+   64.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "实习学校": {
+  "coords": [
+   81.44,
+   27.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "红星中学": {
+  "coords": [
+   65.22,
+   29.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "店铺台阶": {
+  "coords": [
+   59.23,
+   69.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "葡萄架石桌": {
+  "coords": [
+   32.53,
+   71.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院宿舍(被窝)": {
+  "coords": [
+   26.9,
+   60.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "旋转木马": {
+  "coords": [
+   62.35,
+   63.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "红星福利院303室": {
+  "coords": [
+   29.63,
+   60.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "老林家（厨房/书房/客厅）": {
+  "coords": [
+   34.92,
+   61.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "奥数课堂": {
+  "coords": [
+   75.8,
+   34.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "香樟树": {
+  "coords": [
+   69.8,
+   71.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "书店": {
+  "coords": [
+   68.88,
+   67.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "教室": {
+  "coords": [
+   74.62,
+   33.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "院子": {
+  "coords": [
+   26.81,
+   68.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "网吧": {
+  "coords": [
+   74.56,
+   70.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "食堂": {
+  "coords": [
+   30.87,
+   70.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "厕所": {
+  "coords": [
+   32.72,
+   25.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "学校": {
+  "coords": [
+   71.84,
+   34.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "兴趣班教室": {
+  "coords": [
+   67.66,
+   23.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "福利院宿舍": {
+  "coords": [
+   31.77,
+   69.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "致远楼101教室": {
+  "coords": [
+   63.79,
+   25.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "兴趣班（教室）": {
+  "coords": [
+   73.0,
+   27.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "葡萄架": {
+  "coords": [
+   36.99,
+   69.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "红星小学五年级十班": {
+  "coords": [
+   69.44,
+   22.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "讲台": {
+  "coords": [
+   73.87,
+   27.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "池塘": {
+  "coords": [
+   68.99,
+   61.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "小船": {
+  "coords": [
+   68.3,
+   65.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "奥数班": {
+  "coords": [
+   70.33,
+   32.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "面店": {
+  "coords": [
+   33.42,
+   64.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "平房天井(回忆)": {
+  "coords": [
+   43.1,
+   70.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "校门口街道": {
+  "coords": [
+   67.54,
+   22.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "101教室": {
+  "coords": [
+   67.68,
+   24.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "新村烧烤摊": {
+  "coords": [
+   41.35,
+   63.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "新村门口铁门": {
+  "coords": [
+   22.49,
+   68.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "树下": {
+  "coords": [
+   35.5,
+   58.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "青石板路": {
+  "coords": [
+   37.44,
+   67.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "实验初中仲书班": {
+  "coords": [
+   75.71,
+   30.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "儿童游乐场": {
+  "coords": [
+   38.75,
+   59.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "市实小（实验小学）": {
+  "coords": [
+   64.67,
+   27.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "杂志店/零食铺": {
+  "coords": [
+   63.81,
+   63.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "院墙/天井": {
+  "coords": [
+   28.33,
+   72.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "医院边打卤面店": {
+  "coords": [
+   36.92,
+   66.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "路上/街道": {
+  "coords": [
+   67.13,
+   67.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "致远楼101阶梯教室": {
+  "coords": [
+   32.15,
+   26.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "老林的家": {
+  "coords": [
+   33.39,
+   68.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "后门": {
+  "coords": [
+   32.31,
+   22.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "走廊": {
+  "coords": [
+   19.13,
+   27.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "新村门口": {
+  "coords": [
+   30.21,
+   63.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "老居民区天井": {
+  "coords": [
+   34.61,
+   64.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "安宁市希望工程资助单位": {
+  "coords": [
+   63.56,
+   31.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "2号楼3层宿舍": {
+  "coords": [
+   41.69,
+   60.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "陈大炎铁板鱿鱼摊": {
+  "coords": [
+   31.63,
+   60.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "家厨房": {
+  "coords": [
+   34.53,
+   67.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "隔壁实验小学": {
+  "coords": [
+   60.34,
+   31.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "雨中街道": {
+  "coords": [
+   60.34,
+   66.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "办公室": {
+  "coords": [
+   27.35,
+   63.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "专诸巷284号老屋": {
+  "coords": [
+   38.86,
+   66.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "奶猫网吧": {
+  "coords": [
+   63.15,
+   59.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "警局": {
+  "coords": [
+   64.16,
+   59.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "安宁图书馆": {
+  "coords": [
+   37.4,
+   29.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "图书馆小咖啡店": {
+  "coords": [
+   32.48,
+   27.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "杂志店": {
+  "coords": [
+   57.62,
+   62.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "零食铺": {
+  "coords": [
+   63.53,
+   57.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "草坪": {
+  "coords": [
+   74.94,
+   30.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "新村旧式居民区": {
+  "coords": [
+   26.63,
+   60.36
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "市中心小平房小天井": {
+  "coords": [
+   44.89,
+   64.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "饭店": {
+  "coords": [
+   57.49,
+   65.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "电脑": {
+  "coords": [
+   41.75,
+   62.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "奥数班教室": {
+  "coords": [
+   71.12,
+   28.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "老林家院子": {
+  "coords": [
+   42.47,
+   69.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "街道": {
+  "coords": [
+   58.27,
+   68.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "阶梯教室后门": {
+  "coords": [
+   36.08,
+   26.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "学生会会议室": {
+  "coords": [
+   35.62,
+   25.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "公园亭子": {
+  "coords": [
+   59.53,
+   59.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "码头": {
+  "coords": [
+   70.69,
+   63.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "福利院食堂": {
+  "coords": [
+   37.12,
+   73.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "学校门前街道": {
+  "coords": [
+   68.29,
+   29.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "喷泉（实验小学）": {
+  "coords": [
+   62.97,
+   29.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "小黑板": {
+  "coords": [
+   53.67,
+   66.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "草莓世界": {
+  "coords": [
+   88,
+   88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "otherworld"
+ },
+ "书桌": {
+  "coords": [
+   35.44,
+   68.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院303室": {
+  "coords": [
+   31.34,
+   61.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "实验小学喷泉": {
+  "coords": [
+   81.33,
+   32.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "法国梧桐": {
+  "coords": [
+   31.16,
+   68.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "五年级（10）班": {
+  "coords": [
+   62.08,
+   32.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "石桌": {
+  "coords": [
+   36.72,
+   60.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "警示牌": {
+  "coords": [
+   64.88,
+   67.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "公园一角": {
+  "coords": [
+   66.22,
+   74.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "公园门卫": {
+  "coords": [
+   32.76,
+   63.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "安宁市实验小学大门": {
+  "coords": [
+   72.59,
+   33.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "不锈钢栏杆": {
+  "coords": [
+   63.15,
+   30.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "红星小学门口": {
+  "coords": [
+   74.83,
+   25.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "白铁皮门": {
+  "coords": [
+   42.84,
+   63.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "福利院巷口": {
+  "coords": [
+   29.6,
+   71.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "老式居民区": {
+  "coords": [
+   34.76,
+   63.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "小院院墙": {
+  "coords": [
+   37.39,
+   62.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "专诸巷284号小院": {
+  "coords": [
+   29.19,
+   57.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "小卖部": {
+  "coords": [
+   68.56,
+   23.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "饭店门口台阶": {
+  "coords": [
+   61.8,
+   63.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "葡萄架下小石桌": {
+  "coords": [
+   27.36,
+   61.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "实验小学草坪": {
+  "coords": [
+   70.63,
+   26.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "分考场分场牌": {
+  "coords": [
+   69.68,
+   35.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "后门/前门": {
+  "coords": [
+   25.51,
+   27.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "新村门口烧烤摊": {
+  "coords": [
+   40.15,
+   59.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "书房": {
+  "coords": [
+   29.24,
+   67.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "客厅": {
+  "coords": [
+   34.76,
+   60.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "中央公园": {
+  "coords": [
+   65.48,
+   63.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "公园管理处": {
+  "coords": [
+   77.53,
+   66.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "游乐场": {
+  "coords": [
+   62.09,
+   61.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "公园器材室": {
+  "coords": [
+   62.09,
+   65.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "实验小学校门口/喷泉": {
+  "coords": [
+   65.93,
+   34.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "老居民区天井/院墙": {
+  "coords": [
+   45.6,
+   68.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "饭店(回忆)": {
+  "coords": [
+   58.13,
+   71.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "天井/院墙": {
+  "coords": [
+   34.86,
+   58.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "游乐场休息区": {
+  "coords": [
+   70.48,
+   74.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "红砖墙": {
+  "coords": [
+   30.88,
+   67.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "本市": {
+  "coords": [
+   35.97,
+   21.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "outskirt"
+ },
+ "安宁市实验初中": {
+  "coords": [
+   72.92,
+   27.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "外国语学校": {
+  "coords": [
+   77.15,
+   24.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "公交站": {
+  "coords": [
+   78.71,
+   66.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "交管局": {
+  "coords": [
+   70.03,
+   68.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "承安区": {
+  "coords": [
+   62.88,
+   63.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "科研所": {
+  "coords": [
+   35.43,
+   34.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "公园香樟树下": {
+  "coords": [
+   62.66,
+   69.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "游乐场石桌": {
+  "coords": [
+   72.62,
+   71.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "考研补习班": {
+  "coords": [
+   20.73,
+   22.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "智乐中小学课外辅导班": {
+  "coords": [
+   78.62,
+   25.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "大悦商场": {
+  "coords": [
+   8.47,
+   88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "永川市": {
+  "coords": [
+   12.48,
+   88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "莫斯科": {
+  "coords": [
+   4.37,
+   86.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "永川惠和养老院": {
+  "coords": [
+   17.07,
+   80.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "永川市公安局": {
+  "coords": [
+   2,
+   88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "湖畔公园": {
+  "coords": [
+   13.55,
+   85.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "永川大学致公礼堂": {
+  "coords": [
+   16.84,
+   83.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "机场": {
+  "coords": [
+   5.71,
+   82.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "away"
+ },
+ "中央公园游乐场": {
+  "coords": [
+   66.3,
+   62.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "游乐场石桌休息区": {
+  "coords": [
+   64.53,
+   72.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "绿洲基地": {
+  "coords": [
+   41.44,
+   55.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "outskirt"
+ },
+ "98路公交": {
+  "coords": [
+   70.35,
+   72.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "绿洲基地教学楼": {
+  "coords": [
+   34.33,
+   27.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "白色别墅宿舍群": {
+  "coords": [
+   31.03,
+   68.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "一楼空教室": {
+  "coords": [
+   70.19,
+   33.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "绿洲基地教学楼702教室": {
+  "coords": [
+   26.78,
+   30.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "教学楼前台阶": {
+  "coords": [
+   31.5,
+   34.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "楼道转角平台": {
+  "coords": [
+   20.27,
+   29.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "三味大学阶梯教室": {
+  "coords": [
+   26.37,
+   23.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "数学系教室": {
+  "coords": [
+   36.88,
+   20.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "公园杂物间/门卫室": {
+  "coords": [
+   45.88,
+   65.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "实验小学五年级(10)班": {
+  "coords": [
+   70.23,
+   32.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "仲明班": {
+  "coords": [
+   69.38,
+   31.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "专诸巷老林家": {
+  "coords": [
+   38.63,
+   65.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "林家": {
+  "coords": [
+   35.98,
+   69.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "小巷/马路": {
+  "coords": [
+   44.5,
+   61.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "老林家（厨房/书房/客厅/林朝夕房门）": {
+  "coords": [
+   35.46,
+   60.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "公园边老汤圆店": {
+  "coords": [
+   65.85,
+   67.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "图书馆": {
+  "coords": [
+   23.46,
+   23.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "福利院大门": {
+  "coords": [
+   44.52,
+   65.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "林朝夕房间": {
+  "coords": [
+   33.47,
+   68.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "路边": {
+  "coords": [
+   28.44,
+   71.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "院墙/门板": {
+  "coords": [
+   29.87,
+   72.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "新村/老居民区": {
+  "coords": [
+   41.61,
+   61.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "大学生活动中心会议室": {
+  "coords": [
+   29.28,
+   33.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "街道/路上": {
+  "coords": [
+   58.3,
+   67.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "马路": {
+  "coords": [
+   54.95,
+   63.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "教室（小学）": {
+  "coords": [
+   69.15,
+   26.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "学校树下/校门口": {
+  "coords": [
+   78.61,
+   31.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "阶梯教室后门/前门": {
+  "coords": [
+   23.19,
+   26.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "campus"
+ },
+ "小巷/城市街道": {
+  "coords": [
+   31.46,
+   69.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "红星福利院附近两所小学": {
+  "coords": [
+   82.54,
+   33.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "实验小学考场": {
+  "coords": [
+   76.28,
+   35.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "朱红色欧式校舍": {
+  "coords": [
+   70.12,
+   31.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "喷泉/草坪": {
+  "coords": [
+   71.04,
+   32.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "汤圆店/台阶": {
+  "coords": [
+   56.77,
+   70.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "life"
+ },
+ "专诸巷284号厨房": {
+  "coords": [
+   30.72,
+   66.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "葡萄架/石桌": {
+  "coords": [
+   30.11,
+   61.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "办公室外": {
+  "coords": [
+   30.03,
+   65.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ },
+ "小公园香樟树下": {
+  "coords": [
+   76.12,
+   24.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "两所小学": {
+  "coords": [
+   64.58,
+   31.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "school"
+ },
+ "福利院房间": {
+  "coords": [
+   30.34,
+   64.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "home"
+ }
+}

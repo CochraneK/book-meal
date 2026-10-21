@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "feitu",
+  "title": "我在废土世界扫垃圾",
+  "author": "有花在野",
+  "kind": "fictional_world",
+  "desc": "末日废土副本流，墙内赛博 / 墙外废土的双世界设定。五元组抽取 + 12 视图可视化。",
+  "accent": "#3a6b5a",
+  "report": "feitu.html",
+  "status": "ready",
+  "metrics": {
+    "characters": 379,
+    "events": 4386,
+    "relations": 1606
+  },
+  "chapters": 439,
+  "chars": 2032881,
+  "updated": "2026-10-21"
+}

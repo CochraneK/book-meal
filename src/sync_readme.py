@@ -149,9 +149,25 @@ src/                  平台与构建脚本
 web/                  前端真源：template/index.html + css/app.css + js/app.js
 data/                 聚合数据源与增量勘误层（data.json 是单一数据源）
 tests/                单元测试 + tests/browser_check.py（无头浏览器自检）
+                      check_copyright.py 是版权巡检，两条 CI 共用
 docs/                 文档：docs/add_a_book.md（新增一本书）、docs/history/
 legacy/               已停用脚本归档（分片时代遗留，见 legacy/README.md）
+teardown/             拆书工程：其余三本书的抽取与报告生成
+  src/                流水线脚本（generate_report.py / build_swdw_report.py …）
+    publish_books.py  把 out/<id>.html 同步到 books/<id>/index.html（并可 --check）
+  web/                拆书报告前端真源（与上面的 web/ 是两套，别混）
+  data/<id>/          各书抽取数据（原文 TXT 不入库，见下）
+  out/                构建产物（不入版本控制）
 ```
+
+> **为什么有个 `teardown/`：**
+> 这个仓库最初只装《明朝那些事儿》报告，其余三本书是在另一个独立工程里拆的，
+> 每次发新版都要手动跨目录拷贝——忘了拷就出现「门户卡片是新的、点进去是旧的」。
+> 2026-10-21 把那个工程整体搬成子目录后，两边共用同一份版权规则、同一条 CI，
+> `publish_books.py --check` 也让「忘了同步」变成 CI 会报错的事。
+>
+> 两套前端没有合并：视图集合完全不同（那边是年号/航海/关系图，这边是阶段轴/
+> 引用/学科论文），强融的代价远大于收益。
 
 ## 一本书是怎么拆出来的
 

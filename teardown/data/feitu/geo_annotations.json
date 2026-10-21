@@ -1,0 +1,10372 @@
+{
+ "尊贵女王店": {
+  "coords": [
+   59.85,
+   56.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区": {
+  "coords": [
+   46.78,
+   43.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心": {
+  "coords": [
+   49.41,
+   41.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "神国": {
+  "coords": [
+   47.01,
+   31.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "飞车": {
+  "coords": [
+   34.23,
+   67.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "第二区": {
+  "coords": [
+   45.16,
+   46.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "机械海洋馆": {
+  "coords": [
+   26.45,
+   50.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "黑色飞车": {
+  "coords": [
+   23.92,
+   60.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "极北之地": {
+  "coords": [
+   52.51,
+   5.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "乌托邦地下": {
+  "coords": [
+   66.81,
+   49.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "荒村": {
+  "coords": [
+   23.95,
+   63.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "蜂巢": {
+  "coords": [
+   54.1,
+   53.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "蚁穴": {
+  "coords": [
+   56.74,
+   59.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "走廊": {
+  "coords": [
+   28.26,
+   49.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "避难所": {
+  "coords": [
+   78.74,
+   51.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "黑鸟市": {
+  "coords": [
+   30.82,
+   33.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "月亮街": {
+  "coords": [
+   8.0,
+   42.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "乌托邦": {
+  "coords": [
+   54.38,
+   58.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "垃圾场": {
+  "coords": [
+   54.24,
+   52.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下室": {
+  "coords": [
+   53.88,
+   49.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "教堂（意识体云端）": {
+  "coords": [
+   88,
+   10.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "金市": {
+  "coords": [
+   74.55,
+   29.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "归乡号列车": {
+  "coords": [
+   65.47,
+   61.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "机械水母馆": {
+  "coords": [
+   48.25,
+   60.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "103区清洁中心": {
+  "coords": [
+   55.28,
+   56.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "村口大槐树": {
+  "coords": [
+   55.29,
+   35.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "好再来火锅店": {
+  "coords": [
+   46.73,
+   52.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "红房子": {
+  "coords": [
+   43.42,
+   49.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "祝宁的住处": {
+  "coords": [
+   51.33,
+   54.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "池塘": {
+  "coords": [
+   60.36,
+   34.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "北墙": {
+  "coords": [
+   52.84,
+   46.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第一军区": {
+  "coords": [
+   41.79,
+   55.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家": {
+  "coords": [
+   50.67,
+   47.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "松山寺": {
+  "coords": [
+   40.83,
+   42.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废弃工厂避难所": {
+  "coords": [
+   46.33,
+   72.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "荒村村路": {
+  "coords": [
+   61.49,
+   56.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "一级防护墙": {
+  "coords": [
+   60.33,
+   51.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "医疗部": {
+  "coords": [
+   49.94,
+   47.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "小园的房间": {
+  "coords": [
+   53.68,
+   65.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "港口": {
+  "coords": [
+   47.92,
+   46.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "诊室": {
+  "coords": [
+   56.56,
+   41.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "实验室": {
+  "coords": [
+   53.21,
+   31.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下实验室": {
+  "coords": [
+   29.66,
+   45.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "鬼头坟场": {
+  "coords": [
+   42.03,
+   60.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "丰渔村": {
+  "coords": [
+   13.52,
+   34.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "北地雪原": {
+  "coords": [
+   58.91,
+   7.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "82区": {
+  "coords": [
+   57.04,
+   42.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "牙医馆": {
+  "coords": [
+   35.0,
+   62.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "清洁中心大厅": {
+  "coords": [
+   44.77,
+   43.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍文溪办公室": {
+  "coords": [
+   38.48,
+   55.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "恒生机械公司3号楼": {
+  "coords": [
+   49.57,
+   57.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "机械设计部": {
+  "coords": [
+   47.54,
+   46.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "立体防御空间": {
+  "coords": [
+   46.38,
+   54.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "第一区": {
+  "coords": [
+   58.19,
+   49.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "浮沙岛": {
+  "coords": [
+   82.57,
+   14.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "910号房": {
+  "coords": [
+   30.98,
+   60.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "A7号下水道": {
+  "coords": [
+   44.34,
+   46.93
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "客厅": {
+  "coords": [
+   50.81,
+   43.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "出墙越野车": {
+  "coords": [
+   46.51,
+   57.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "天台": {
+  "coords": [
+   50.25,
+   45.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "5车": {
+  "coords": [
+   28.73,
+   31.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "4车": {
+  "coords": [
+   36.77,
+   53.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "霍家主宅厅堂": {
+  "coords": [
+   37.85,
+   55.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "秘密实验基地": {
+  "coords": [
+   54.49,
+   57.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "一号线地轨站台": {
+  "coords": [
+   70.28,
+   67.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "世界尽头": {
+  "coords": [
+   28.24,
+   52.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "地下垃圾场": {
+  "coords": [
+   69.76,
+   30.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "祝宁的出租屋": {
+  "coords": [
+   39.09,
+   50.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区垃圾场": {
+  "coords": [
+   36.35,
+   50.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "荒村后山": {
+  "coords": [
+   51.71,
+   44.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "后山": {
+  "coords": [
+   73.77,
+   54.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "烂尾楼": {
+  "coords": [
+   58.83,
+   48.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "777号实验体": {
+  "coords": [
+   66.5,
+   49.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "永生药业基金会": {
+  "coords": [
+   38.26,
+   38.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "绩效大会会议室": {
+  "coords": [
+   54.97,
+   45.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全通道": {
+  "coords": [
+   49.75,
+   52.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "贫民窟": {
+  "coords": [
+   53.88,
+   47.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "墙外": {
+  "coords": [
+   54.76,
+   38.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "药物储备间": {
+  "coords": [
+   32.18,
+   60.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "火种俱乐部": {
+  "coords": [
+   48.29,
+   51.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "观察室": {
+  "coords": [
+   52.26,
+   41.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "会议室": {
+  "coords": [
+   48.9,
+   52.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "45层训练室": {
+  "coords": [
+   55.98,
+   48.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心论坛": {
+  "coords": [
+   82.27,
+   14.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "焚烧炉": {
+  "coords": [
+   47.75,
+   54.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "垃圾山": {
+  "coords": [
+   50.36,
+   46.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "酒店大堂": {
+  "coords": [
+   47.32,
+   45.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "199号房": {
+  "coords": [
+   63.4,
+   62.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下医院": {
+  "coords": [
+   54.5,
+   47.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "深坑": {
+  "coords": [
+   47.74,
+   55.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "楼梯": {
+  "coords": [
+   35.74,
+   43.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "滑雪场": {
+  "coords": [
+   55.77,
+   43.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全屋": {
+  "coords": [
+   48.23,
+   52.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "实验楼": {
+  "coords": [
+   68.67,
+   58.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "年级主任办公室": {
+  "coords": [
+   55.85,
+   72.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "装甲飞车": {
+  "coords": [
+   50.71,
+   73.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "街道": {
+  "coords": [
+   23.24,
+   57.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "公交车站牌": {
+  "coords": [
+   64.83,
+   73.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "小巷": {
+  "coords": [
+   50.43,
+   16.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "楼道": {
+  "coords": [
+   66.35,
+   71.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "多罗站": {
+  "coords": [
+   69.8,
+   37.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "罗马城小区": {
+  "coords": [
+   52.34,
+   49.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "帐篷": {
+  "coords": [
+   68.22,
+   36.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "牢笼区": {
+  "coords": [
+   50.76,
+   68.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "永生药业实验室": {
+  "coords": [
+   40.27,
+   63.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "血管": {
+  "coords": [
+   42.34,
+   47.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "空中世界走廊": {
+  "coords": [
+   63.57,
+   49.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "乌托邦外围森林": {
+  "coords": [
+   40.12,
+   51.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "骸骨洞穴": {
+  "coords": [
+   73.23,
+   43.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "空中高速": {
+  "coords": [
+   62.85,
+   52.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "污染孢子之海": {
+  "coords": [
+   18.93,
+   31.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "巨人骨架": {
+  "coords": [
+   34.52,
+   50.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "巨人心脏": {
+  "coords": [
+   44.35,
+   43.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "一号线末班车": {
+  "coords": [
+   64.16,
+   74.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "人鱼馆": {
+  "coords": [
+   41.79,
+   50.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "馆长室": {
+  "coords": [
+   32.4,
+   60.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "废弃垃圾房": {
+  "coords": [
+   41.6,
+   42.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心会议室": {
+  "coords": [
+   45.11,
+   59.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心电梯": {
+  "coords": [
+   44.25,
+   51.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "高草地": {
+  "coords": [
+   55.44,
+   53.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "白衣老太太宅": {
+  "coords": [
+   66.57,
+   47.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "异常事件小组办公室": {
+  "coords": [
+   50.41,
+   47.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "烂尾楼二十五楼": {
+  "coords": [
+   36.78,
+   48.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "3号楼天台": {
+  "coords": [
+   60.53,
+   44.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "优秀员工专用通道": {
+  "coords": [
+   57.39,
+   47.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下加工车间": {
+  "coords": [
+   44.17,
+   50.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "恒生机械园": {
+  "coords": [
+   48.04,
+   51.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下通道": {
+  "coords": [
+   84.97,
+   14.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "103区西部废弃垃圾场": {
+  "coords": [
+   45.63,
+   51.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "某间地下室": {
+  "coords": [
+   50.07,
+   53.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍家": {
+  "coords": [
+   48.69,
+   55.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "二楼走廊": {
+  "coords": [
+   45.01,
+   63.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "床底夹层": {
+  "coords": [
+   47.68,
+   43.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "光明孤儿院": {
+  "coords": [
+   56.91,
+   47.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "镜室": {
+  "coords": [
+   69.87,
+   49.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "103区地下": {
+  "coords": [
+   50.82,
+   52.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "垃圾房": {
+  "coords": [
+   41.56,
+   53.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "永生药业基金会酒店": {
+  "coords": [
+   53.83,
+   56.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "九楼走廊": {
+  "coords": [
+   62.25,
+   56.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "浴室": {
+  "coords": [
+   49.15,
+   39.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "清洁中心更衣室": {
+  "coords": [
+   63.67,
+   48.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "观测亭": {
+  "coords": [
+   56.76,
+   54.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "医疗舱": {
+  "coords": [
+   47.13,
+   46.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "实验室门": {
+  "coords": [
+   45.56,
+   48.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "温馨小屋": {
+  "coords": [
+   37.39,
+   49.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下防空安全屋": {
+  "coords": [
+   39.81,
+   54.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "书房": {
+  "coords": [
+   44.88,
+   51.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "坟帖爱好者交流中心": {
+  "coords": [
+   82.36,
+   10.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "清洁中心顶楼": {
+  "coords": [
+   52.95,
+   45.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "会议厅": {
+  "coords": [
+   50.42,
+   58.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "钢铁大道第三公园": {
+  "coords": [
+   57.69,
+   55.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "河岸": {
+  "coords": [
+   49.77,
+   43.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "格斗场": {
+  "coords": [
+   37.21,
+   47.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "裴书的别墅": {
+  "coords": [
+   45.59,
+   50.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家花园": {
+  "coords": [
+   49.87,
+   47.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑鸟一中": {
+  "coords": [
+   70.46,
+   65.93
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "隧道": {
+  "coords": [
+   70.79,
+   45.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "实验楼天台": {
+  "coords": [
+   62.95,
+   64.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "化学实验室": {
+  "coords": [
+   50.69,
+   30.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "教学楼": {
+  "coords": [
+   62.81,
+   39.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "教室": {
+  "coords": [
+   57.41,
+   58.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "巨人森林": {
+  "coords": [
+   45.46,
+   57.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "主殿": {
+  "coords": [
+   42.42,
+   34.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废弃建筑工地": {
+  "coords": [
+   65.75,
+   33.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "501室": {
+  "coords": [
+   66.52,
+   52.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "霉菌之城": {
+  "coords": [
+   59.05,
+   52.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "85车": {
+  "coords": [
+   76.04,
+   65.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "9车餐车": {
+  "coords": [
+   55.95,
+   64.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "7车": {
+  "coords": [
+   56.59,
+   26.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "白澄之墓": {
+  "coords": [
+   52.27,
+   45.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "北墙F-03口": {
+  "coords": [
+   40.83,
+   70.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "养育营": {
+  "coords": [
+   42.67,
+   49.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "森林": {
+  "coords": [
+   42.99,
+   48.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "镜像住宅": {
+  "coords": [
+   61.1,
+   64.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "空中门": {
+  "coords": [
+   66.77,
+   54.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "湖边临时驻扎点": {
+  "coords": [
+   33.4,
+   51.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "骨髓通道": {
+  "coords": [
+   58.56,
+   66.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "北地": {
+  "coords": [
+   54.94,
+   4.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "黑月": {
+  "coords": [
+   38.14,
+   48.3
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "祝宁家": {
+  "coords": [
+   49.68,
+   42.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第四区": {
+  "coords": [
+   52.29,
+   54.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑色匣子建筑（主机房）": {
+  "coords": [
+   26.15,
+   55.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "极北之地机房": {
+  "coords": [
+   43.69,
+   8.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "神国废墟": {
+  "coords": [
+   38.32,
+   59.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "三十号研究所": {
+  "coords": [
+   51.51,
+   40.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "22车铁轨空间": {
+  "coords": [
+   36.45,
+   48.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "水下污染区域": {
+  "coords": [
+   62.03,
+   60.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "玻璃墙": {
+  "coords": [
+   34.68,
+   37.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "二号诊室": {
+  "coords": [
+   61.71,
+   54.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "五楼黑色大门": {
+  "coords": [
+   37.72,
+   80.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "祝宁的卧室": {
+  "coords": [
+   51.34,
+   46.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王店地下室安全屋": {
+  "coords": [
+   51.01,
+   40.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "A面观察室": {
+  "coords": [
+   42.81,
+   53.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "幸福村": {
+  "coords": [
+   63.13,
+   33.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "一级防护墙外": {
+  "coords": [
+   41.48,
+   43.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "阿芬宅": {
+  "coords": [
+   24.09,
+   41.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "阿芬宅后院": {
+  "coords": [
+   42.55,
+   45.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "老张宅": {
+  "coords": [
+   55.16,
+   46.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "清洁中心内部论坛": {
+  "coords": [
+   88,
+   16.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "第三世界荒村": {
+  "coords": [
+   88,
+   39.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "墙外驻扎军营地": {
+  "coords": [
+   22.03,
+   64.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "清洁中心主体大楼": {
+  "coords": [
+   39.8,
+   44.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王店八层": {
+  "coords": [
+   45.04,
+   45.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "密林": {
+  "coords": [
+   61.55,
+   52.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "坟帖论坛": {
+  "coords": [
+   82.64,
+   13.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "恒生机械公司": {
+  "coords": [
+   41.31,
+   43.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "仓储冷冻室": {
+  "coords": [
+   61.18,
+   52.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全楼梯": {
+  "coords": [
+   52.61,
+   51.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "杂物间": {
+  "coords": [
+   44.75,
+   57.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "希望办公室": {
+  "coords": [
+   51.12,
+   52.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑店": {
+  "coords": [
+   44.03,
+   57.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "徐萌家": {
+  "coords": [
+   57.74,
+   56.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "刘年年豪宅": {
+  "coords": [
+   52.53,
+   48.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "创世科技云端": {
+  "coords": [
+   85.51,
+   13.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "人造滑雪场": {
+  "coords": [
+   52.62,
+   51.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "圣心大教堂": {
+  "coords": [
+   85.83,
+   10.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "公共卫生间": {
+  "coords": [
+   72.88,
+   49.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "废弃教堂（垃圾场）": {
+  "coords": [
+   45.3,
+   43.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家地下室": {
+  "coords": [
+   53.05,
+   57.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "创世科技总部": {
+  "coords": [
+   59.29,
+   47.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆尧的办公室": {
+  "coords": [
+   51.66,
+   52.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍家客房浴室": {
+  "coords": [
+   38.71,
+   48.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心医疗部": {
+  "coords": [
+   51.87,
+   45.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心走廊": {
+  "coords": [
+   42.45,
+   48.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废弃居民楼": {
+  "coords": [
+   52.51,
+   52.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王店地下室住处": {
+  "coords": [
+   44.6,
+   47.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火锅店": {
+  "coords": [
+   61.25,
+   36.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "一楼大厅": {
+  "coords": [
+   53.72,
+   49.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区街道": {
+  "coords": [
+   52.9,
+   40.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "《小鬼说鬼话》直播间": {
+  "coords": [
+   88,
+   10.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "阅览室": {
+  "coords": [
+   30.89,
+   49.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "监控室": {
+  "coords": [
+   62.49,
+   59.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "禁闭室": {
+  "coords": [
+   36.73,
+   57.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "通风管道": {
+  "coords": [
+   75.44,
+   46.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "机械妈妈的房间": {
+  "coords": [
+   54.89,
+   37.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "汉堡炸鸡店": {
+  "coords": [
+   59.12,
+   44.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "秘密资料室": {
+  "coords": [
+   44.59,
+   55.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "一级防护墙外森林": {
+  "coords": [
+   58.4,
+   59.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "103区高墙": {
+  "coords": [
+   42.31,
+   50.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "中心广场": {
+  "coords": [
+   57.69,
+   47.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "高速公路": {
+  "coords": [
+   50.8,
+   53.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "新世纪酒店": {
+  "coords": [
+   48.53,
+   44.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "落地窗": {
+  "coords": [
+   29.61,
+   51.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "酒店外墙": {
+  "coords": [
+   53.8,
+   45.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "前台后走廊": {
+  "coords": [
+   56.01,
+   63.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下洞穴": {
+  "coords": [
+   54.69,
+   50.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "护士站": {
+  "coords": [
+   54.15,
+   33.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下医院走廊": {
+  "coords": [
+   58.22,
+   47.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "基金会演讲厅": {
+  "coords": [
+   44.47,
+   49.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "玻璃观察窗": {
+  "coords": [
+   68.23,
+   50.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下洞穴洞口": {
+  "coords": [
+   58.95,
+   41.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "红海度假村": {
+  "coords": [
+   59.98,
+   52.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "祝宁的房间": {
+  "coords": [
+   50.1,
+   46.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "永生药业": {
+  "coords": [
+   61.13,
+   50.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "酒店门口": {
+  "coords": [
+   53.42,
+   52.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王店地下室": {
+  "coords": [
+   51.27,
+   41.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "房盈办公室": {
+  "coords": [
+   43.65,
+   51.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区港口": {
+  "coords": [
+   45.96,
+   56.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "困难模式赛道": {
+  "coords": [
+   56.7,
+   52.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区穹顶": {
+  "coords": [
+   44.06,
+   50.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "卧室": {
+  "coords": [
+   42.53,
+   51.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "东区": {
+  "coords": [
+   48.06,
+   58.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公园孩童游玩区": {
+  "coords": [
+   52.65,
+   56.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "居民楼": {
+  "coords": [
+   52.15,
+   44.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区外空域": {
+  "coords": [
+   53.46,
+   54.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "纯黑房间": {
+  "coords": [
+   64.88,
+   33.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "河流": {
+  "coords": [
+   57.68,
+   48.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "便利店": {
+  "coords": [
+   46.79,
+   50.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "光明医院": {
+  "coords": [
+   57.27,
+   44.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "病房": {
+  "coords": [
+   44.01,
+   47.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "围墙": {
+  "coords": [
+   53.51,
+   53.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "洗手间": {
+  "coords": [
+   45.18,
+   50.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "广场": {
+  "coords": [
+   51.83,
+   47.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "高档小区": {
+  "coords": [
+   52.74,
+   42.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "高墙": {
+  "coords": [
+   62.61,
+   51.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "步行街": {
+  "coords": [
+   39.92,
+   59.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "电线杆": {
+  "coords": [
+   37.99,
+   50.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "小吃店": {
+  "coords": [
+   41.92,
+   30.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "三年级一班教室": {
+  "coords": [
+   71.46,
+   56.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "驾驶舱": {
+  "coords": [
+   67.18,
+   65.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "实验楼走廊": {
+  "coords": [
+   43.75,
+   36.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "第一教学楼": {
+  "coords": [
+   45.04,
+   42.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "人头密室": {
+  "coords": [
+   44.62,
+   67.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "后车座": {
+  "coords": [
+   24.53,
+   54.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "商场": {
+  "coords": [
+   14.6,
+   46.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "家具店": {
+  "coords": [
+   69.83,
+   65.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "糖水店": {
+  "coords": [
+   68.38,
+   61.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "草地": {
+  "coords": [
+   78.01,
+   40.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "三单元楼": {
+  "coords": [
+   85.79,
+   32.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "银山车站": {
+  "coords": [
+   34.87,
+   47.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "15车": {
+  "coords": [
+   68.19,
+   63.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "列车连接处": {
+  "coords": [
+   42.39,
+   49.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "罗马城22栋13楼": {
+  "coords": [
+   42.39,
+   52.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "南麟车站": {
+  "coords": [
+   49.51,
+   29.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "14车车顶": {
+  "coords": [
+   26.23,
+   49.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "归乡号1车（车头）": {
+  "coords": [
+   29.26,
+   57.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "归乡号车尾": {
+  "coords": [
+   52.11,
+   60.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "主卧": {
+  "coords": [
+   50.69,
+   47.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北调补给处": {
+  "coords": [
+   67.84,
+   58.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "补给站帐篷": {
+  "coords": [
+   49.28,
+   41.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "停尸房": {
+  "coords": [
+   49.51,
+   53.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "停车场": {
+  "coords": [
+   26.25,
+   49.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "黑色灯塔": {
+  "coords": [
+   48.49,
+   6.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "防护墙": {
+  "coords": [
+   76.41,
+   46.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "基站": {
+  "coords": [
+   62.42,
+   31.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "复苏会据点": {
+  "coords": [
+   64.06,
+   43.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "小村庄": {
+  "coords": [
+   49.71,
+   74.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "农家乐": {
+  "coords": [
+   58.33,
+   47.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "竹林": {
+  "coords": [
+   33.1,
+   61.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "老李养殖基地": {
+  "coords": [
+   67.61,
+   47.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "飞鱼线": {
+  "coords": [
+   53.75,
+   45.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "飞鱼线补给站": {
+  "coords": [
+   71.43,
+   68.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "模型屋房间": {
+  "coords": [
+   51.15,
+   54.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "模型屋走廊": {
+  "coords": [
+   43.22,
+   44.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "模型屋墙头": {
+  "coords": [
+   59.86,
+   46.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "罗马城22栋13楼楼道": {
+  "coords": [
+   51.28,
+   40.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "痘坑男的房间": {
+  "coords": [
+   64.04,
+   48.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "痘坑男的飞船": {
+  "coords": [
+   51.38,
+   40.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "痘坑男头颅内": {
+  "coords": [
+   66.69,
+   48.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "树桩": {
+  "coords": [
+   30.38,
+   47.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废弃化工厂": {
+  "coords": [
+   55.79,
+   51.36
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙辐射区废墟": {
+  "coords": [
+   47.64,
+   53.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "乌托邦裂缝": {
+  "coords": [
+   55.51,
+   57.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "乌托邦地下尸骸层": {
+  "coords": [
+   24.8,
+   52.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "宋知章的办公室": {
+  "coords": [
+   42.72,
+   49.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "姥鲨": {
+  "coords": [
+   63.93,
+   61.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "人工刻痕地面": {
+  "coords": [
+   55.04,
+   43.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "南墙外": {
+  "coords": [
+   69.26,
+   60.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "会客厅": {
+  "coords": [
+   48.78,
+   51.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心培训基地": {
+  "coords": [
+   62.86,
+   47.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "山洞出口": {
+  "coords": [
+   45.68,
+   30.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "死亡冰柱": {
+  "coords": [
+   69.99,
+   69.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "北地临时避难所": {
+  "coords": [
+   50.02,
+   2.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "珊瑚林": {
+  "coords": [
+   75.58,
+   45.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "极夜北地": {
+  "coords": [
+   56.99,
+   4.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "指挥部": {
+  "coords": [
+   53.83,
+   49.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙F-03出口": {
+  "coords": [
+   53.44,
+   55.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "烂尾楼水坑": {
+  "coords": [
+   39.84,
+   55.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "发布会宴会厅": {
+  "coords": [
+   59.34,
+   52.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "破旧出租屋": {
+  "coords": [
+   54.0,
+   50.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "沙尘暴区": {
+  "coords": [
+   51.04,
+   41.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "清洁中心49层大厅": {
+  "coords": [
+   49.14,
+   42.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "怪奇海洋馆": {
+  "coords": [
+   31.71,
+   47.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "机械水母馆后台": {
+  "coords": [
+   71.29,
+   53.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "玻璃云梯": {
+  "coords": [
+   47.25,
+   45.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "司机室": {
+  "coords": [
+   45.56,
+   62.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "B面观察室": {
+  "coords": [
+   49.79,
+   53.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "研究室": {
+  "coords": [
+   49.82,
+   42.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "120层审讯室": {
+  "coords": [
+   45.36,
+   56.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "医疗部家属等待区": {
+  "coords": [
+   47.72,
+   47.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "红色电话亭": {
+  "coords": [
+   50.69,
+   55.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "坟贴爱好者论坛": {
+  "coords": [
+   88,
+   11.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "35号楼": {
+  "coords": [
+   26.65,
+   57.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "空中走廊": {
+  "coords": [
+   40.41,
+   52.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "小白兔口腔": {
+  "coords": [
+   62.99,
+   25.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "员工休息室": {
+  "coords": [
+   60.22,
+   55.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "女洗手间": {
+  "coords": [
+   43.81,
+   69.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "其他诊室": {
+  "coords": [
+   34.09,
+   43.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "五楼回廊": {
+  "coords": [
+   62.49,
+   64.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "高自剑家": {
+  "coords": [
+   65.08,
+   61.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "清洁中心技术部门": {
+  "coords": [
+   38.96,
+   55.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全通道楼梯": {
+  "coords": [
+   47.31,
+   43.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "某地下实验室": {
+  "coords": [
+   53.8,
+   46.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心49层": {
+  "coords": [
+   44.65,
+   47.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "水井": {
+  "coords": [
+   56.83,
+   44.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "自动医药贩卖机": {
+  "coords": [
+   51.86,
+   56.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "A面观察室自助食堂": {
+  "coords": [
+   60.46,
+   48.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "神像民宅": {
+  "coords": [
+   57.53,
+   42.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "荒村主干道": {
+  "coords": [
+   52.4,
+   59.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "有神像的房屋": {
+  "coords": [
+   29.81,
+   50.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "村口老槐树": {
+  "coords": [
+   30.8,
+   41.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "后院木屋监控室": {
+  "coords": [
+   63.5,
+   32.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "菜埔": {
+  "coords": [
+   40.11,
+   57.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "两户相连的隔墙": {
+  "coords": [
+   28.14,
+   42.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "后院土墙与屋顶": {
+  "coords": [
+   30.31,
+   48.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "吴老头宅": {
+  "coords": [
+   68.25,
+   55.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "荒村村口": {
+  "coords": [
+   42.22,
+   54.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "103区清洁中心大门": {
+  "coords": [
+   62.2,
+   53.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区焚烧炉": {
+  "coords": [
+   50.25,
+   46.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "驻扎军封闭建筑": {
+  "coords": [
+   48.69,
+   57.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "百灵小区3栋7楼": {
+  "coords": [
+   45.57,
+   48.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "异常观察室": {
+  "coords": [
+   48.06,
+   48.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "任务中心会议室": {
+  "coords": [
+   61.78,
+   46.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "植物园式密室": {
+  "coords": [
+   60.89,
+   55.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "纯白房间": {
+  "coords": [
+   46.9,
+   47.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "私密谈话室": {
+  "coords": [
+   52.48,
+   51.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "大黄花所在井口": {
+  "coords": [
+   40.26,
+   49.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "异常事件小组办公区": {
+  "coords": [
+   54.56,
+   44.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心清理部": {
+  "coords": [
+   47.64,
+   51.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "居民楼楼道": {
+  "coords": [
+   55.98,
+   51.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "网红火锅店": {
+  "coords": [
+   27.24,
+   45.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "空中货运高速带": {
+  "coords": [
+   40.2,
+   48.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火锅店门口": {
+  "coords": [
+   55.61,
+   61.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "今天又想离职小组": {
+  "coords": [
+   85.71,
+   14.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "恒生机械公司大厅": {
+  "coords": [
+   55.06,
+   50.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公司园区宣传栏": {
+  "coords": [
+   46.16,
+   53.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "恒生机械公司食堂": {
+  "coords": [
+   51.13,
+   48.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "员工传送带": {
+  "coords": [
+   37.55,
+   49.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "纸箱工位": {
+  "coords": [
+   61.74,
+   50.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "祝宁工位": {
+  "coords": [
+   54.24,
+   58.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王": {
+  "coords": [
+   45.59,
+   48.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火锅店所在街道": {
+  "coords": [
+   43.25,
+   47.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "公益走廊": {
+  "coords": [
+   45.06,
+   46.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "制造间": {
+  "coords": [
+   41.65,
+   51.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "入职办公室": {
+  "coords": [
+   47.85,
+   46.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公司医疗中心病房": {
+  "coords": [
+   51.49,
+   45.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "货梯": {
+  "coords": [
+   52.05,
+   43.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "无法离开的公司": {
+  "coords": [
+   43.67,
+   51.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "慈善走廊": {
+  "coords": [
+   41.35,
+   47.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "冷冻仓储室": {
+  "coords": [
+   55.78,
+   45.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "电梯间": {
+  "coords": [
+   51.14,
+   44.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "血池": {
+  "coords": [
+   55.62,
+   47.36
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区垃圾处理公司": {
+  "coords": [
+   41.04,
+   49.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "恒生机械园外": {
+  "coords": [
+   42.84,
+   51.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "恒生机械园废墟": {
+  "coords": [
+   46.42,
+   48.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区清洁中心技术部门": {
+  "coords": [
+   50.36,
+   41.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "创世科技": {
+  "coords": [
+   55.7,
+   43.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "铁皮屋物资点": {
+  "coords": [
+   55.31,
+   40.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "好再来火锅店大堂": {
+  "coords": [
+   55.05,
+   63.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "收银台": {
+  "coords": [
+   34.01,
+   63.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "火锅店后厨": {
+  "coords": [
+   49.82,
+   54.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "火锅店后门": {
+  "coords": [
+   39.66,
+   33.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "后厨走廊": {
+  "coords": [
+   29.1,
+   42.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "祝宁旧居": {
+  "coords": [
+   49.02,
+   57.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑色牙医馆": {
+  "coords": [
+   66.66,
+   47.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "103区高级住宅": {
+  "coords": [
+   53.06,
+   57.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "红色超跑": {
+  "coords": [
+   55.47,
+   41.05
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "谢家": {
+  "coords": [
+   48.49,
+   47.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "民间医院": {
+  "coords": [
+   48.53,
+   44.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "徐萌的车": {
+  "coords": [
+   55.92,
+   53.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍文溪家": {
+  "coords": [
+   46.5,
+   46.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "刘年年本宅地下室": {
+  "coords": [
+   58.81,
+   43.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "意识海洋": {
+  "coords": [
+   86.32,
+   13.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "云端防线沙滩": {
+  "coords": [
+   83.74,
+   14.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "海滩": {
+  "coords": [
+   88,
+   15.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "海滨小镇": {
+  "coords": [
+   43.15,
+   48.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "环岛公路": {
+  "coords": [
+   61.14,
+   30.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "潜水用品小屋": {
+  "coords": [
+   52.85,
+   55.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "浮沙岛街道": {
+  "coords": [
+   59.35,
+   43.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "商店屋檐": {
+  "coords": [
+   71.3,
+   56.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "鲍瑞铭的意识体云端": {
+  "coords": [
+   87.05,
+   17.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "女员工宿舍": {
+  "coords": [
+   43.21,
+   50.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "清洁房": {
+  "coords": [
+   47.35,
+   45.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "男员工宿舍": {
+  "coords": [
+   62.22,
+   38.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下室楼梯": {
+  "coords": [
+   50.85,
+   60.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "水果店": {
+  "coords": [
+   44.32,
+   46.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "水果店二楼阁楼": {
+  "coords": [
+   58.53,
+   59.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "水果店屋顶": {
+  "coords": [
+   60.62,
+   37.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "教堂": {
+  "coords": [
+   54.4,
+   58.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "创世科技公司总部地下十一层": {
+  "coords": [
+   43.13,
+   51.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "浴缸": {
+  "coords": [
+   54.17,
+   42.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍家浴室": {
+  "coords": [
+   49.5,
+   53.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "浮沙岛外海": {
+  "coords": [
+   55.95,
+   47.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "陆家浴室": {
+  "coords": [
+   52.85,
+   49.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "创世科技总部地下机房": {
+  "coords": [
+   52.86,
+   45.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "鲍瑞铭的主机": {
+  "coords": [
+   46.53,
+   49.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "浮沙岛（现实）": {
+  "coords": [
+   65.53,
+   31.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "浮沙岛教堂（现实）": {
+  "coords": [
+   51.08,
+   69.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "码头": {
+  "coords": [
+   62.26,
+   43.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "救济船": {
+  "coords": [
+   35.84,
+   49.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "联邦救助站": {
+  "coords": [
+   51.51,
+   45.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "钢铁厂": {
+  "coords": [
+   44.75,
+   49.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第一军区大学": {
+  "coords": [
+   50.92,
+   44.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区旧教堂": {
+  "coords": [
+   55.85,
+   45.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍家客厅": {
+  "coords": [
+   43.84,
+   50.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "浮沙岛海滩（意识体云端）": {
+  "coords": [
+   87.71,
+   9.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "尊贵女王店客厅": {
+  "coords": [
+   40.58,
+   45.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "浮沙岛海滩": {
+  "coords": [
+   57.36,
+   55.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "意识的海洋": {
+  "coords": [
+   88.0,
+   15.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "创世科技地下室机房": {
+  "coords": [
+   58.76,
+   51.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "机械海洋馆（记忆）": {
+  "coords": [
+   60.04,
+   57.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "培养仓": {
+  "coords": [
+   31.95,
+   56.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "曹玮的家": {
+  "coords": [
+   45.02,
+   47.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废弃辐射小区": {
+  "coords": [
+   45.94,
+   45.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心异常事件小组办公室": {
+  "coords": [
+   57.54,
+   50.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心240层会客室": {
+  "coords": [
+   41.67,
+   56.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心总部大楼": {
+  "coords": [
+   38.84,
+   51.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "围墙边缘贫民窟": {
+  "coords": [
+   49.48,
+   41.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍文溪办公室（通讯中）": {
+  "coords": [
+   38.83,
+   55.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "市区安全屋": {
+  "coords": [
+   44.08,
+   48.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "意识体云端": {
+  "coords": [
+   87.96,
+   14.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "后勤部办公室": {
+  "coords": [
+   55.64,
+   53.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "研究部": {
+  "coords": [
+   51.53,
+   40.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "新西街酒吧": {
+  "coords": [
+   42.01,
+   55.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心一楼大厅": {
+  "coords": [
+   62.51,
+   54.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "300层纯白房间": {
+  "coords": [
+   44.48,
+   46.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火锅店后厨走廊": {
+  "coords": [
+   45.2,
+   56.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "陆家庄园": {
+  "coords": [
+   49.91,
+   47.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "小园家": {
+  "coords": [
+   60.01,
+   50.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "影音室": {
+  "coords": [
+   39.84,
+   45.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "衣柜": {
+  "coords": [
+   51.04,
+   45.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "厨房": {
+  "coords": [
+   57.69,
+   60.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "宿舍房间": {
+  "coords": [
+   32.9,
+   44.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "祝宁的宿舍房间": {
+  "coords": [
+   70.83,
+   48.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "黎欣的房间": {
+  "coords": [
+   45.4,
+   51.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "公共洗浴间": {
+  "coords": [
+   26.7,
+   57.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "饭厅": {
+  "coords": [
+   59.97,
+   49.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "楼梯口": {
+  "coords": [
+   55.55,
+   48.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "垃圾场外废旧房屋": {
+  "coords": [
+   53.4,
+   54.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "记忆宫殿": {
+  "coords": [
+   86.89,
+   14.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "防护墙内部": {
+  "coords": [
+   52.63,
+   66.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "公租房": {
+  "coords": [
+   45.09,
+   43.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "VIP观赏室": {
+  "coords": [
+   64.18,
+   41.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "训练场地": {
+  "coords": [
+   47.52,
+   54.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "垃圾山贫民窟": {
+  "coords": [
+   58.18,
+   45.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "荒废社区": {
+  "coords": [
+   62.0,
+   48.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "坟贴论坛": {
+  "coords": [
+   88,
+   7.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "蜂巢出租屋": {
+  "coords": [
+   51.76,
+   51.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "超市": {
+  "coords": [
+   63.63,
+   48.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "自动贩卖机": {
+  "coords": [
+   53.61,
+   49.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火种俱乐部地下室": {
+  "coords": [
+   45.0,
+   41.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "狭窄洞穴": {
+  "coords": [
+   48.7,
+   41.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "地底监狱": {
+  "coords": [
+   54.08,
+   51.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "鬼隐村": {
+  "coords": [
+   66.04,
+   54.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "庙": {
+  "coords": [
+   57.84,
+   43.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "荒村后方村落": {
+  "coords": [
+   45.42,
+   69.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "店门前雪地": {
+  "coords": [
+   41.63,
+   48.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "八层": {
+  "coords": [
+   53.63,
+   53.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍家安全屋": {
+  "coords": [
+   42.14,
+   55.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "徐萌卧室": {
+  "coords": [
+   46.94,
+   51.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地轨": {
+  "coords": [
+   47.8,
+   40.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "350层封闭办公室": {
+  "coords": [
+   62.06,
+   44.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下室29层": {
+  "coords": [
+   44.62,
+   49.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下30层": {
+  "coords": [
+   47.79,
+   46.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "监狱牢房": {
+  "coords": [
+   52.92,
+   57.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "锦绣国际大饭店": {
+  "coords": [
+   54.45,
+   58.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "宣讲会会议室": {
+  "coords": [
+   53.77,
+   55.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "会议室门外走廊": {
+  "coords": [
+   42.66,
+   58.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "电梯": {
+  "coords": [
+   42.36,
+   55.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "电梯井": {
+  "coords": [
+   54.28,
+   65.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "员工通道": {
+  "coords": [
+   66.59,
+   54.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "下水道入口荒地": {
+  "coords": [
+   47.08,
+   48.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心专车": {
+  "coords": [
+   47.12,
+   41.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "技术中心": {
+  "coords": [
+   46.27,
+   51.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "客厅窗户": {
+  "coords": [
+   54.91,
+   60.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "八楼窗户": {
+  "coords": [
+   38.23,
+   59.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "三楼": {
+  "coords": [
+   53.85,
+   56.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "二楼会议室窗": {
+  "coords": [
+   43.45,
+   51.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "卵鞘": {
+  "coords": [
+   46.1,
+   46.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "087号病房": {
+  "coords": [
+   57.96,
+   42.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "柳柳的病房": {
+  "coords": [
+   44.49,
+   44.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "三重门": {
+  "coords": [
+   54.49,
+   47.93
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "新世纪酒店对面高楼房间": {
+  "coords": [
+   52.69,
+   47.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火锅店门口台阶": {
+  "coords": [
+   47.83,
+   62.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "温柔暖房": {
+  "coords": [
+   40.35,
+   48.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "污染孢子收容部": {
+  "coords": [
+   50.64,
+   59.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "走廊尽头": {
+  "coords": [
+   51.01,
+   43.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "低温箱": {
+  "coords": [
+   38.25,
+   50.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "贫民窟窄巷": {
+  "coords": [
+   53.94,
+   51.17
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公共电话亭": {
+  "coords": [
+   48.63,
+   46.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废弃工厂": {
+  "coords": [
+   40.91,
+   57.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "风景区度假地": {
+  "coords": [
+   52.67,
+   54.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "神国安全屋": {
+  "coords": [
+   44.97,
+   52.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "门后实验室": {
+  "coords": [
+   56.65,
+   51.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "铁链与项圈": {
+  "coords": [
+   60.27,
+   56.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "棚屋": {
+  "coords": [
+   55.71,
+   56.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "199房": {
+  "coords": [
+   40.14,
+   66.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "培养皿与铁箱": {
+  "coords": [
+   49.95,
+   56.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "培养皿": {
+  "coords": [
+   41.75,
+   40.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "酒店对面房间": {
+  "coords": [
+   45.82,
+   46.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下酒吧": {
+  "coords": [
+   52.07,
+   46.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "蜂巢走廊": {
+  "coords": [
+   55.13,
+   55.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "酒店前台": {
+  "coords": [
+   40.53,
+   57.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下入口通道": {
+  "coords": [
+   53.57,
+   65.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "病房走廊": {
+  "coords": [
+   49.16,
+   44.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下医院第三诊疗室": {
+  "coords": [
+   65.07,
+   53.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "清洁中心办公室门口": {
+  "coords": [
+   55.85,
+   56.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "新世纪大酒店": {
+  "coords": [
+   53.58,
+   45.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区外壁": {
+  "coords": [
+   55.81,
+   51.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "19楼": {
+  "coords": [
+   48.66,
+   40.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心前空地": {
+  "coords": [
+   55.85,
+   51.36
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "垃圾场焚烧炉": {
+  "coords": [
+   55.13,
+   47.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "天空防御穹顶": {
+  "coords": [
+   45.19,
+   47.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下防污堡垒": {
+  "coords": [
+   47.32,
+   47.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下29层牢房": {
+  "coords": [
+   60.28,
+   50.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "通风口": {
+  "coords": [
+   52.85,
+   45.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下囚笼": {
+  "coords": [
+   53.1,
+   49.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "宣情的病房": {
+  "coords": [
+   50.17,
+   45.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "林中雪屋": {
+  "coords": [
+   47.0,
+   55.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "林中小屋": {
+  "coords": [
+   43.34,
+   56.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "淋浴间": {
+  "coords": [
+   55.91,
+   57.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "森林深处": {
+  "coords": [
+   51.74,
+   55.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "坡道": {
+  "coords": [
+   47.42,
+   53.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下实验基地": {
+  "coords": [
+   55.31,
+   58.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "滑雪道": {
+  "coords": [
+   42.77,
+   57.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "空中高速公路": {
+  "coords": [
+   40.39,
+   54.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "一号高速公路": {
+  "coords": [
+   50.52,
+   57.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "左3隧道": {
+  "coords": [
+   56.87,
+   48.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第九大道": {
+  "coords": [
+   55.82,
+   52.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废弃办公大楼": {
+  "coords": [
+   48.88,
+   39.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心医疗部住院部": {
+  "coords": [
+   50.18,
+   56.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "漆黑房间": {
+  "coords": [
+   59.55,
+   50.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "地下防空洞": {
+  "coords": [
+   50.7,
+   42.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "培育室": {
+  "coords": [
+   42.77,
+   54.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "14区实验基地": {
+  "coords": [
+   57.32,
+   51.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "垃圾处理中心": {
+  "coords": [
+   40.9,
+   48.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "中央大街": {
+  "coords": [
+   56.59,
+   53.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "市中心": {
+  "coords": [
+   40.16,
+   45.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下避难所": {
+  "coords": [
+   54.9,
+   47.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "骆珊家": {
+  "coords": [
+   56.93,
+   45.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "钢铁穹顶": {
+  "coords": [
+   48.39,
+   48.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "西区高架桥下": {
+  "coords": [
+   40.82,
+   56.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "西区第七大道": {
+  "coords": [
+   40.07,
+   55.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "宝华三街路口": {
+  "coords": [
+   48.28,
+   43.93
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "守城机械人内部": {
+  "coords": [
+   54.65,
+   51.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "污染区域地表裂缝": {
+  "coords": [
+   38.32,
+   58.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "东墙": {
+  "coords": [
+   59.3,
+   52.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "钢铁之穹": {
+  "coords": [
+   58.71,
+   44.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "红色滑滑梯": {
+  "coords": [
+   54.5,
+   53.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "三级防护墙钢铁之穹": {
+  "coords": [
+   54.87,
+   45.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "射击室": {
+  "coords": [
+   51.77,
+   42.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "模拟室": {
+  "coords": [
+   63.13,
+   46.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第一防污避难堡垒": {
+  "coords": [
+   59.82,
+   51.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "某间办公室": {
+  "coords": [
+   83.05,
+   54.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "纯白空间": {
+  "coords": [
+   73.02,
+   52.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "中央控制室": {
+  "coords": [
+   57.73,
+   52.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "神国飞艇": {
+  "coords": [
+   70.58,
+   60.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "地下暗河": {
+  "coords": [
+   38.14,
+   52.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "救助营地": {
+  "coords": [
+   50.03,
+   56.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "重症区": {
+  "coords": [
+   57.23,
+   47.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑色空间": {
+  "coords": [
+   56.54,
+   35.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "墙外岛屿": {
+  "coords": [
+   33.43,
+   57.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "防火外置楼梯": {
+  "coords": [
+   39.22,
+   44.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "通讯终端机": {
+  "coords": [
+   51.95,
+   57.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑色轿车": {
+  "coords": [
+   42.64,
+   45.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "救济站": {
+  "coords": [
+   36.68,
+   51.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "对面大楼": {
+  "coords": [
+   53.1,
+   45.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "西区卡座": {
+  "coords": [
+   49.63,
+   54.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "宋知章的房间": {
+  "coords": [
+   57.39,
+   43.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "祝宁的家": {
+  "coords": [
+   46.97,
+   49.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地道": {
+  "coords": [
+   43.44,
+   54.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "90区": {
+  "coords": [
+   55.28,
+   48.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公园长椅": {
+  "coords": [
+   50.14,
+   52.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "幸运沸腾鱼庄": {
+  "coords": [
+   53.83,
+   54.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废旧大楼": {
+  "coords": [
+   60.31,
+   47.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "墙外城市": {
+  "coords": [
+   65.33,
+   38.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "楼顶停机坪": {
+  "coords": [
+   69.03,
+   56.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "度假村别墅": {
+  "coords": [
+   55.06,
+   52.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心大楼": {
+  "coords": [
+   50.56,
+   47.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "人类幸存者基地": {
+  "coords": [
+   49.11,
+   39.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "极光岛": {
+  "coords": [
+   53.71,
+   68.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "第一区墓园": {
+  "coords": [
+   61.28,
+   50.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "刘瑜的墓碑": {
+  "coords": [
+   44.94,
+   59.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第七十四区": {
+  "coords": [
+   48.44,
+   53.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "无人区": {
+  "coords": [
+   30.87,
+   63.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "最后一道安全墙": {
+  "coords": [
+   45.57,
+   52.29
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "天空之穹": {
+  "coords": [
+   42.93,
+   49.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第二区街道": {
+  "coords": [
+   47.92,
+   59.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第二区居民区": {
+  "coords": [
+   45.91,
+   54.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家避难所": {
+  "coords": [
+   38.75,
+   46.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公共转播屏幕": {
+  "coords": [
+   54.95,
+   45.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "一级防御墙": {
+  "coords": [
+   48.23,
+   52.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "未知空间": {
+  "coords": [
+   67.7,
+   57.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "墙下": {
+  "coords": [
+   48.96,
+   56.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北部区域": {
+  "coords": [
+   56.37,
+   53.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "高墙下": {
+  "coords": [
+   53.81,
+   44.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "高墙顶部瞭望岗": {
+  "coords": [
+   56.25,
+   41.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "公交车站": {
+  "coords": [
+   54.13,
+   65.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "牛肉拉面馆": {
+  "coords": [
+   61.52,
+   67.04
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "理发店": {
+  "coords": [
+   68.32,
+   58.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "一痘清美容院": {
+  "coords": [
+   43.76,
+   58.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "山脚隧道": {
+  "coords": [
+   44.51,
+   26.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "山": {
+  "coords": [
+   31.29,
+   47.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "操场": {
+  "coords": [
+   30.73,
+   62.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "楼梯间": {
+  "coords": [
+   33.44,
+   44.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "药品储存室": {
+  "coords": [
+   62.54,
+   61.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废旧黑鸟第一中学": {
+  "coords": [
+   65.33,
+   48.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "教学楼楼顶": {
+  "coords": [
+   61.35,
+   52.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "教学楼走廊与楼梯": {
+  "coords": [
+   72.6,
+   64.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "黑鸟市街道": {
+  "coords": [
+   21.48,
+   58.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "小吃店后厨": {
+  "coords": [
+   44.54,
+   37.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "男厕所": {
+  "coords": [
+   52.32,
+   54.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "小树林": {
+  "coords": [
+   56.11,
+   39.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废弃面馆": {
+  "coords": [
+   82.0,
+   56.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "办公组大办公室": {
+  "coords": [
+   33.63,
+   58.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "驾驶座": {
+  "coords": [
+   27.41,
+   68.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "副驾驶座": {
+  "coords": [
+   47.45,
+   36.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "储物间": {
+  "coords": [
+   69.66,
+   61.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "教导处": {
+  "coords": [
+   14.31,
+   49.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "小区楼下": {
+  "coords": [
+   50.75,
+   53.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全围墙": {
+  "coords": [
+   47.15,
+   55.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "学校对面街道": {
+  "coords": [
+   44.31,
+   67.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "祝遥的居所": {
+  "coords": [
+   42.39,
+   51.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "射击训练室": {
+  "coords": [
+   62.97,
+   36.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "第一中学教学楼": {
+  "coords": [
+   47.35,
+   74.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "佛舍": {
+  "coords": [
+   52.41,
+   57.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "许愿池": {
+  "coords": [
+   61.97,
+   47.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "消杀通道": {
+  "coords": [
+   40.93,
+   36.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "避难所入口": {
+  "coords": [
+   55.45,
+   72.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "清洁中心办公室": {
+  "coords": [
+   43.36,
+   47.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "污染区": {
+  "coords": [
+   29.84,
+   41.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "山坡": {
+  "coords": [
+   44.01,
+   56.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "飞车后备箱": {
+  "coords": [
+   41.3,
+   44.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "儿童乐园": {
+  "coords": [
+   81.16,
+   36.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "草丛": {
+  "coords": [
+   57.78,
+   48.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "黄雅若的卧室": {
+  "coords": [
+   44.39,
+   58.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "路边车辆": {
+  "coords": [
+   55.34,
+   39.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "封闭小区": {
+  "coords": [
+   41.98,
+   48.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "养老院": {
+  "coords": [
+   84.84,
+   69.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "沼泽": {
+  "coords": [
+   66.17,
+   70.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "街道拐角": {
+  "coords": [
+   59.33,
+   48.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "心理医生诊室": {
+  "coords": [
+   42.85,
+   48.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "电视塔": {
+  "coords": [
+   79.97,
+   71.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "大路路口": {
+  "coords": [
+   39.81,
+   81.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "网吧": {
+  "coords": [
+   79.63,
+   67.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "三十六层住宅楼": {
+  "coords": [
+   41.16,
+   59.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "圣医生家": {
+  "coords": [
+   61.14,
+   38.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "黄雅若的原房子": {
+  "coords": [
+   57.72,
+   32.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "绿门": {
+  "coords": [
+   45.05,
+   41.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "黄雅若的新家": {
+  "coords": [
+   56.79,
+   43.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "曲城": {
+  "coords": [
+   41.01,
+   70.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "松山寺地下避难所": {
+  "coords": [
+   56.94,
+   53.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "松山寺后院": {
+  "coords": [
+   41.85,
+   48.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "霉菌之城边缘街道": {
+  "coords": [
+   78.47,
+   52.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "沼泽田": {
+  "coords": [
+   23.43,
+   41.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "第三信号塔": {
+  "coords": [
+   59.69,
+   45.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "希城": {
+  "coords": [
+   47.81,
+   34.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "售票厅": {
+  "coords": [
+   37.52,
+   56.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "安检口": {
+  "coords": [
+   69.33,
+   58.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废弃铁轨": {
+  "coords": [
+   60.63,
+   52.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "检票大厅": {
+  "coords": [
+   44.4,
+   47.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "12B检票口": {
+  "coords": [
+   40.84,
+   41.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "19车": {
+  "coords": [
+   49.5,
+   70.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "列车洗手间": {
+  "coords": [
+   42.64,
+   27.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "下水道深处": {
+  "coords": [
+   51.61,
+   51.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "联邦下水道管网": {
+  "coords": [
+   48.82,
+   48.24
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "丁超杰的家": {
+  "coords": [
+   57.67,
+   53.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "温馨小家": {
+  "coords": [
+   41.85,
+   53.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "12车前车门": {
+  "coords": [
+   45.44,
+   44.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "22车": {
+  "coords": [
+   45.9,
+   66.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "山间隧道": {
+  "coords": [
+   53.69,
+   26.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "8车": {
+  "coords": [
+   57.25,
+   49.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "6车": {
+  "coords": [
+   36.27,
+   45.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "车厢走廊": {
+  "coords": [
+   71.91,
+   63.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "虎山车站": {
+  "coords": [
+   47.65,
+   57.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "齐河车站": {
+  "coords": [
+   64.06,
+   33.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "陆家老宅": {
+  "coords": [
+   47.11,
+   57.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆鸢房间": {
+  "coords": [
+   60.65,
+   50.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "3车": {
+  "coords": [
+   74.42,
+   51.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "2车": {
+  "coords": [
+   31.45,
+   42.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "1车": {
+  "coords": [
+   42.17,
+   30.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "车尾22车": {
+  "coords": [
+   30.25,
+   45.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "归乡号车顶": {
+  "coords": [
+   13.9,
+   68.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "归乡号5车": {
+  "coords": [
+   45.53,
+   22.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "大杨树治安局分局": {
+  "coords": [
+   43.77,
+   49.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "拘留室": {
+  "coords": [
+   42.88,
+   46.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "绿门内的住宅": {
+  "coords": [
+   42.69,
+   58.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "昌赢大桥": {
+  "coords": [
+   41.12,
+   41.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "多罗站站台": {
+  "coords": [
+   31.32,
+   58.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "补给站站岗处": {
+  "coords": [
+   35.36,
+   69.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "避难所门口": {
+  "coords": [
+   30.0,
+   50.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "田露家": {
+  "coords": [
+   45.95,
+   42.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "私人停尸机构": {
+  "coords": [
+   43.79,
+   56.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "木溪山森林公园": {
+  "coords": [
+   77.75,
+   64.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "盘山公路": {
+  "coords": [
+   67.43,
+   47.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "缆车": {
+  "coords": [
+   47.8,
+   45.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "灯塔": {
+  "coords": [
+   58.72,
+   64.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "隔离区": {
+  "coords": [
+   16.28,
+   52.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "稍岗": {
+  "coords": [
+   61.43,
+   67.7
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "墙内空间": {
+  "coords": [
+   45.09,
+   38.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "车库": {
+  "coords": [
+   46.33,
+   42.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "饮水区": {
+  "coords": [
+   31.75,
+   47.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "医院走廊（幻觉）": {
+  "coords": [
+   40.61,
+   55.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "黑色高塔（幻觉）": {
+  "coords": [
+   74.06,
+   56.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "易拉罐污染区": {
+  "coords": [
+   82.57,
+   63.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "北方海岛": {
+  "coords": [
+   74.98,
+   57.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "试炼场": {
+  "coords": [
+   46.34,
+   58.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "精神病院": {
+  "coords": [
+   50.0,
+   42.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "白色房间": {
+  "coords": [
+   57.39,
+   49.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "车边休息处": {
+  "coords": [
+   46.88,
+   57.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "工厂": {
+  "coords": [
+   50.7,
+   63.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "北墙F—03口": {
+  "coords": [
+   56.35,
+   46.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "补给站": {
+  "coords": [
+   49.88,
+   56.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "陆家训练室": {
+  "coords": [
+   40.34,
+   50.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "南山": {
+  "coords": [
+   44.41,
+   43.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙C—08口": {
+  "coords": [
+   47.58,
+   54.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "荒野外小路": {
+  "coords": [
+   22.21,
+   59.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "治安局拘留所": {
+  "coords": [
+   60.35,
+   48.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "石墙": {
+  "coords": [
+   62.19,
+   34.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "偏僻山头": {
+  "coords": [
+   63.54,
+   53.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "帐篷空地": {
+  "coords": [
+   58.55,
+   31.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "鸭舍": {
+  "coords": [
+   85.3,
+   64.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "后厨": {
+  "coords": [
+   41.7,
+   81.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "小院": {
+  "coords": [
+   45.32,
+   32.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "陈启航家": {
+  "coords": [
+   51.02,
+   55.15
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "恒生公司": {
+  "coords": [
+   40.36,
+   53.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "水底洞穴": {
+  "coords": [
+   59.01,
+   45.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "浅水洼": {
+  "coords": [
+   33.26,
+   53.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "丰渔村营地": {
+  "coords": [
+   66.9,
+   78.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "小帐篷": {
+  "coords": [
+   35.63,
+   24.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "绘画聚会场所": {
+  "coords": [
+   59.96,
+   44.3
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "私密包厢": {
+  "coords": [
+   45.36,
+   44.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "廖湘霖老家阁楼": {
+  "coords": [
+   42.86,
+   57.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "主卧浴室": {
+  "coords": [
+   39.54,
+   46.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "玄关": {
+  "coords": [
+   47.96,
+   37.3
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "第三个基站": {
+  "coords": [
+   35.85,
+   63.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "荒地": {
+  "coords": [
+   59.61,
+   48.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "铁塔": {
+  "coords": [
+   73.12,
+   52.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "补给站食堂": {
+  "coords": [
+   56.59,
+   72.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "渡鸦队营地": {
+  "coords": [
+   35.44,
+   68.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "北墙外密林": {
+  "coords": [
+   78.06,
+   54.18
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "山洞": {
+  "coords": [
+   69.3,
+   58.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "飞鱼线补给站食堂": {
+  "coords": [
+   62.5,
+   60.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "猎豹队群聊": {
+  "coords": [
+   88,
+   11.11
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "飞鱼线大型墓葬群": {
+  "coords": [
+   40.36,
+   26.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "103区康复医院": {
+  "coords": [
+   40.62,
+   51.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "荒野": {
+  "coords": [
+   53.74,
+   65.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "联邦第三十号研究所": {
+  "coords": [
+   46.07,
+   52.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地下二十七楼实验室": {
+  "coords": [
+   59.73,
+   48.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "焦土废墟": {
+  "coords": [
+   26.19,
+   48.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "焦土废墟上空": {
+  "coords": [
+   66.77,
+   56.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "模型屋": {
+  "coords": [
+   57.45,
+   39.58
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "模型屋卫生间": {
+  "coords": [
+   63.78,
+   63.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "模型屋冰箱": {
+  "coords": [
+   69.72,
+   42.09
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "模型屋客厅": {
+  "coords": [
+   51.04,
+   60.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "蛆虫养殖基地": {
+  "coords": [
+   32.44,
+   62.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "对面大楼天台": {
+  "coords": [
+   47.15,
+   41.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "空中世界": {
+  "coords": [
+   42.14,
+   53.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "旧世界": {
+  "coords": [
+   27.73,
+   35.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "天花板吊灯": {
+  "coords": [
+   51.67,
+   61.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "飞机的坟墓": {
+  "coords": [
+   33.95,
+   62.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "痘坑男耳道": {
+  "coords": [
+   42.42,
+   61.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "出口门": {
+  "coords": [
+   55.8,
+   59.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "空中门外的森林与湖泊": {
+  "coords": [
+   50.77,
+   39.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "飞鱼线北调补给站": {
+  "coords": [
+   46.37,
+   27.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "水滴群上空": {
+  "coords": [
+   23.73,
+   60.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "庄临办公室": {
+  "coords": [
+   41.94,
+   42.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍文溪住宅": {
+  "coords": [
+   42.55,
+   51.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "血池湖": {
+  "coords": [
+   27.41,
+   41.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "朝圣者的飞车": {
+  "coords": [
+   53.05,
+   44.89
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "朝圣者尸坑": {
+  "coords": [
+   38.16,
+   59.54
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "苹果人栖息的湖": {
+  "coords": [
+   26.14,
+   61.72
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "月光下的湖": {
+  "coords": [
+   51.31,
+   62.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "飘着苹果人尸体的河": {
+  "coords": [
+   43.6,
+   45.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "城墙高处": {
+  "coords": [
+   28.99,
+   64.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "103区异常事件调查小组办公室": {
+  "coords": [
+   52.6,
+   51.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "19区": {
+  "coords": [
+   52.22,
+   41.43
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙辐射区": {
+  "coords": [
+   52.13,
+   46.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "化工厂": {
+  "coords": [
+   56.35,
+   49.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙废墟工厂": {
+  "coords": [
+   60.49,
+   49.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "出墙口": {
+  "coords": [
+   69.19,
+   67.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "化工厂地下房间": {
+  "coords": [
+   56.71,
+   50.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "霍家主宅": {
+  "coords": [
+   44.81,
+   49.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "天空": {
+  "coords": [
+   75.47,
+   61.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "精英女子学院考场": {
+  "coords": [
+   46.57,
+   46.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "乌托邦外围河边": {
+  "coords": [
+   61.01,
+   63.62
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "乌托邦外围森林边缘": {
+  "coords": [
+   35.82,
+   43.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "乌托邦教堂": {
+  "coords": [
+   26.15,
+   57.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "乌托邦市中心": {
+  "coords": [
+   42.19,
+   55.48
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "乌托邦马路": {
+  "coords": [
+   44.12,
+   42.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "姥鲨口腔": {
+  "coords": [
+   35.9,
+   51.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "乌托邦小镇": {
+  "coords": [
+   44.41,
+   39.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "大地裂缝": {
+  "coords": [
+   25.02,
+   63.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "鱼鳃排出通道": {
+  "coords": [
+   46.81,
+   74.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "废弃化工厂外街道": {
+  "coords": [
+   45.32,
+   48.65
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆鸢的房间": {
+  "coords": [
+   57.93,
+   50.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家长走廊": {
+  "coords": [
+   43.3,
+   49.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "父亲卧室大门": {
+  "coords": [
+   48.68,
+   54.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "装甲车残骸": {
+  "coords": [
+   44.55,
+   45.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "白骨墙": {
+  "coords": [
+   68.37,
+   34.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "海底": {
+  "coords": [
+   57.53,
+   47.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "海底气泡": {
+  "coords": [
+   21.92,
+   42.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "白骨洞穴": {
+  "coords": [
+   48.86,
+   34.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "白骨骨道": {
+  "coords": [
+   46.23,
+   41.46
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "竖井": {
+  "coords": [
+   29.3,
+   46.38
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "骨架通道": {
+  "coords": [
+   46.77,
+   55.94
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "骨架": {
+  "coords": [
+   76.55,
+   52.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "临时大棚": {
+  "coords": [
+   54.51,
+   41.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "末日大都市": {
+  "coords": [
+   43.84,
+   50.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "沙漠污染区": {
+  "coords": [
+   24.69,
+   36.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "红房子孤儿院": {
+  "coords": [
+   54.55,
+   61.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "骨髓": {
+  "coords": [
+   34.31,
+   53.52
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "巨人子宫": {
+  "coords": [
+   39.81,
+   51.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "玻璃实验室": {
+  "coords": [
+   48.12,
+   57.88
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "秘密基地实验室": {
+  "coords": [
+   28.22,
+   69.67
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "污染物囚室": {
+  "coords": [
+   51.32,
+   58.6
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "学校操场": {
+  "coords": [
+   43.38,
+   53.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "巨人骨髓": {
+  "coords": [
+   33.08,
+   74.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "巨人骨髓坡地": {
+  "coords": [
+   63.35,
+   46.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "灰烬地": {
+  "coords": [
+   31.95,
+   47.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "陆家宅邸": {
+  "coords": [
+   53.37,
+   52.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家卧室": {
+  "coords": [
+   38.95,
+   67.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "医疗床": {
+  "coords": [
+   62.3,
+   65.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "神国防御屏障": {
+  "coords": [
+   59.33,
+   50.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "巨人血管通道": {
+  "coords": [
+   36.71,
+   77.1
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "雪原": {
+  "coords": [
+   49.06,
+   42.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "人头象背上": {
+  "coords": [
+   43.17,
+   51.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "调查员冻尸地": {
+  "coords": [
+   26.35,
+   67.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "冰雪墓地": {
+  "coords": [
+   58.03,
+   45.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "避难所武器窖": {
+  "coords": [
+   57.45,
+   59.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "浮标": {
+  "coords": [
+   39.12,
+   49.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "103区清洁中心技术支持部": {
+  "coords": [
+   48.59,
+   54.22
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "清洁中心主楼": {
+  "coords": [
+   51.36,
+   55.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "作战部部长办公室": {
+  "coords": [
+   43.75,
+   43.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "冰花丛": {
+  "coords": [
+   32.17,
+   35.36
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "尸体山谷": {
+  "coords": [
+   58.47,
+   58.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "纯白雪原": {
+  "coords": [
+   43.72,
+   3.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "冰树": {
+  "coords": [
+   53.02,
+   6.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "霍家本宅": {
+  "coords": [
+   49.69,
+   47.82
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "宣情的办公室": {
+  "coords": [
+   59.85,
+   47.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "世界之树": {
+  "coords": [
+   44.08,
+   9.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "纯白海洋": {
+  "coords": [
+   53.27,
+   7.96
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "普罗米修斯主机室": {
+  "coords": [
+   45.62,
+   13.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "神国陆家卧室": {
+  "coords": [
+   51.25,
+   46.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "霍文溪卧室外的院落": {
+  "coords": [
+   45.55,
+   50.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "二层公路": {
+  "coords": [
+   36.76,
+   50.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "江河": {
+  "coords": [
+   39.52,
+   44.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "囚禁陆鸢的牢笼": {
+  "coords": [
+   63.53,
+   47.41
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废旧工厂": {
+  "coords": [
+   51.17,
+   52.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第四区港口": {
+  "coords": [
+   52.02,
+   47.34
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "永生药业实验基地": {
+  "coords": [
+   67.21,
+   36.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "北墙F03口": {
+  "coords": [
+   56.64,
+   41.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "朝圣者组织老巢": {
+  "coords": [
+   55.25,
+   48.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "祝宁真神会": {
+  "coords": [
+   54.62,
+   49.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "世界尽头的岛屿": {
+  "coords": [
+   50.11,
+   42.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "钟楼": {
+  "coords": [
+   75.8,
+   72.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "废弃仓库": {
+  "coords": [
+   56.22,
+   46.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙墙下": {
+  "coords": [
+   58.12,
+   47.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "污染孢子供应管道": {
+  "coords": [
+   69.23,
+   80.0
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "陆家走廊": {
+  "coords": [
+   45.01,
+   46.49
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "飞鸟浮雕大门": {
+  "coords": [
+   50.1,
+   43.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "家主的房间": {
+  "coords": [
+   44.12,
+   47.3
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "陆家尖塔": {
+  "coords": [
+   52.7,
+   49.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第三区": {
+  "coords": [
+   42.02,
+   50.69
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "阿尔法系列实验室": {
+  "coords": [
+   38.66,
+   48.2
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第五区": {
+  "coords": [
+   57.22,
+   57.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "天空穹顶电子屏幕": {
+  "coords": [
+   47.35,
+   51.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "联邦7号行刑场": {
+  "coords": [
+   56.45,
+   50.35
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "第一军区办公室": {
+  "coords": [
+   58.73,
+   46.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "污染稳定区": {
+  "coords": [
+   7.9,
+   48.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "北墙外风沙区": {
+  "coords": [
+   31.14,
+   45.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "医疗飞车": {
+  "coords": [
+   68.32,
+   35.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "军用补给处": {
+  "coords": [
+   61.75,
+   53.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "守城机甲": {
+  "coords": [
+   56.05,
+   50.8
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "培养实验室": {
+  "coords": [
+   53.69,
+   52.99
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "异能提取室": {
+  "coords": [
+   43.76,
+   49.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "51号基地避难所A1区": {
+  "coords": [
+   60.53,
+   47.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "避难所检疫处": {
+  "coords": [
+   52.44,
+   47.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "废弃管道": {
+  "coords": [
+   47.14,
+   46.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "103区滑雪场": {
+  "coords": [
+   37.43,
+   47.14
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "归乡号列车站点": {
+  "coords": [
+   41.73,
+   29.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "水滴群": {
+  "coords": [
+   58.82,
+   38.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "霍文溪房间": {
+  "coords": [
+   55.81,
+   57.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "极北之地边缘雪原": {
+  "coords": [
+   45.9,
+   5.39
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "地底空洞": {
+  "coords": [
+   54.25,
+   30.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "市中心酒店宴会厅": {
+  "coords": [
+   46.41,
+   43.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "讲台": {
+  "coords": [
+   52.19,
+   46.61
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "归乡号列车19车": {
+  "coords": [
+   44.2,
+   48.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "归乡号列车20车": {
+  "coords": [
+   21.72,
+   37.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "归乡号列车21车": {
+  "coords": [
+   41.03,
+   59.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "旧世界城市": {
+  "coords": [
+   13.83,
+   32.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "白澄的墓碑": {
+  "coords": [
+   67.4,
+   54.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "火种俱乐部赛场": {
+  "coords": [
+   41.31,
+   49.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "老医院": {
+  "coords": [
+   54.27,
+   57.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "临终医院": {
+  "coords": [
+   53.53,
+   52.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "北墙第一战场": {
+  "coords": [
+   31.85,
+   66.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "反抗军办公室": {
+  "coords": [
+   39.95,
+   44.25
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "极北之地边缘": {
+  "coords": [
+   51.89,
+   5.26
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "墙内避难所": {
+  "coords": [
+   45.77,
+   48.12
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "人类最高监狱": {
+  "coords": [
+   43.48,
+   54.87
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "12区": {
+  "coords": [
+   59.75,
+   47.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "新联邦演讲现场": {
+  "coords": [
+   39.05,
+   49.19
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "雪屋": {
+  "coords": [
+   78.07,
+   51.37
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "北地冰雕群": {
+  "coords": [
+   43.09,
+   9.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "north"
+ },
+ "103区墓园": {
+  "coords": [
+   59.92,
+   47.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "猎豹之家墓地": {
+  "coords": [
+   40.82,
+   51.86
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "柠檬树": {
+  "coords": [
+   57.11,
+   46.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "地轨站": {
+  "coords": [
+   41.48,
+   48.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "黑色任务车": {
+  "coords": [
+   43.83,
+   45.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "深海馆": {
+  "coords": [
+   70.99,
+   58.3
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "海洋馆大厅": {
+  "coords": [
+   54.62,
+   50.78
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "人鱼馆水底": {
+  "coords": [
+   33.41,
+   58.08
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "展览玻璃墙": {
+  "coords": [
+   73.16,
+   45.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "人鱼馆展览缸": {
+  "coords": [
+   41.68,
+   49.59
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "观赏区": {
+  "coords": [
+   38.27,
+   47.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "百合花园站": {
+  "coords": [
+   70.25,
+   38.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "太阳幼儿园站": {
+  "coords": [
+   66.99,
+   49.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "绿河沟站": {
+  "coords": [
+   68.43,
+   43.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "奇异博物馆站": {
+  "coords": [
+   52.63,
+   72.73
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "机械大学站": {
+  "coords": [
+   16.21,
+   62.28
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "机械海洋馆安全区": {
+  "coords": [
+   46.08,
+   52.06
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "水池": {
+  "coords": [
+   35.44,
+   37.53
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "机械水母馆水池": {
+  "coords": [
+   64.93,
+   45.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "展览池": {
+  "coords": [
+   26.56,
+   48.98
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "机械海洋馆大厅": {
+  "coords": [
+   55.71,
+   49.4
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "观测走廊": {
+  "coords": [
+   38.29,
+   62.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "机械防护罩": {
+  "coords": [
+   51.84,
+   66.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "安检车": {
+  "coords": [
+   38.98,
+   47.23
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "检查区": {
+  "coords": [
+   28.31,
+   42.27
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "三号车厢": {
+  "coords": [
+   20.23,
+   64.75
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "清洁中心55层": {
+  "coords": [
+   57.38,
+   53.45
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "火种射击俱乐部": {
+  "coords": [
+   42.45,
+   43.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "审讯观察间": {
+  "coords": [
+   52.27,
+   48.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "住院部": {
+  "coords": [
+   45.51,
+   54.76
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全区": {
+  "coords": [
+   45.42,
+   50.95
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "创世科技公司": {
+  "coords": [
+   59.25,
+   42.5
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "坟帖": {
+  "coords": [
+   88,
+   12.71
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "cloud"
+ },
+ "地下走廊": {
+  "coords": [
+   41.29,
+   48.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "市人民医院": {
+  "coords": [
+   84.59,
+   47.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "训练营": {
+  "coords": [
+   52.16,
+   27.21
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "一号线铁轨": {
+  "coords": [
+   76.1,
+   49.16
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "观赏台": {
+  "coords": [
+   52.31,
+   56.51
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "贫民窟牙医馆": {
+  "coords": [
+   58.25,
+   42.83
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "牙医的住处": {
+  "coords": [
+   34.18,
+   47.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "35层": {
+  "coords": [
+   60.87,
+   49.32
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "空中通道": {
+  "coords": [
+   52.65,
+   46.44
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "正容镜": {
+  "coords": [
+   22.35,
+   73.85
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "二楼检查室": {
+  "coords": [
+   6.3,
+   47.47
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "三楼洗牙区": {
+  "coords": [
+   52.66,
+   54.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "四楼治疗区": {
+  "coords": [
+   54.33,
+   52.01
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "厕所隔间": {
+  "coords": [
+   66.45,
+   58.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "牙医馆大门": {
+  "coords": [
+   66.81,
+   59.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "柜子": {
+  "coords": [
+   50.48,
+   56.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "高自剑的卧室": {
+  "coords": [
+   52.41,
+   67.79
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "技术支持部监测厅": {
+  "coords": [
+   53.14,
+   51.31
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "13楼楼梯拐角": {
+  "coords": [
+   26.12,
+   47.33
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "蚁穴大门": {
+  "coords": [
+   62.39,
+   56.02
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "instance"
+ },
+ "高级住宅区": {
+  "coords": [
+   52.23,
+   41.9
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "刘年年的公寓": {
+  "coords": [
+   52.95,
+   55.77
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "刘年年的豪宅": {
+  "coords": [
+   56.13,
+   53.91
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "豪宅楼下": {
+  "coords": [
+   48.73,
+   42.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王店后门": {
+  "coords": [
+   56.05,
+   47.84
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "魔方实验基地": {
+  "coords": [
+   49.64,
+   45.97
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "尊贵女王店吧台": {
+  "coords": [
+   44.78,
+   54.03
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "塑胶跑道": {
+  "coords": [
+   49.97,
+   61.64
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "polluted"
+ },
+ "射击比赛场馆": {
+  "coords": [
+   34.06,
+   36.07
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "unzoned"
+ },
+ "103区清洁中心55层": {
+  "coords": [
+   55.39,
+   46.13
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "观察室卧室": {
+  "coords": [
+   61.93,
+   53.66
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "观察室后研究室": {
+  "coords": [
+   47.72,
+   54.42
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "观察室活动区": {
+  "coords": [
+   58.15,
+   47.68
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "安全屋卫生间": {
+  "coords": [
+   44.49,
+   40.55
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "无人的小巷": {
+  "coords": [
+   58.78,
+   49.74
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "3号公路": {
+  "coords": [
+   52.55,
+   45.57
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "某实验基地": {
+  "coords": [
+   47.37,
+   48.56
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "悬浮飞车": {
+  "coords": [
+   41.7,
+   49.63
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wall_in"
+ },
+ "全封闭飞车": {
+  "coords": [
+   63.33,
+   42.81
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ },
+ "墙外草地": {
+  "coords": [
+   49.48,
+   54.92
+  ],
+  "geo_status": "schematic",
+  "modern": "",
+  "source": "示意坐标系（虚构地点，仅表现空间关系）",
+  "zone": "wasteland"
+ }
+}

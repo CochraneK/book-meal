@@ -1,0 +1,53 @@
+{
+  "kinds": {
+    "modern_real": "现代·现实",
+    "fictional_world": "架空·幻想",
+    "history": "历史"
+  },
+  "books": {
+    "tiancai": {
+      "title": "天才基本法",
+      "author": "长洱",
+      "file": "天才基本法.txt",
+      "kind": "modern_real",
+      "heading": "numbered",
+      "desc": "现代校园 / 奥数题材，林朝夕重启人生线的双时间线叙事。五元组抽取 + 12 视图可视化（含 15 篇学科论文）。",
+      "accent": "#8c4a2f",
+      "report": "tiancai.html",
+      "data_json": "data/tiancai/data.json"
+    },
+    "feitu": {
+      "title": "我在废土世界扫垃圾",
+      "author": "有花在野",
+      "file": "我在废土世界扫垃圾.txt",
+      "kind": "fictional_world",
+      "heading": "plain",
+      "desc": "末日废土副本流，墙内赛博 / 墙外废土的双世界设定。五元组抽取 + 12 视图可视化。",
+      "accent": "#3a6b5a",
+      "report": "feitu.html",
+      "data_json": "data/feitu/data.json"
+    },
+    "ming": {
+      "title": "明朝那些事儿",
+      "author": "当年明月",
+      "kind": "history",
+      "desc": "全景式明朝历史：人物 / 事件 / 关系 / 年号 / 航海的时空图谱。独立成站，外部书。",
+      "accent": "#b8862f",
+      "report": "../明朝/standalone.html",
+      "external": true,
+      "data_json": "../明朝/data/data.json"
+    },
+    "swdw": {
+      "title": "小说维度晋升，我在天幕当评委",
+      "author": "白水瓶子",
+      "kind": "fictional_world",
+      "heading": "plain",
+      "file": "data/swdw/source_combined.txt",
+      "desc": "维度晋升·天幕评估七世界。知识图谱含 meta / 天幕机制 / 7 世界人物·情节·判定·死亡清单 / 规则演化 / 余黎成长弧 / 全 202 章索引；首屏七世界卡片墙可直接跳档案。",
+      "accent": "#5a4b8c",
+      "data_json": "data/swdw/data.json",
+      "report": "swdw.html",
+      "standalone": true
+    }
+  }
+}

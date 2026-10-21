@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__ · 拆书知识库</title>
+<style>
+__CSS__
+</style>
+</head>
+<body>
+<script>
+/* 主题在首次绘制前定好，避免亮→暗闪烁；与 app.js 的 applyTheme 同源同键 */
+try {
+  var t = localStorage.getItem("kg-report-theme");
+  document.body.dataset.theme = (t === "dark" || t === "light") ? t
+    : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+} catch (e) { document.body.dataset.theme = "light"; }
+</script>
+<div id="app">
+  <header class="site-header">
+    <div class="header-main">
+      <div class="title-block">
+        <div class="kicker">拆书 · 时空知识图谱</div>
+        <h1 id="book-title">__TITLE__</h1>
+        <div class="subtitle" id="book-sub"></div>
+      </div>
+      <div class="header-stats" id="header-stats"></div>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist"></nav>
+  </header>
+
+  <main id="views">
+    <section class="view" id="view-overview" role="tabpanel"></section>
+    <section class="view" id="view-distribution" role="tabpanel"></section>
+    <section class="view" id="view-characters" role="tabpanel"></section>
+    <section class="view" id="view-places" role="tabpanel"></section>
+    <section class="view" id="view-map" role="tabpanel"></section>
+    <section class="view" id="view-events" role="tabpanel"></section>
+    <section class="view" id="view-relations" role="tabpanel"></section>
+    <section class="view" id="view-phases" role="tabpanel"></section>
+    <section class="view" id="view-quotes" role="tabpanel"></section>
+    <section class="view" id="view-story" role="tabpanel"></section>
+    <section class="view" id="view-perspectives" role="tabpanel"></section>
+    <section class="view" id="view-papers" role="tabpanel"></section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</div>
+
+<div class="dialog-backdrop" id="dialog-backdrop" hidden>
+  <div class="dialog" id="dialog" role="dialog" aria-modal="true"></div>
+</div>
+<div class="toast-bar" id="toast-bar" hidden></div>
+<button id="back-top" type="button" title="回到顶部" aria-label="回到顶部">↑ 回顶</button>
+
+<script>
+"use strict";
+var DATA = __DATA__;
+</script>
+<script>
+__JS__
+</script>
+</body>
+</html>

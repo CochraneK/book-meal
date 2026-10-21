@@ -1,0 +1,95 @@
+name: CI · teardown
+
+# 拆书工程（teardown/）的门禁。
+#
+# 为什么单独一条、且默认不跟着每次推送跑：
+#   src/check_report.py 要用无头 Chrome 逐视图验证 24 个页面，约 4 分钟。
+#   它保护的是「产出物本身好不好」，而平台门户那条 CI 保护的是「站点能不能发布」，
+#   两者节奏不同——改一行 CSS 不该让人等四分钟。
+#
+# 触发方式：
+#   - 改了 teardown/** 的 push / PR（paths 过滤，其余改动不触发）
+#   - 每周一 03:17 UTC 定时兜底（防止 paths 之外的内容悄悄坏掉）
+#   - 手动 workflow_dispatch 随时跑
+
+on:
+  push:
+    branches: [main]
+    paths: ["teardown/**"]
+  pull_request:
+    paths: ["teardown/**"]
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  teardown:
+    name: 拆书工程 · 语法 · 不变量 · 报告自检
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: teardown
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # 版权合规：统一调 tests/check_copyright.py（名单 + .txt 体积 + json 内容特征），
+      # 与平台那条 CI 共用同一份实现。放最前面，失败即停。
+      # 它是按仓库根扫描的，所以要在后面换回去。
+      - name: 版权合规巡检
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          python tests/check_copyright.py
+
+      - name: 安装依赖
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Python 语法检查
+        run: python -m compileall -q src tests
+
+      - name: 前端脚本语法检查
+        run: node --check web/js/app.js
+
+      - name: 单元测试
+        run: python -m pytest tests -q
+
+      - name: 重新生成派生产物
+        run: |
+          python src/papers_prep.py
+          python src/papers_render.py
+          python src/perspectives_prep.py
+
+      - name: 深度校验（verify_* + README 一致）
+        run: |
+          for s in verify_core verify_perspectives verify_story_refs verify_papers; do
+            python src/$s.py
+          done
+          python src/sync_readme.py --check
+
+      - name: 构建三本报告
+        run: |
+          python src/generate_report.py
+          python src/build_swdw_report.py
+
+      # publish_books.py 的默认平台根目录就是本工程的父目录（同一仓库），
+      # 这里不用传 --platform：合成一个仓库之后，站点根天然在上一层。
+      # 这一步的意义是把「改了工程却忘了同步到 books/」变成 CI 看得见的失败。
+      - name: 产物与发布目录同步性
+        run: python src/publish_books.py --check
+
+      - name: 安装 Chrome（无头自检用）
+        uses: browser-actions/setup-chrome@v1
+
+      - name: 无头浏览器自检（12 视图 x 2 本书）
+        run: python src/check_report.py

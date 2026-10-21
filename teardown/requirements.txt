@@ -1,0 +1,4 @@
+# CI / 本地门禁依赖（C4）。
+# 项目生产脚本仅依赖标准库 + matplotlib（papers_render 画图）；测试用 pytest。
+matplotlib>=3.5
+pytest>=7

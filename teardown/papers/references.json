@@ -1,0 +1,777 @@
+{
+ "generated_by": "src/verify_refs.py",
+ "total": 25,
+ "verified": 25,
+ "refs": [
+  {
+   "key": "granovetter1973",
+   "disciplines": [
+    "sociology",
+    "networks"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "granovetter",
+    "year": 1973,
+    "title": "The Strength of Weak Ties",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1086/225469",
+   "doi": "10.1086/225469",
+   "type": "journal-article",
+   "title": "The Strength of Weak Ties",
+   "year": 1973,
+   "apa": "Granovetter, M. S. (1973). The Strength of Weak Ties. *American Journal of Sociology*, *78*(6), 1360–1380. https://doi.org/10.1086/225469",
+   "evidence": "https://doi.org/10.1086/225469",
+   "raw": {
+    "container-title": [
+     "American Journal of Sociology"
+    ],
+    "volume": "78",
+    "issue": "6",
+    "page": "1360-1380",
+    "publisher": "University of Chicago Press"
+   }
+  },
+  {
+   "key": "lin2001",
+   "disciplines": [
+    "sociology",
+    "networks"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "lin",
+    "year": 2001,
+    "title": "Social Capital",
+    "type": "book",
+    "publisher": "Cambridge University Press"
+   },
+   "source": "crossref",
+   "id": "10.1017/cbo9780511815447",
+   "doi": "10.1017/cbo9780511815447",
+   "type": "monograph",
+   "title": "Social Capital",
+   "year": 2001,
+   "apa": "Lin, N. (2001). *Social Capital*. Cambridge University Press. https://doi.org/10.1017/cbo9780511815447",
+   "evidence": "https://doi.org/10.1017/cbo9780511815447",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Cambridge University Press"
+   }
+  },
+  {
+   "key": "scott1990",
+   "disciplines": [
+    "sociology",
+    "politics",
+    "communication"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "scott",
+    "year": 2017,
+    "title": "Domination and the Arts of Resistance",
+    "type": "book",
+    "publisher": "Yale University Press"
+   },
+   "source": "crossref",
+   "id": "10.12987/9780300153569",
+   "doi": "10.12987/9780300153569",
+   "type": "edited-book",
+   "title": "Domination and the Arts of Resistance",
+   "year": 2017,
+   "apa": "Scott, J. C. (2017). *Domination and the Arts of Resistance*. Yale University Press. https://doi.org/10.12987/9780300153569",
+   "evidence": "https://doi.org/10.12987/9780300153569",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Yale University Press"
+   }
+  },
+  {
+   "key": "ryan2000",
+   "disciplines": [
+    "psychology",
+    "education"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "ryan",
+    "year": 2000,
+    "title": "Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1037/0003-066x.55.1.68",
+   "doi": "10.1037/0003-066x.55.1.68",
+   "type": "journal-article",
+   "title": "Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being.",
+   "year": 2000,
+   "apa": "Ryan, R. M., & Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. *American Psychologist*, *55*(1), 68–78. https://doi.org/10.1037/0003-066x.55.1.68",
+   "evidence": "https://doi.org/10.1037/0003-066x.55.1.68",
+   "raw": {
+    "container-title": [
+     "American Psychologist"
+    ],
+    "volume": "55",
+    "issue": "1",
+    "page": "68-78",
+    "publisher": "American Psychological Association (APA)"
+   }
+  },
+  {
+   "key": "bandura1977",
+   "disciplines": [
+    "psychology"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "bandura",
+    "year": 1977,
+    "title": "Self-efficacy: Toward a unifying theory of behavioral change",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1037/0033-295x.84.2.191",
+   "doi": "10.1037/0033-295x.84.2.191",
+   "type": "journal-article",
+   "title": "Self-efficacy: Toward a unifying theory of behavioral change.",
+   "year": 1977,
+   "apa": "Bandura, A. (1977). Self-efficacy: Toward a unifying theory of behavioral change. *Psychological Review*, *84*(2), 191–215. https://doi.org/10.1037/0033-295x.84.2.191",
+   "evidence": "https://doi.org/10.1037/0033-295x.84.2.191",
+   "raw": {
+    "container-title": [
+     "Psychological Review"
+    ],
+    "volume": "84",
+    "issue": "2",
+    "page": "191-215",
+    "publisher": "American Psychological Association (APA)"
+   }
+  },
+  {
+   "key": "dweck1988",
+   "disciplines": [
+    "psychology",
+    "education"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "dweck",
+    "year": 1988,
+    "title": "A social-cognitive approach to motivation and personality",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1037/0033-295x.95.2.256",
+   "doi": "10.1037/0033-295x.95.2.256",
+   "type": "journal-article",
+   "title": "A social-cognitive approach to motivation and personality.",
+   "year": 1988,
+   "apa": "Dweck, C. S., & Leggett, E. L. (1988). A social-cognitive approach to motivation and personality. *Psychological Review*, *95*(2), 256–273. https://doi.org/10.1037/0033-295x.95.2.256",
+   "evidence": "https://doi.org/10.1037/0033-295x.95.2.256",
+   "raw": {
+    "container-title": [
+     "Psychological Review"
+    ],
+    "volume": "95",
+    "issue": "2",
+    "page": "256-273",
+    "publisher": "American Psychological Association (APA)"
+   }
+  },
+  {
+   "key": "becker1962",
+   "disciplines": [
+    "economics"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "becker",
+    "year": 1962,
+    "title": "Investment in Human Capital: A Theoretical Analysis",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1086/258724",
+   "doi": "10.1086/258724",
+   "type": "journal-article",
+   "title": "Investment in Human Capital: A Theoretical Analysis",
+   "year": 1962,
+   "apa": "Becker, G. S. (1962). Investment in Human Capital: A Theoretical Analysis. *Journal of Political Economy*, *70*(5, Part 2), 9–49. https://doi.org/10.1086/258724",
+   "evidence": "https://doi.org/10.1086/258724",
+   "raw": {
+    "container-title": [
+     "Journal of Political Economy"
+    ],
+    "volume": "70",
+    "issue": "5, Part 2",
+    "page": "9-49",
+    "publisher": "University of Chicago Press"
+   }
+  },
+  {
+   "key": "ostrom1990",
+   "disciplines": [
+    "economics",
+    "politics",
+    "ethics"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "ostrom",
+    "year": 1990,
+    "title": "Governing the Commons",
+    "type": "book",
+    "publisher": "Cambridge University Press"
+   },
+   "source": "crossref",
+   "id": "10.1017/cbo9780511807763",
+   "doi": "10.1017/cbo9780511807763",
+   "type": "monograph",
+   "title": "Governing the Commons",
+   "year": 1990,
+   "apa": "Ostrom, E. (1990). *Governing the Commons*. Cambridge University Press. https://doi.org/10.1017/cbo9780511807763",
+   "evidence": "https://doi.org/10.1017/cbo9780511807763",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Cambridge University Press"
+   }
+  },
+  {
+   "key": "propp1968",
+   "disciplines": [
+    "narrative"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "propp",
+    "year": 1968,
+    "title": "Morphology of the Folktale",
+    "type": "book",
+    "publisher": "University of Texas Press"
+   },
+   "source": "crossref",
+   "id": "10.7560/783911",
+   "doi": "10.7560/783911",
+   "type": "edited-book",
+   "title": "Morphology of the Folktale",
+   "year": 1968,
+   "apa": "Propp, V. (1968). *Morphology of the Folktale*. University of Texas Press. https://doi.org/10.7560/783911",
+   "evidence": "https://doi.org/10.7560/783911",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "University of Texas Press"
+   }
+  },
+  {
+   "key": "moretti2011",
+   "disciplines": [
+    "narrative",
+    "networks",
+    "method"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "moretti",
+    "year": 2011,
+    "title": "Network Theory, Plot Analysis",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.64590/vko",
+   "doi": "10.64590/vko",
+   "type": "journal-article",
+   "title": "Network Theory, Plot Analysis",
+   "year": 2011,
+   "apa": "Moretti, F. (2011). Network Theory, Plot Analysis. *New Left Review*, *2*(68), 80–102. https://doi.org/10.64590/vko",
+   "evidence": "https://doi.org/10.64590/vko",
+   "raw": {
+    "container-title": [
+     "New Left Review"
+    ],
+    "volume": "2",
+    "issue": "68",
+    "page": "80-102",
+    "publisher": "New Left Review"
+   }
+  },
+  {
+   "key": "barthes1975",
+   "disciplines": [
+    "narrative",
+    "linguistics"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "barthes",
+    "year": 1975,
+    "title": "An Introduction to the Structural Analysis of Narrative",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.2307/468419",
+   "doi": "10.2307/468419",
+   "type": "journal-article",
+   "title": "An Introduction to the Structural Analysis of Narrative",
+   "year": 1975,
+   "apa": "Barthes, R., & Duisit, L. (1975). An Introduction to the Structural Analysis of Narrative. *New Literary History*, *6*(2), 237. https://doi.org/10.2307/468419",
+   "evidence": "https://doi.org/10.2307/468419",
+   "raw": {
+    "container-title": [
+     "New Literary History"
+    ],
+    "volume": "6",
+    "issue": "2",
+    "page": "237",
+    "publisher": "JSTOR"
+   }
+  },
+  {
+   "key": "illich1971",
+   "disciplines": [
+    "education"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "illich",
+    "year": 1995,
+    "title": "Deschooling Society",
+    "type": "book",
+    "publisher": "Boyars"
+   },
+   "source": "crossref",
+   "id": "10.1558/isbn.9780714520704",
+   "doi": "10.1558/isbn.9780714520704",
+   "type": "monograph",
+   "title": "Deschooling Society",
+   "year": 1995,
+   "apa": "Illich, I. (1995). *Deschooling Society*. Equinox Publishing Ltd.. https://doi.org/10.1558/isbn.9780714520704",
+   "evidence": "https://doi.org/10.1558/isbn.9780714520704",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Equinox Publishing Ltd."
+   }
+  },
+  {
+   "key": "gieryn2000",
+   "disciplines": [
+    "geography"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "gieryn",
+    "year": 2000,
+    "title": "A Space for Place in Sociology",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1146/annurev.soc.26.1.463",
+   "doi": "10.1146/annurev.soc.26.1.463",
+   "type": "journal-article",
+   "title": "A Space for Place in Sociology",
+   "year": 2000,
+   "apa": "Gieryn, T. F. (2000). A Space for Place in Sociology. *Annual Review of Sociology*, *26*(1), 463–496. https://doi.org/10.1146/annurev.soc.26.1.463",
+   "evidence": "https://doi.org/10.1146/annurev.soc.26.1.463",
+   "raw": {
+    "container-title": [
+     "Annual Review of Sociology"
+    ],
+    "volume": "26",
+    "issue": "1",
+    "page": "463-496",
+    "publisher": "Annual Reviews"
+   }
+  },
+  {
+   "key": "watts1998",
+   "disciplines": [
+    "networks"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "watts",
+    "year": 1998,
+    "title": "Collective dynamics of small-world networks",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1038/30918",
+   "doi": "10.1038/30918",
+   "type": "journal-article",
+   "title": "Collective dynamics of ‘small-world’ networks",
+   "year": 1998,
+   "apa": "Watts, D. J., & Strogatz, S. H. (1998). Collective dynamics of ‘small-world’ networks. *Nature*, *393*(6684), 440–442. https://doi.org/10.1038/30918",
+   "evidence": "https://doi.org/10.1038/30918",
+   "raw": {
+    "container-title": [
+     "Nature"
+    ],
+    "volume": "393",
+    "issue": "6684",
+    "page": "440-442",
+    "publisher": "Springer Science and Business Media LLC"
+   }
+  },
+  {
+   "key": "barabasi1999",
+   "disciplines": [
+    "networks"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "barabasi",
+    "year": 1999,
+    "title": "Emergence of Scaling in Random Networks",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1126/science.286.5439.509",
+   "doi": "10.1126/science.286.5439.509",
+   "type": "journal-article",
+   "title": "Emergence of Scaling in Random Networks",
+   "year": 1999,
+   "apa": "Barabási, A. L., & Albert, R. (1999). Emergence of Scaling in Random Networks. *Science*, *286*(5439), 509–512. https://doi.org/10.1126/science.286.5439.509",
+   "evidence": "https://doi.org/10.1126/science.286.5439.509",
+   "raw": {
+    "container-title": [
+     "Science"
+    ],
+    "volume": "286",
+    "issue": "5439",
+    "page": "509-512",
+    "publisher": "American Association for the Advancement of Science (AAAS)"
+   }
+  },
+  {
+   "key": "brown1987",
+   "disciplines": [
+    "linguistics"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "brown",
+    "year": 1987,
+    "title": "Politeness",
+    "type": "book",
+    "publisher": "Cambridge University Press"
+   },
+   "source": "crossref",
+   "id": "10.1017/cbo9780511813085",
+   "doi": "10.1017/cbo9780511813085",
+   "type": "monograph",
+   "title": "Politeness",
+   "year": 1987,
+   "apa": "Brown, P., Levinson, S. C., & Gumperz, J. J. (1987). *Politeness*. Cambridge University Press. https://doi.org/10.1017/cbo9780511813085",
+   "evidence": "https://doi.org/10.1017/cbo9780511813085",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Cambridge University Press"
+   }
+  },
+  {
+   "key": "shannon1948",
+   "disciplines": [
+    "communication"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "shannon",
+    "year": 1948,
+    "title": "A Mathematical Theory of Communication",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1002/j.1538-7305.1948.tb01338.x",
+   "doi": "10.1002/j.1538-7305.1948.tb01338.x",
+   "type": "journal-article",
+   "title": "A Mathematical Theory of Communication",
+   "year": 1948,
+   "apa": "Shannon, C. E. (1948). A Mathematical Theory of Communication. *Bell System Technical Journal*, *27*(3), 379–423. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+   "evidence": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+   "raw": {
+    "container-title": [
+     "Bell System Technical Journal"
+    ],
+    "volume": "27",
+    "issue": "3",
+    "page": "379-423",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+   }
+  },
+  {
+   "key": "cover1986",
+   "disciplines": [
+    "law"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "cover",
+    "year": 1986,
+    "title": "Violence and the Word",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.2307/796468",
+   "doi": "10.2307/796468",
+   "type": "journal-article",
+   "title": "Violence and the Word",
+   "year": 1986,
+   "apa": "Cover, R. M. (1986). Violence and the Word. *The Yale Law Journal*, *95*(8), 1601. https://doi.org/10.2307/796468",
+   "evidence": "https://doi.org/10.2307/796468",
+   "raw": {
+    "container-title": [
+     "The Yale Law Journal"
+    ],
+    "volume": "95",
+    "issue": "8",
+    "page": "1601",
+    "publisher": "JSTOR"
+   }
+  },
+  {
+   "key": "ewick1995",
+   "disciplines": [
+    "law",
+    "narrative"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "ewick",
+    "year": 1995,
+    "title": "Subversive Stories and Hegemonic Tales: Toward a Sociology of Narrative",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.2307/3054010",
+   "doi": "10.2307/3054010",
+   "type": "journal-article",
+   "title": "Subversive Stories and Hegemonic Tales: Toward a Sociology of Narrative",
+   "year": 1995,
+   "apa": "Ewick, P., & Silbey, S. S. (1995). Subversive Stories and Hegemonic Tales: Toward a Sociology of Narrative. *Law &amp; Society Review*, *29*(2), 197–226. https://doi.org/10.2307/3054010",
+   "evidence": "https://doi.org/10.2307/3054010",
+   "raw": {
+    "container-title": [
+     "Law &amp; Society Review"
+    ],
+    "volume": "29",
+    "issue": "2",
+    "page": "197-226",
+    "publisher": "Cambridge University Press (CUP)"
+   }
+  },
+  {
+   "key": "held2006",
+   "disciplines": [
+    "ethics",
+    "gender",
+    "medicine"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "held",
+    "year": 2005,
+    "title": "The Ethics of Care",
+    "type": "book",
+    "publisher": "Oxford University Press"
+   },
+   "source": "crossref",
+   "id": "10.1093/0195180992.001.0001",
+   "doi": "10.1093/0195180992.001.0001",
+   "type": "book",
+   "title": "The Ethics of Care",
+   "year": 2005,
+   "apa": "Held, V. (2005). *The Ethics of Care*. Oxford University PressNew York. https://doi.org/10.1093/0195180992.001.0001",
+   "evidence": "https://doi.org/10.1093/0195180992.001.0001",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Oxford University PressNew York"
+   }
+  },
+  {
+   "key": "butler1990",
+   "disciplines": [
+    "gender"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "butler",
+    "year": 2011,
+    "title": "Gender Trouble",
+    "type": "book",
+    "publisher": "Routledge"
+   },
+   "source": "crossref",
+   "id": "10.4324/9780203824979",
+   "doi": "10.4324/9780203824979",
+   "type": "book",
+   "title": "Gender Trouble",
+   "year": 2011,
+   "apa": "Butler, J. (2011). *Gender Trouble*. Routledge. https://doi.org/10.4324/9780203824979",
+   "evidence": "https://doi.org/10.4324/9780203824979",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "Routledge"
+   }
+  },
+  {
+   "key": "haraway1985",
+   "disciplines": [
+    "gender",
+    "medicine"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "haraway",
+    "year": 1987,
+    "title": "A manifesto for cyborgs: Science, technology, and socialist feminism in the 1980s",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1080/08164649.1987.9961538",
+   "doi": "10.1080/08164649.1987.9961538",
+   "type": "journal-article",
+   "title": "A manifesto for Cyborgs: Science, technology, and socialist feminism in the 1980s",
+   "year": 1987,
+   "apa": "Haraway, D. (1987). A manifesto for Cyborgs: Science, technology, and socialist feminism in the 1980s. *Australian Feminist Studies*, *2*(4), 1–42. https://doi.org/10.1080/08164649.1987.9961538",
+   "evidence": "https://doi.org/10.1080/08164649.1987.9961538",
+   "raw": {
+    "container-title": [
+     "Australian Feminist Studies"
+    ],
+    "volume": "2",
+    "issue": "4",
+    "page": "1-42",
+    "publisher": "Informa UK Limited"
+   }
+  },
+  {
+   "key": "bury1982",
+   "disciplines": [
+    "medicine"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "bury",
+    "year": 1982,
+    "title": "Chronic illness as biographical disruption",
+    "type": "article",
+    "publisher": ""
+   },
+   "source": "crossref",
+   "id": "10.1111/1467-9566.ep11339939",
+   "doi": "10.1111/1467-9566.ep11339939",
+   "type": "journal-article",
+   "title": "Chronic illness as biographical disruption",
+   "year": 1982,
+   "apa": "Bury, M. (1982). Chronic illness as biographical disruption. *Sociology of Health &amp; Illness*, *4*(2), 167–182. https://doi.org/10.1111/1467-9566.ep11339939",
+   "evidence": "https://doi.org/10.1111/1467-9566.ep11339939",
+   "raw": {
+    "container-title": [
+     "Sociology of Health &amp; Illness"
+    ],
+    "volume": "4",
+    "issue": "2",
+    "page": "167-182",
+    "publisher": "Wiley"
+   }
+  },
+  {
+   "key": "jockers2013",
+   "disciplines": [
+    "method"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "jockers",
+    "year": 2013,
+    "title": "Macroanalysis",
+    "type": "book",
+    "publisher": "University of Illinois Press"
+   },
+   "source": "crossref",
+   "id": "10.5406/illinois/9780252037528.001.0001",
+   "doi": "10.5406/illinois/9780252037528.001.0001",
+   "type": "monograph",
+   "title": "Macroanalysis",
+   "year": 2013,
+   "apa": "Jockers, M. L. (2013). *Macroanalysis*. University of Illinois Press. https://doi.org/10.5406/illinois/9780252037528.001.0001",
+   "evidence": "https://doi.org/10.5406/illinois/9780252037528.001.0001",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "University of Illinois Press"
+   }
+  },
+  {
+   "key": "piper2018",
+   "disciplines": [
+    "method"
+   ],
+   "status": "verified",
+   "expected": {
+    "author": "piper",
+    "year": 2018,
+    "title": "Enumerations",
+    "type": "book",
+    "publisher": "University of Chicago Press"
+   },
+   "source": "crossref",
+   "id": "10.7208/chicago/9780226568898.001.0001",
+   "doi": "10.7208/chicago/9780226568898.001.0001",
+   "type": "monograph",
+   "title": "Enumerations",
+   "year": 2018,
+   "apa": "Piper, A. (2018). *Enumerations*. University of Chicago Press. https://doi.org/10.7208/chicago/9780226568898.001.0001",
+   "evidence": "https://doi.org/10.7208/chicago/9780226568898.001.0001",
+   "raw": {
+    "container-title": null,
+    "volume": null,
+    "issue": null,
+    "page": null,
+    "publisher": "University of Chicago Press"
+   }
+  }
+ ]
+}

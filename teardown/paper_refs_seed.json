@@ -1,0 +1,370 @@
+{
+ "_note": "参考文献候选。每条过 Crossref 检索（类型 + 标题 Dice >= 0.85 + 年份 <= 1 + 作者姓氏）。未命中不得写入：人文类经典若无 DOI 记录，改用同主题有 DOI 的期刊文献，而不是手抄版权页。",
+ "refs": [
+  {
+   "key": "granovetter1973",
+   "query": "The strength of weak ties Granovetter American Journal of Sociology 1973",
+   "publisher_hint": "",
+   "expect": {
+    "author": "granovetter",
+    "year": 1973,
+    "title": "The Strength of Weak Ties",
+    "type": "article"
+   },
+   "disciplines": [
+    "sociology",
+    "networks"
+   ]
+  },
+  {
+   "key": "lin2001",
+   "query": "Social Capital A Theory of Social Structure and Action Nan Lin Cambridge",
+   "publisher_hint": "Cambridge University Press",
+   "expect": {
+    "author": "lin",
+    "year": 2001,
+    "title": "Social Capital",
+    "type": "book"
+   },
+   "disciplines": [
+    "sociology",
+    "networks"
+   ]
+  },
+  {
+   "key": "scott1990",
+   "query": "Domination and the Arts of Resistance Hidden Transcripts Scott Yale",
+   "publisher_hint": "Yale University Press",
+   "expect": {
+    "author": "scott",
+    "year": 2017,
+    "title": "Domination and the Arts of Resistance",
+    "type": "book"
+   },
+   "disciplines": [
+    "sociology",
+    "politics",
+    "communication"
+   ]
+  },
+  {
+   "key": "ryan2000",
+   "query": "Self-determination theory and the facilitation of intrinsic motivation social development and well-being Ryan Deci American Psychologist",
+   "publisher_hint": "",
+   "expect": {
+    "author": "ryan",
+    "year": 2000,
+    "title": "Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being",
+    "type": "article"
+   },
+   "disciplines": [
+    "psychology",
+    "education"
+   ]
+  },
+  {
+   "key": "bandura1977",
+   "query": "Self-efficacy toward a unifying theory of behavioral change Bandura Psychological Review 1977",
+   "publisher_hint": "",
+   "expect": {
+    "author": "bandura",
+    "year": 1977,
+    "title": "Self-efficacy: Toward a unifying theory of behavioral change",
+    "type": "article"
+   },
+   "disciplines": [
+    "psychology"
+   ]
+  },
+  {
+   "key": "dweck1988",
+   "query": "A social-cognitive approach to motivation and personality Dweck Leggett Psychological Review",
+   "publisher_hint": "",
+   "expect": {
+    "author": "dweck",
+    "year": 1988,
+    "title": "A social-cognitive approach to motivation and personality",
+    "type": "article"
+   },
+   "disciplines": [
+    "psychology",
+    "education"
+   ]
+  },
+  {
+   "key": "becker1962",
+   "query": "Investment in human capital a theoretical analysis Becker Journal of Political Economy 1962",
+   "publisher_hint": "",
+   "expect": {
+    "author": "becker",
+    "year": 1962,
+    "title": "Investment in Human Capital: A Theoretical Analysis",
+    "type": "article"
+   },
+   "disciplines": [
+    "economics"
+   ]
+  },
+  {
+   "key": "ostrom1990",
+   "query": "Governing the Commons The Evolution of Institutions for Collective Action Ostrom Cambridge",
+   "publisher_hint": "Cambridge University Press",
+   "expect": {
+    "author": "ostrom",
+    "year": 1990,
+    "title": "Governing the Commons",
+    "type": "book"
+   },
+   "disciplines": [
+    "economics",
+    "politics",
+    "ethics"
+   ]
+  },
+  {
+   "key": "propp1968",
+   "query": "Morphology of the Folktale Propp University of Texas Press",
+   "publisher_hint": "University of Texas Press",
+   "expect": {
+    "author": "propp",
+    "year": 1968,
+    "title": "Morphology of the Folktale",
+    "type": "book"
+   },
+   "disciplines": [
+    "narrative"
+   ]
+  },
+  {
+   "key": "moretti2011",
+   "query": "Network Theory Plot Analysis Moretti New Left Review 2011",
+   "publisher_hint": "",
+   "expect": {
+    "author": "moretti",
+    "year": 2011,
+    "title": "Network Theory, Plot Analysis",
+    "type": "article"
+   },
+   "disciplines": [
+    "narrative",
+    "networks",
+    "method"
+   ]
+  },
+  {
+   "key": "barthes1975",
+   "query": "An Introduction to the Structural Analysis of Narrative Barthes New Literary History",
+   "publisher_hint": "",
+   "expect": {
+    "author": "barthes",
+    "year": 1975,
+    "title": "An Introduction to the Structural Analysis of Narrative",
+    "type": "article"
+   },
+   "disciplines": [
+    "narrative",
+    "linguistics"
+   ]
+  },
+  {
+   "key": "illich1971",
+   "query": "Deschooling Society Illich Marion Boyars",
+   "publisher_hint": "Boyars",
+   "expect": {
+    "author": "illich",
+    "year": 1995,
+    "title": "Deschooling Society",
+    "type": "book"
+   },
+   "disciplines": [
+    "education"
+   ]
+  },
+  {
+   "key": "gieryn2000",
+   "query": "A space for place in sociology Gieryn Annual Review of Sociology 2000",
+   "publisher_hint": "",
+   "expect": {
+    "author": "gieryn",
+    "year": 2000,
+    "title": "A Space for Place in Sociology",
+    "type": "article"
+   },
+   "disciplines": [
+    "geography"
+   ]
+  },
+  {
+   "key": "watts1998",
+   "query": "Collective dynamics of small-world networks Watts Strogatz Nature 1998",
+   "publisher_hint": "",
+   "expect": {
+    "author": "watts",
+    "year": 1998,
+    "title": "Collective dynamics of small-world networks",
+    "type": "article"
+   },
+   "disciplines": [
+    "networks"
+   ]
+  },
+  {
+   "key": "barabasi1999",
+   "query": "Emergence of scaling in random networks Barabasi Albert Science 1999",
+   "publisher_hint": "",
+   "expect": {
+    "author": "barabasi",
+    "year": 1999,
+    "title": "Emergence of Scaling in Random Networks",
+    "type": "article"
+   },
+   "disciplines": [
+    "networks"
+   ]
+  },
+  {
+   "key": "brown1987",
+   "query": "Politeness Some Universals in Language Usage Brown Levinson Cambridge",
+   "publisher_hint": "Cambridge University Press",
+   "expect": {
+    "author": "brown",
+    "year": 1987,
+    "title": "Politeness",
+    "type": "book"
+   },
+   "disciplines": [
+    "linguistics"
+   ]
+  },
+  {
+   "key": "shannon1948",
+   "query": "A Mathematical Theory of Communication Shannon Bell System Technical Journal 1948",
+   "publisher_hint": "",
+   "expect": {
+    "author": "shannon",
+    "year": 1948,
+    "title": "A Mathematical Theory of Communication",
+    "type": "article"
+   },
+   "disciplines": [
+    "communication"
+   ]
+  },
+  {
+   "key": "cover1986",
+   "query": "Violence and the Word Cover Yale Law Journal 1986",
+   "publisher_hint": "",
+   "expect": {
+    "author": "cover",
+    "year": 1986,
+    "title": "Violence and the Word",
+    "type": "article"
+   },
+   "disciplines": [
+    "law"
+   ]
+  },
+  {
+   "key": "ewick1995",
+   "query": "Subversive stories and hegemonic tales toward a sociology of narrative Ewick Silbey Law and Society Review",
+   "publisher_hint": "",
+   "expect": {
+    "author": "ewick",
+    "year": 1995,
+    "title": "Subversive Stories and Hegemonic Tales: Toward a Sociology of Narrative",
+    "type": "article"
+   },
+   "disciplines": [
+    "law",
+    "narrative"
+   ]
+  },
+  {
+   "key": "held2006",
+   "query": "The Ethics of Care Personal Political and Global Virginia Held Oxford",
+   "publisher_hint": "Oxford University Press",
+   "expect": {
+    "author": "held",
+    "year": 2005,
+    "title": "The Ethics of Care",
+    "type": "book"
+   },
+   "disciplines": [
+    "ethics",
+    "gender",
+    "medicine"
+   ]
+  },
+  {
+   "key": "butler1990",
+   "query": "Gender Trouble Feminism and the Subversion of Identity Butler Routledge",
+   "publisher_hint": "Routledge",
+   "expect": {
+    "author": "butler",
+    "year": 2011,
+    "title": "Gender Trouble",
+    "type": "book"
+   },
+   "disciplines": [
+    "gender"
+   ]
+  },
+  {
+   "key": "haraway1985",
+   "query": "A manifesto for cyborgs science technology and socialist feminism in the 1980s Haraway Australian Feminist Studies",
+   "publisher_hint": "",
+   "expect": {
+    "author": "haraway",
+    "year": 1987,
+    "title": "A manifesto for cyborgs: Science, technology, and socialist feminism in the 1980s",
+    "type": "article"
+   },
+   "disciplines": [
+    "gender",
+    "medicine"
+   ]
+  },
+  {
+   "key": "bury1982",
+   "query": "Chronic illness as biographical disruption Bury Sociology of Health and Illness 1982",
+   "publisher_hint": "",
+   "expect": {
+    "author": "bury",
+    "year": 1982,
+    "title": "Chronic illness as biographical disruption",
+    "type": "article"
+   },
+   "disciplines": [
+    "medicine"
+   ]
+  },
+  {
+   "key": "jockers2013",
+   "query": "Macroanalysis Digital Methods and Literary History Jockers Illinois",
+   "publisher_hint": "University of Illinois Press",
+   "expect": {
+    "author": "jockers",
+    "year": 2013,
+    "title": "Macroanalysis",
+    "type": "book"
+   },
+   "disciplines": [
+    "method"
+   ]
+  },
+  {
+   "key": "piper2018",
+   "query": "Enumerations Data and Literary Study Piper Chicago",
+   "publisher_hint": "University of Chicago Press",
+   "expect": {
+    "author": "piper",
+    "year": 2018,
+    "title": "Enumerations",
+    "type": "book"
+   },
+   "disciplines": [
+    "method"
+   ]
+  }
+ ]
+}
