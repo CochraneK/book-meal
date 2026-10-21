@@ -1,6 +1,7 @@
-/* ===== V12 视图 / 实体数据门控 =====
-   app.js 用 boot 启动；人物/地点/事件均按“摘要 + 单实体详情 shard”加载。
-   地点章节、郑和航线、lifespans 继续只在真正需要时加载。 */
+/* ===== 视图 / 实体数据门控 =====
+   app.js 用 boot 启动；人物 / 地点 / 事件视图与详情，均在真正渲染前由本层确保
+   对应数据域分块已加载（见 data-loader.js 的 VIEW_CHUNKS / entityPlan）。
+   地点章节、郑和航线只在切换到对应模式时下载。 */
 (function(){
 'use strict';
 if(typeof setView!=='function'||typeof state==='undefined'||typeof DATA==='undefined')return;
@@ -82,7 +83,7 @@ if(baseShowEvent){
 }
 if(baseShowLocation){showLocation=function(x){return ensureEntity('place',x&&x.ancient||x,()=>baseShowLocation(x));};}
 
-/* 地点卡“详情”在 app.js 内直接 openDetail，不经过 showLocation：先补地点详情 shard。 */
+/* 地点卡「详情」在 app.js 内直接 openDetail，不经过 showLocation：先补地点数据。 */
 document.addEventListener('click',e=>{
   const b=e.target&&e.target.closest?e.target.closest('[data-location-id]'):null;if(!b)return;
   const x=(DATA.locations||[]).find(y=>y.id===b.dataset.locationId);if(!x||entityReady('place',x.ancient))return;
@@ -90,8 +91,7 @@ document.addEventListener('click',e=>{
   window.__MING_ENSURE_ENTITY_DATA('place','location-card:'+x.ancient,x.ancient).then(()=>{rebuildLocationIndex();b.click();}).catch(failLoad);
 },true);
 
-/* 所有事件入口统一门控：事件索引、时间轴、帝王、人物/地点详情、航线都只在真正点击
-   一条事件时补 events core + 目标 event-detail shard + locations + insight。 */
+/* 所有事件入口统一门控：点击一条事件时补 events 域 + locations + insight。 */
 document.addEventListener('click',e=>{
   const b=e.target&&e.target.closest?e.target.closest('[data-event-id],[data-event-name],[data-loc-event]'):null;if(!b)return;
   const key=b.dataset.eventId||b.dataset.eventName||b.dataset.locEvent||'';
@@ -104,22 +104,21 @@ document.addEventListener('click',e=>{
   }).catch(failLoad);
 },true);
 
-/* “按章节”只有切换到该模式才下载 chapterLocations。 */
+/* 「按章节」只有切换到该模式才下载 chapterLocations。 */
 document.addEventListener('click',e=>{
   const b=e.target&&e.target.closest?e.target.closest('[data-loc-mode="chapter"]'):null;if(!b||chunkReady('place-chapters'))return;
   e.preventDefault();e.stopImmediatePropagation();
   window.__MING_ENSURE_DATA_CHUNKS(['place-chapters'],'location-chapters').then(()=>b.click()).catch(failLoad);
 },true);
 
-/* 郑和航线的数据本身已经带停靠点事件摘要；切换模式只下载 voyages。点击具体事件时
-   再由上面的统一事件门控取 event core + 单个详情 shard。 */
+/* 郑和航线的数据本身已带停靠点事件摘要；切换模式只下载 voyages。 */
 document.addEventListener('click',e=>{
   const b=e.target&&e.target.closest?e.target.closest('[data-map-mode="voyage"]'):null;if(!b||chunkReady('voyages'))return;
   e.preventDefault();e.stopImmediatePropagation();
   window.__MING_ENSURE_DATA_CHUNKS(['voyages'],'map-voyage').then(()=>b.click()).catch(failLoad);
 },true);
 
-/* 洞察正文在 capture 阶段先取对应实体计划；事件名称会先取 events core，再解析目标 shard。 */
+/* 洞察正文里的实体链接，点击前先取对应实体计划。 */
 document.addEventListener('click',e=>{
   const lnk=e.target&&e.target.closest?e.target.closest('.ins-link'):null;if(!lnk)return;
   const kind=lnk.hasAttribute('data-ins-p')?'person':(lnk.hasAttribute('data-ins-l')?'place':(lnk.hasAttribute('data-ins-e')?'event':''));

@@ -21,7 +21,9 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -56,8 +58,54 @@ def render_standalone(payload: dict) -> str:
     return G.compose_document(payload)
 
 
+# 数据域分块契约（与 web/js/data-loader.js 的 ALL_CHUNKS 一一对应）。
+# boot 只保留元数据；下列键在 boot 中置空，完整数据拆到 assets/data-<name>.js 按需加载。
+CHUNK_MAP = {
+    "characters": ["characters"],
+    "locations": ["locations"],
+    "events": ["events"],
+    "relations": ["relations"],
+    "time": ["timeline"],
+    "lifespans": ["lifespans"],
+    "graphs": ["visualizations", "relationGraphFull", "relationGraphEntities"],
+    "place-chapters": ["chapterLocations"],
+    "voyages": ["voyages"],
+    "insight": ["insightIndex"],
+}
+
+
+def _empty_like(value):
+    """保留原类型（list→[]，dict→{}），boot 里占位，避免 app.js 顶层访问 undefined。"""
+    return [] if isinstance(value, list) else {}
+
+
+def split_boot_and_chunks(payload: dict) -> dict:
+    """返回 boot：复制全量 payload，但把所有分块键置为空占位。"""
+    boot = copy.deepcopy(payload)
+    for keys in CHUNK_MAP.values():
+        for k in keys:
+            if k in boot:
+                boot[k] = _empty_like(boot[k])
+    return boot
+
+
+def _chunk_file(name: str, data: dict) -> str:
+    """生成一个分块文件：把数据并入全局 DATA 并标记 ready，再广播 ming:data-chunk。"""
+    return (
+        "(function(){Object.assign(DATA, %s);"
+        "window.__MING_DATA_CHUNKS__['%s']=true;"
+        "document.dispatchEvent(new CustomEvent('ming:data-chunk',{detail:{name:'%s'}}));})();\n"
+        % (_json_for_script(data), name, name)
+    )
+
+
 def render_web(payload: dict, out_dir: Path) -> dict:
-    """分离资源形态：写 index.html + assets/{app.css,app.js,data.js}。"""
+    """分离资源形态（按需加载版）：
+
+    写 index.html + assets/{app.css, app.js, data.js(boot), data-loader.js,
+    lazy-data.js, data-<chunk>.js}。首屏只下 boot 元数据，各数据域在视图/实体
+    被访问时由 data-loader/lazy-data 注入式懒加载。
+    """
     skeleton = G.TEMPLATE_PATH.read_text(encoding="utf-8")
     css = G.CSS_PATH.read_text(encoding="utf-8")
     js = G.JS_PATH.read_text(encoding="utf-8")
@@ -69,24 +117,50 @@ def render_web(payload: dict, out_dir: Path) -> dict:
     assets.mkdir(parents=True, exist_ok=True)
     (assets / "app.css").write_text(css, encoding="utf-8")
 
-    body = js.replace(_DATA_CONST, "", 1).replace(_INSIGHT_CONST, "", 1)
-    (assets / "app.js").write_text(body, encoding="utf-8")
-    data_js = (
-        "const DATA=%s;\nconst INSIGHT_DATA=%s;\n"
-        % (_json_for_script(payload), _json_for_script(G.INSIGHT_PAYLOAD))
+    # 运行时加载器（与 app.js 同目录的源文件）
+    loader_src = BASE / "web" / "js"
+    shutil.copyfile(loader_src / "data-loader.js", assets / "data-loader.js")
+    shutil.copyfile(loader_src / "lazy-data.js", assets / "lazy-data.js")
+
+    # boot：元数据全量，数据域置空
+    boot = split_boot_and_chunks(payload)
+    data_js = "const DATA=%s;\nconst INSIGHT_DATA=%s;\n" % (
+        _json_for_script(boot),
+        _json_for_script(G.INSIGHT_PAYLOAD),
     )
     (assets / "data.js").write_text(data_js, encoding="utf-8")
 
-    html = skeleton.replace(_STYLE_ANCHOR, '<link rel="stylesheet" href="assets/app.css">')
-    html = html.replace(_SCRIPT_ANCHOR, '<script src="assets/data.js"></script>\n<script src="assets/app.js"></script>')
-    html = html.replace("__TITLE__", payload["scopeLabel"])
-    (out_dir / "index.html").write_text(html, encoding="utf-8")
-    return {
-        "index.html": len(html),
+    # 各数据域分块
+    written = {
+        "index.html": 0,
         "assets/app.css": len(css),
-        "assets/app.js": len(body),
         "assets/data.js": len(data_js),
     }
+    for name, keys in CHUNK_MAP.items():
+        chunk = {k: payload[k] for k in keys if k in payload}
+        cf = assets / ("data-%s.js" % name)
+        cf.write_text(_chunk_file(name, chunk), encoding="utf-8")
+        written["assets/data-%s.js" % name] = cf.stat().st_size
+
+    # app.js：剥离内联数据常量（数据改由 data.js + 分块提供）
+    body = js.replace(_DATA_CONST, "", 1).replace(_INSIGHT_CONST, "", 1)
+    (assets / "app.js").write_text(body, encoding="utf-8")
+    written["assets/app.js"] = len(body)
+
+    # index.html：脚本顺序 data.js → data-loader.js → app.js → lazy-data.js
+    # （data-loader 需 DATA；lazy-data 需 setView + __MING_ENSURE_*，故在 app.js 之后）
+    html = skeleton.replace(_STYLE_ANCHOR, '<link rel="stylesheet" href="assets/app.css">')
+    html = html.replace(
+        _SCRIPT_ANCHOR,
+        '<script src="assets/data.js"></script>\n'
+        '<script src="assets/data-loader.js"></script>\n'
+        '<script src="assets/app.js"></script>\n'
+        '<script src="assets/lazy-data.js"></script>',
+    )
+    html = html.replace("__TITLE__", payload["scopeLabel"])
+    (out_dir / "index.html").write_text(html, encoding="utf-8")
+    written["index.html"] = (out_dir / "index.html").stat().st_size
+    return written
 
 
 def check_render(payload: dict, findings: list) -> list:
