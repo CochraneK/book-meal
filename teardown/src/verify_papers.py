@@ -243,7 +243,19 @@ def check_paper(slug, path, metrics, refs, errs):
 
 
 def main():
-    metrics = json.load(open(os.path.join(PAPERS, "_metrics.json"), encoding="utf-8"))
+    mp = os.path.join(PAPERS, "_metrics.json")
+    if not os.path.exists(mp):
+        # 这个文件是 papers_prep.py 的中间产物，不入版本控制。
+        # 干净 checkout（CI）里必然没有。裸抛 FileNotFoundError 会让人
+        # 花很久猜是数据坏了还是路径错了，所以在这里说清楚怎么补。
+        print("[FAIL] 缺少 %s" % mp)
+        print("       它是 papers_prep.py 生成的中间产物，请先执行：")
+        print("         python src/papers_prep.py")
+        print("       （本脚本靠它核对 metrics 是否漂移。在干净 checkout 里缺它是常态，")
+        print("        不代表数据坏了。）")
+        return 1
+    with open(mp, encoding="utf-8") as f:
+        metrics = json.load(f)
     refs = {r["key"]: r for r in json.load(open(os.path.join(PAPERS, "references.json"),
                                                 encoding="utf-8"))["refs"]}
     errs = []

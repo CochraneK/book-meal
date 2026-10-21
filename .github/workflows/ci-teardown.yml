@@ -61,14 +61,18 @@ jobs:
       - name: 前端脚本语法检查
         run: node --check web/js/app.js
 
-      - name: 单元测试
-        run: python -m pytest tests -q
-
+      # 必须排在单元测试**之前**：单元测试里的 verify_papers.py 要读
+      # papers/_metrics.json，而它是 papers_prep.py 的中间产物（不入版本控制），
+      # 干净 checkout 里没有。放在测试之后会让单元测试在 CI 上必挂
+      # （2026-10-21 首次跑就是这样），而在本地因为产物常驻反而看不出来。
       - name: 重新生成派生产物
         run: |
           python src/papers_prep.py
           python src/papers_render.py
           python src/perspectives_prep.py
+
+      - name: 单元测试
+        run: python -m pytest tests -q
 
       - name: 深度校验（verify_* + README 一致）
         run: |
