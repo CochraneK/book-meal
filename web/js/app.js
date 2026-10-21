@@ -288,8 +288,10 @@ function distSparkCard(d){
 }
 function categoryCard(){
   const c=DATA.cleaning||{};
-  const rel=Object.entries(c.relation_categories||{}).sort((a,b)=>b[1]-a[1]);
-  const ev=Object.entries(c.event_categories||{}).sort((a,b)=>b[1]-a[1]);
+  // 「其他」通常是最大的一块灰色，排在最前会抢走注意力；按数量降序但把它压到末位。
+  const sortCats=obj=>{const arr=Object.entries(obj||{}).sort((a,b)=>b[1]-a[1]);return arr.filter(([k])=>k!=='其他').concat(arr.filter(([k])=>k==='其他'));};
+  const rel=sortCats(c.relation_categories);
+  const ev=sortCats(c.event_categories);
   if(!rel.length&&!ev.length)return '';
   const block=(items,colorFn,unit)=>{
     const tot=items.reduce((a,b)=>a+b[1],0)||1;

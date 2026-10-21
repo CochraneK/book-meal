@@ -25,6 +25,9 @@ BASE = Path(__file__).resolve().parents[1]
 DATA_PATH = BASE / "data" / "data.json"
 RAW_PATH = BASE / "data" / "extract_raw.json"
 CHAPTERS_PATH = BASE / "data" / "chapters.json"
+# 章节字数表（key -> 正文字符数）：chapters.json 含全文、被 gitignore，
+# CI 读不到正文，用这份轻量表兜底计算密度。
+CHAPTER_LENGTHS_PATH = BASE / "data" / "chapter_lengths.json"
 OUT_PATH = BASE  # 报告直接输出到项目根：index.html（全书，唯一入口）
 
 # 人名归一与 merge.py 共用同一份规则；data.json 已在聚合时归一，这里是双保险
@@ -201,13 +204,28 @@ def distribution_stats(values):
     }
 
 
-def build_distribution(raw_by_key, selected_keys, chapter_by_key, chapter_records, metrics):
-    """Build raw chapter extraction diagnostics and the source-to-evidence hierarchy."""
+def build_distribution(raw_by_key, selected_keys, chapter_by_key, chapter_records, metrics, chapter_lengths=None):
+    """Build raw chapter extraction diagnostics and the source-to-evidence hierarchy.
+
+    ``chapter_lengths`` 是 ``data/chapter_lengths.json``（key -> 正文字符数）。
+    CI 环境没有 ``data/chapters.json``（含正文、被 gitignore），此时用字数表
+    兜底，保证「每万字密度」不是 0；本地有正文时仍以正文长度为准，口径一致。
+    """
     chapter_text = {
         item.get("key"): item.get("body", "")
         for item in chapter_records
         if item.get("type", "") == "chapter"
     }
+    chapter_lengths = chapter_lengths or {}
+
+    def chapter_text_length(key):
+        body = chapter_text.get(key)
+        if body:
+            return len(body)
+        try:
+            return int(chapter_lengths.get(key, 0) or 0)
+        except (TypeError, ValueError):
+            return 0
     chapters = []
     for key in selected_keys:
         raw = raw_by_key.get(key, {})
@@ -238,7 +256,7 @@ def build_distribution(raw_by_key, selected_keys, chapter_by_key, chapter_record
             if item.get("from") and item.get("to")
         }
         relations = len(relation_keys)
-        text_length = len(chapter_text.get(key, ""))
+        text_length = chapter_text_length(key)
         total = characters + locations + events + relations
         chapters.append({
             "key": key,
@@ -667,6 +685,7 @@ def build_scope(scope: str):
     reign_years = faction_profile.reign_start_map(data.get("reigns", []))
     raw_list = load_json(RAW_PATH, [])
     chapter_records = load_json(CHAPTERS_PATH, [])
+    chapter_lengths = load_json(CHAPTER_LENGTHS_PATH, {})
     raw_by_key = {item.get("key"): item for item in raw_list}
     all_chapter_keys = sorted(
         (key for key, item in raw_by_key.items() if item.get("type", "chapter") == "chapter"),
@@ -998,6 +1017,7 @@ def build_scope(scope: str):
         chapter_by_key,
         chapter_records,
         metrics,
+        chapter_lengths,
     )
     visualizations = build_visualizations(
         chars,
