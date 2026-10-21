@@ -53,6 +53,12 @@ jobs:
       - name: 聚合门户校验（不落盘）
         run: python src/build_hub.py --check
 
+      # Pages 只发布白名单成品（index.html / standalone.html / sw.js / ming/ / books/），
+      # 由 src/build_dist.py 挑拣。PR 阶段就跑一遍组装 + 门禁，
+      # 免得合并后部署才发现发布面不对（比如有人把原著误放进 books/）。
+      - name: 发布目录组装校验
+        run: python src/build_dist.py --out .ci/site && python src/build_dist.py --check --out .ci/site
+
       # README 是生成物：模板在 src/sync_readme.py，数字来自工件数据。
       # 手改 README 而不改模板会让下次生成悄悄吃掉改动，故在此拦住。
       - name: README 与模板一致

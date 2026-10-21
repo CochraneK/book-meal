@@ -107,6 +107,7 @@ src/                  平台与构建脚本
   merge.py            数据聚合 / generate_report.py 最终模型
   audit_final.py      深审（ERROR 即退出非 0）
   validators.py       结构不变量（12 组规则）
+  build_dist.py       组装 Pages 发布目录（只挑成品，工程文件不进站点）
   core/               共享核心：年份解析/经纬度校验/势力结构化/图布局
 web/                  前端真源：template/index.html + css/app.css + js/app.js
 data/                 聚合数据源与增量勘误层（data.json 是单一数据源）
@@ -130,6 +131,20 @@ teardown/             拆书工程：其余三本书的抽取与报告生成
 >
 > 两套前端没有合并：视图集合完全不同（那边是年号/航海/关系图，这边是阶段轴/
 > 引用/学科论文），强融的代价远大于收益。
+
+## 站点发布面
+
+Pages 用 **Actions 部署**（不是「从分支发布」），站点内容 = `src/build_dist.py`
+挑出的白名单，仓库里其余文件根本不上传：
+
+```
+发布：  index.html  standalone.html  sw.js  ming/  books/
+不发布：src/ data/ web/ tests/ docs/ legacy/ teardown/ README.md …
+```
+
+改白名单请改 `build_dist.py` 顶部的 `PUBLISH_FILES` / `PUBLISH_DIRS`；新增一本书
+只要落在 `books/<id>/` 下就自动包含。产物组装完还会过一道禁忌闸
+（`.txt` / `.py` / `quotes.json` / `data.json` 出现即失败），CI 与部署前各跑一次。
 
 ## 一本书是怎么拆出来的
 
