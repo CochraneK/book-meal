@@ -897,6 +897,10 @@ window.addEventListener('unhandledrejection',e=>{const r=e&&e.reason;reportRunti
 const _missingKeys=['characters','events','locations','relations','chapters'].filter(k=>!DATA[k]);
 if(_missingKeys.length)failBar('data','内嵌数据不完整，缺少字段：'+_missingKeys.join('、')+'，部分视图可能空白，请重新生成报告。',{level:'error',retry:()=>location.reload(),retryLabel:'重新加载'});
 
-/* 首屏按地址栏还原（无 hash 时原样停在总览） */
-try{applyDeepLink();}catch(err){reportRuntimeError('深链',(err&&err.message)||err);}
+/* 首屏按地址栏还原（无 hash 时原样停在总览）。
+   推迟到 DOMContentLoaded：确保 data-loader / lazy-data（位于本脚本之后）已完成
+   setView 包裹，首屏即走按需加载门控，避免用空 boot 先渲染数据视图。
+   standalone 形态下 lazy-data 不接入，此延迟亦无害（DOMContentLoaded 仍会触发）。 */
+function _initialDeepLink(){try{applyDeepLink();}catch(err){reportRuntimeError('深链',(err&&err.message)||err);}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',_initialDeepLink);else _initialDeepLink();
 
