@@ -125,7 +125,7 @@ def test_app_js_has_unified_error_ui():
     js = B.G.JS_PATH.read_text(encoding="utf-8")
     for token in ("function failBar", "function dismissFail", "function reportRuntimeError",
                   "window.__MING_READY=true", "controllerchange", "tileerror",
-                  "unhandledrejection", "navigator.serviceWorker.register('sw.js')"):
+                  "unhandledrejection", "navigator.serviceWorker.register(SW_CANDIDATES[i++])"):
         assert token in js, token
     # 不允许再出现「空 catch 吞掉失败」的写法（SW 注册 / Leaflet 就绪回落）
     assert ".catch(()=>{});" not in js, "存在静默吞掉异常的 catch"

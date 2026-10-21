@@ -16,8 +16,10 @@
 // v11：仓库由 CochraneK/ming 改名为 CochraneK/book-meal，Pages 站点根由 /ming/ 变为
 //     /book-meal/。缓存前缀同步改为 book-meal- 并 bump（旧 URL 已不可达，此处仅为
 //     命名空间一致性与清理残留）。
+// v12：离线缓存注册改为按目录深度依次尝试（修正 /ming/、/books/<id>/ 等子目录下
+//     register('sw.js') 解析到子目录导致 404）；同轮总览首屏重构。
 const CACHE_PREFIX = 'book-meal-';
-const CACHE = CACHE_PREFIX + 'v11';
+const CACHE = CACHE_PREFIX + 'v12';
 
 self.addEventListener('install', () => { self.skipWaiting(); });
 

@@ -127,5 +127,5 @@ def test_service_worker_cache_bumped_for_platform_switch():
     随后仓库由 ming 改名为 book-meal，缓存前缀同步改为 book-meal-。
     SW 缓存必须 bump，以清空旧命名空间下的过期条目。"""
     sw = (B.BASE / "sw.js").read_text(encoding="utf-8")
-    assert "CACHE_PREFIX + 'v11'" in sw
+    assert "CACHE_PREFIX + 'v12'" in sw
     assert "多书聚合平台" in sw

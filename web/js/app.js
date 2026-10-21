@@ -162,14 +162,31 @@ $('#detailDialog').addEventListener('click',e=>{if(e.target.id==='detailDialog')
 state.showMarkers=true;// 地点标记常显（原勾选框已按需求移除）
 const mapSubnav=$('#mapSubnav');if(mapSubnav){mapSubnav.querySelectorAll('[data-map-mode]').forEach(b=>b.addEventListener('click',()=>{state.mapMode=b.dataset.mapMode;mapSubnav.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));renderMap()}))}
 // 离线缓存：注册 Service Worker（stale-while-revalidate），重复访问秒开；失败不阻塞阅读，但给出可见提示。
+// sw.js 放在仓库根，而报告可能位于 /ming/、/books/<id>/ 等子目录：
+// 相对路径 'sw.js' 在子目录里会解析成 <子目录>/sw.js（404），因此按目录深度依次尝试。
+// 由近及远：同目录自带 sw.js 时优先用它；否则回退到上一级、上两级（网站根）。
+const SW_CANDIDATES=['sw.js','../sw.js','../../sw.js'];
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
-    const reg=()=>navigator.serviceWorker.register('sw.js')
-      .then(()=>{dismissFail('sw');})
-      .catch(()=>{failBar('sw','离线缓存未启用（离线打开与二次访问加速不可用），不影响当前阅读。',{level:'info',retry:reg});});
+    // 首次安装时 activate 里的 clients.claim() 也会触发 controllerchange；
+    // 此时页面内容本就是最新的，不该提示“已更新”，否则新访客会被误导去刷新。
+    let hadController=!!navigator.serviceWorker.controller;
+    const reg=()=>{
+      let i=0;
+      const attempt=()=>{
+        if(i>=SW_CANDIDATES.length)return Promise.reject(new Error('未找到 sw.js'));
+        return navigator.serviceWorker.register(SW_CANDIDATES[i++])
+          .then(()=>{dismissFail('sw');})
+          .catch(()=>attempt());
+      };
+      return attempt().catch(()=>{failBar('sw','离线缓存未启用（离线打开与二次访问加速不可用），不影响当前阅读。',{level:'info',retry:reg});});
+    };
     reg();
-    // 新版本就绪：提示刷新即可拿到最新数据
-    navigator.serviceWorker.addEventListener('controllerchange',()=>{failBar('swUpdate','报告已更新到新版本，刷新即可加载最新内容。',{level:'info',retry:()=>location.reload(),retryLabel:'刷新'});});
+    // 新版本就绪：提示刷新即可拿到最新数据（仅在页面原本已被 SW 控制时提示）
+    navigator.serviceWorker.addEventListener('controllerchange',()=>{
+      if(!hadController){hadController=true;return;}
+      failBar('swUpdate','报告已更新到新版本，刷新即可加载最新内容。',{level:'info',retry:()=>location.reload(),retryLabel:'刷新'});
+    });
   });
 }
 // 瓦片层工厂：主源 Esri（国内可达性好），连续 6 次出错且 0 张成功时自动回退 OSM。
