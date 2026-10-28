@@ -1,0 +1,21 @@
+{
+  "id": "sanggan",
+  "title": "太阳照在桑乾河上",
+  "author": "丁玲",
+  "kind": "modern_real",
+  "desc": "1948 年土改长篇「暖水屯」全量知识库：58 章 / 78 人物 / 124 事件 / 123 关系，78 篇 SecondMe 深描（证据分层）+ 「走进暖水屯」人生模拟（15 角色 / 22 节点 / 6 结局）。单文件离线报告，不引用任何外部 CDN。",
+  "accent": "#2f6b6b",
+  "metrics": {
+    "characters": 78,
+    "events": 124,
+    "relations": 123
+  },
+  "chapters": 58,
+  "report": "index.html",
+  "updated": "2026-10-28",
+  "order": 5,
+  "glyph": "桑",
+  "subtitle": "土改·暖水屯",
+  "external": false,
+  "note": "78 篇深描 + 人生模拟"
+}
