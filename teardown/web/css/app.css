@@ -187,6 +187,21 @@ table.data tbody tr:hover { background: var(--panel-2); }
   color: var(--ink); border-radius: 6px; padding: 3px 10px; font-family: inherit; }
 .pager button:disabled { opacity: .4; cursor: default; }
 
+/* ---------- 启动失败 / 运行期错误条（ming 同款） ---------- */
+.fail-host { position: fixed; top: 0; left: 0; right: 0; z-index: 80; display: flex; flex-direction: column; }
+.fail-bar { display: flex; gap: 12px; align-items: center; justify-content: space-between;
+  padding: 10px 16px; font-size: 13px; border-bottom: 1px solid; }
+.fail-bar.fail-error { background: #fdecea; color: #8a1f1f; border-color: #e0a39c; }
+body[data-theme="dark"] .fail-bar.fail-error { background: #3a1f1f; color: #ffb4a8; border-color: #6e3a36; }
+.fail-bar.fail-warn { background: #fff6e5; color: #8a6512; border-color: #e0c08a; }
+body[data-theme="dark"] .fail-bar.fail-warn { background: #3a2f1a; color: #ffd58a; border-color: #6e5636; }
+.fail-msg { flex: 1; }
+.fail-acts { display: flex; gap: 8px; flex-shrink: 0; }
+.fail-act { cursor: pointer; border: 1px solid currentColor; background: transparent; color: inherit;
+  border-radius: 6px; padding: 3px 12px; font-family: inherit; font-size: 13px; }
+.fail-act:hover { background: rgba(0,0,0,.06); }
+body[data-theme="dark"] .fail-act:hover { background: rgba(255,255,255,.08); }
+
 /* ---------- 图表（纯 SVG） ---------- */
 .chart-legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--ink-2); margin-top: 6px; }
 .chart-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; }

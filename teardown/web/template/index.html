@@ -24,6 +24,46 @@ try {
   }
 } catch (e) { document.body.dataset.theme = "light"; }
 </script>
+<script>
+/* 启动守卫（与 ming 同款）：主脚本置于页面底部，一旦内嵌数据被裁剪或脚本执行抛错，
+   页面会停在空白骨架且毫无提示。这里独立于主脚本先埋一个检查点：
+   5 秒内若主脚本仍未置位 __KG_READY，就渲染一条可见的错误提示与重载入口。
+   本段不依赖任何外部资源，也不读取数据内容，故不受数据注入影响。 */
+window.__KG_READY = false;
+window.__KG_BOOTERR = "";
+window.addEventListener("error", function (e) {
+  if (e && e.message && !window.__KG_BOOTERR) window.__KG_BOOTERR = e.message;
+});
+setTimeout(function () {
+  if (window.__KG_READY) return;
+  var host = document.getElementById("failHost");
+  if (!host) {
+    host = document.createElement("div");
+    host.id = "failHost";
+    host.className = "fail-host";
+    document.body.appendChild(host);
+  }
+  var bar = document.createElement("div");
+  bar.className = "fail-bar fail-error";
+  bar.setAttribute("role", "alert");
+  var msg = document.createElement("span");
+  msg.className = "fail-msg";
+  msg.textContent = "报告未能完成初始化" +
+    (window.__KG_BOOTERR ? "：" + String(window.__KG_BOOTERR).slice(0, 160) : "（内嵌数据可能缺失或被裁剪）") +
+    "。可重新加载，或改用完整版文件打开。";
+  var acts = document.createElement("span");
+  acts.className = "fail-acts";
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "fail-act";
+  btn.textContent = "重新加载";
+  btn.addEventListener("click", function () { location.reload(); });
+  acts.appendChild(btn);
+  bar.appendChild(msg);
+  bar.appendChild(acts);
+  host.appendChild(bar);
+}, 5000);
+</script>
 <div id="app">
   <header class="site-header">
     <div class="header-main">

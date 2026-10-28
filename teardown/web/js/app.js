@@ -107,6 +107,16 @@
   places.forEach(function (p) { placeById[p.i] = p; });
   events.forEach(function (e) { eventById[e.i] = e; });
   var aliasIndex = DATA.alias_index || {};
+  /* 统一搜索判定（ming 同款）：直接子串命中，或「用户输入的是某别名」时
+     用 aliasIndex 归一到规范名再匹配。所有视图共用，避免各列表各写一份。 */
+  function matchesQuery(hay, raw) {
+    var q = String(raw == null ? "" : raw).trim().toLowerCase();
+    if (!q) return true;
+    var h = String(hay || "").toLowerCase();
+    if (h.indexOf(q) >= 0) return true;
+    var canon = aliasIndex[String(raw).trim()];
+    return !!canon && h.indexOf(String(canon).toLowerCase()) >= 0;
+  }
   // 人物语录索引（A4）：quotes.json 的 by_person 已按归属归属好的对白，
   // 按分数取靠前的几条。**绝不把叙述句挂到人名下**——叙述在 quotes 顶层，
   // 这里只吃 by_person，数据层就没混过。
@@ -240,7 +250,56 @@
       btn.title = "切换主题（当前：" + (t === "dark" ? "墨玉深色" : "素纸亮色") + "）";
     }
   }
+  /* 运行期错误 / 启动失败：顶部红条 + 重新加载（ming 的 failBar 同款）。
+     渲染异常只报一次，避免刷屏；页面其余部分仍可浏览。 */
+  function bootFail(msg) {
+    window.__KG_BOOTERR = window.__KG_BOOTERR || msg;
+    var host = document.getElementById("failHost");
+    if (!host) {
+      host = document.createElement("div");
+      host.id = "failHost";
+      host.className = "fail-host";
+      document.body.appendChild(host);
+    }
+    var bar = document.createElement("div");
+    bar.className = "fail-bar fail-error";
+    bar.setAttribute("role", "alert");
+    var m = document.createElement("span");
+    m.className = "fail-msg";
+    m.textContent = msg;
+    var acts = document.createElement("span");
+    acts.className = "fail-acts";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "fail-act";
+    btn.textContent = "重新加载";
+    btn.addEventListener("click", function () { location.reload(); });
+    acts.appendChild(btn);
+    bar.appendChild(m);
+    bar.appendChild(acts);
+    host.appendChild(bar);
+  }
+  function reportError(kind, e) {
+    var msg = (kind || "脚本") + "异常：" + String((e && e.message) || e || "未知错误").slice(0, 160);
+    window.__KG_SEEN = window.__KG_SEEN || {};
+    if (window.__KG_SEEN[msg]) return;
+    window.__KG_SEEN[msg] = 1;
+    console.error(msg, e);
+    bootFail(msg + "（页面其余部分仍可浏览）");
+  }
+
   var currentView = "overview";
+  /* 视图懒渲染缓存：boot 只渲染总览，其余视图首次切到时才渲染并记入 rendered，
+     再切回不再重建 DOM（ming 的 state.rendered 同款）。单文件离线场景下，
+     这等价于 ming 的「数据分片懒加载」——把首屏从一次性生成 12 个视图的 DOM
+     降到只生成总览，长列表/大图随用随建，首屏与切换都明显更顺。 */
+  var rendered = {};
+  var RENDERERS = {
+    overview: renderOverview, distribution: renderDistribution, characters: renderCharacters,
+    places: renderPlaces, map: renderMap, events: renderEvents, relations: renderRelations,
+    phases: renderPhases, quotes: renderQuotes, story: renderStory,
+    perspectives: renderPerspectives, papers: renderPapers
+  };
   function switchView(v) {
     currentView = v;
     Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (t) {
@@ -249,9 +308,16 @@
     Array.prototype.forEach.call(document.querySelectorAll(".view"), function (s) {
       s.classList.toggle("active", s.id === "view-" + v);
     });
-    if (v === "map") renderMap();
-    if (v === "relations") renderRelations();
-    if (v === "papers") renderPapers();
+    var first = !rendered[v];
+    if (first) {
+      try { RENDERERS[v](); rendered[v] = true; }
+      catch (e) { reportError("render:" + v, e); return; }
+    }
+    /* 这三个视图依赖容器尺寸 / 主题，已渲染后每次切回也重绘（保持原行为）；
+       其余视图切回直接复用缓存，不再重建。 */
+    if (!first && (v === "map" || v === "relations" || v === "papers")) {
+      try { RENDERERS[v](); } catch (e) { reportError("render:" + v, e); }
+    }
     syncHash();   // 地址栏即状态：切视图也回写，复制 URL 即可分享当前所在
   }
 
@@ -802,6 +868,8 @@
   /* ---------- 人物 ---------- */
   var charQuery = "";
   var charTier = "main";   // main = 核心+主要（默认）｜all = 全部含龙套
+  var charPage = 0;
+  var CARD_PAGE = 24;      // 人物卡较大，每页 24 张，翻页比一次性平铺更顺
   var TIER_LABEL = { core: "核心", major: "主要", minor: "次要", cameo: "龙套" };
   var TIER_ORDER = ["core", "major", "minor", "cameo"];
   function tierCounts(list) {
@@ -813,14 +881,18 @@
     var q = charQuery;
     var searched = persons.filter(function (p) {
       if (!q) return true;
-      return (p.n + " " + (p.a || []).join(" ") + " " + (p.f || []).join(" ") + " " + p.r)
-        .toLowerCase().indexOf(q.toLowerCase()) >= 0;
+      return matchesQuery(p.n, q) ||
+        (p.a || []).some(function (a) { return matchesQuery(a, q); }) ||
+        (p.f || []).some(function (f) { return matchesQuery(f, q); }) ||
+        matchesQuery(p.r || "", q);
     });
     var tc = tierCounts(searched);
     // 默认只给「核心 + 主要」，一次性龙套折叠起来——379 张卡平铺等于没有信息
     var list = charTier === "all" ? searched : searched.filter(function (p) {
       return p.tr === "core" || p.tr === "major";
     });
+    var pages = Math.max(1, Math.ceil(list.length / CARD_PAGE));
+    charPage = Math.min(Math.max(charPage, 0), pages - 1);
 
     var html = [];
     html.push("<div class='panel'><div class='search-row'>" +
@@ -839,16 +911,17 @@
     if (!list.length) {
       html.push("<div class='muted'>没有匹配「" + esc(q) + "」的人物。</div></div>");
       $("view-characters").innerHTML = html.join("");
-      bindSearch($("char-search"), function (v) { charQuery = v; renderCharacters(); syncHash(); });
+      bindSearch($("char-search"), function (v) { charQuery = v; charPage = 0; renderCharacters(); syncHash(); });
       bindTierBtns();
       return;
     }
     html.push("<div class='small muted' style='margin-bottom:10px'>当前 " + list.length +
       " 人 · 点击卡片翻面看详情 · 分层依据：出场章数 ≥20 核心 / ≥5 主要 / ≥2 次要 / 1 章龙套</div>");
 
-    // 分组展示：核心 / 主要 / 次要 / 龙套 各自成段，读者一眼知道谁重要
+    // 分组展示：核心 / 主要 / 次要 / 龙套 各自成段；分页切片只取当前页条目
+    var paged = list.slice(charPage * CARD_PAGE, charPage * CARD_PAGE + CARD_PAGE);
     TIER_ORDER.forEach(function (t) {
-      var grp = list.filter(function (p) { return p.tr === t; });
+      var grp = paged.filter(function (p) { return p.tr === t; });
       if (!grp.length) return;
       html.push("<div class='tier-head'><b>" + TIER_LABEL[t] + "</b>" +
         "<span class='muted small'> " + grp.length + " 人</span></div>");
@@ -856,11 +929,17 @@
       grp.forEach(function (p) { html.push(pokeCard(p)); });
       html.push("</div>");
     });
+    html.push("<div class='pager'>" +
+      "<button id='char-prev'" + (charPage === 0 ? " disabled" : "") + ">上一页</button>" +
+      "<span>第 " + (charPage + 1) + " / " + pages + " 页 · 共 " + list.length + " 人</span>" +
+      "<button id='char-next'" + (charPage >= pages - 1 ? " disabled" : "") + ">下一页</button></div>");
     html.push("</div>");
     $("view-characters").innerHTML = html.join("");
-    bindSearch($("char-search"), function (v) { charQuery = v; renderCharacters(); syncHash(); });
+    bindSearch($("char-search"), function (v) { charQuery = v; charPage = 0; renderCharacters(); syncHash(); });
     bindTierBtns();
     bindCardEvents();
+    var cp = $("char-prev"); if (cp) cp.onclick = function () { charPage--; renderCharacters(); };
+    var cn = $("char-next"); if (cn) cn.onclick = function () { charPage++; renderCharacters(); };
   }
   function bindTierBtns() {
     Array.prototype.forEach.call(document.querySelectorAll(".tier-btn"), function (b) {
@@ -943,36 +1022,45 @@
 
   /* ---------- 地点 ---------- */
   var placeQuery = "";
+  var placePage = 0;
   function renderPlaces() {
     var q = placeQuery;
     var list = places.filter(function (p) {
       if (!q) return true;
-      return (p.n + " " + (p.mo || "") + " " + (p.rg || "") + " " + (p.t || "") + " " + (p.tb || "") + " " + placeZone(p))
-        .toLowerCase().indexOf(q.toLowerCase()) >= 0;
+      return matchesQuery(p.n, q) || matchesQuery(p.mo || "", q) || matchesQuery(p.rg || "", q) ||
+        matchesQuery(p.t || "", q) || matchesQuery(p.tb || "", q) || matchesQuery(placeZone(p), q);
     });
+    var pages = Math.max(1, Math.ceil(list.length / PAGE));
+    placePage = Math.min(Math.max(placePage, 0), pages - 1);
     var html = ["<div class='panel'><div class='search-row'>" +
       "<div class='search-box'><span>🔍</span><input id='place-search' type='text' placeholder='搜索地点 / 今址 / 区域 / 类型（共 " +
       places.length + " 处）' value='" + esc(q) + "'></div></div>"];
     if (!list.length) {
       html.push("<div class='muted'>没有匹配「" + esc(q) + "」的地点。</div>");
     } else {
-      html.push("<div class='small muted' style='margin-bottom:10px'>命中 " + list.length + " 处 · 点击查看详情（含出场章节）</div>");
+      var paged = list.slice(placePage * PAGE, placePage * PAGE + PAGE);
+      html.push("<div class='small muted' style='margin-bottom:10px'>命中 " + list.length + " 处 · 点击查看详情（含出场章节）· 第 " + (placePage + 1) + " / " + pages + " 页</div>");
       html.push("<div class='table-wrap'><table class='data'><thead><tr><th>地点</th><th>今址/对应</th><th>所在分区</th><th>功能类别</th><th>坐标状态</th><th>出场</th></tr></thead><tbody>");
-      list.slice(0, 400).forEach(function (p) {
+      paged.forEach(function (p) {
         html.push("<tr data-place='" + esc(p.n) + "'><td>" + hl(p.n, q) + "</td><td class='small'>" +
           esc(p.mo || "—") + "</td><td class='small' title='抽取原文区域：" + esc(p.rg || "空") + "'>" + esc(placeZone(p)) + "</td><td class='small' title='抽取原文类型：" + esc(p.t || "空") + "'>" +
           esc(placeCat(p)) + "</td><td><span class='badge " + p.g + "'>" + (GEO_LABEL[p.g] || p.g) + "</span></td>" +
           "<td class='num'>" + p.c.length + " 章</td></tr>");
       });
       html.push("</tbody></table></div>");
-      if (list.length > 400) html.push("<div class='small muted' style='margin-top:8px'>仅显示前 400 处，请用搜索缩小范围。</div>");
+      html.push("<div class='pager'>" +
+        "<button id='place-prev'" + (placePage === 0 ? " disabled" : "") + ">上一页</button>" +
+        "<span>第 " + (placePage + 1) + " / " + pages + " 页 · 共 " + list.length + " 处</span>" +
+        "<button id='place-next'" + (placePage >= pages - 1 ? " disabled" : "") + ">下一页</button></div>");
     }
     html.push("</div>");
     $("view-places").innerHTML = html.join("");
-    bindSearch($("place-search"), function (v) { placeQuery = v; renderPlaces(); syncHash(); });
+    bindSearch($("place-search"), function (v) { placeQuery = v; placePage = 0; renderPlaces(); syncHash(); });
     Array.prototype.forEach.call($("view-places").querySelectorAll("[data-place]"), function (tr) {
       tr.onclick = function () { showPlace(tr.dataset.place); };
     });
+    var pp = $("place-prev"); if (pp) pp.onclick = function () { placePage--; renderPlaces(); };
+    var pn = $("place-next"); if (pn) pn.onclick = function () { placePage++; renderPlaces(); };
   }
 
   /* ---------- 地图 ---------- */
@@ -1161,8 +1249,9 @@
     var list = events.filter(function (e) {
       if (evType && evCat(e) !== evType) return false;
       if (!q) return true;
-      return (e.n + " " + e.ty + " " + evCat(e) + " " + (e.p || []).join(" ") + " " + (e.loc || "") + " " + (e.no || "") + " " + (e.st || ""))
-        .toLowerCase().indexOf(q) >= 0;
+      return matchesQuery(e.n, q) || matchesQuery(e.ty || "", q) || matchesQuery(evCat(e), q) ||
+        (e.p || []).some(function (n) { return matchesQuery(canonPerson(n), q); }) ||
+        matchesQuery(e.loc || "", q) || matchesQuery(e.no || "", q) || matchesQuery(e.st || "", q);
     });
     var types = {};
     events.forEach(function (e) { var k = evCat(e); types[k] = (types[k] || 0) + 1; });
@@ -2430,26 +2519,24 @@
     });
   }
   function boot() {
-    renderHeader();
-    buildTabs();
-    renderOverview();
-    renderDistribution();
-    renderCharacters();
-    renderPlaces();
-    renderEvents();
-    renderPhases();
-    renderQuotes();
-    renderStory();
-    renderPerspectives();
-    renderPapers();
-    bindBackTop();
-    // 深链：完整参数（view/q/person/detail/event/place/phase）见本文件「深链」节；
-    // 键名非法或缺失时回退到总览，否则没有任何 .view 会带上 active，整页会显示为空白
-    applyHash();
-    window.addEventListener("hashchange", function () { applyHash(); });
-    document.addEventListener("click", function (e) {
-      if (e.target.dataset && e.target.dataset.ch) gotoChapter(+e.target.dataset.ch);
-    });
+    try {
+      renderHeader();
+      buildTabs();
+      renderOverview(); rendered.overview = true;   // 首屏只渲染总览，其余视图懒渲染
+      bindBackTop();
+      // 深链：完整参数（view/q/person/detail/event/place/phase）见本文件「深链」节；
+      // 键名非法或缺失时回退到总览，否则没有任何 .view 会带上 active，整页会显示为空白
+      applyHash();
+      window.addEventListener("hashchange", function () { applyHash(); });
+      document.addEventListener("click", function (e) {
+        if (e.target.dataset && e.target.dataset.ch) gotoChapter(+e.target.dataset.ch);
+      });
+      window.__KG_READY = true;
+    } catch (e) {
+      window.__KG_READY = false;
+      bootFail("初始化失败：" + (e && e.message ? e.message : e));
+      throw e;   // 同时抛到控制台，便于排查
+    }
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
