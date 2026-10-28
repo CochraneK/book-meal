@@ -8,7 +8,7 @@
 [![依赖](https://img.shields.io/badge/dependencies-none-brightgreen)]()
 [![形态](https://img.shields.io/badge/报告-单文件离线-blueviolet)]()
 
-**4 本书 · 1,018 章 · 1,805 人物 · 6,938 事件 · 4,426 关系**
+**5 本书 · 1,076 章 · 1,883 人物 · 7,062 事件 · 4,549 关系**
 
 [打开书库 →](https://cochranek.github.io/book-meal/)
 
@@ -41,8 +41,9 @@
 | **天才基本法** | 长洱 | 现代现实 | 221 | 140 | 1,399 | 482 | [打开](https://cochranek.github.io/book-meal/books/tiancai/index.html) |
 | **我在废土世界扫垃圾** | 有花在野 | 幻想世界 | 439 | 379 | 4,386 | 1,606 | [打开](https://cochranek.github.io/book-meal/books/feitu/index.html) |
 | **小说维度晋升，我在天幕当评委** | 白水瓶子 | 幻想世界 | 202 | 55 | 47 | 14 | [打开](https://cochranek.github.io/book-meal/books/swdw/index.html) |
+| **太阳照在桑乾河上** | 丁玲 | 现代现实 | 58 | 78 | 124 | 123 | [打开](https://cochranek.github.io/book-meal/books/sanggan/index.html) |
 
-合计 **4 本 · 1,018 章 · 1,805 人物 · 6,938 事件 · 4,426 关系**。
+合计 **5 本 · 1,076 章 · 1,883 人物 · 7,062 事件 · 4,549 关系**。
 门户只读各书的 `manifest.json`，不加载任何一本书的 payload，因此永远轻量。
 
 ## 为什么不一样
