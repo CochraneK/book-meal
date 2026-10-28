@@ -1,0 +1,91 @@
+/* ============================================================
+   书影工坊 · 主题皮肤：天才基本法
+   气质：理性 · 温暖 · 学术校园。主色学术蓝 + 暖琥珀，方格纸肌理。
+   作用于 html[data-book="tiancai"]，仅覆写变量与少量母题，不碰布局逻辑。
+   ============================================================ */
+
+/* ---- 亮色盘（default / data-theme=light）---- */
+html[data-book="tiancai"] body {
+  --bg: #eef2f8;
+  --panel: #ffffff;
+  --panel-2: #e6edf6;
+  --ink: #1d2a3a;
+  --ink-2: #46566a;
+  --ink-3: #6a7a8c;
+  --line: #d2ddea;
+  --accent: #2f5d8a;        /* 学术蓝（主） */
+  --accent-2: #c8884a;      /* 暖琥珀（次 / 链接） */
+  --gold: #b5742e;
+  --teal: #2f7d72;          /* 地点：青绿 */
+  --red: #b04a48;
+  --green: #3f7a4e;
+  --shadow: 0 1px 3px rgba(31,42,58,.10), 0 6px 18px rgba(31,42,58,.06);
+}
+
+/* ---- 暗色盘 ---- */
+html[data-book="tiancai"] body[data-theme="dark"] {
+  --bg: #131a24;
+  --panel: #1b2430;
+  --panel-2: #232e3c;
+  --ink: #e7edf5;
+  --ink-2: #aab8c8;
+  --ink-3: #93a3b4;
+  --line: #31404f;
+  --accent: #6fa3d8;
+  --accent-2: #e0a85e;
+  --gold: #d8b25e;
+  --teal: #5fb3aa;
+  --red: #d07070;
+  --green: #6fa87a;
+  --shadow: 0 1px 3px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.35);
+}
+
+/* ---- 签名母题：方格纸肌理 ---- */
+html[data-book="tiancai"] body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(47,93,138,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47,93,138,.10) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+html[data-book="tiancai"] body[data-theme="dark"] {
+  background-image:
+    linear-gradient(rgba(111,163,216,.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111,163,216,.085) 1px, transparent 1px);
+}
+
+/* ---- 局部重构：标题与英雄区 ---- */
+html[data-book="tiancai"] .kicker {
+  letter-spacing: .22em;
+  color: var(--accent);
+}
+html[data-book="tiancai"] h1 {
+  letter-spacing: .04em;
+}
+/* 顶部一道学术蓝细线，呼应「知识图谱」的冷静理性 */
+html[data-book="tiancai"] .site-header {
+  border-top: 3px solid var(--accent);
+  padding-top: 14px;
+}
+/* 英雄区数字卡：左缘学术蓝描边 */
+html[data-book="tiancai"] .ov-stat {
+  border-top: 2px solid var(--accent);
+}
+/* 面板标题：学术蓝竖线，区分「结论 / 证据」 */
+html[data-book="tiancai"] .panel h3,
+html[data-book="tiancai"] .ov-panel h3 {
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+}
+/* 章节节奏柱 / 事件功能轨道：主色学术蓝 */
+html[data-book="tiancai"] .ov-spark i { background: var(--accent); }
+html[data-book="tiancai"] .ov-fig .tr span { background: var(--accent); }
+/* 人物卡正面上缘学术蓝渐隐，呼应粉笔标题 */
+html[data-book="tiancai"] .poke-front {
+  background: linear-gradient(160deg, rgba(47,93,138,.06), var(--panel) 55%);
+}
+html[data-book="tiancai"] .poke-faction { color: var(--accent); }
+/* 故事长文：引文块用学术蓝而非金，统一冷调 */
+html[data-book="tiancai"] .story blockquote { border-left-color: var(--accent); }
+html[data-book="tiancai"] .finding,
+html[data-book="tiancai"] .ov-claim { border-left-color: var(--accent); }

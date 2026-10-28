@@ -1,9 +1,6 @@
 {
   "id": "tiancai",
-  "order": 2,
   "title": "天才基本法",
-  "glyph": "天",
-  "subtitle": "奥数·双时间线",
   "author": "长洱",
   "kind": "modern_real",
   "desc": "现代校园 / 奥数题材，林朝夕重启人生线的双时间线叙事。五元组抽取 + 12 视图可视化（含 15 篇学科论文）。",
@@ -15,7 +12,10 @@
   },
   "chapters": 221,
   "report": "index.html",
+  "updated": "2026-10-28",
+  "order": 2,
+  "glyph": "天",
+  "subtitle": "奥数·双时间线",
   "external": false,
-  "updated": "2026-10-21",
   "note": ""
 }

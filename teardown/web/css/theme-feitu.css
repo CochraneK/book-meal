@@ -1,0 +1,105 @@
+/* ============================================================
+   书影工坊 · 主题皮肤：我在废土世界扫垃圾
+   气质：锈蚀 · 工业 · 暗色生存。默认深色（危险琥珀 + 锈红 + 钢蓝），
+   终端等宽、危险斜纹、暗色主题。作用于 html[data-book="feitu"]。
+   ============================================================ */
+
+/* ---- 「亮色」盘（dusk 余烬，深色书默认不进亮态，这里给一个偏暗的暖灰）---- */
+html[data-book="feitu"] body {
+  --bg: #1c1812;
+  --panel: #262019;
+  --panel-2: #322a20;
+  --ink: #ece3d2;
+  --ink-2: #b6a890;
+  --ink-3: #8a7c66;
+  --line: #3e3424;
+  --accent: #e0a32e;        /* 危险琥珀（主） */
+  --accent-2: #5f93b4;      /* 钢蓝（次 / 链接） */
+  --gold: #c8882e;
+  --teal: #4a7a6f;          /* 地点：锈青 */
+  --red: #c5503a;           /* 锈红：冲突/战斗 */
+  --green: #6a8a5a;
+  --shadow: 0 1px 3px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.4);
+}
+
+/* ---- 暗色盘（更深，废土夜）---- */
+html[data-book="feitu"] body[data-theme="dark"] {
+  --bg: #14110d;
+  --panel: #1f1b14;
+  --panel-2: #2a241a;
+  --ink: #e8e0d0;
+  --ink-2: #b3a892;
+  --ink-3: #9a8c74;
+  --line: #3a3326;
+  --accent: #e8ac33;
+  --accent-2: #6a9ec0;
+  --gold: #d0902e;
+  --teal: #52947f;
+  --red: #cf5a42;
+  --green: #71985e;
+  --shadow: 0 1px 3px rgba(0,0,0,.55), 0 6px 20px rgba(0,0,0,.45);
+}
+
+/* ---- 签名母题：危险斜纹 + 暗色扫描线 ---- */
+/* 扫描线两层：粗 6px（.09）打底勾出 CRT 质感，细 3px（.05）叠加，缩放后仍肉眼可见 */
+html[data-book="feitu"] body {
+  background-color: var(--bg);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(224,163,46,.09) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(0deg, rgba(224,163,46,.05) 0 1px, transparent 1px 3px);
+}
+html[data-book="feitu"] body[data-theme="dark"] {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(232,172,51,.10) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(0deg, rgba(232,172,51,.06) 0 1px, transparent 1px 3px);
+}
+/* 头部顶部一道危险斜纹，像隔离带 */
+html[data-book="feitu"] .site-header {
+  border-top: 4px solid transparent;
+  border-image: repeating-linear-gradient(45deg,
+    var(--accent) 0 11px, #14110d 11px 22px) 4;
+  padding-top: 14px;
+}
+/* 等宽字体落到 kicker / subtitle，终端质感 */
+html[data-book="feitu"] .kicker,
+html[data-book="feitu"] .subtitle {
+  font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+  letter-spacing: .12em;
+}
+html[data-book="feitu"] .kicker { color: var(--accent); }
+
+/* ---- 局部重构 ---- */
+/* 英雄区数字卡：琥珀顶描边 + 暗角 */
+html[data-book="feitu"] .ov-stat {
+  border-top: 2px solid var(--accent);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+}
+/* 面板标题：危险琥珀竖线 */
+html[data-book="feitu"] .panel h3,
+html[data-book="feitu"] .ov-panel h3 {
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+}
+/* 章节节奏柱用琥珀；事件功能轨道用锈红，呼应「副本 / 战斗」 */
+html[data-book="feitu"] .ov-spark i { background: var(--accent); }
+html[data-book="feitu"] .ov-fig .tr span { background: var(--red); }
+/* 标签页激活态：琥珀 */
+html[data-book="feitu"] .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+/* 人物卡正面上缘锈红渐隐，硬核一点 */
+html[data-book="feitu"] .poke-front {
+  background: linear-gradient(160deg, rgba(224,163,46,.10), var(--panel) 60%);
+  border-color: var(--line);
+}
+html[data-book="feitu"] .poke-faction {
+  color: var(--accent);
+  font-family: "JetBrains Mono", Consolas, monospace;
+  letter-spacing: .06em;
+}
+/* 故事长文引文：锈红描边 */
+html[data-book="feitu"] .story blockquote { border-left-color: var(--red); }
+html[data-book="feitu"] .finding,
+html[data-book="feitu"] .ov-claim { border-left-color: var(--accent); }
+/* 链接用钢蓝，在暗底上更可读 */
+html[data-book="feitu"] .story a.ch-ref,
+html[data-book="feitu"] .story a.ph-ref,
+html[data-book="feitu"] .story button.ins-link { color: var(--accent-2); border-bottom-color: var(--accent-2); }

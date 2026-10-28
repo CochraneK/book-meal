@@ -13,8 +13,15 @@ __CSS__
 /* 主题在首次绘制前定好，避免亮→暗闪烁；与 app.js 的 applyTheme 同源同键 */
 try {
   var t = localStorage.getItem("kg-report-theme");
-  document.body.dataset.theme = (t === "dark" || t === "light") ? t
-    : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  if (t === "dark" || t === "light") {
+    document.body.dataset.theme = t;
+  } else {
+    /* 暗色气质的书（废土 / 天幕）默认进深色，其余跟系统偏好 */
+    var _book = document.documentElement.dataset.book;
+    var _darkDefault = (_book === "feitu" || _book === "swdw");
+    document.body.dataset.theme = (_darkDefault ||
+      matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  }
 } catch (e) { document.body.dataset.theme = "light"; }
 </script>
 <div id="app">

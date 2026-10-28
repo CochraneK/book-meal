@@ -363,6 +363,15 @@ def build(book_id):
     css = open(os.path.join(BASE, "web", "css", "app.css"), encoding="utf-8").read()
     js = open(os.path.join(BASE, "web", "js", "app.js"), encoding="utf-8").read()
 
+    # 按书换肤：存在 web/css/theme-<book>.css 就追到 app.css 之后（主题盘与母题
+    # 用 html[data-book] 作用域覆写，零侵入；不存在则只挂 data-book 标记，无害）。
+    theme_css = ""
+    theme_path = os.path.join(BASE, "web", "css", f"theme-{book_id}.css")
+    if os.path.exists(theme_path):
+        theme_css = open(theme_path, encoding="utf-8").read()
+        print(f"  [theme] 已注入主题皮肤 theme-{book_id}.css")
+    tpl = tpl.replace('<html lang="zh-CN">', f'<html lang="zh-CN" data-book="{book_id}">')
+
     # 自检 1：CSS 括号平衡
     if css.count("{") - css.count("}") != 0:
         raise RuntimeError("CSS 花括号不平衡，终止构建")
@@ -387,7 +396,7 @@ def build(book_id):
         raise RuntimeError("__DATA__ 占位符必须且只能出现一次")
 
     data_js = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
-    html = tpl.replace("__CSS__", css).replace("__JS__", js) \
+    html = tpl.replace("__CSS__", css + "\n" + theme_css).replace("__JS__", js) \
               .replace("__DATA__", data_js) \
               .replace("__TITLE__", cfg["title"])
 

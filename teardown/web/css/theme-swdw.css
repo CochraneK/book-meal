@@ -1,0 +1,91 @@
+/* ============================================================
+   书影工坊 · 主题皮肤：小说维度晋升，我在天幕当评委
+   气质：宇宙 · 星幕 · 空灵。默认深色（紫罗兰 + 星蓝 + 光粉），
+   星点光晕 + 棱镜渐变。作用于 html[data-book="swdw"]。
+   ============================================================ */
+
+/* ---- 「亮色」盘（黎明天幕，偏暗的靛紫）---- */
+html[data-book="swdw"] body {
+  --bg: #181730;
+  --panel: #221d3c;
+  --panel-2: #2c2650;
+  --ink: #ece8f7;
+  --ink-2: #b4acd6;
+  --ink-3: #8a7fb4;
+  --line: #382f5c;
+  --accent: #8b6cd6;        /* 紫罗兰（主） */
+  --accent-2: #5b8fd6;      /* 星蓝（次 / 链接） */
+  --gold: #d6b25e;
+  --teal: #4a9aa0;
+  --red: #d06a8a;           /* 光粉红：角色死亡/危机 */
+  --green: #5e9a7a;
+  --shadow: 0 1px 3px rgba(0,0,0,.45), 0 6px 18px rgba(70,40,120,.3);
+}
+
+/* ---- 暗色盘（深空夜幕）---- */
+html[data-book="swdw"] body[data-theme="dark"] {
+  --bg: #0f0e1a;
+  --panel: #1a1830;
+  --panel-2: #241f40;
+  --ink: #e6e2f5;
+  --ink-2: #b0a8d0;
+  --ink-3: #9387bd;
+  --line: #322b52;
+  --accent: #9b7ce6;
+  --accent-2: #6a9fe6;
+  --gold: #e0bd6a;
+  --teal: #54aab0;
+  --red: #e07aa0;
+  --green: #6eaa8a;
+  --shadow: 0 1px 3px rgba(0,0,0,.5), 0 6px 20px rgba(60,30,110,.35);
+}
+
+/* ---- 签名母题：星幕 + 顶部棱镜光晕 ---- */
+html[data-book="swdw"] body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1.6px 1.6px at 18px 28px, rgba(232,228,248,.95), transparent 60%),
+    radial-gradient(1.3px 1.3px at 86px 64px, rgba(155,124,230,.85), transparent 60%),
+    radial-gradient(1.8px 1.8px at 150px 130px, rgba(232,228,248,.8), transparent 60%),
+    radial-gradient(1.2px 1.2px at 58px 168px, rgba(106,159,230,.85), transparent 60%),
+    radial-gradient(1100px 460px at 50% -10%, rgba(139,108,214,.30), transparent 72%);
+  background-size: 200px 200px, 200px 200px, 200px 200px, 200px 200px, 100% 100%;
+}
+html[data-book="swdw"] .site-header {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--accent), var(--accent-2), var(--red)) 3;
+  padding-top: 14px;
+}
+html[data-book="swdw"] .kicker {
+  letter-spacing: .24em;
+  color: var(--accent);
+}
+
+/* ---- 局部重构 ---- */
+/* 英雄区数字卡：紫罗兰顶描边 + 星幕微光 */
+html[data-book="swdw"] .ov-stat {
+  border-top: 2px solid var(--accent);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+}
+/* 面板标题：紫罗兰竖线 */
+html[data-book="swdw"] .panel h3,
+html[data-book="swdw"] .ov-panel h3 {
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+}
+/* 章节节奏柱用紫罗兰；事件功能轨道用星蓝 */
+html[data-book="swdw"] .ov-spark i { background: var(--accent); }
+html[data-book="swdw"] .ov-fig .tr span { background: var(--accent-2); }
+html[data-book="swdw"] .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+/* 人物卡正面上缘紫罗兰渐隐 */
+html[data-book="swdw"] .poke-front {
+  background: linear-gradient(160deg, rgba(139,108,214,.12), var(--panel) 60%);
+}
+html[data-book="swdw"] .poke-faction { color: var(--accent); }
+/* 故事长文引文：紫罗兰描边 */
+html[data-book="swdw"] .story blockquote { border-left-color: var(--accent); }
+html[data-book="swdw"] .finding,
+html[data-book="swdw"] .ov-claim { border-left-color: var(--accent); }
+html[data-book="swdw"] .story a.ch-ref,
+html[data-book="swdw"] .story a.ph-ref,
+html[data-book="swdw"] .story button.ins-link { color: var(--accent-2); border-bottom-color: var(--accent-2); }

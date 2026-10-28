@@ -222,6 +222,37 @@ blockquote{margin:0;background:var(--paper-2);border-left:3px solid var(--accent
 .itbl .cw{color:var(--ink-3);white-space:nowrap}
 .itbl .cc{color:var(--ink-3);text-align:right;white-space:nowrap}
 footer{text-align:center;color:var(--ink-3);font-size:11.5px;padding:34px 0 0;line-height:1.7}
+
+/* ===== 书影工坊 · 主题皮肤：天幕当评委（深空星幕，暗色默认） =====
+   独立报告不走五元组模板，这里直接覆写变量 + 修几处硬编码亮色 + 加星幕母题。
+   覆写块置于末尾，同特异性下后声明胜出；变量级联到全篇。 */
+:root{
+  --bg:#0f0e1a; --paper:#1a1830; --paper-2:#241f40;
+  --ink:#e6e2f5; --ink-2:#b0a8d0; --ink-3:#9387bd;
+  --line:#322b52; --line-2:#3a3360;
+  --accent:#9b7ce6; --accent-soft:#2a2450; --gold:#e0bd6a;
+  --green:#6eaa8a; --amber:#d6a04e; --red:#e07aa0;
+  --shadow:0 1px 3px rgba(0,0,0,.5),0 8px 22px rgba(60,30,110,.35);
+}
+body{ background-color:var(--bg);
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 18%, rgba(232,228,248,.9), transparent),
+    radial-gradient(1.4px 1.4px at 28% 44%, rgba(155,124,230,.8), transparent),
+    radial-gradient(1.8px 1.8px at 47% 12%, rgba(232,228,248,.75), transparent),
+    radial-gradient(1.3px 1.3px at 63% 70%, rgba(155,124,230,.7), transparent),
+    radial-gradient(1.6px 1.6px at 78% 33%, rgba(232,228,248,.7), transparent),
+    radial-gradient(1.2px 1.2px at 88% 82%, rgba(106,159,230,.75), transparent),
+    radial-gradient(1.5px 1.5px at 35% 86%, rgba(232,228,248,.65), transparent),
+    radial-gradient(1.4px 1.4px at 8% 64%, rgba(155,124,230,.6), transparent),
+    radial-gradient(1100px 460px at 50% -10%, rgba(139,108,214,.30), transparent 72%); }
+nav.toc{ background:rgba(15,14,26,.94); border-bottom:1px solid var(--line) }
+nav.toc .brand{ color:var(--ink) }
+.hero{ border-bottom:1px solid var(--line) }
+.dtbl th{ background:#2a1f3a; color:var(--red) }
+.verdict-box.v-pass{ background:rgba(110,170,138,.12) }
+.verdict-box.v-fail{ background:rgba(214,160,78,.12) }
+.verdict-box.v-destroy{ background:rgba(224,122,160,.12) }
+.verdict-box.v-pending{ background:rgba(132,122,168,.12) }
 </style></head>
 <body>
 <nav class="toc"><span class="brand">小说维度晋升，我在天幕当评委</span><a href="#overview">概览</a><a href="#mech">天幕机制</a><a href="#worlds">七世界档案</a><a href="#rules">规则演化</a><a href="#arc">余黎成长</a><a href="#theme">主题</a><a href="#index">全本目录</a></nav>
