@@ -579,6 +579,20 @@ nav.toc .brand{ color:var(--ink) }
 .verdict-box.v-fail{ background:rgba(214,160,78,.12) }
 .verdict-box.v-destroy{ background:rgba(224,122,160,.12) }
 .verdict-box.v-pending{ background:rgba(132,122,168,.12) }
+
+/* ===== 无障碍：跳转链接 / 键盘焦点 / 减弱动效（与五元组模板同口径） ===== */
+.skip-link{position:fixed;left:16px;top:10px;z-index:100;transform:translateY(-180%);
+  padding:8px 12px;border-radius:6px;background:var(--paper);color:var(--accent);
+  border:1px solid var(--line);font-weight:700;text-decoration:none;transition:transform .15s}
+.skip-link:focus{transform:translateY(0)}
+button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+@media print{.skip-link{display:none!important}}
 """
 
 HTML = f"""<!DOCTYPE html>
@@ -587,8 +601,9 @@ HTML = f"""<!DOCTYPE html>
 <title>{esc(M['title'])} · 拆书报告</title>
 <style>{CSS}</style></head>
 <body>
+<a class="skip-link" href="#content">跳到主要内容</a>
 <nav class="toc"><span class="brand">{esc(M['title'])}</span>{nav_html}</nav>
-<div class="wrap">
+<div class="wrap" id="content" tabindex="-1">
 {hero}
 {section_overview()}
 {section_mech()}

@@ -300,6 +300,18 @@
     phases: renderPhases, quotes: renderQuotes, story: renderStory,
     perspectives: renderPerspectives, papers: renderPapers
   };
+  /* 打印前把未渲染的视图补齐：懒渲染后直接 Ctrl+P（完整手册模式）会把未访问过的
+     视图打成空白页——它们的 DOM 还是空的。beforeprint 统一补渲染；
+     「仅打印卡片」模式（body.printing-cards）隐藏了整个 #app，无需补。 */
+  function renderAllForPrint() {
+    if (document.body.classList.contains("printing-cards")) return;
+    Object.keys(RENDERERS).forEach(function (v) {
+      if (!rendered[v]) {
+        try { RENDERERS[v](); rendered[v] = true; } catch (e) { /* 单视图失败不阻塞打印 */ }
+      }
+    });
+  }
+  window.addEventListener("beforeprint", renderAllForPrint);
   function switchView(v) {
     currentView = v;
     Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (t) {
@@ -959,7 +971,7 @@
         "<span class='poke-quote-src'>第" + qCh + "章" +
         (q1.h ? " · " + esc(q1.h) : "") + "</span></div>"
       : "";
-    var back = "<div class='poke-face poke-back'>" +
+    var back = "<div class='poke-face poke-back' inert>" +
       "<div class='poke-kv'><b>姓名</b> " + esc(p.n) + "</div>" +
       (p.a && p.a.length ? "<div class='poke-kv'><b>别名</b> " + esc(p.a.join("、")) + "</div>" : "") +
       "<div class='poke-kv'><b>主阵营</b> " + esc(fm) + "</div>" +
@@ -987,7 +999,13 @@
           e.stopPropagation();
           return;
         }
-        card.classList.toggle("flipped");
+        var flipped = card.classList.toggle("flipped");
+        /* 翻面后把朝向读者的那一面设为可交互，另一面 inert：
+           否则 Tab 会聚焦到背面被遮挡的「详情」链接，读屏也会念两面内容。 */
+        var front = card.querySelector(".poke-front");
+        var back = card.querySelector(".poke-back");
+        if (front) front.inert = flipped;
+        if (back) back.inert = !flipped;
       };
     });
     var pb = $("print-cards");
