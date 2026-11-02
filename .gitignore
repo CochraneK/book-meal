@@ -15,6 +15,14 @@ venv/
 明朝那些事儿.txt
 data/chapters.json
 
+# ── 版权：抓取正文（fanqie-novel-scrape 等抓取 skill 的产物）──
+# 正文统一落 data/<id>/chapters/，只供本地拆书；合并 TXT 也在 data/ 里。
+# 与 tests/check_copyright.py 的「data/ 下禁止 .txt」规则对齐，
+# 免得抓完顺手 git add -A 就把整本原文推上去。
+data/**/*.txt
+data/*/chapters/
+data/*/.cache/
+
 # ── 版权：teardown/ 工程自带的规则 ──────────────────────
 # teardown/ 目录下另有 .gitignore，负责该工程的原文排除
 # （《天才基本法》《我在废土世界扫垃圾》两本 TXT）与产物排除（out/）。

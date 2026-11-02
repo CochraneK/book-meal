@@ -3,6 +3,12 @@
 本仓库是**多书拆解聚合平台**。新增一本书不需要改平台代码、不需要改 CI——
 平台只认 `books/<id>/manifest.json` 这一份「书目名片」。
 
+> **源文本从哪来**：番茄（fanqienovel.com）的书用仓内 skill
+> `.workbuddy/skills/fanqie-novel-scrape/`——`scripts/fanqie.py` 抓取并还原 PUA 字体混淆，
+> 正文落 `data/<id>/`（已 gitignore），`scripts/make_manifest.py` 写书目名片。
+> 其它站点（带 Cloudflare 的聚合站）见用户级 skill `novel-cloudflare-scrape`。
+> 两者产出一致（`chapters/NNNN.txt`），下游流程通用。
+
 ## 一、准备报告产物
 
 把该书的报告做成**单文件离线 HTML**（不引任何 CDN，双击可开），放到：

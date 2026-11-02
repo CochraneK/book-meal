@@ -1,2 +1,6 @@
 # 本流水线仅使用 Python 3.8+ 标准库，无第三方依赖。
 # 如需运行抽取辅助脚本，直接用系统/内置 Python 即可。
+#
+# 例外：抓取脚本 .workbuddy/skills/fanqie-novel-scrape/scripts/ 需要字形比对依赖
+#   pip install fonttools numpy
+# （只影响「抓番茄」，不影响拆书/构建/发布主流水线）
