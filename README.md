@@ -58,6 +58,9 @@
   统一提示条（说明故障 + 重试 + 可关闭），不再静默白屏。
 - **离线优先**——CSS/JS/数据全内联进单文件；地图在瓦片全失败时自动退回 SVG 点位图，
   点位仍可点击查看书中介绍。
+- **书库不是五个孤岛**——每份报告顶部都有同一条书库导航：一键回门户、下拉切到
+  另外四本；书单来自 `books/*/manifest.json` 的单一真源，新增一本自动纳入。
+  离线双击下载的报告时，导航链接自动改指线上书库，正文仍完全离线。
 - **数据诚实披露**——未知年份的事件单独成组，未定位地点如实标注，覆盖率与
   缺口都写在页面上，不拿推断充数据。
 
@@ -87,10 +90,18 @@ python -m http.server 8765 --bind 127.0.0.1   # 起个静态服务
 
 ```powershell
 python src/merge.py            # 聚合（增量勘误层不会被覆盖）
-python src/build.py            # 构建明书离线单文件 standalone.html
+python src/build.py --scope full --target standalone --out standalone.html
+python src/build.py --scope full --target web --out .ci/publish
 python src/build_hub.py        # 重建书库门户 index.html
+python src/sync_shelf.py       # 给 6 份报告注入/刷新书库导航条（幂等）
+python src/sync_readme.py      # 重建 README
 python tests/run_tests.py      # 单元测试（纯标准库，无第三方依赖）
+python src/check_delivery.py   # 交付能力断言（按需加载/洞察互跳/导航条/门户）
 ```
+
+`sync_shelf.py` 必须排在**所有会重写报告产物的命令之后**：导航条是发布层的
+生成装饰，重建 `standalone.html` / `ming/` / `books/` 会把它覆盖掉。CI 在
+`refresh-index.yml` 里也是按这个顺序跑，并有 `--check` 兜底。
 
 ## 仓库结构
 
@@ -103,7 +114,11 @@ books/                每本书一个目录
   <id>/index.html     该书报告（单文件）
 ming/                 《明朝那些事儿》分层版报告（index.html + assets/，CI 生成）
 src/                  平台与构建脚本
-  build_hub.py        门户生成器（扫 books/*/manifest.json）
+  book_registry.py    统一书单单一真源：门户/README/各报告导航条都读它
+  sync_shelf.py       把书库导航条幂等注入 6 份报告（--check 可入 CI）
+  check_delivery.py   交付能力断言：把路线图「已完成」变成机器可验事实
+  build_hub.py        门户生成器（书单来自 book_registry.py）
+  sync_readme.py      README 生成/校验器（改文案改这里，勿手改 README）
   build.py            统一构建入口（--target standalone|web、--check）
   merge.py            数据聚合 / generate_report.py 最终模型
   audit_final.py      深审（ERROR 即退出非 0）
@@ -170,6 +185,8 @@ Pages 用 **Actions 部署**（不是「从分支发布」），站点内容 = `
 | 深审 | `python src/audit_final.py` | 业务规则：geo 对账、同名异地、在位区间衔接、分部子图 |
 | 单元测试 | `python tests/run_tests.py` | 共享核心、数据不变量、模板拆分等价性、占位符唯一性、错误 UI 锚点 |
 | 浏览器自检 | `python tests/browser_check.py <产物>` | 本机 Chrome `--dump-dom` 跑 11 个场景（deep link、搜索高亮、地图、双模式图…）+ 启动守卫兜底 |
+| 书库连通 | `python src/sync_shelf.py --check` | 6 份报告的导航条是否都是最新版（回门户 / 书间切换不至于退化成死链） |
+| 交付能力 | `python src/check_delivery.py` | 按需加载、洞察互跳、离线单文件、门户工具栏的 11 项结构断言 |
 
 CI 每次 push/PR 还会先跑**版权合规巡检**（原书全文一旦入库即失败）与
 **模块遮蔽巡检**（任何 `.py` 与标准库同名都会污染 `sys.path[0]`，仅存在就能让 Python 崩掉）。
@@ -187,15 +204,29 @@ CI 有巡检）。仓库只发布脱敏后的章节索引与聚合结果。换�
 
 ## 新增一本书
 
-放 `books/<id>/` + 一份 `manifest.json`，跑一次 `python src/build_hub.py` 即可，
-平台代码与 CI 都不用改。完整手册见 [`docs/add_a_book.md`](docs/add_a_book.md)。
+放 `books/<id>/` + 一份 `manifest.json`，跑一次
+`python src/build_hub.py` + `python src/sync_shelf.py` 即可，平台代码与 CI 都不用改
+——书库导航条的目标清单由 manifest 派生，新书自动获得回门户与书间切换能力。
+完整手册见 [`docs/add_a_book.md`](docs/add_a_book.md)。
 
 ## 路线图
 
-- [ ] 明书按需加载恢复（2026-10-01 单体 `data.js` 重构后暂停，现状首屏约 5 MB）
-- [ ] 人物卡语录扩面（现 66 人 → 目标覆盖高频人物，须原文命中）
-- [ ] 洞察长文与图谱实体互跳
-- [ ] 未定位地点与未知年份事件的人工考据（按提及频次排序推进）
+**已结清**（2026-11-04 复核，结论由 `python src/check_delivery.py` 常驻断言守护）：
+
+- [x] 明书按需加载——此前把两种交付形态混为一谈了。`ming/` 分层版首屏只下
+  约 279 KB 的 boot 元数据，10 个数据分块（共 5.3 MB）按视图懒加载，实测
+  点「洞察」才请求 `data-insight.js`；`standalone.html`（5.28 MB）是**有意保留**
+  的完整离线单文件，按定义不能拆，不在该项范围内。
+- [x] 洞察长文与图谱实体互跳——正向：洞察正文里的实体名可点开人物/地点/事件卡
+  （实测 466 个可点实体）；反向：卡片内「相关洞察」跳回对应章节并高亮，
+  弹窗先行关闭。双向钩子 `linkifyInsight` / `insightBlock` 均有断言覆盖。
+
+**待办**（都需要原文考据，不能凭记忆或推断补齐）：
+
+- [ ] 人物卡语录扩面（现 66 人 → 目标覆盖高频人物；验收线：每句
+  在原书全文检索到原句，0 命中即弃用，见「数据纪律」）
+- [ ] 未定位地点与未知年份事件的人工考据（583 个地点中
+  553 个已定位；按提及频次排序推进，每条须标注来源）
 
 历史过程与踩坑记录在 `.workbuddy/`（工程笔记）与 `docs/history/`（重构方案、自查与验收清单）。
 

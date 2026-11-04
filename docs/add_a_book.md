@@ -1,7 +1,34 @@
 # 新增一本书（runbook）
 
 本仓库是**多书拆解聚合平台**。新增一本书不需要改平台代码、不需要改 CI——
-平台只认 `books/<id>/manifest.json` 这一份「书目名片」。
+平台只认 `books/<id>/manifest.json` 这一份「书目名片」。书单的单一真源是
+`src/book_registry.py`：门户书卡、README 书单表、各报告顶部的书库导航条都从这里读，
+因此新增一本只需放 manifest，三处自动同步。
+
+## 端到端流水线（标准顺序）
+
+```
+抓取源文本 → 分章 → 逐章抽取五元组 → 聚合 → 质量校验 → 主题皮肤 → 报告构建
+→ 登记 manifest → 门户重建 → 导航条注入 → 交付断言 → 提交发布
+```
+
+| 阶段 | 落点 | 命令 / 工具 |
+|---|---|---|
+| 抓取 + 字体反混淆 | `data/<id>/`（不入版本控制） | `.workbuddy/skills/fanqie-novel-scrape/scripts/fanqie.py`、`font_deobf.py`、`qa.py`、`make_manifest.py` |
+| 分章 | `teardown/data/<id>/chapters.json` | `teardown/src/split_chapters.py` |
+| 抽取 | `extract_raw.json` | 用户级 skill `book-teardown-pipeline` 六阶段流水线 |
+| 聚合 | `data.json` | `teardown/src/merge.py` |
+| 校验 | — | `teardown/src/quality_checkup.py` + `verify_*.py` + `pytest tests -q` |
+| 主题皮肤 | `teardown/web/css/theme-<id>.css` | 书影工坊 SOP；按书气质换肤 + 母题 + 局部重构 |
+| 报告 | `teardown/out/<id>.html` | `teardown/src/generate_report.py` / `build_swdw_report.py` |
+| 发布同步 | `books/<id>/index.html` | `teardown/src/publish_books.py <id>`（会自动注入导航条） |
+| 门户 + 导航条 | `index.html` 与 6 份报告 | `python src/build_hub.py` → `python src/sync_shelf.py` |
+| 交付断言 | — | `python src/check_delivery.py`、`python src/sync_shelf.py --check` |
+| README | `README.md` | `python src/sync_readme.py`（勿手改） |
+
+> 顺序里最容易漏的是 **`sync_shelf.py` 必须排在所有会重写报告产物的命令之后**。
+> 导航条是发布层生成装饰，重建 `standalone.html` / `ming/` / `books/` 会覆盖它；
+> 漏跑时 `python src/sync_shelf.py --check` 与 CI 的「书库导航条一致性」会直接报红。
 
 > **源文本从哪来**：番茄（fanqienovel.com）的书用仓内 skill
 > `.workbuddy/skills/fanqie-novel-scrape/`——`scripts/fanqie.py` 抓取并还原 PUA 字体混淆，
@@ -74,26 +101,39 @@ python "C:/Users/cunyi/.workbuddy/skills/book-teardown-pipeline/scripts/new_book
 | `updated` | 否 | 报告更新日期 `YYYY-MM-DD` |
 | `note` | 否 | 卡片上的小徽标文字，如「独立报告」 |
 
-## 三、本地生成并验证门户
+## 三、本地生成并验证门户 + 导航条
 
 ```bash
-python src/build_hub.py --check     # 只校验不落盘
+python src/book_registry.py         # 确认新书已进入统一书单
+python src/build_hub.py --check     # 只校验不落盘（含断链检查）
 python src/build_hub.py             # 生成根 index.html
+python src/sync_shelf.py --list     # 确认新书报告已被列为注入目标
+python src/sync_shelf.py            # 给 6 份报告刷新导航条
+python src/sync_shelf.py --check    # 幂等性校验
+python src/check_delivery.py        # 交付能力断言
+python src/sync_readme.py           # 重建 README（书单表 / 路线图数字）
 ```
 
-打开根 `index.html` 应看到：新卡片、总览数字已累加、类型筛选 chip 已更新。
+打开根 `index.html` 应看到：新卡片、总览数字已累加、类型筛选 chip 已更新、
+搜索「书名」命中 1 本。进入新报告应看到顶部「← 书库 / 书名 / 切换书目 ▾」，
+下拉菜单里 6 个入口齐全、当前书高亮。
+
+`sync_shelf.py` 的 `base` 由产物相对仓库根的深度自动算出（`books/<id>/` 是
+`../../`，`ming/` 是 `../`，根目录是 `./`），书挪目录不会留下死链；报告用
+`file://` 双击打开时，导航链接自动改指线上书库，正文仍完全离线。
 
 ## 四、提交并推送
 
 ```bash
-git add books/<id>/ src/build_hub.py README.md
+git add books/<id>/ index.html README.md docs/add_a_book.md
+git add standalone.html ming/index.html books/*/index.html   # sync_shelf.py 的回写
 git commit -m "feat(books): 新增《书名》拆解报告"
 git push
 ```
 
 推送到 `main` 会触发 `refresh-index.yml`：重建明书分层版与 `standalone.html`、
-重跑门户生成，并在产物确有变化时自动回写一个 commit。**门户本身也会被 CI 重新生成**，
-所以第③步在本地跑只为提前验证，不必提交它（提交也无妨，CI 会覆盖成同一内容）。
+重跑门户生成、**重放 `sync_shelf.py`**，并在产物确有变化时自动回写一个 commit。
+所以第③步在本地跑主要为提前验证；即使漏提交，CI 也会按同一顺序补齐。
 
 ## 五、旧深链兼容（仅首次改造时需要注意）
 

@@ -48,6 +48,14 @@ import sys
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# 平台侧的统一书单与「书库导航条」在仓库根的 src/ 下。
+# 追加到 sys.path 末尾（不是 insert(0)）：本工程 src/ 里也有 core/ 等同名模块，
+# 必须让本工程自己的模块优先，否则会在构建脚本里发生隐蔽的模块遮蔽。
+_ROOT_SRC = os.path.normpath(os.path.join(os.path.dirname(BASE), "src"))
+if _ROOT_SRC not in sys.path:
+    sys.path.append(_ROOT_SRC)
+import book_registry as REG  # noqa: E402
+
 # 平台根目录 = 本工程的父目录。
 # 2026-10-21 两仓合并：本工程作为 teardown/ 子目录并入 book-meal 仓库，
 # 门户 index.html 与 books/<id>/ 都在同一仓库里，因此父目录就是平台根。
@@ -82,11 +90,14 @@ _GENERATED_RE = re.compile(rb'"generated":"[^"]*"')
 
 
 def canonical_digest(data: bytes) -> str:
-    """产物比对用的摘要：忽略 generated 时间戳，只反映真正的内容变化。
+    """产物比对用的摘要：忽略 generated 时间戳 + 平台专有书库导航条。
 
-    写入平台时复制的仍是原文件（含最新时间戳），归一化只影响「要不要复制」的判断。
+    为什么还要剥离导航条：`books/<id>/index.html` 是**发布物**，比本工程的
+    `out/<id>.html` 多一段由 src/sync_shelf.py 注入的书库导航条（返回门户 +
+    切换书目）。那是平台装饰，不是本工程产物的内容变化；不剥掉的话，
+    `publish_books.py --check` 会在每本书注入后永远报「平台副本落后」。
     """
-    return digest(_GENERATED_RE.sub(b"", data))
+    return digest(_GENERATED_RE.sub(b"", REG.strip_shelf(data)))
 
 
 def publishable_books(cfg):
@@ -188,14 +199,19 @@ def main(argv=None):
             continue
 
         old_man = load_json(dest_man)
-        new_man = build_manifest(bid, local_man, entry, old_man, today)
         src_bytes = read_bytes(src_path)
 
-        # 1) 产物是否同步（按内容比对，不看 mtime；忽略构建时间戳）
+        # 1) 产物是否同步（按内容比对，不看 mtime；忽略构建时间戳与平台导航条）
         same_html = (
             os.path.isfile(dest_html)
             and canonical_digest(read_bytes(dest_html)) == canonical_digest(src_bytes)
         )
+        # updated 的语义是「这本书的报告上次真正变了是什么时候」，不是
+        # 「今天几号」。此前无条件写 today，导致发布后每过一天
+        # `publish_books.py --check` 就报一次「平台副本落后」——纯粹由日历
+        # 触发的假阳性，定时 CI 尤其容易被打红。产物没变就沿用旧值。
+        effective_today = ((old_man or {}).get("updated") or today) if same_html else today
+        new_man = build_manifest(bid, local_man, entry, old_man, effective_today)
         # 2) manifest 是否会变（忽略 _order 这类门户内部计算字段）
         same_man = False
         if old_man:
@@ -206,8 +222,10 @@ def main(argv=None):
 
         if not args.check and not same_html:
             os.makedirs(dest_dir, exist_ok=True)
+            # 发布物比构建产物多一段平台专有的书库导航条。在这里就注入，
+            # 本地跑完 publish_books.py 不必再记得补跑 src/sync_shelf.py。
             with open(dest_html, "wb") as f:
-                f.write(src_bytes)
+                f.write(REG.inject_shelf(src_bytes, bid, "../../"))
             changed_copy.append(bid)
         if not args.check and not same_man:
             os.makedirs(dest_dir, exist_ok=True)

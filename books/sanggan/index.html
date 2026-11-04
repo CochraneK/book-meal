@@ -404,6 +404,102 @@ mark.hl{background:#f6dd93;color:#2f2a22;border-radius:2px;padding:0 1px}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2329241f'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='%23f0d18c' font-family='serif'>桑</text></svg>">
 </head>
 <body>
+<!-- BOOK_SHELF_START -->
+<style>
+/* ===== 书库导航条（src/book_registry.py 注入，勿在报告里另写一份） ===== */
+.shelf-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:7px 18px;background:#2b2520;color:#f4ecdf;font-size:12.5px;
+  font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+  border-bottom:1px solid rgba(216,191,134,.28);position:relative;z-index:60}
+.shelf-bar a{color:inherit;text-decoration:none}
+.shelf-home{font-weight:700;white-space:nowrap;letter-spacing:.02em}
+.shelf-home:hover{color:#e5c889}
+.shelf-sep{opacity:.4}
+.shelf-cur{color:#e5c889;font-weight:600;white-space:nowrap;
+  max-width:22ch;overflow:hidden;text-overflow:ellipsis}
+.shelf-spacer{flex:1}
+.shelf-switch{position:relative}
+.shelf-switch>button{cursor:pointer;background:transparent;color:#f4ecdf;
+  border:1px solid rgba(216,191,134,.45);border-radius:6px;
+  padding:3px 10px;font:inherit;font-size:12px}
+.shelf-switch>button:hover{border-color:#e5c889;color:#e5c889}
+.shelf-menu{position:absolute;right:0;top:calc(100% + 6px);min-width:210px;
+  background:#fffdf8;color:#2f2822;border:1px solid #ded6c9;border-radius:9px;
+  box-shadow:0 10px 30px rgba(42,31,21,.22);padding:6px;display:none;z-index:70}
+.shelf-switch.open .shelf-menu{display:block}
+.shelf-menu a{display:flex;align-items:center;gap:9px;padding:7px 9px;
+  border-radius:6px;font-size:12.5px;white-space:nowrap}
+.shelf-menu a:hover,.shelf-menu a[aria-current="page"]{background:#f3ece0}
+.shelf-menu a[aria-current="page"]{font-weight:700}
+.shelf-dot{width:8px;height:8px;border-radius:50%;flex:none}
+.shelf-menu small{margin-left:auto;color:#8a8075;font-size:10.5px}
+.shelf-switch>button:focus-visible,.shelf-menu a:focus-visible,.shelf-home:focus-visible{
+  outline:2px solid #e5c889;outline-offset:2px}
+/* 各报告的 skip-link 固定在 top:10px，会被导航条盖住，统一挪到条下方 */
+.shelf-bar~.skip-link{top:46px}
+@media(max-width:640px){.shelf-bar{padding:6px 12px;font-size:11.5px}
+  .shelf-cur{max-width:12ch}}
+@media print{.shelf-bar{display:none!important}}
+</style>
+<nav class="shelf-bar" id="shelf-bar" aria-label="书库导航"><a class="shelf-home" href="../../index.html">← 书库</a><span class="shelf-sep">/</span><span class="shelf-cur"></span><span class="shelf-spacer"></span><span class="shelf-switch" id="shelf-switch"><button type="button" id="shelf-toggle" aria-haspopup="true" aria-expanded="false">切换书目 ▾</button><span class="shelf-menu" id="shelf-menu" role="menu"></span></span></nav>
+<script>window.BOOK_SHELF=[{"id":"ming","title":"明朝那些事儿","kindLabel":"历史","accent":"#8a2f2f","href":"ming/index.html"},{"id":"tiancai","title":"天才基本法","kindLabel":"现代现实","accent":"#8c4a2f","href":"books/tiancai/index.html"},{"id":"feitu","title":"我在废土世界扫垃圾","kindLabel":"幻想世界","accent":"#3a6b5a","href":"books/feitu/index.html"},{"id":"swdw","title":"小说维度晋升，我在天幕当评委","kindLabel":"幻想世界","accent":"#5a4b8c","href":"books/swdw/index.html"},{"id":"sanggan","title":"太阳照在桑乾河上","kindLabel":"现代现实","accent":"#2f6b6b","href":"books/sanggan/index.html"}];window.BOOK_SHELF_CURRENT="sanggan";window.BOOK_SHELF_BASE="../../";window.BOOK_SHELF_ONLINE_BASE="https://cochranek.github.io/book-meal/";
+(function(){
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  var list = window.BOOK_SHELF || [];
+  var cur  = window.BOOK_SHELF_CURRENT || '';
+  var base = window.BOOK_SHELF_BASE || './';
+  // 双击下载的离线单文件时，相对路径指向的兄弟目录不存在；
+  // 此时导航条改指线上书库（链接是导航，不是内容依赖，不影响离线正文）。
+  if (location.protocol === 'file:' && window.BOOK_SHELF_ONLINE_BASE) {
+    base = window.BOOK_SHELF_ONLINE_BASE;
+  }
+  var bar  = document.getElementById('shelf-bar');
+  if (!bar) return;
+
+  var home = bar.querySelector('.shelf-home');
+  if (home) home.href = base + 'index.html';
+
+  var here = null;
+  list.forEach(function(b){ if (b.id === cur) here = b; });
+  var curEl = bar.querySelector('.shelf-cur');
+  if (curEl) curEl.textContent = here ? here.title : (cur || '本报告');
+
+  var sw   = document.getElementById('shelf-switch');
+  var btn  = document.getElementById('shelf-toggle');
+  var menu = document.getElementById('shelf-menu');
+  if (!sw || !btn || !menu) return;
+
+  menu.innerHTML = list.map(function(b){
+    var on = b.id === cur;
+    return '<a href="' + esc(base + b.href) + '"'
+      + (on ? ' class="on" aria-current="page"' : '') + '>'
+      + '<span class="shelf-dot" style="background:' + esc(b.accent) + '"></span>'
+      + '<span></span><small>' + esc(b.kindLabel || '') + '</small></a>';
+  }).join('');
+  // 书名走 textContent，避免 title 里的特殊字符破坏结构（与整体转义纪律一致）
+  Array.prototype.forEach.call(menu.querySelectorAll('a'), function(a, i){
+    var span = a.querySelectorAll('span')[1];
+    if (span && list[i]) span.textContent = list[i].title;
+  });
+
+  function toggle(open){
+    sw.classList.toggle('open', typeof open === 'boolean' ? open : !sw.classList.contains('open'));
+    btn.setAttribute('aria-expanded', sw.classList.contains('open') ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); toggle(); });
+  document.addEventListener('click', function(e){
+    if (!sw.contains(e.target)) toggle(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') toggle(false);
+  });
+})();
+</script>
+<!-- BOOK_SHELF_END -->
 <a class="skip-link" href="#main">跳到主内容</a>
 <header class="app-header">
   <div class="header-inner">

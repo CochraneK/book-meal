@@ -75,6 +75,9 @@ jobs:
           cp -R .ci/publish/assets ming/assets
           python src/check_budget.py standalone.html
           python src/build_hub.py --quiet
+          # 重新生成会覆盖掉上一步的产物，书库导航条必须在这里重放（幂等）。
+          # 目标清单由 books/*/manifest.json 派生，新增书自动纳入。
+          python src/sync_shelf.py --quiet
 
       - name: 仅在公开产物变化时回写 main
         shell: bash
@@ -84,13 +87,15 @@ jobs:
             echo "main 已有更新；放弃本次旧快照回写，由更新提交触发的新任务负责。"
             exit 0
           fi
-          if git diff --quiet -- web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html ming/index.html ming/assets; then
-            echo "源码镜像、README、聚合门户、明书分层版与离线版均已一致，无需提交。"
+          if git diff --quiet -- web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html ming/index.html ming/assets books/; then
+            echo "源码镜像、README、聚合门户、明书分层版、离线版与各书导航条均已一致，无需提交。"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html ming/index.html ming/assets
+          # books/ 整目录纳入：sync_shelf.py 会回写各书的 index.html，
+          # 只 add 明书那几个文件会让导航条改动留在工作区、下次又触发一轮。
+          git add web/js/app.js web/js/experience.js web/css/app.css web/template/index.html README.md index.html standalone.html ming/index.html ming/assets books/
           # 根 assets/ 已下沉到 ming/assets/（旧架构遗留），从索引中移除
           git rm -r -q --cached --ignore-unmatch assets
           git commit -m "chore: publish book hub and ming layered report"

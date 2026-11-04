@@ -105,3 +105,9 @@ jobs:
 
       - name: 无头浏览器自检（12 视图 x 2 本书）
         run: python src/check_report.py
+
+      # 视图渲染得出来 ≠ 体验基建还在。守卫/懒渲染/分页/别名归一/翻面 inert/
+      # beforeprint 打印补齐/skip-link 这些此前全靠人工点一遍，这里固化为断言，
+      # 防止后续改前端时悄悄退化（2026-11-04 补）。
+      - name: 体验基建回归自检
+        run: python src/check_experience.py

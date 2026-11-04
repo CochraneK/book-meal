@@ -53,6 +53,15 @@ jobs:
       - name: 聚合门户校验（不落盘）
         run: python src/build_hub.py --check
 
+      # 5 个孤岛报告靠顶部的书库导航条连成一个产品。条子是生成物
+      # （src/sync_shelf.py 幂等注入），手改/漏跑都会让书间跳转退化成死链。
+      - name: 书库导航条一致性
+        run: python src/sync_shelf.py --check
+
+      # README 路线图里勾掉的「已完成」必须有机器可验的依据，防止悄悄退化。
+      - name: 交付能力断言（按需加载 / 洞察互跳 / 导航条 / 门户）
+        run: python src/check_delivery.py
+
       # Pages 只发布白名单成品（index.html / standalone.html / sw.js / ming/ / books/），
       # 由 src/build_dist.py 挑拣。PR 阶段就跑一遍组装 + 门禁，
       # 免得合并后部署才发现发布面不对（比如有人把原著误放进 books/）。

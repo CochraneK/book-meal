@@ -31,23 +31,31 @@ from __future__ import annotations
 
 import argparse
 import html
-import json
 import sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[1]
 BOOKS_DIR = BASE / "books"
 
-KIND_LABELS = {
-    "history": "历史",
-    "modern_real": "现代现实",
-    "fictional_world": "幻想世界",
-    "humanities": "人文",
-    "other": "其他",
+# 书单的单一真源：门户 / README / 各报告的书库导航条都读它。
+# 这里保留 KIND_LABELS / DEFAULT_ORDER / load_manifests / report_href 作为
+# 对外名字（sync_readme.py 在用），实现全部委托过去，避免两份口径漂移。
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import book_registry as REG  # noqa: E402
+
+KIND_LABELS = REG.KIND_LABELS
+
+# 书卡上的「气质」标签：一眼看出这本书的报告偏重什么，而不只是类型名。
+KIND_TRAITS = {
+    "history": "圣地巡礼 · 年谱",
+    "modern_real": "现实图谱 · 深描",
+    "fictional_world": "世界观 · 阶段轴",
+    "humanities": "多视角 · 论文",
+    "other": "结构化拆解",
 }
 
 # 卡片排序：order 小的在前；缺省排最后（保持稳定）
-DEFAULT_ORDER = 99
+DEFAULT_ORDER = REG.DEFAULT_ORDER
 
 
 def esc(v) -> str:
@@ -60,48 +68,17 @@ def esc(v) -> str:
 
 
 def load_manifests(books_dir: Path = BOOKS_DIR):
-    """扫描 books/*/manifest.json，返回 (manifests, warnings)。"""
-    manifests, warnings = [], []
-    if not books_dir.is_dir():
-        return manifests, ["books/ 目录不存在：%s" % books_dir]
+    """扫描 books/*/manifest.json，返回 (manifests, warnings)。
 
-    for child in sorted(books_dir.iterdir()):
-        mf = child / "manifest.json"
-        if not mf.is_file():
-            continue
-        try:
-            data = json.loads(mf.read_text(encoding="utf-8"))
-        except Exception as exc:  # noqa: BLE001 - 坏 manifest 不应中断整站
-            warnings.append("manifest 解析失败，已跳过：%s（%s）" % (mf, exc))
-            continue
-        if not data.get("title"):
-            warnings.append("manifest 缺少 title，已跳过：%s" % mf)
-            continue
-        data.setdefault("id", child.name)
-        data.setdefault("kind", "other")
-        data.setdefault("metrics", {})
-        data.setdefault("report", "index.html")
-        data["_order"] = data.get("order", DEFAULT_ORDER)
-        manifests.append(data)
-
-    manifests.sort(key=lambda m: (m["_order"], str(m.get("id", ""))))
-    return manifests, warnings
+    实现在 book_registry.load_with_warnings：同一份书单同时供门户、README、
+    书库导航条使用，新增一本书不需要改本文件。
+    """
+    return REG.load_with_warnings(books_dir)
 
 
 def report_href(m) -> str:
-    """卡片「打开」链接。external 书的 report 视为绝对/站外地址。
-
-    report 为纯文件名（如 `index.html`）时按 `books/<id>/<report>` 拼接；
-    含 `/` 则视为站内相对路径原样使用，供报告不在 `books/<id>/` 下的情形
-    （例：明书下沉到仓库根 `ming/`，写作 `ming/index.html`）。
-
-    路径一律相对门户页（它就在仓库根）解析。本站挂在 GitHub Pages 子路径 `/book-meal/`
-    **不能**用 `/` 开头的绝对路径——那会跳到域名根。
-    """
-    rep = str(m.get("report", "index.html"))
-    if m.get("external") or "/" in rep:
-        return rep
-    return "books/%s/%s" % (m.get("id", ""), rep)
+    """卡片「打开」链接，相对站点根（书库导航条用的是同一个 href）。"""
+    return m.get("href") or REG.href_of(m)
 
 
 def _card(m) -> str:
@@ -128,13 +105,23 @@ def _card(m) -> str:
     meta_line = " · ".join(
         x for x in (m.get("author", ""), m.get("subtitle", "")) if x
     )
+    trait = KIND_TRAITS.get(kind, "结构化拆解")
+    size = sum(int(metrics.get(k) or 0) for k in ("characters", "events", "relations"))
+    haystack = " ".join(str(x or "") for x in (
+        m.get("title"), m.get("author"), m.get("subtitle"), m.get("desc"), kind_label,
+    )).lower()
+    attrs = (
+        'data-order="%s" data-size="%d" data-updated="%s" data-search="%s"'
+        % (esc(m.get("order", 999)), size, esc(m.get("updated", "")), esc(haystack))
+    )
 
     return (
-        '<article class="card" data-kind="{kind}" style="--accent:{accent}">'
+        '<article class="card" data-kind="{kind}" style="--accent:{accent}" {attrs}>'
         '<div class="cover" aria-hidden="true"><span class="glyph">{glyph}</span>'
         '<span class="cover-kind">{kind_label}</span></div>'
         '<div class="body">'
-        '<div class="k-row"><span class="bdg bdg-kind">{kind_label}</span>{badges}</div>'
+        '<div class="k-row"><span class="bdg bdg-kind">{kind_label}</span>'
+        '<span class="bdg bdg-trait">{trait}</span>{badges}</div>'
         "<h2>{title}</h2>"
         '<p class="author">{meta}</p>'
         '<p class="desc">{desc}</p>'
@@ -154,6 +141,8 @@ def _card(m) -> str:
         stats_html=stats_html,
         updated=("更新 " + esc(m.get("updated"))) if m.get("updated") else "",
         href=esc(report_href(m)),
+        attrs=attrs,
+        trait=esc(trait),
     )
 
 CSS = """
@@ -161,8 +150,26 @@ CSS = """
   --bg:#f2eee6; --paper:#fffdf8; --ink:#27231f; --muted:#716960;
   --line:#ded6c9; --accent:#8d3025; --gold:#b88b35;
   --shadow:0 8px 24px rgba(42,31,21,.08);
+  --card-ink:#2f2822; --desc:#4a443b; --hero-bg1:#342c25; --hero-bg2:#2a241f;
+}
+body[data-theme="dark"]{
+  --bg:#171613; --paper:#211f1b; --ink:#efe7da; --muted:#a79c8c;
+  --line:#3b362e; --accent:#d08a72; --gold:#d8bf86;
+  --shadow:0 8px 24px rgba(0,0,0,.4);
+  --card-ink:#f4ecdf; --desc:#cfc4b4; --hero-bg1:#2a2621; --hero-bg2:#1d1a17;
 }
 *{box-sizing:border-box}
+.skip-link{position:fixed;left:16px;top:10px;z-index:120;transform:translateY(-180%);
+  padding:8px 12px;border-radius:6px;background:var(--paper);color:var(--accent);
+  border:1px solid var(--line);font-weight:700;text-decoration:none;transition:transform .15s}
+.skip-link:focus{transform:translateY(0)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
   line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -198,6 +205,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .bdg-kind{background:#f3ece0;color:#8a6a2a}
 .bdg-ext{background:#e8f1ec;color:#2f6b4f}
 .bdg-note{background:#f6efe4;color:#86632a}
+.bdg-trait{background:transparent;color:var(--muted);border:1px solid var(--line)}
 .card h2{margin:0;font-size:20px;line-height:1.3;color:#2f2822}
 .author{margin:3px 0 0;font-size:12px;color:var(--muted)}
 .desc{margin:10px 0 14px;font-size:13px;color:#4a443b;flex:1;
@@ -225,6 +233,30 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-si
   .glyph{margin:0;font-size:32px}
   .cover-kind{writing-mode:horizontal-tb}
 }
+
+/* ===== 工具栏：搜索 / 排序 / 主题（门户重做） ===== */
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 14px}
+.search{flex:1;min-width:220px;position:relative}
+.search input{width:100%;padding:9px 14px;border:1px solid var(--line);
+  border-radius:9px;background:var(--paper);color:var(--ink);font:inherit;font-size:13.5px}
+.search input::placeholder{color:var(--muted)}
+.toolbar select,.theme-btn{padding:8px 12px;border:1px solid var(--line);border-radius:9px;
+  background:var(--paper);color:var(--ink);font:inherit;font-size:13px;cursor:pointer}
+.theme-btn{min-width:86px}
+.hitcount{font-size:12px;color:var(--muted);margin-left:2px}
+.trait{position:absolute;right:12px;top:12px;font-size:10.5px;
+  color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.grid{align-items:stretch}
+.card{position:relative}
+
+/* 暗色下把几处硬编码浅色拉回可读 */
+body[data-theme="dark"] .hero{background:linear-gradient(180deg,var(--hero-bg1),var(--hero-bg2))}
+body[data-theme="dark"] .card h2{color:var(--card-ink)}
+body[data-theme="dark"] .desc{color:var(--desc)}
+body[data-theme="dark"] .mts b{color:var(--card-ink)}
+body[data-theme="dark"] .bdg-kind,body[data-theme="dark"] .bdg-note{background:#3a3327;color:#d8bf86}
+body[data-theme="dark"] .bdg-ext{background:#24362e;color:#8ec9a8}
+@media print{.toolbar,.theme-btn,.skip-link{display:none!important}}
 """
 
 JS = """
@@ -234,18 +266,68 @@ JS = """
   var h = location.hash;
   if (h && h.length > 1) { location.replace('ming/' + h); return; }
 
-  var chips = document.querySelectorAll('.chip');
-  var cards = document.querySelectorAll('.card');
+  var KEY = 'book-shelf-theme';
+  var body = document.body;
+  var themeBtn = document.getElementById('theme-btn');
+  // 首绘前的主题已在 <body> 起始的内联脚本里定好，这里只同步按钮文案
+  function label(t){
+    if (themeBtn) themeBtn.textContent = (t === 'dark') ? '切换亮色' : '切换暗色';
+  }
+  label(body.dataset.theme);
+  if (themeBtn) themeBtn.addEventListener('click', function(){
+    var t = (body.dataset.theme === 'dark') ? 'light' : 'dark';
+    body.dataset.theme = t;
+    try { localStorage.setItem(KEY, t); } catch (e) {}
+    label(t);
+  });
+
+  var chips  = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var cards  = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var grid   = document.querySelector('.grid');
+  var search = document.getElementById('book-search');
+  var sort   = document.getElementById('book-sort');
+  var hit    = document.getElementById('hitcount');
+  var kind = 'all', q = '';
+
+  function refresh(){
+    var n = 0;
+    cards.forEach(function(c){
+      var okKind = (kind === 'all' || c.getAttribute('data-kind') === kind);
+      var okQ = !q || (c.getAttribute('data-search') || '').indexOf(q) >= 0;
+      var show = okKind && okQ;
+      c.style.display = show ? '' : 'none';
+      if (show) n++;
+    });
+    var mode = sort ? sort.value : 'order';
+    var ordered = cards.slice().sort(function(a, b){
+      if (mode === 'size') return (+b.dataset.size) - (+a.dataset.size);
+      if (mode === 'updated') return String(b.dataset.updated || '').localeCompare(String(a.dataset.updated || ''));
+      return (+a.dataset.order) - (+b.dataset.order);
+    });
+    ordered.forEach(function(c){ grid.appendChild(c); });
+    if (hit) hit.textContent = '显示 ' + n + ' / ' + cards.length + ' 本';
+  }
+
   chips.forEach(function(c){
     c.addEventListener('click', function(){
       chips.forEach(function(x){ x.classList.remove('on'); });
       c.classList.add('on');
-      var k = c.getAttribute('data-kind');
-      cards.forEach(function(card){
-        card.style.display = (!k || k === 'all' || card.getAttribute('data-kind') === k) ? '' : 'none';
-      });
+      kind = c.getAttribute('data-kind') || 'all';
+      refresh();
     });
   });
+  if (search) {
+    var timer = null;
+    search.addEventListener('input', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        q = search.value.trim().toLowerCase();
+        refresh();
+      }, 140);
+    });
+  }
+  if (sort) sort.addEventListener('change', refresh);
+  refresh();
 })();
 """
 
@@ -285,6 +367,12 @@ def render(manifests, warnings, base: Path = BASE) -> str:
         '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
         "<title>书库 · 拆书平台</title>\n"
         "<style>%s</style>\n</head>\n<body>\n"
+        "<script>(function(){try{var t=localStorage.getItem('book-shelf-theme');"
+        "if(t==='dark'||t==='light'){document.body.dataset.theme=t;return;}"
+        "document.body.dataset.theme=(window.matchMedia&&"
+        "matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';"
+        "}catch(e){document.body.dataset.theme='light';}})();</script>\n"
+        '<a class="skip-link" href="#shelf">跳到书单</a>\n'
         '<div class="wrap">\n'
         '<header class="hero">\n'
         "<div>\n"
@@ -299,8 +387,18 @@ def render(manifests, warnings, base: Path = BASE) -> str:
         '<div><dd>%d</dd><dt>事件</dt></div>\n'
         '<div><dd>%d</dd><dt>关系</dt></div>\n'
         "</dl>\n</header>\n"
-        '<nav class="filters">%s</nav>\n'
-        '<main class="grid">%s</main>\n'
+        '<nav class="filters" aria-label="按类型筛选">%s</nav>\n'
+        '<div class="toolbar">\n'
+        '<label class="search"><input id="book-search" type="search" '
+        'placeholder="搜索书名 / 作者 / 关键词" aria-label="搜索书目"></label>\n'
+        '<select id="book-sort" aria-label="排序方式">'
+        '<option value="order">默认顺序</option>'
+        '<option value="size">按数据规模</option>'
+        '<option value="updated">按更新时间</option></select>\n'
+        '<button class="theme-btn" id="theme-btn" type="button" aria-label="切换明暗主题">切换暗色</button>\n'
+        '<span class="hitcount" id="hitcount" role="status" aria-live="polite"></span>\n'
+        "</div>\n"
+        '<main class="grid" id="shelf" tabindex="-1">%s</main>\n'
         "%s"
         "<footer>由 src/build_hub.py 扫描 books/*/manifest.json 生成 · "
         "新增书籍只需放入 books/&lt;id&gt;/ 并附一份 manifest.json · "
