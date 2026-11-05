@@ -17,6 +17,105 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[t
 @media print{.skip-link{display:none!important}}
 /* THEME_SYNC_END */
 </style>
+<style data-generated-from="web/css/theme-ming.css">
+/* MING_THEME_SYNC_START */
+/* ===== 《明朝那些事儿》母题皮肤 · 真源 =====
+   人工只维护本文件，由 src/sync_ming_theme.py 镜像进 web/template/index.html。
+   明书 base（app.css）本来就是暖棕朱红的纸墨底子，所以这里不另换配色，
+   只补「宣纸 / 朱砂印章 / 年号刻度」三层母题 + 少量局部重构。
+
+   母题粒度刻意做粗：1~2px 的细纹在 1280px 截图缩放后会完全消失
+   （此前三本书换肤踩过），因此用 180px 平铺瓦片 + 2.5px 纤维点。 */
+:root{
+  --ming-seal:#8d3025;
+  --ming-seal-soft:rgba(141,48,37,.10);
+  --ming-fiber:rgba(120,96,64,.055);
+  --ming-gold:#b88b35;
+}
+
+/* 宣纸：纤维斑点 + 横向帘纹，平铺瓦片保证缩放后仍可见 */
+body{
+  background-color:#f2eee6;
+  background-image:
+    radial-gradient(2.5px 2.5px at 24px 32px, var(--ming-fiber), transparent 62%),
+    radial-gradient(2px 2px at 118px 96px, rgba(141,48,37,.045), transparent 62%),
+    radial-gradient(2px 2px at 66px 148px, var(--ming-fiber), transparent 62%),
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(120,100,70,.028) 27px 28px);
+  background-size:180px 180px,180px 180px,180px 180px,100% 28px;
+  background-attachment:scroll;
+}
+
+/* 顶部一条朱砂压边：像线装书的天头 */
+.app-header{border-top:3px solid var(--ming-seal)}
+.app-header .brand{
+  font-family:"Songti SC","STSong","SimSun",serif;
+  letter-spacing:.08em;
+}
+
+/* 总览大卡：右上角朱砂印章（不占布局，纯装饰）
+   注意实际 DOM 是 .ov-hero-copy（新版总览），不是旧版 .hero-copy——
+   挂错选择器会得到一条永远不生效的装饰规则。 */
+.ov-hero-copy{position:relative}
+.ov-hero-copy::after{
+  content:"明";
+  position:absolute;right:22px;top:20px;
+  width:52px;height:52px;display:grid;place-items:center;
+  font-family:"Songti SC","STSong","SimSun",serif;font-size:30px;font-weight:700;
+  color:#e8c9a4;border:2px solid rgba(232,201,164,.62);border-radius:3px;
+  box-shadow:inset 0 0 0 3px rgba(52,44,37,.9);
+  transform:rotate(-7deg);opacity:.85;pointer-events:none;
+}
+@media(max-width:640px){.ov-hero-copy::after{width:38px;height:38px;font-size:22px;right:14px;top:14px}}
+
+/* 视图标题：朱砂竖批注线（旧 .section-head 与新版 .ov-head 都在用） */
+.section-head h2,.ov-head h2{
+  border-left:4px solid var(--ming-seal);
+  padding-left:12px;
+  font-family:"Songti SC","STSong","SimSun",serif;
+  letter-spacing:.03em;
+}
+
+/* 面板：左上角一道淡朱痕，呼应线装书函套 */
+.panel,.ov-panel{
+  border-top:2px solid rgba(141,48,37,.22);
+}
+
+/* 时间轴年份：年号刻度感，等宽数字更整齐 */
+.year-group h3{
+  font-family:"Songti SC","STSong","SimSun",serif;
+  font-variant-numeric:tabular-nums;
+  border-bottom:1px dashed rgba(141,48,37,.35);
+  padding-bottom:3px;
+}
+.timeline{border-left-color:var(--ming-seal)}
+
+/* 来源章节 chip：朱砂细边，强调「可回原书核对」 */
+.source-chip{
+  border-color:rgba(141,48,37,.30);
+  background:linear-gradient(180deg,#fffdf8,#fbf5ea);
+}
+
+/* 帝王 / 年谱视图的年号标签 */
+.dynasty-label.active{background:var(--ming-seal);color:#fff5ec}
+
+/* 键盘焦点环复用朱砂，避免和主题脱节 */
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{
+  outline-color:var(--ming-seal);
+}
+
+/* 打印：纸张纹理一律去掉，别浪费墨、也别干扰人物卡打印 */
+@media print{
+  body{background-image:none!important;background-color:#fff!important}
+  .ov-hero-copy::after{display:none!important}
+  .panel,.ov-panel{border-top:0!important}
+  .section-head h2,.ov-head h2{border-left:0!important;padding-left:0!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ov-hero-copy::after{transform:none}
+}
+/* MING_THEME_SYNC_END */
+</style>
 </head>
 <body>
 <!-- BOOK_SHELF_START -->

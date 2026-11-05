@@ -43,7 +43,8 @@ def main(argv=None) -> int:
     if not report.exists():
         raise SystemExit(f"standalone 不存在：{report}")
 
-    css_paths = [BASE / "web/css/app.css", BASE / "web/css/theme.css", BASE / "web/css/experience.css"]
+    css_paths = [BASE / "web/css/app.css", BASE / "web/css/theme.css",
+                 BASE / "web/css/experience.css", BASE / "web/css/theme-ming.css"]
     sizes = {
         "standalone": report.stat().st_size,
         "app.js": (BASE / "web/js/app.js").stat().st_size,

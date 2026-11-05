@@ -95,6 +95,10 @@ TEMPLATE = """# Book-Meal · 拆书知识库
   统一提示条（说明故障 + 重试 + 可关闭），不再静默白屏。
 - **离线优先**——CSS/JS/数据全内联进单文件；地图在瓦片全失败时自动退回 SVG 点位图，
   点位仍可点击查看书中介绍。
+- **每本书有自己的皮肤**——三本现代/架空小说分别是方格纸、废土 CRT 扫描线、
+  深空星幕；明书则是宣纸纤维 + 朱砂印章 + 年号刻度。主题真源
+  `web/css/theme-<book>.css`，由 `sync_ming_theme.py` / `generate_report.py` 在构建期
+  注入，standalone 与分层版自动同步，不靠手改产物。
 - **书库不是五个孤岛**——每份报告顶部都有同一条书库导航：一键回门户、下拉切到
   另外四本；书单来自 `books/*/manifest.json` 的单一真源，新增一本自动纳入。
   离线双击下载的报告时，导航链接自动改指线上书库，正文仍完全离线。
@@ -127,6 +131,7 @@ python -m http.server 8765 --bind 127.0.0.1   # 起个静态服务
 
 ```powershell
 python src/merge.py            # 聚合（增量勘误层不会被覆盖）
+python src/sync_ming_theme.py  # 母题主题 CSS → 模板（改了 theme-ming.css 才需要）
 python src/build.py --scope full --target standalone --out standalone.html
 python src/build.py --scope full --target web --out .ci/publish
 python src/build_hub.py        # 重建书库门户 index.html
@@ -153,7 +158,10 @@ ming/                 《明朝那些事儿》分层版报告（index.html + ass
 src/                  平台与构建脚本
   book_registry.py    统一书单单一真源：门户/README/各报告导航条都读它
   sync_shelf.py       把书库导航条幂等注入 6 份报告（--check 可入 CI）
+  sync_ming_theme.py  明书母题主题 CSS 镜像（真源 → 模板，--check 可入 CI）
   check_delivery.py   交付能力断言：把路线图「已完成」变成机器可验事实
+  verify_quotes.py    书内语录原文命中门禁（有原著 TXT 时逐条校验）
+  build_geo_backlog.py 生成未定位地点人工考据队列 docs/geo_backlog.md
   build_hub.py        门户生成器（书单来自 book_registry.py）
   sync_readme.py      README 生成/校验器（改文案改这里，勿手改 README）
   build.py            统一构建入口（--target standalone|web、--check）
@@ -162,11 +170,11 @@ src/                  平台与构建脚本
   validators.py       结构不变量（12 组规则）
   build_dist.py       组装 Pages 发布目录（只挑成品，工程文件不进站点）
   core/               共享核心：年份解析/经纬度校验/势力结构化/图布局
-web/                  前端真源：template/index.html + css/app.css + js/app.js
+web/                  前端真源：template/index.html + css/app.css + css/theme-ming.css + js/app.js
 data/                 聚合数据源与增量勘误层（data.json 是单一数据源）
 tests/                单元测试 + tests/browser_check.py（无头浏览器自检）
                       check_copyright.py 是版权巡检，两条 CI 共用
-docs/                 文档：docs/add_a_book.md（新增一本书）、docs/history/
+docs/                 文档：docs/add_a_book.md（新增一本书）、docs/geo_backlog.md（考据队列）、docs/history/
 legacy/               已停用脚本归档（分片时代遗留，见 legacy/README.md）
 teardown/             拆书工程：其余三本书的抽取与报告生成
   src/                流水线脚本（generate_report.py / build_swdw_report.py …）
@@ -224,6 +232,8 @@ Pages 用 **Actions 部署**（不是「从分支发布」），站点内容 = `
 | 浏览器自检 | `python tests/browser_check.py <产物>` | 本机 Chrome `--dump-dom` 跑 11 个场景（deep link、搜索高亮、地图、双模式图…）+ 启动守卫兜底 |
 | 书库连通 | `python src/sync_shelf.py --check` | 6 份报告的导航条是否都是最新版（回门户 / 书间切换不至于退化成死链） |
 | 交付能力 | `python src/check_delivery.py` | 按需加载、洞察互跳、离线单文件、门户工具栏的 11 项结构断言 |
+| 语录纪律 | `python src/verify_quotes.py` | 幽灵人物卡 / 空值；本机有原著 TXT 时逐条校验「原文命中」（0 命中即失败） |
+| 考据队列 | `python src/build_geo_backlog.py --check` | 未定位地点队列与 `data.json` 同步，补了坐标就要重生成 |
 
 CI 每次 push/PR 还会先跑**版权合规巡检**（原书全文一旦入库即失败）与
 **模块遮蔽巡检**（任何 `.py` 与标准库同名都会污染 `sys.path[0]`，仅存在就能让 Python 崩掉）。
@@ -260,10 +270,17 @@ CI 有巡检）。仓库只发布脱敏后的章节索引与聚合结果。换�
 
 **待办**（都需要原文考据，不能凭记忆或推断补齐）：
 
-- [ ] 人物卡语录扩面（现 @@ming_quotes@@ 人 → 目标覆盖高频人物；验收线：每句
-  在原书全文检索到原句，0 命中即弃用，见「数据纪律」）
+- [ ] 人物卡语录扩面（现 @@ming_quotes@@ 人）：**已建立原文命中门禁**
+  `src/verify_quotes.py`，2026-11-05 复核修正了 2 条改写词序/加字的漂移，
+  补入 7 条归属经上下文核对的引语，现 @@ming_quotes@@ 条全部原文命中、0 失败。
+  剩余高频缺口用 `python src/verify_quotes.py --stats` 输出 Top 20 考据队列，
+  **必须逐条核对说话人再入库**——自动抽取不可靠：实测 15 条候选里 13 条
+  把「A 对 B 说：…」误归到了 B 名下。
 - [ ] 未定位地点与未知年份事件的人工考据（@@ming_locations@@ 个地点中
-  @@ming_located@@ 个已定位；按提及频次排序推进，每条须标注来源）
+  @@ming_located@@ 个已定位）：**队列已生成**
+  [`docs/geo_backlog.md`](docs/geo_backlog.md)——30 个冷门古地名按提及章数排序，
+  逐条附出处章节 key、书中提及形式与核验路径，只列证据不填推断坐标；
+  未知年份事件只剩 2 个。剩余的是**逐条查证**本身，不是梳理工作。
 
 历史过程与踩坑记录在 `.workbuddy/`（工程笔记）与 `docs/history/`（重构方案、自查与验收清单）。
 

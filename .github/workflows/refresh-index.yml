@@ -52,6 +52,11 @@ jobs:
       - name: 同步 V3 / V13 产品体验镜像
         run: python src/sync_experience.py
 
+      - name: 同步明书母题主题镜像
+        # 必须排在 build.py 之前：standalone.html 与 ming/ 都从同一个模板渲染，
+        # 主题块镜像一次，两种交付形态自带同一套宣纸/朱砂母题。
+        run: python src/sync_ming_theme.py
+
       - name: 同步 README 最终模型
         # src/sync_readme.py 是模板渲染器：README 全文由它生成，数字来自
         # books/*/manifest.json 与明书最终模型。旧 sync_readme_v11/v12/v13
