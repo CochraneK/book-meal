@@ -36,6 +36,12 @@ jobs:
       - name: 模块遮蔽巡检
         run: python src/check_module_shadow.py
 
+      # 仓库卫生：本机私有原文 / 含正文的 chapters.json / quotes.json 必须被
+      # gitignore 挡住，缓存目录不能脱离忽略名单，真源与发布成品不能缺失。
+      # 用 --no-index 探针，干净 checkout 里文件不存在也能验规则。
+      - name: 仓库卫生检查（忽略边界 / 主体完整性）
+        run: python src/repo_hygiene.py --check
+
       - name: Python 语法检查
         run: python -m compileall -q src tests
 

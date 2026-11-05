@@ -23,6 +23,28 @@
 根路径是书库门户，点卡片进各书报告。新增一本书 = 放一个目录 + 一份
 `manifest.json`，平台代码和 CI 都不用改。
 
+## 仓库速览（不迷失版）
+
+一个目录里混着四类东西，**先认层再动手**：真正受版本控制的只是源码与成品，
+其余体积都是本机工作区，clone 拿不到。精确数字跑
+`python src/repo_hygiene.py --report`，不写进文档以免数字悄悄失真。
+
+| 层 | 主要路径 | 怎么对待 |
+|---|---|---|
+| 真源 | `data/`、`teardown/data/`、`src/`、`web/`、`tests/`、`.github/`、`books/*/manifest.json` | **改这里才有意义** |
+| 成品 | `index.html`、`standalone.html`、`sw.js`、`ming/`、`books/*/index.html` | 生成物，别手改；Pages 只发这 5 类 |
+| 本机私有输入 | 3 本原著 TXT、`chapters.json`（含正文）、`tiancai/feitu` 的 `quotes.json` | 不入库、本机唯一、**绝不删**；删了报告无法重建 |
+| 本地临时产物 | `.ci/`、`_site/`、`dist/`、`.dump/`、`papers_pilot/`、各 `__pycache__/` | 不入库，可归档；用 `src/repo_hygiene.py` 体检 / 移动 / 回滚 |
+
+**改哪里 → 跑什么**：改内容动 `data/*.json` 再 `merge.py` + `build.py`；
+改外观动 `web/` 再跑 `sync_*.py` 镜像器；加书放 `books/<id>/manifest.json`
+再跑 `build_hub.py` + `sync_shelf.py`。拿不准就跑
+`python src/repo_hygiene.py --report` 看分层体积与可归档清单。
+
+**两条红线**：`teardown/out/` 是本机 `publish_books.py --check` 的输入，移走会让
+门禁变红；`papers_pilot/` 与 `.dump/git-sync/` 是**没有远程的独立 git 仓库**，
+删除前必须先备份。归档一律是移动不是删除，`--restore` 可一键回滚。
+
 ## 在线入口
 
 | 入口 | 地址 | 说明 |
@@ -129,6 +151,7 @@ src/                  平台与构建脚本
   backlog_common.py   人工考据队列共享口径层：排序/章节 key/待考筛选
   build_geo_backlog.py 生成地点 + 年份考据队列 docs/geo_backlog.md
   build_quote_backlog.py 生成语录扩面队列 docs/quote_backlog.md
+  repo_hygiene.py     仓库分层体检 / 非破坏归档 / 忽略边界门禁
   build_hub.py        门户生成器（书单来自 book_registry.py）
   sync_readme.py      README 生成/校验器（改文案改这里，勿手改 README）
   build.py            统一构建入口（--target standalone|web、--check）
@@ -204,6 +227,7 @@ Pages 用 **Actions 部署**（不是「从分支发布」），站点内容 = `
 | 语录纪律 | `python src/verify_quotes.py` | 幽灵人物卡 / 空值；本机有原著 TXT 时逐条校验「原文命中」（0 命中即失败） |
 | 语录扩面队列 | `python src/build_quote_backlog.py --check` | Top 20 滚动队列与 `data.json` / `character_quotes.json` / 结论登记表同步，登记结论后要重生成 |
 | 考据队列 | `python src/build_geo_backlog.py --check` | 未定位地点 + 未知年份事件队列与 `data.json` 同步，补了坐标 / 年份就要重生成 |
+| 仓库卫生 | `python src/repo_hygiene.py --check` | 私有原文与缓存目录是否仍在 gitignore 内、真源与发布成品是否齐全；体检用 `--report`，归档用 `--archive` |
 
 CI 每次 push/PR 还会先跑**版权合规巡检**（原书全文一旦入库即失败）与
 **模块遮蔽巡检**（任何 `.py` 与标准库同名都会污染 `sys.path[0]`，仅存在就能让 Python 崩掉）。
