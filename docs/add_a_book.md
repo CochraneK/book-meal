@@ -23,12 +23,17 @@
 | 报告 | `teardown/out/<id>.html` | `teardown/src/generate_report.py` / `build_swdw_report.py` |
 | 发布同步 | `books/<id>/index.html` | `teardown/src/publish_books.py <id>`（会自动注入导航条） |
 | 门户 + 导航条 | `index.html` 与 6 份报告 | `python src/build_hub.py` → `python src/sync_shelf.py` |
-| 交付断言 | — | `python src/check_delivery.py`、`python src/sync_shelf.py --check` |
+| 交付断言 | — | `python src/check_delivery.py`、`python src/sync_shelf.py --check`、<br>`python src/build_geo_backlog.py --check`、`python src/build_quote_backlog.py --check` |
 | README | `README.md` | `python src/sync_readme.py`（勿手改） |
 
 > 顺序里最容易漏的是 **`sync_shelf.py` 必须排在所有会重写报告产物的命令之后**。
 > 导航条是发布层生成装饰，重建 `standalone.html` / `ming/` / `books/` 会覆盖它；
 > 漏跑时 `python src/sync_shelf.py --check` 与 CI 的「书库导航条一致性」会直接报红。
+
+> 两份人工考据队列（`docs/geo_backlog.md` / `docs/quote_backlog.md`）读的是明书
+> `data/data.json`，**新增其它书不会改变它们**；平台侧只需在门禁里跑 `--check`
+> 确认文档与数据没脱节。明书数据真变了（补坐标 / 补年份 / 收新语录 / 登记结论），
+> 要先跑不带 `--check` 的生成器重生成，再跑 `python src/sync_readme.py`。
 
 > **源文本从哪来**：番茄（fanqienovel.com）的书用仓内 skill
 > `.workbuddy/skills/fanqie-novel-scrape/`——`scripts/fanqie.py` 抓取并还原 PUA 字体混淆，

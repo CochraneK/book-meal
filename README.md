@@ -98,6 +98,8 @@ python src/sync_ming_theme.py  # 母题主题 CSS → 模板（改了 theme-ming
 python src/build.py --scope full --target standalone --out standalone.html
 python src/build.py --scope full --target web --out .ci/publish
 python src/build_hub.py        # 重建书库门户 index.html
+python src/build_geo_backlog.py   # 重建地点/年份考据队列
+python src/build_quote_backlog.py  # 重建语录扩面考据队列
 python src/sync_shelf.py       # 给 6 份报告注入/刷新书库导航条（幂等）
 python src/sync_readme.py      # 重建 README
 python tests/run_tests.py      # 单元测试（纯标准库，无第三方依赖）
@@ -124,7 +126,9 @@ src/                  平台与构建脚本
   sync_ming_theme.py  明书母题主题 CSS 镜像（真源 → 模板，--check 可入 CI）
   check_delivery.py   交付能力断言：把路线图「已完成」变成机器可验事实
   verify_quotes.py    书内语录原文命中门禁（有原著 TXT 时逐条校验）
-  build_geo_backlog.py 生成未定位地点人工考据队列 docs/geo_backlog.md
+  backlog_common.py   人工考据队列共享口径层：排序/章节 key/待考筛选
+  build_geo_backlog.py 生成地点 + 年份考据队列 docs/geo_backlog.md
+  build_quote_backlog.py 生成语录扩面队列 docs/quote_backlog.md
   build_hub.py        门户生成器（书单来自 book_registry.py）
   sync_readme.py      README 生成/校验器（改文案改这里，勿手改 README）
   build.py            统一构建入口（--target standalone|web、--check）
@@ -135,9 +139,11 @@ src/                  平台与构建脚本
   core/               共享核心：年份解析/经纬度校验/势力结构化/图布局
 web/                  前端真源：template/index.html + css/app.css + css/theme-ming.css + js/app.js
 data/                 聚合数据源与增量勘误层（data.json 是单一数据源）
+                      quote_backlog_status.json 只登记「已核对结论」，不是事实来源
 tests/                单元测试 + tests/browser_check.py（无头浏览器自检）
                       check_copyright.py 是版权巡检，两条 CI 共用
-docs/                 文档：docs/add_a_book.md（新增一本书）、docs/geo_backlog.md（考据队列）、docs/history/
+docs/                 文档：add_a_book.md（新增一本书）、geo_backlog.md（地点/年份考据队列）、
+                      quote_backlog.md（语录扩面队列）、history/
 legacy/               已停用脚本归档（分片时代遗留，见 legacy/README.md）
 teardown/             拆书工程：其余三本书的抽取与报告生成
   src/                流水线脚本（generate_report.py / build_swdw_report.py …）
@@ -196,7 +202,8 @@ Pages 用 **Actions 部署**（不是「从分支发布」），站点内容 = `
 | 书库连通 | `python src/sync_shelf.py --check` | 6 份报告的导航条是否都是最新版（回门户 / 书间切换不至于退化成死链） |
 | 交付能力 | `python src/check_delivery.py` | 按需加载、洞察互跳、离线单文件、门户工具栏的 11 项结构断言 |
 | 语录纪律 | `python src/verify_quotes.py` | 幽灵人物卡 / 空值；本机有原著 TXT 时逐条校验「原文命中」（0 命中即失败） |
-| 考据队列 | `python src/build_geo_backlog.py --check` | 未定位地点队列与 `data.json` 同步，补了坐标就要重生成 |
+| 语录扩面队列 | `python src/build_quote_backlog.py --check` | Top 20 滚动队列与 `data.json` / `character_quotes.json` / 结论登记表同步，登记结论后要重生成 |
+| 考据队列 | `python src/build_geo_backlog.py --check` | 未定位地点 + 未知年份事件队列与 `data.json` 同步，补了坐标 / 年份就要重生成 |
 
 CI 每次 push/PR 还会先跑**版权合规巡检**（原书全文一旦入库即失败）与
 **模块遮蔽巡检**（任何 `.py` 与标准库同名都会污染 `sys.path[0]`，仅存在就能让 Python 崩掉）。
@@ -233,17 +240,21 @@ CI 有巡检）。仓库只发布脱敏后的章节索引与聚合结果。换�
 
 **待办**（都需要原文考据，不能凭记忆或推断补齐）：
 
-- [ ] 人物卡语录扩面（现 73 人）：**已建立原文命中门禁**
-  `src/verify_quotes.py`，2026-11-05 复核修正了 2 条改写词序/加字的漂移，
-  补入 7 条归属经上下文核对的引语，现 73 条全部原文命中、0 失败。
-  剩余高频缺口用 `python src/verify_quotes.py --stats` 输出 Top 20 考据队列，
-  **必须逐条核对说话人再入库**——自动抽取不可靠：实测 15 条候选里 13 条
-  把「A 对 B 说：…」误归到了 B 名下。
+- [ ] 人物卡语录扩面（现 73 人）：**门禁 + 可勾选队列均已建立**。
+  `src/verify_quotes.py` 守原文命中（2026-11-05 修正了 2 条改写词序/加字的漂移，
+  补入 7 条归属经上下文核对的引语，现 73 条全部命中、0 失败）；
+  [`docs/quote_backlog.md`](docs/quote_backlog.md) 是覆盖章节最多的
+  **Top 20 滚动队列**——核对结论登记在
+  `data/quote_backlog_status.json` 后该人退出、下一名自动补位，
+  「确实没有合适台词」也能销账。**必须逐条核对说话人再入库**：
+  自动抽取不可靠，实测 15 条候选里 13 条把「A 对 B 说：…」误归到了 B 名下。
 - [ ] 未定位地点与未知年份事件的人工考据（583 个地点中
-  553 个已定位）：**队列已生成**
-  [`docs/geo_backlog.md`](docs/geo_backlog.md)——30 个冷门古地名按提及章数排序，
-  逐条附出处章节 key、书中提及形式与核验路径，只列证据不填推断坐标；
-  未知年份事件只剩 2 个。剩余的是**逐条查证**本身，不是梳理工作。
+  553 个已定位）：**两份队列均已生成**
+  [`docs/geo_backlog.md`](docs/geo_backlog.md)——30 个冷门古地名
+  按提及章数排序，逐条附出处章节 key、书中提及形式与核验路径；另有
+  2 个年份待考事件逐条列出（类别 / 相关人员 / 出处章节），
+  数字全部从 `data.json` 派生。两份队列都**只列证据，不填推断坐标或年份**；
+  剩余的是**逐条查证**本身，不是梳理工作。
 
 历史过程与踩坑记录在 `.workbuddy/`（工程笔记）与 `docs/history/`（重构方案、自查与验收清单）。
 

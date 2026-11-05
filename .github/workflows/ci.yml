@@ -71,9 +71,13 @@ jobs:
       - name: 书内语录数据纪律
         run: python src/verify_quotes.py
 
-      # 考据队列是生成物：数据一变（比如补了一个坐标），文档必须跟着缩短。
-      - name: 未定位地点考据队列一致性
+      # 考据队列都是生成物：数据一变（补坐标 / 补年份 / 收新语录 / 登记结论），
+      # 文档必须跟着变。两份队列与 --stats 共用 src/backlog_common.py 的口径。
+      - name: 地点与年份考据队列一致性
         run: python src/build_geo_backlog.py --check
+
+      - name: 语录扩面队列一致性
+        run: python src/build_quote_backlog.py --check
 
       # Pages 只发布白名单成品（index.html / standalone.html / sw.js / ming/ / books/），
       # 由 src/build_dist.py 挑拣。PR 阶段就跑一遍组装 + 门禁，

@@ -1,0 +1,4 @@
+{
+  "_comment": "人物卡语录扩面的人工核对结论登记表。只登记「已核对过」的人；未登记即视为待核对，由 src/build_quote_backlog.py 从 Top 20 队列里自动补位。entries 的 value 形如 {\"status\": \"已入库 | 无可靠台词 | 归属存疑\", \"note\": \"回书章节与判断依据\"}。status 只作队列流转，不是事实来源；真正的语录以 data/character_quotes.json 为唯一真源。",
+  "entries": {}
+}

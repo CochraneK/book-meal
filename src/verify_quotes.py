@@ -24,6 +24,9 @@ README「数据纪律」第 2 条：引语必须原文命中，0 命中即弃用
     python src/verify_quotes.py                      # 结构校验 + 原文命中（有 TXT 时）
     python src/verify_quotes.py --strict-attribution # 额外打印归属证据
     python src/verify_quotes.py --stats              # 打印覆盖率 Top 缺口
+
+`--stats` 的名单与 `docs/quote_backlog.md` 共用 `backlog_common.quote_gaps()`，
+控制台是「快速看一眼」，可勾选、可销账的正式队列在文档里。
 """
 from __future__ import annotations
 
@@ -34,6 +37,9 @@ import sys
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import backlog_common as BC  # noqa: E402
 QUOTES = BASE / "data" / "character_quotes.json"
 DATA = BASE / "data" / "data.json"
 SOURCE = BASE / "明朝那些事儿.txt"
@@ -130,12 +136,14 @@ def main(argv=None) -> int:
                       (k, "✓ 人名前缀" if ok else "· 未见人名前缀（代词/诗句/遗言）", pre[-46:]))
 
     if args.stats:
-        chars = sorted(data.get("characters", []),
-                       key=lambda c: -len(c.get("chapters") or []))
-        missing = [c for c in chars if c["name"] not in entries][:20]
-        print("\n覆盖章节最多但仍无语录的 Top 20（人工考据队列）：")
+        # 口径统一由共享层提供：排序、排除已登记结论者，与 docs/quote_backlog.md
+        # 完全同源，避免「控制台给的名单」和「文档里的队列」互相矛盾。
+        missing = BC.quote_gaps(data, quotes)
+        print("\n覆盖章节最多但仍无语录的 Top %d（人工考据队列）：" % BC.GAP_LIMIT)
         for c in missing:
             print("  %-12s %3d 章" % (c["name"], len(c.get("chapters") or [])))
+        print("\n  可勾选队列与结论登记：docs/quote_backlog.md"
+              "（由 src/build_quote_backlog.py 生成）")
 
     if problems:
         print("\n[FAIL] %d 个问题：" % len(problems))
