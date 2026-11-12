@@ -46,7 +46,9 @@ jobs:
         run: python -m compileall -q src tests
 
       - name: 前端脚本语法检查
-        run: node --check web/js/app.js
+        run: |
+          node --check web/js/app.js
+          node --check web/world_experience.js
 
       # 测试与构建都不依赖 data/chapters.json（不入库的版权文件）：
       # 章节标题来自 data/extract_raw.json，缺 chapters.json 只会少字数统计。
