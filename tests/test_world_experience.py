@@ -77,3 +77,12 @@ def test_build_dist_publishes_generated_preview_without_source_files():
     assert b"world-template-ming" in rendered
     assert b"world/kernel/" not in rendered
     assert not any(rel.endswith(".py") for _,rel in items if rel.startswith("worlds/"))
+
+
+def test_old_homepage_only_adds_preview_link():
+    import build_hub
+    home = (W.ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'href="worlds/index.html"' in home
+    assert 'class="world-teaser"' in home
+    assert 'href="worlds/index.html"' in build_hub.render(book_registry.load(), [])
+    assert 'id="book-search"' in home and 'id="book-sort"' in home

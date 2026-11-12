@@ -33,3 +33,7 @@ python tests/browser_check_world.py .ci/site/worlds/index.html
 ## PR 审阅预览
 
 GitHub Actions CI 在 PR 上验收成功后，产生可下载的 `book-meal-run03-site-preview` artifact（7 日保留），包括完整白名单站点 `.ci/site/` 和四张桌面/手机浏览器截图。下载解压后打开 `site/worlds/index.html`，目录中的书籍报告均可按原相对路径正常打开。这个 artifact 是构建预览，不是 GitHub Pages 已部署版本。
+
+## 入口发现（非破坏性）
+
+主站门户只增加一个明显标注“预览”的短链接，指向 `worlds/index.html`。保留原有所有书卡、排序、搜索、明暗和深链；源文件与追踪的生成物同步维护（`src/build_hub.py` + `index.html`），由 CI `--check` 防止漂移。
