@@ -51,7 +51,7 @@ TEMPLATE = """# Book-Meal · 拆书知识库
 [![依赖](https://img.shields.io/badge/dependencies-none-brightgreen)]()
 [![形态](https://img.shields.io/badge/报告-单文件离线-blueviolet)]()
 
-**@@book_count@@ 本书 · @@total_chapters@@ 章 · @@total_characters@@ 人物 · @@total_events@@ 事件 · @@total_relations@@ 关系**
+**@@ready_book_count@@ 本已整理 · @@planned_book_count@@ 本建档中 · @@total_chapters@@ 章已整理 · @@total_characters@@ 人物 · @@total_events@@ 事件 · @@total_relations@@ 关系**
 
 [打开书库 →](@@pages@@/)
 
@@ -106,7 +106,7 @@ Leaflet 与地图瓦片按需从 CDN 加载，拿不到时自动退回离线点�
 |---|---|---|--:|--:|--:|--:|---|
 @@book_rows@@
 
-合计 **@@book_count@@ 本 · @@total_chapters@@ 章 · @@total_characters@@ 人物 · @@total_events@@ 事件 · @@total_relations@@ 关系**。
+合计 **@@ready_book_count@@ 本已整理 / @@planned_book_count@@ 本建档中 · @@total_chapters@@ 章已整理 · @@total_characters@@ 人物 · @@total_events@@ 事件 · @@total_relations@@ 关系**。
 门户只读各书的 `manifest.json`，不加载任何一本书的 payload，因此永远轻量。
 
 ## 为什么不一样
@@ -356,17 +356,19 @@ def _book_rows(manifests) -> str:
     rows = []
     for m in manifests:
         mt = m.get("metrics") or {}
+        planned = m.get("status") == "planned"
         kind = KIND_LABELS.get(str(m.get("kind", "other")), str(m.get("kind", "other")))
         rows.append(
-            "| **%(title)s** | %(author)s | %(kind)s | %(ch)s | %(c)s | %(e)s | %(r)s | [打开](%(url)s) |"
+            "| **%(title)s** | %(author)s | %(kind)s | %(ch)s | %(c)s | %(e)s | %(r)s | [%(action)s](%(url)s) |"
             % {
                 "title": m.get("title", ""),
                 "author": m.get("author", "—"),
                 "kind": kind,
-                "ch": _fmt(m.get("chapters", 0)),
-                "c": _fmt(mt.get("characters", 0)),
-                "e": _fmt(mt.get("events", 0)),
-                "r": _fmt(mt.get("relations", 0)),
+                "ch": "—" if planned else _fmt(m.get("chapters", 0)),
+                "c": "—" if planned else _fmt(mt.get("characters", 0)),
+                "e": "—" if planned else _fmt(mt.get("events", 0)),
+                "r": "—" if planned else _fmt(mt.get("relations", 0)),
+                "action": "查看建档页" if planned else "打开",
                 "url": _hub_url(m),
             }
         )
@@ -401,6 +403,8 @@ def render(source: str = None) -> str:
         "pages": PAGES,
         "repo": REPO,
         "book_count": len(manifests),
+        "ready_book_count": sum(m.get("status") != "planned" for m in manifests),
+        "planned_book_count": sum(m.get("status") == "planned" for m in manifests),
         "total_characters": _fmt(totals["characters"]),
         "total_events": _fmt(totals["events"]),
         "total_relations": _fmt(totals["relations"]),

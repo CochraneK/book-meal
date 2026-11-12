@@ -1,0 +1,19 @@
+{
+  "id": "ordinary-world",
+  "order": 6,
+  "title": "平凡的世界",
+  "glyph": "凡",
+  "subtitle": "双水村 · 城乡变迁",
+  "author": "路遥",
+  "kind": "modern_real",
+  "desc": "围绕孙少安、孙少平等人的生活道路与孙、田、金三家的命运，探索中国城乡社会变迁。当前仅完成书目建档，人物、事件与关系尚未从原文抽取。",
+  "accent": "#8f6840",
+  "metrics": {},
+  "chapters": 0,
+  "report": "index.html",
+  "external": false,
+  "status": "planned",
+  "volumes": 3,
+  "updated": "2026-11-12",
+  "note": "建档中 · 尚未拆书"
+}

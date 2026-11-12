@@ -99,7 +99,9 @@ def _card(m) -> str:
         '<div><b>%s</b><span>%s</span></div>' % (esc(metrics.get(key)), esc(label))
         for key, label in (("characters", "人物"), ("events", "事件"), ("relations", "关系"))
     )
-    if ch:
+    if m.get("status") == "planned":
+        stats_html = '<div><b>—</b><span>内容待抽取</span></div>'
+    elif ch:
         stats_html += '<div><b>%s</b><span>章</span></div>' % esc(ch)
 
     meta_line = " · ".join(
@@ -127,7 +129,7 @@ def _card(m) -> str:
         '<p class="desc">{desc}</p>'
         '<div class="mts">{stats_html}</div>'
         '<div class="ft"><span>{updated}</span>'
-        '<a class="open" href="{href}">打开报告 <i>→</i></a></div>'
+        '<a class="open" href="{href}">{open_text} <i>→</i></a></div>'
         "</div></article>"
     ).format(
         kind=esc(kind),
@@ -141,6 +143,7 @@ def _card(m) -> str:
         stats_html=stats_html,
         updated=("更新 " + esc(m.get("updated"))) if m.get("updated") else "",
         href=esc(report_href(m)),
+        open_text=("查看建档页" if m.get("status") == "planned" else "打开报告"),
         attrs=attrs,
         trait=esc(trait),
     )
@@ -377,12 +380,12 @@ def render(manifests, warnings, base: Path = BASE) -> str:
         '<header class="hero">\n'
         "<div>\n"
         '<p class="kicker">书库 · 拆书平台</p>\n'
-        "<h1>%d 本书，拆成可读的结构</h1>\n"
+        "<h1>%d 本书，走进更多世界</h1>\n"
         '<p class="lede">长篇小说与知识类书籍的结构化拆解：五元组知识图谱、地点坐标、'
         "关系网络与多视角分析。每本书一份单文件离线报告，按章节保留来源与核验状态。</p>\n"
         "</div>\n"
         '<dl class="hero-stats">\n'
-        '<div><dd>%d</dd><dt>本书</dt></div>\n'
+        '<div><dd>%d</dd><dt>书目（含建档中）</dt></div>\n'
         '<div><dd>%d</dd><dt>人物</dt></div>\n'
         '<div><dd>%d</dd><dt>事件</dt></div>\n'
         '<div><dd>%d</dd><dt>关系</dt></div>\n'
