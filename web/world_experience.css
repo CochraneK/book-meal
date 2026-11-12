@@ -53,3 +53,7 @@ aside.sidebar{position:sticky;top:18px}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#201e1a;--paper:#302c26;--tint:#373127;--ink:#f3eade;--mute:#c8bcaa;--line:#50473b}.book[aria-current=page]{border-color:#8b7460}.glyph{background:#4c4033;border-color:#806a54;color:#efd6b1}.route .action{color:#efc195}.planned{border-color:#826d54}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 @media print{.sidebar,.top nav{display:none}.layout{display:block}}
+
+[hidden]{display:none!important}
+
+[hidden]{display:none!important}

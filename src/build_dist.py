@@ -16,6 +16,7 @@ Pages 的 legacy 模式（Deploy from a branch）会把**整个仓库**当站点
     sw.js             Service Worker，必须在站点根，否则 scope 不对
     ming/             明书报告 + assets 分块
     books/            各书报告与 manifest.json
+    worlds/index.html  统一世界体验预览（运行时生成，不存储私有数据）
 
 新增一本书只要落在 books/<id>/ 下就自动包含，不需要改本文件。
 
@@ -78,7 +79,15 @@ def plan():
             for fn in sorted(filenames):
                 src = os.path.join(dirpath, fn)
                 items.append((src, os.path.relpath(src, BASE)))
+    # Virtual single-file experience preview: generated directly into the Pages artifact.
+    # This preserves the original repository pages and prevents duplicate output files.
+    items.append((None, os.path.join("worlds", "index.html")))
     return items
+
+
+def generated_world_preview():
+    from build_world_experience import render
+    return render().encode("utf-8")
 
 
 def scan_guard(out):
@@ -102,7 +111,11 @@ def build(out):
     for src, rel in items:
         dst = os.path.join(out, rel)
         os.makedirs(os.path.dirname(dst) or out, exist_ok=True)
-        shutil.copy2(src, dst)
+        if src is None:
+            with open(dst, "wb") as f:
+                f.write(generated_world_preview())
+        else:
+            shutil.copy2(src, dst)
     # 不加 .nojekyll，Jekyll 会跳过下划线开头的目录，并把 .md 渲染成页面。
     with open(os.path.join(out, ".nojekyll"), "w", encoding="utf-8"):
         pass
@@ -134,6 +147,10 @@ def check(out):
         dst = os.path.join(out, rel)
         if not os.path.isfile(dst):
             missing.append(rel)
+        elif src is None:
+            with open(dst, "rb") as f:
+                if f.read() != generated_world_preview():
+                    diff.append(rel)
         elif sha256(src) != sha256(dst):
             diff.append(rel)
     bad = scan_guard(out)

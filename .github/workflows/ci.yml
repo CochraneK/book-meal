@@ -106,3 +106,7 @@ jobs:
 
       - name: 无头浏览器自检
         run: python tests/browser_check.py .ci/index.html
+
+      # Run 03: 新的统一世界入口只在 Pages 构建时生成，不覆盖旧报告。
+      - name: 统一世界入口无头浏览器检查
+        run: python tests/browser_check_world.py .ci/site/worlds/index.html
