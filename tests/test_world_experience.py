@@ -86,3 +86,43 @@ def test_old_homepage_only_adds_preview_link():
     assert 'class="world-teaser"' in home
     assert 'href="worlds/index.html"' in build_hub.render(book_registry.load(), [])
     assert 'id="book-search"' in home and 'id="book-sort"' in home
+
+
+def test_real_ming_shared_glimpse_is_evidence_aware():
+    from world_components import digest
+    from export_world import build
+    world=build("ming")
+    excerpt=digest(world,"../ming/index.html")
+    assert 'class="world-glimpse"' in excerpt
+    assert '章节' not in excerpt or '基于统一数据契约' in excerpt
+    assert '#view=characters&amp;person=' in excerpt
+    assert '#view=events' in excerpt
+    assert '<script' not in excerpt
+    assert "私有内核" in excerpt
+    preview=W.render()
+    assert excerpt in preview
+
+
+def test_shared_component_handles_synthetic_sanggan_without_private_fixture():
+    from world_adapters import sanggan
+    from world_components import digest
+    sample={
+        "manifest":{"book":{"title":"Test","author":"Synthetic"}},
+        "persons":[
+            {"id":"person:A","name":"Test A","evidence":"observed","first_chapter":1},
+            {"id":"person:B","name":"Test B","evidence":"inferred","first_chapter":1},
+        ],"places":[],
+        "events":{"events":[
+            {"id":"event:X","chapter":2,"summary":"An event","actors":["person:A","person:B"],"evidence":"observed"},
+        ]},
+        "relations":{"relations":[
+            {"id":"rel:1","from":"person:A","to":"person:B","sub_pred":"colleague","source_type":"observed"}
+        ]},
+        "kernel":{"count":2,"persons":[]},
+    }
+    world=sanggan.adapt(sample)
+    s=digest(world,"../books/sanggan/index.html")
+    assert "Test A" in s and "Test B" in s
+    assert "An event" in s
+    assert "colleague" in s
+    assert "<script" not in s

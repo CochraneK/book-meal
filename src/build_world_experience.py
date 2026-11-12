@@ -9,9 +9,11 @@ from __future__ import annotations
 import argparse
 import html
 import re
+from functools import lru_cache
 from pathlib import Path
 
 import book_registry
+from world_components import digest
 
 ROOT = Path(__file__).resolve().parents[1]
 IDENTIFIER = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
@@ -137,8 +139,22 @@ def detail(book):
     return s
 
 
+@lru_cache(maxsize=1)
+def _ming_public_world():
+    """Ming: real public aggregate; never fetch Private Sanggan in Pages CI."""
+    from export_world import build
+    from world_contract import validate_world
+    world=build("ming")
+    problems=validate_world(world)
+    if problems:
+        raise ValueError("Ming world-contract validation failed: "+str(problems[:3]))
+    return world
+
+
 def render(manifests=None):
     books=catalog(book_registry.load() if manifests is None else manifests)
+    has_ming=any(b["id"]=="ming" and b["status"]=="ready" for b in books)
+    ming_preview=digest(_ming_public_world(),"../ming/index.html") if has_ming else ""
     if not books: raise ValueError("empty book registry")
     choices=[]
     templates=[]
@@ -153,8 +169,9 @@ def render(manifests=None):
                ' aria-current="page"' if i==0 else "",
                esc(b["glyph"]),esc(b["title"]),esc(small))
         )
+        supplement=ming_preview if b["id"]=="ming" and b["status"]=="ready" else ""
         templates.append('<template id="world-template-%s">%s</template>'%
-                         (esc(b["id"]),detail(b)))
+                         (esc(b["id"]),detail(b)+supplement))
     css=(ROOT/"web/world_experience.css").read_text(encoding="utf-8")
     js=(ROOT/"web/world_experience.js").read_text(encoding="utf-8")
     if "</style" in css.lower() or "</script" in js.lower():
@@ -188,7 +205,9 @@ def render(manifests=None):
         '</main></div><div class="sr-only" id="selection-status" '
         'role="status" aria-live="polite"></div></div>'
         '%s<script>%s</script></body></html>\n'
-    )%(css,"".join(choices),detail(books[0]),"".join(templates),js)
+    )%(css,"".join(choices),
+       detail(books[0])+(ming_preview if books[0]["id"]=="ming" else ""),
+       "".join(templates),js)
 
 
 def main(argv=None):
