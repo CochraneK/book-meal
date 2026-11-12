@@ -20,7 +20,10 @@ IDENTIFIER = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
 EXTRAS = {
     "ming": [("圣地巡礼地图", "map"), ("历史时间轴", "timeline"),
              ("帝王与年谱", "dynasty"), ("人物图谱", "visuals")],
-    "sanggan": [("走进暖水屯（原报告）", None), ("人物深描（原报告）", None)],
+    "sanggan": [("走进暖水屯 · 人生模拟", "sim"),
+                ("人物与证据深描", "insight"),
+                ("完整事件链", "events"),
+                ("人物关系网络", "relations")],
     "swdw": [("七世界探索（原报告）", None)],
     "tiancai": [("双时间线（原报告）", None)],
     "feitu": [("废土世界图谱（原报告）", None)],
@@ -62,10 +65,17 @@ def catalog(manifests):
                 "explore": link+"#view=visuals",
                 "research": link+"#view=insight",
             })
+        elif key == "sanggan" and not planned:
+            # These routes exist in the already published Sanggan report.
+            routes.update({
+                "story": link+"#view=events",
+                "explore": link+"#view=characters",
+                "research": link+"#view=insight",
+            })
         extras = []
         if not planned:
             for label, view in EXTRAS.get(key, []):
-                suffix = "#view="+view if key == "ming" and view else ""
+                suffix = "#view="+view if key in ("ming", "sanggan") and view else ""
                 extras.append((label, link+suffix))
         result.append({
             "id":key, "title":str(m.get("title") or ""), "author":str(m.get("author") or ""),
@@ -151,10 +161,26 @@ def _ming_public_world():
     return world
 
 
+@lru_cache(maxsize=1)
+def _sanggan_public_world():
+    """Reuse the existing PUBLIC HTML, never the Private Sanggan repo."""
+    from world_adapters.sanggan_public import read_public_report, adapt
+    from world_contract import validate_world
+    data, fingerprint = read_public_report(ROOT/"books/sanggan/index.html")
+    world = adapt(data, source_sha256=fingerprint)
+    errors = validate_world(world)
+    if errors:
+        raise ValueError("Sanggan public World Contract invalid: " + str(errors[:3]))
+    return world
+
+
 def render(manifests=None):
     books=catalog(book_registry.load() if manifests is None else manifests)
     has_ming=any(b["id"]=="ming" and b["status"]=="ready" for b in books)
     ming_preview=digest(_ming_public_world(),"../ming/index.html") if has_ming else ""
+    has_sanggan=any(b["id"]=="sanggan" and b["status"]=="ready" for b in books)
+    sanggan_preview=(digest(_sanggan_public_world(),"../books/sanggan/index.html",
+                            event_deep_link=True) if has_sanggan else "")
     if not books: raise ValueError("empty book registry")
     choices=[]
     templates=[]
@@ -169,7 +195,9 @@ def render(manifests=None):
                ' aria-current="page"' if i==0 else "",
                esc(b["glyph"]),esc(b["title"]),esc(small))
         )
-        supplement=ming_preview if b["id"]=="ming" and b["status"]=="ready" else ""
+        supplement=(ming_preview if b["id"]=="ming" and b["status"]=="ready"
+                    else sanggan_preview if b["id"]=="sanggan" and b["status"]=="ready"
+                    else "")
         templates.append('<template id="world-template-%s">%s</template>'%
                          (esc(b["id"]),detail(b)+supplement))
     css=(ROOT/"web/world_experience.css").read_text(encoding="utf-8")
@@ -206,7 +234,8 @@ def render(manifests=None):
         'role="status" aria-live="polite"></div></div>'
         '%s<script>%s</script></body></html>\n'
     )%(css,"".join(choices),
-       detail(books[0])+(ming_preview if books[0]["id"]=="ming" else ""),
+       detail(books[0])+(ming_preview if books[0]["id"]=="ming" else
+                        sanggan_preview if books[0]["id"]=="sanggan" else ""),
        "".join(templates),js)
 
 
