@@ -106,3 +106,20 @@ jobs:
 
       - name: 无头浏览器自检
         run: python tests/browser_check.py .ci/index.html
+
+      # Run 03: 新的统一世界入口只在 Pages 构建时生成，不覆盖旧报告。
+      - name: 统一世界入口无头浏览器检查
+        run: python tests/browser_check_world.py .ci/site/worlds/index.html
+
+      # PR 时保留已经通过发布白名单门禁的整站预览，以及手机/桌面截图。
+      # 仅提供审核下载，不自动部署或修改 main。
+      - name: 上传 Run 03 站点与视觉验收预览
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-meal-run03-site-preview
+          path: |
+            .ci/site/
+            .ci/world-preview-screenshots/
+          retention-days: 7
+          if-no-files-found: error

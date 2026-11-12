@@ -1,0 +1,46 @@
+# Run 03 · 统一书籍世界体验（交接与验证）
+
+状态：独立体验预览，未替换任何旧报告。基于 Run 02 分支叠加，待 PR 审核。
+
+## 已做
+
+1. 通用书籍世界入口采用 book_registry.load()，书目、状态和数字只有一个源。
+2. 同一页呈现六本书；移动端横向书单 + 书名搜索；读懂、探索、研究三个真正可点击的入口。
+3. 明朝已有页面的 overview/visuals/insight/map/timeline/dynasty 可直接深链；其他书仍打开各自的完整报告，没有捏造新交互。
+4. 平凡的世界仍是建档中，指标用未知显示，不生成假图谱或人物。
+5. 生成器与 CSS/JS 源都不进入网站；src/build_dist.py 生成单文件自包含 HTML 到 .ci/site/worlds/index.html，继续接受版权与发布目录白名单审查。
+6. 新增零依赖单元测试 + CI 无头浏览器真实切换测试（不同 query book）。
+
+## 运行
+
+python tests/run_tests.py world_experience
+python src/build_dist.py --out .ci/site
+python src/build_dist.py --check --out .ci/site
+python tests/browser_check_world.py .ci/site/worlds/index.html
+
+打开 .ci/site/worlds/index.html?book=ming 或 ?book=sanggan 即可查看预览。
+这条预览路径只有在最终合并并经 GitHub Pages 部署后才会出现在公开站点；PR 本身不等于线上已上线。
+
+## 保护措施与缺口
+
+- 不直接修改 index.html、ming、books 内任何既有报告；不触碰 Private sanggan 原始源。
+- 模块遵循一书一世界；原始数据依旧沿旧构建链，暂未把专有图谱强行压成通用组件。
+- World Contract 有数据适配和校验，但 Sanggan 真正的 Private Python 端到端还未通过。
+- 老书报告无可靠通用深链时明确显示“打开现有报告”，不能假称直达人物或进入模拟。
+- 真正的通用人物卡/关系图/研究组件属于 Run 03B：应先通过真实公共 Ming 和授权 Sanggan 同 schema 的双样本验收，再对比原版视觉与互动后迁移。
+- CI 自动无头浏览器不等于真实手机人工体验。
+
+## PR 审阅预览
+
+GitHub Actions CI 在 PR 上验收成功后，产生可下载的 `book-meal-run03-site-preview` artifact（7 日保留），包括完整白名单站点 `.ci/site/` 和四张桌面/手机浏览器截图。下载解压后打开 `site/worlds/index.html`，目录中的书籍报告均可按原相对路径正常打开。这个 artifact 是构建预览，不是 GitHub Pages 已部署版本。
+
+## 入口发现（非破坏性）
+
+主站门户只增加一个明显标注“预览”的短链接，指向 `worlds/index.html`。保留原有所有书卡、排序、搜索、明暗和深链；源文件与追踪的生成物同步维护（`src/build_hub.py` + `index.html`），由 CI `--check` 防止漂移。
+
+## Run 03B · 数据驱动的真正共享组件
+
+新增 src/world_components.py：纯标准库，把任意经过适配的 World Contract 渲染为可折叠的“人物、事件、关系”小型索引，转义输出、只保留来源章位和来源角色，不把人格假设写成事实。
+- 公开预览仅对明朝真实公共聚合数据渲染前六名关联度较高人物、四条事件及关系样例；其余完整视图仍走原报告。
+- 合成暖水屯测试调用同一渲染器与 Sanggan adapter，验证跨书兼容；私有 Sanggan 真实数据不会进 Pages。
+- 后续如需公开暖水屯人物样例，必须先在授权环境建立可发布的审查数据源与明确版权边界。
