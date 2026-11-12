@@ -24,7 +24,11 @@ def test_ming_legacy_deep_links_remain_reachable():
 def test_sanggan_uses_only_existing_public_report():
     b=next(x for x in W.catalog(book_registry.load()) if x["id"]=="sanggan")
     assert b["report"]=="../books/sanggan/index.html"
-    assert set(b["routes"].values())=={b["report"]}
+    assert b["routes"] == {
+        "story": b["report"] + "#view=events",
+        "explore": b["report"] + "#view=characters",
+        "research": b["report"] + "#view=insight",
+    }
     output=W.render()
     assert "world/kernel/" not in output
     assert "world/index/persons.json" not in output
@@ -126,3 +130,68 @@ def test_shared_component_handles_synthetic_sanggan_without_private_fixture():
     assert "An event" in s
     assert "colleague" in s
     assert "<script" not in s
+
+
+
+def test_existing_public_sanggan_report_maps_real_events_and_people():
+    from world_adapters.sanggan_public import read_public_report, adapt
+    from world_contract import validate_world
+    raw, checksum=read_public_report(W.ROOT/"books/sanggan/index.html")
+    assert len(checksum)==64
+    assert (len(raw["characters"]),len(raw["events"]),len(raw["relations"]))==(78,124,123)
+    world=adapt(raw,source_sha256=checksum)
+    assert not validate_world(world),validate_world(world)[:10]
+    assert (len(world["persons"]),len(world["events"]),len(world["relations"]))==(78,124,123)
+    assert len(world["places"])==len(raw["scene"]["places"])
+    assert world["extensions"]["sanggan_public"]["private_persona_kernels_included"] is False
+    assert world["extensions"]["sanggan_public"]["only_public_index_fields"] is True
+    assert {p["source_id"] for p in world["persons"]}=={p["id"] for p in raw["characters"]}
+    for person in world["persons"]:
+        assert set(person) <= {
+            "id","source_id","name","ontology_version","ontology_ref",
+            "aliases","roles","evidence_ids","extensions",
+        }
+        assert "persona_domains" not in person
+        assert "trace" not in person and "by_batch" not in person
+    assert not any("world/kernel/" in str(p) for p in world["persons"])
+
+
+def test_same_component_shows_real_public_sanggan_and_deep_links():
+    from world_components import digest
+    world=W._sanggan_public_world()
+    fragment=digest(world,"../books/sanggan/index.html",event_deep_link=True)
+    assert 'class="world-glimpse"' in fragment
+    assert "基于统一数据契约" in fragment
+    assert "#view=characters&amp;person=" in fragment
+    assert "#view=events&amp;event=" in fragment
+    assert "第" in fragment and "章" in fragment
+    html=W.render()
+    assert fragment in html and 'id="world-template-sanggan"' in html
+
+
+def test_public_sanggan_parser_never_executes_javascript():
+    from world_adapters.sanggan_public import extract_report_data
+    import json
+    fixture={"characters":[],"events":[],"relations":[]}
+    assert extract_report_data("const DATA = "+json.dumps(fixture)+";")==fixture
+    for invalid in (
+        "const DATA = alert('bad');",
+        "const DATA = {};\\nconst DATA = {};",
+        "var DATA = {};",
+    ):
+        try:extract_report_data(invalid)
+        except ValueError:pass
+        else:raise AssertionError("accepted executable or duplicate assignment")
+
+
+def test_public_sanggan_evidence_provenance_and_unresolved_entities():
+    from world_adapters.sanggan_public import adapt, read_public_report
+    from world_contract import validate_world
+    data,_=read_public_report(W.ROOT/"books/sanggan/index.html")
+    w=adapt(data)
+    assert not validate_world(w)
+    assert all(e["source"]["path"].startswith("books/sanggan/index.html")
+               for e in w["evidence"])
+    assert all(e.get("verification")=="source_record_only" for e in w["evidence"])
+    assert all(e["status"]=="unresolved" for e in w["entities"])
+    assert all(r["evidence_ids"] for r in w["relations"])

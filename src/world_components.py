@@ -16,7 +16,8 @@ def text(value, limit=100):
     return escape(s[:limit]+("…" if len(s)>limit else ""),quote=True)
 
 
-def digest(world: dict, report_href: str, *, limit_people: int = 6, limit_events: int = 4) -> str:
+def digest(world: dict, report_href: str, *, limit_people: int = 6, limit_events: int = 4,
+           event_deep_link: bool = False) -> str:
     """Render a collapsible real-world sample from ANY validated World Contract."""
     if not isinstance(world,dict) or not report_href.startswith("../"):
         raise ValueError("invalid world or report href")
@@ -54,9 +55,16 @@ def digest(world: dict, report_href: str, *, limit_people: int = 6, limit_events
                       (escape(href,quote=True),text(name,36),text(role,58),chapter))
     chunks.append('</div></section><section aria-label="事件示例"><h4>事件</h4><div class="glimpse-list">')
     for e in selected_events:
-        year=(e.get("time") or {}).get("label") or "时间待核"
-        chunks.append('<a class="glimpse-record" href="%s#view=events"><strong>%s</strong><small>%s</small></a>'%
-                      (escape(report_href,quote=True),text(e.get("name") or e.get("source_id"),62),text(year,36)))
+        timing=e.get("time") or {}
+        chapter=timing.get("chapter")
+        chapter_label=("第"+str(chapter)+"章") if chapter is not None else ""
+        time_label=timing.get("label") or "时间待核"
+        href=report_href+"#view=events"
+        if event_deep_link and e.get("source_id"):
+            href+="&event="+quote(str(e["source_id"]),safe="")
+        when=(text(chapter_label,20)+" · " if chapter_label else "")+text(time_label,32)
+        chunks.append('<a class="glimpse-record" href="%s"><strong>%s</strong><small>%s</small></a>'%
+                      (escape(href,quote=True),text(e.get("name") or e.get("source_id"),62),when))
     chunks.append('</div></section></div>')
     if selected_rels:
         chunks.append('<div class="relation-preview"><h4>人物关系样例</h4><ul>')
