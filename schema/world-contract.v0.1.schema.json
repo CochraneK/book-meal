@@ -1,0 +1,419 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CochraneK/book-meal/blob/main/schema/world-contract.v0.1.schema.json",
+  "title": "Book-Meal World Contract v0.1 interoperability envelope",
+  "description": "World wrapper, NOT a competing Human Ontology. Person semantics reference AI-Persona Human Ontology v2.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "book",
+    "world",
+    "persons",
+    "places",
+    "entities",
+    "events",
+    "relations",
+    "evidence",
+    "states",
+    "experiments",
+    "audit",
+    "extensions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "book": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "author",
+        "source_repository"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^book:"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string"
+        },
+        "source_repository": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "required": [
+        "id",
+        "book_id",
+        "parent_world_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^world:"
+        },
+        "book_id": {
+          "type": "string",
+          "pattern": "^book:"
+        },
+        "parent_world_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "persons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/person"
+      }
+    },
+    "places": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "warnings",
+        "unresolved_endpoints",
+        "source_counts"
+      ],
+      "properties": {
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unresolved_endpoints": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "source_counts": {
+          "type": "object"
+        }
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "sourceRef": {
+      "type": "object",
+      "required": [
+        "repository",
+        "path",
+        "native_id",
+        "chapters"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "native_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "id",
+        "for_id",
+        "kind",
+        "source"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "for_id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "BOOK",
+            "INFER",
+            "EXT",
+            "SIM",
+            "UNKNOWN"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/sourceRef"
+        }
+      }
+    },
+    "person": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "name",
+        "ontology_version",
+        "ontology_ref",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ontology_version": {
+          "const": "2.0.0"
+        },
+        "ontology_ref": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "name",
+        "kind",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "name",
+        "participants",
+        "time",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "time": {
+          "type": "object",
+          "required": [
+            "year_start",
+            "year_end",
+            "label",
+            "chapter"
+          ],
+          "properties": {
+            "year_start": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "year_end": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "label": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "chapter": {
+              "type": [
+                "integer",
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_id",
+        "from_id",
+        "to_id",
+        "predicate",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "from_id": {
+          "type": "string"
+        },
+        "to_id": {
+          "type": "string"
+        },
+        "predicate": {
+          "type": "string"
+        },
+        "canonical_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extensions": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
