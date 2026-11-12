@@ -41,6 +41,42 @@
     var requested=new URLSearchParams(location.search).get("book");
     show(requested||nav.querySelector("a[data-book]").getAttribute("data-book"),false);
   });
+  // The index is within each world template. Delegate so switching books keeps
+  // the controls working without a second JS instance or external dependency.
+  function refreshIndex(browser){
+    var active=browser.querySelector(".browser-section:not([hidden])");
+    var query=browser.querySelector("[data-world-search]");
+    var q=query?query.value.trim().toLowerCase():"",count=0;
+    if(!active)return;
+    active.querySelectorAll("[data-index-record]").forEach(function(row){
+      var visible=(row.getAttribute("data-search")||"").indexOf(q)!==-1;
+      row.hidden=!visible;
+      if(visible)count++;
+    });
+    var out=browser.querySelector("[data-world-result]");
+    if(out)out.textContent="显示 "+count+" 项"+(q?"匹配结果":"");
+  }
+  pane.addEventListener("click",function(e){
+    var button=e.target.closest("[data-index-tab]");
+    if(!button||!pane.contains(button))return;
+    var browser=button.closest(".world-browser");
+    if(!browser)return;
+    var value=button.getAttribute("data-index-tab");
+    browser.querySelectorAll("[data-index-tab]").forEach(function(btn){
+      btn.setAttribute("aria-pressed",btn===button?"true":"false");
+    });
+    browser.querySelectorAll("[data-index-section]").forEach(function(section){
+      section.hidden=section.getAttribute("data-index-section")!==value;
+    });
+    var searchBox=browser.querySelector("[data-world-search]");
+    if(searchBox)searchBox.value="";
+    refreshIndex(browser);
+  });
+  pane.addEventListener("input",function(e){
+    if(!e.target.matches("[data-world-search]"))return;
+    var browser=e.target.closest(".world-browser");
+    if(browser)refreshIndex(browser);
+  });
   var requested=new URLSearchParams(location.search).get("book");
   if(requested)show(requested,false);
 })();

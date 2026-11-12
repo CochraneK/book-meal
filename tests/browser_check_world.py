@@ -39,7 +39,12 @@ def run(book, title, expected_route):
         active=re.search(r'<a[^>]*aria-current="page"[^>]*data-book="'+re.escape(book)+r'"',doc)
     ok=(result.returncode==0 and
         bool(re.search(r'<h2 id="world-title"[^>]*>'+re.escape(title)+r'</h2>',stage))
-        and expected_route in stage and bool(active))
+        and expected_route in stage and bool(active)
+        and (book=="ordinary-world" or (
+            'class="world-browser"' in stage and
+            'data-index-tab="persons"' in stage and
+            'data-world-search' in stage
+        )))
     print("[OK]" if ok else "[FAIL]",book,"switch & active DOM")
     if not ok:
         print("rc=",result.returncode,"stage-tail=",stage[-900:],"stderr=",result.stderr[-400:])
