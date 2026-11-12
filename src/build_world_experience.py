@@ -14,6 +14,7 @@ from pathlib import Path
 
 import book_registry
 from world_components import digest
+from world_browse import render as render_index
 
 ROOT = Path(__file__).resolve().parents[1]
 IDENTIFIER = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
@@ -177,10 +178,13 @@ def _sanggan_public_world():
 def render(manifests=None):
     books=catalog(book_registry.load() if manifests is None else manifests)
     has_ming=any(b["id"]=="ming" and b["status"]=="ready" for b in books)
-    ming_preview=digest(_ming_public_world(),"../ming/index.html") if has_ming else ""
+    ming_preview=(digest(_ming_public_world(),"../ming/index.html") +
+                  render_index(_ming_public_world(),"../ming/index.html",cap=40)) if has_ming else ""
     has_sanggan=any(b["id"]=="sanggan" and b["status"]=="ready" for b in books)
     sanggan_preview=(digest(_sanggan_public_world(),"../books/sanggan/index.html",
-                            event_deep_link=True) if has_sanggan else "")
+                            event_deep_link=True) +
+                     render_index(_sanggan_public_world(),"../books/sanggan/index.html",
+                                  cap=250,event_deep_link=True)) if has_sanggan else ""
     if not books: raise ValueError("empty book registry")
     choices=[]
     templates=[]

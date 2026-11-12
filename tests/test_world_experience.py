@@ -195,3 +195,54 @@ def test_public_sanggan_evidence_provenance_and_unresolved_entities():
     assert all(e.get("verification")=="source_record_only" for e in w["evidence"])
     assert all(e["status"]=="unresolved" for e in w["entities"])
     assert all(r["evidence_ids"] for r in w["relations"])
+
+
+
+def test_full_public_sanggan_index_is_accessible_and_searchable():
+    from world_browse import render as browse
+    src=W._sanggan_public_world()
+    fragment=browse(src,"../books/sanggan/index.html",cap=250,event_deep_link=True)
+    assert "人物 78" in fragment
+    assert "事件 124" in fragment
+    assert "关系 123" in fragment
+    assert fragment.count('data-index-record')==78+124+123
+    assert 'data-index-tab="persons"' in fragment
+    assert 'data-index-tab="events"' in fragment
+    assert 'data-index-tab="relations"' in fragment
+    assert 'data-world-search' in fragment
+    assert "#view=characters&amp;person=" in fragment
+    assert "#view=events&amp;event=" in fragment
+    assert fragment in W.render()
+
+
+def test_large_ming_index_is_capped_and_preserves_full_report():
+    from world_browse import render as browse
+    w=W._ming_public_world()
+    fragment=browse(w,"../ming/index.html",cap=40)
+    assert "世界索引" in fragment
+    assert fragment.count('data-index-record')==120
+    assert "数据量较大" in fragment
+    assert "查看完整原报告" in fragment
+    assert fragment in W.render()
+
+
+def test_search_index_escapes_untrusted_public_names():
+    from world_browse import render as browse
+    from world_adapters.sanggan_public import adapt
+    fake={
+        "characters":[{"id":"person:E","name":'<img src=x onerror=alert(1)>',
+                       "role_in_book":"<svg onload=alert(1)>","first_chapter":1}],
+        "events":[],"relations":[],"scene":{"places":[]},
+    }
+    fragment=browse(adapt(fake),"../books/sanggan/index.html")
+    assert "<img" not in fragment and "<svg" not in fragment
+    assert "&lt;img" in fragment and "&lt;svg" in fragment
+    assert 'data-index-record' in fragment
+
+
+def test_world_browser_script_contains_delegated_handlers():
+    js=(W.ROOT/"web/world_experience.js").read_text(encoding="utf-8")
+    assert '[data-index-tab]' in js
+    assert '[data-world-search]' in js
+    assert 'pane.addEventListener("click"' in js
+    assert 'pane.addEventListener("input"' in js
