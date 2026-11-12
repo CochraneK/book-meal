@@ -46,11 +46,23 @@ def add_evidence(world: dict, record_id: str, *, kind: str, repo: str,
                  path: str, native_id: str, chapters=(), note: str = "") -> str:
     if kind not in EPISTEMIC:
         raise ValueError("unknown epistemic type: " + kind)
-    evidence_id = stable_id("evidence", world["book"]["id"].removeprefix("book:"), record_id)
+    normalized_chapters = list(dict.fromkeys(
+        str(x) for x in (chapters or []) if x is not None and str(x)
+    ))
+    # Evidence is an *occurrence*, not merely the record it describes:
+    # a missing person may be referenced in event_graph AND relation_graph.
+    evidence_source_key = json.dumps(
+        [record_id, kind, repo, path, str(native_id), normalized_chapters],
+        ensure_ascii=False, separators=(",", ":"),
+    )
+    evidence_id = stable_id("evidence", world["book"]["id"].removeprefix("book:"), evidence_source_key)
+    if any(row["id"] == evidence_id for row in world["evidence"]):
+        return evidence_id  # idempotent when the same unresolved source is visited repeatedly
     record = {
         "id": evidence_id, "for_id": record_id, "kind": kind,
+        "verification": "source_record_only",  # references have not been OCR/source-text rechecked
         "source": {"repository": repo, "path": path, "native_id": str(native_id),
-                   "chapters": list(dict.fromkeys(str(x) for x in (chapters or []) if x is not None and str(x)))},
+                   "chapters": normalized_chapters},
     }
     if note:
         record["note"] = note
@@ -64,14 +76,21 @@ def unresolved_entity(world: dict, native_id: object, *, source_path: str,
     label = str(native_id)
     wid = world["book"]["id"].removeprefix("book:")
     item_id = stable_id("entity", wid, "unresolved|" + label)
-    if not any(r["id"] == item_id for r in world["entities"]):
-        source = world["book"]["source_repository"]
-        evid = add_evidence(world, item_id, kind="UNKNOWN", repo=source, path=source_path,
-                            native_id=label)
+    source = world["book"]["source_repository"]
+    evid = add_evidence(world, item_id, kind="UNKNOWN", repo=source, path=source_path,
+                        native_id=label)
+    existing = next((r for r in world["entities"] if r["id"] == item_id), None)
+    if existing is None:
         world["entities"].append({
             "id": item_id, "name": label, "kind": "unresolved_" + expected_kind,
             "status": "unresolved", "evidence_ids": [evid], "source_id": label,
         })
+    elif evid not in existing["evidence_ids"]:
+        existing["evidence_ids"].append(evid)
+    # Audit each distinct source, even if the missing native ID is shared.
+    if not any(x["source_id"] == label and x["source_path"] == source_path
+               and x["expected_kind"] == expected_kind
+               for x in world["audit"]["unresolved_endpoints"]):
         world["audit"]["unresolved_endpoints"].append({
             "source_id": label, "expected_kind": expected_kind, "source_path": source_path,
         })

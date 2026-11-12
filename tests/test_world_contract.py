@@ -48,7 +48,11 @@ def test_sanggan_adapter_synthetic_roundtrip():
     assert (len(a["persons"]), len(a["events"]), len(a["relations"])) == (2, 1, 2)
     assert len(a["entities"]) == 1  # unresolved reference is NOT an invented person
     assert a["entities"][0]["status"] == "unresolved"
-    assert len(a["audit"]["unresolved_endpoints"]) == 1
+    assert len(a["audit"]["unresolved_endpoints"]) == 2
+    assert {x["source_path"] for x in a["audit"]["unresolved_endpoints"]} == {
+        "world/event_graph/events.json", "world/relation_graph/relations.json"
+    }
+    assert len(a["entities"][0]["evidence_ids"]) == 2
     assert a["persons"][0]["extensions"]["sanggan"]["kernel_path"] == "kernel/persons/A.json"
     assert any(e["kind"] == "INFER" for e in a["evidence"])
 
@@ -130,3 +134,62 @@ def test_real_ming_contract_against_read_only_source():
     assert len(world["relations"]) >= 2000
     assert all(x["ontology_version"] == "2.0.0" for x in world["persons"])
     assert len({x["id"] for x in world["evidence"]}) == len(world["evidence"])
+
+
+
+def test_sanggan_real_shape_chapter_annotations_do_not_disappear():
+    """In the real private source, evidence may be a chapter note, not a flag."""
+    s = synthetic_sanggan()
+    s["persons"][0]["evidence"] = "chapter note with source context"
+    s["events"]["events"][0]["evidence"] = "chapter reference"
+    s["places"][0]["evidence"] = "another source annotation"
+    result = sanggan.adapt(s)
+    target_ids = {
+        result["persons"][0]["id"], result["events"][0]["id"], result["places"][0]["id"]
+    }
+    annotations = [x for x in result["evidence"] if x["for_id"] in target_ids]
+    assert len(annotations) == 3
+    assert all(x["kind"] == "BOOK" for x in annotations)
+    assert all(x["verification"] == "source_record_only" for x in annotations)
+    assert all("source chapter annotation only" in x.get("note", "") for x in annotations)
+    assert "chapter note with source context" not in str(result)
+
+
+def test_sanggan_declared_counts_are_not_mistaken_for_actual():
+    s = synthetic_sanggan()
+    s["kernel"]["count"] = 3  # actual kernel entries: 1, person index: 2
+    s["relations"]["count"] = 99  # actual: 2
+    s["events"]["count"] = 88  # actual: 1
+    s["manifest"]["counts"] = {"persons": 42, "relations": 99}
+    result = sanggan.adapt(s)
+    assert not validate_world(result)
+    warnings = result["audit"]["warnings"]
+    assert any("kernel header count" in x for x in warnings)
+    assert any("kernel entry count" in x for x in warnings)
+    assert any("relation header count" in x for x in warnings)
+    assert any("event header count" in x for x in warnings)
+    assert any("manifest persons" in x for x in warnings)
+    assert result["audit"]["source_counts"]["persons"] == 2
+    assert result["audit"]["source_counts"]["relations"] == 2
+
+
+def test_unresolved_records_keep_each_distinct_origin_and_deduplicate_repeats():
+    s = synthetic_sanggan()
+    s["events"]["events"][0]["actors"].append("person:UNKNOWN")
+    s["relations"]["relations"][1]["to"] = "person:UNKNOWN"
+    result = sanggan.adapt(s)
+    unresolved = result["entities"]
+    assert len(unresolved) == 1
+    assert len(unresolved[0]["evidence_ids"]) == 2
+    assert len(result["audit"]["unresolved_endpoints"]) == 2
+    assert len(set(x["id"] for x in result["evidence"])) == len(result["evidence"])
+    assert not validate_world(result)
+
+
+def test_sanggan_no_evidence_source_falls_back_to_unknown():
+    s = synthetic_sanggan()
+    s["persons"][0].pop("evidence")
+    result = sanggan.adapt(s)
+    link = result["persons"][0]["evidence_ids"][0]
+    record = next(x for x in result["evidence"] if x["id"] == link)
+    assert record["kind"] == "UNKNOWN"
