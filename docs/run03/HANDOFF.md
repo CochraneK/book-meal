@@ -29,3 +29,7 @@ python tests/browser_check_world.py .ci/site/worlds/index.html
 - 老书报告无可靠通用深链时明确显示“打开现有报告”，不能假称直达人物或进入模拟。
 - 真正的通用人物卡/关系图/研究组件属于 Run 03B：应先通过真实公共 Ming 和授权 Sanggan 同 schema 的双样本验收，再对比原版视觉与互动后迁移。
 - CI 自动无头浏览器不等于真实手机人工体验。
+
+## PR 审阅预览
+
+GitHub Actions CI 在 PR 上验收成功后，产生可下载的 `book-meal-run03-site-preview` artifact（7 日保留），包括完整白名单站点 `.ci/site/` 和四张桌面/手机浏览器截图。下载解压后打开 `site/worlds/index.html`，目录中的书籍报告均可按原相对路径正常打开。这个 artifact 是构建预览，不是 GitHub Pages 已部署版本。

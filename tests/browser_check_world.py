@@ -50,3 +50,23 @@ assert run("ming","明朝那些事儿","../ming/index.html#view=visuals")
 assert run("sanggan","太阳照在桑乾河上","../books/sanggan/index.html")
 assert run("ordinary-world","平凡的世界","查看书籍建档页")
 print("[OK] all world preview smoke checks")
+
+# Keep visual evidence separate from source control. Four screenshots are taken
+# from the same generated preview tested above; they contain public UI only.
+shots=Path(".ci/world-preview-screenshots")
+shots.mkdir(parents=True,exist_ok=True)
+for book in ("ming","sanggan"):
+    for view,size in (("desktop","1280,820"),("mobile","390,844")):
+        dest=(shots/(book+"-"+view+".png")).resolve()
+        with tempfile.TemporaryDirectory(prefix="world-shot-") as home:
+            result=subprocess.run([
+                browser,"--headless=new","--no-sandbox","--disable-gpu",
+                "--disable-dev-shm-usage","--disable-background-networking",
+                "--disable-extensions","--hide-scrollbars","--force-device-scale-factor=1",
+                "--virtual-time-budget=1500","--window-size="+size,
+                "--user-data-dir="+home,"--screenshot="+str(dest),
+                page.as_uri()+"?book="+book
+            ],capture_output=True,text=True,timeout=35)
+        if result.returncode!=0 or not dest.is_file() or dest.stat().st_size<1000:
+            raise AssertionError("screenshot failed: "+str(dest)+" "+result.stderr[-250:])
+        print("[OK] screenshot",dest.name,dest.stat().st_size,"bytes")
